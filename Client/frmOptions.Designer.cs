@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.fbd = new System.Windows.Forms.FolderBrowserDialog();
             this.SuspendLayout();
             // 
             // frmOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(510, 237);
             this.Name = "frmOptions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmOptions";
@@ -43,5 +44,7 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.FolderBrowserDialog fbd;
     }
 }

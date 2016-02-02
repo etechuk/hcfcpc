@@ -11,7 +11,7 @@ using DevComponents.DotNetBar.Metro;
 
 namespace Client
 {
-    public partial class frmCompanies : MetroAppForm
+    public partial class frmCompanies : MetroForm
     {
         public frmCompanies()
         {
@@ -20,24 +20,21 @@ namespace Client
             DataSet ds = Program.DB.SelectAll("SELECT ID,NameFirst,NameLast FROM Companies;");
             if (ds.Tables.Count > 0)
             {
-                List<ComboItem> items = new List<ComboItem>();
+                AutoCompleteStringCollection asCompanies = new AutoCompleteStringCollection();
                 foreach (DataRow r in ds.Tables[0].Rows)
                 {
-                    items.Add(new ComboItem() { Text = r["Name"].ToString(), Value = Convert.ToInt32(r["ID"]) });
+                    asCompanies.Add(r["Name"].ToString());
                 }
-                cbxCompanies.DataSource = items;
-                cbxCompanies.DisplayMember = "Text";
-                cbxCompanies.ValueMember = "Value";
-                cbxCompanies.SelectedIndex = -1;
+                txtCompany.AutoCompleteCustomSource = asCompanies;
             }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            cbxCompanies.SelectedIndex = -1;
-            txtName.Text = "";
-            ActiveControl = txtName;
-            txtName.Focus();
+            txtCompany.Text = "";
+            txtCompany.Text = "";
+            ActiveControl = txtCompany;
+            txtCompany.Focus();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -48,21 +45,21 @@ namespace Client
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtName.Text.Trim() == "")
+            if (txtCompany.Text.Trim() == "")
             {
                 MessageBox.Show("Please enter a name to continue.", "Name", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 return;
             }
 
             int iID = 0;
-            if (cbxCompanies.SelectedIndex < 0)
+            if (txtCompany.Text.Trim().Length == 0)
             {
                 string sDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                 string sInsertCols = "", sInsertVals = "";
 
                 sInsertCols += sInsertCols != "" ? ",Name" : "Name";
                 sInsertVals += sInsertVals != "" ? ",@name" : "@name";
-                Program.DB.AddParameter("@name", txtName.Text.Trim());
+                Program.DB.AddParameter("@name", txtCompany.Text.Trim());
 
                 sInsertCols += sInsertCols != "" ? ",Modified" : "Modified";
                 sInsertVals += sInsertVals != "" ? ",@mod" : "@mod";
@@ -86,7 +83,12 @@ namespace Client
             }
             else
             {
-                SharedData.iCompanyID = Convert.ToInt32(cbxCompanies.SelectedValue);
+                Program.DB.AddParameter("Name", txtCompany.Text.Trim());
+                DataSet ds = Program.DB.SelectAll("SELECT ID,NameFirst,NameLast FROM Companies WHERE Name=@Name;");
+                if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+                {
+                    SharedData.iCompanyID = Convert.ToInt32(ds.Tables[0].Rows[0]["ID"]);
+                }
             }
 
             DialogResult = DialogResult.OK;

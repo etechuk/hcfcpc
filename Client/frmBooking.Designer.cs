@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.ms = new DevComponents.DotNetBar.Metro.MetroShell();
             this.sm = new DevComponents.DotNetBar.StyleManager(this.components);
             this.tc = new DevComponents.DotNetBar.SuperTabControl();
             this.superTabControlPanel6 = new DevComponents.DotNetBar.SuperTabControlPanel();
@@ -47,39 +46,6 @@
             this.chFilename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnDocumentAdd = new DevComponents.DotNetBar.ButtonX();
             this.superTabItem6 = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.btnContacts = new DevComponents.DotNetBar.ButtonX();
-            this.btnCompanies = new DevComponents.DotNetBar.ButtonX();
-            this.lvRooms = new System.Windows.Forms.ListView();
-            this.txtLayout = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.lblLayout = new DevComponents.DotNetBar.LabelX();
-            this.lblRooms = new DevComponents.DotNetBar.LabelX();
-            this.lblEmail = new DevComponents.DotNetBar.LabelX();
-            this.txtEmail = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.lblPhone = new DevComponents.DotNetBar.LabelX();
-            this.txtPhone = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.cbxContacts = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.lblContact = new DevComponents.DotNetBar.LabelX();
-            this.cbxCompanies = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.lblCompany = new DevComponents.DotNetBar.LabelX();
-            this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabControlPanel2 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.cbxDelegates = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.dtTimeAccessTo = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.lblTimeAcessTo = new DevComponents.DotNetBar.LabelX();
-            this.dtTimeAccessFrom = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.lblTimeAccess = new DevComponents.DotNetBar.LabelX();
-            this.lblName = new DevComponents.DotNetBar.LabelX();
-            this.txtName = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.dtTimeTo = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.lblTimeTo = new DevComponents.DotNetBar.LabelX();
-            this.dtTimeFrom = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.dtDateTo = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.lblDateTo = new DevComponents.DotNetBar.LabelX();
-            this.dtDateFrom = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.lblDatesTimes = new DevComponents.DotNetBar.LabelX();
-            this.superTabItem2 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel5 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.txtPurchaseOrder = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -92,6 +58,24 @@
             this.txtInvoiceAddress = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.superTabItem5 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabControlPanel4 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.txtComments = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.superTabItem4 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.txtContact = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtCompany = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.btnContacts = new DevComponents.DotNetBar.ButtonX();
+            this.btnCompanies = new DevComponents.DotNetBar.ButtonX();
+            this.lvRooms = new System.Windows.Forms.ListView();
+            this.txtLayout = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.lblLayout = new DevComponents.DotNetBar.LabelX();
+            this.lblRooms = new DevComponents.DotNetBar.LabelX();
+            this.txtEmail = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.lblPhone = new DevComponents.DotNetBar.LabelX();
+            this.txtPhone = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.lblContact = new DevComponents.DotNetBar.LabelX();
+            this.lblCompany = new DevComponents.DotNetBar.LabelX();
+            this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel3 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.txtLunchDiet = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.lblLunchDiet = new DevComponents.DotNetBar.LabelX();
@@ -110,9 +94,23 @@
             this.txtEquipment = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.lblEquipment = new DevComponents.DotNetBar.LabelX();
             this.superTabItem3 = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabControlPanel4 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.txtComments = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.superTabItem4 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabControlPanel2 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.cbxDelegates = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.dtTimeAccessTo = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.lblTimeAcessTo = new DevComponents.DotNetBar.LabelX();
+            this.dtTimeAccessFrom = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.lblTimeAccess = new DevComponents.DotNetBar.LabelX();
+            this.lblName = new DevComponents.DotNetBar.LabelX();
+            this.txtName = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.dtTimeTo = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.lblTimeTo = new DevComponents.DotNetBar.LabelX();
+            this.dtTimeFrom = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.dtDateTo = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.lblDateTo = new DevComponents.DotNetBar.LabelX();
+            this.dtDateFrom = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.lblDatesTimes = new DevComponents.DotNetBar.LabelX();
+            this.superTabItem2 = new DevComponents.DotNetBar.SuperTabItem();
             this.btnSave = new DevComponents.DotNetBar.ButtonX();
             this.btnCancel = new DevComponents.DotNetBar.ButtonX();
             this.lblUsers = new DevComponents.DotNetBar.LabelX();
@@ -120,7 +118,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.tc)).BeginInit();
             this.tc.SuspendLayout();
             this.superTabControlPanel6.SuspendLayout();
+            this.superTabControlPanel5.SuspendLayout();
+            this.superTabControlPanel4.SuspendLayout();
             this.superTabControlPanel1.SuspendLayout();
+            this.superTabControlPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtLunchTime)).BeginInit();
             this.superTabControlPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtTimeAccessTo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtTimeAccessFrom)).BeginInit();
@@ -128,50 +130,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtTimeFrom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtDateTo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtDateFrom)).BeginInit();
-            this.superTabControlPanel5.SuspendLayout();
-            this.superTabControlPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtLunchTime)).BeginInit();
-            this.superTabControlPanel4.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // ms
-            // 
-            this.ms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.ms.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ms.CanCustomize = false;
-            this.ms.CaptionFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ms.CaptionVisible = true;
-            this.ms.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ms.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ms.ForeColor = System.Drawing.Color.Black;
-            this.ms.HelpButtonText = null;
-            this.ms.HelpButtonVisible = false;
-            this.ms.KeyTipsFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ms.Location = new System.Drawing.Point(1, 1);
-            this.ms.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ms.Name = "ms";
-            this.ms.SettingsButtonVisible = false;
-            this.ms.Size = new System.Drawing.Size(638, 32);
-            this.ms.SystemText.MaximizeRibbonText = "&Maximize the Ribbon";
-            this.ms.SystemText.MinimizeRibbonText = "Mi&nimize the Ribbon";
-            this.ms.SystemText.QatAddItemText = "&Add to Quick Access Toolbar";
-            this.ms.SystemText.QatCustomizeMenuLabel = "<b>Customize Quick Access Toolbar</b>";
-            this.ms.SystemText.QatCustomizeText = "&Customize Quick Access Toolbar...";
-            this.ms.SystemText.QatDialogAddButton = "&Add >>";
-            this.ms.SystemText.QatDialogCancelButton = "Cancel";
-            this.ms.SystemText.QatDialogCaption = "Customize Quick Access Toolbar";
-            this.ms.SystemText.QatDialogCategoriesLabel = "&Choose commands from:";
-            this.ms.SystemText.QatDialogOkButton = "OK";
-            this.ms.SystemText.QatDialogPlacementCheckbox = "&Place Quick Access Toolbar below the Ribbon";
-            this.ms.SystemText.QatDialogRemoveButton = "&Remove";
-            this.ms.SystemText.QatPlaceAboveRibbonText = "&Place Quick Access Toolbar above the Ribbon";
-            this.ms.SystemText.QatPlaceBelowRibbonText = "&Place Quick Access Toolbar below the Ribbon";
-            this.ms.SystemText.QatRemoveItemText = "&Remove from Quick Access Toolbar";
-            this.ms.TabIndex = 0;
-            this.ms.TabStripFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // sm
             // 
@@ -200,19 +159,19 @@
             this.tc.ControlBox.MenuBox,
             this.tc.ControlBox.CloseBox});
             this.tc.ControlBox.Visible = false;
-            this.tc.Controls.Add(this.superTabControlPanel2);
             this.tc.Controls.Add(this.superTabControlPanel1);
+            this.tc.Controls.Add(this.superTabControlPanel3);
+            this.tc.Controls.Add(this.superTabControlPanel2);
             this.tc.Controls.Add(this.superTabControlPanel6);
             this.tc.Controls.Add(this.superTabControlPanel5);
-            this.tc.Controls.Add(this.superTabControlPanel3);
             this.tc.Controls.Add(this.superTabControlPanel4);
             this.tc.ForeColor = System.Drawing.Color.Black;
-            this.tc.Location = new System.Drawing.Point(20, 53);
+            this.tc.Location = new System.Drawing.Point(12, 19);
             this.tc.Name = "tc";
             this.tc.ReorderTabsEnabled = false;
             this.tc.SelectedTabFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.tc.SelectedTabIndex = 0;
-            this.tc.Size = new System.Drawing.Size(600, 347);
+            this.tc.Size = new System.Drawing.Size(616, 348);
             this.tc.TabFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tc.TabIndex = 1;
             this.tc.Tabs.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -242,7 +201,7 @@
             this.superTabControlPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlPanel6.Location = new System.Drawing.Point(0, 27);
             this.superTabControlPanel6.Name = "superTabControlPanel6";
-            this.superTabControlPanel6.Size = new System.Drawing.Size(600, 320);
+            this.superTabControlPanel6.Size = new System.Drawing.Size(616, 320);
             this.superTabControlPanel6.TabIndex = 0;
             this.superTabControlPanel6.TabItem = this.superTabItem6;
             // 
@@ -414,7 +373,7 @@
             this.lvDocuments.Location = new System.Drawing.Point(16, 18);
             this.lvDocuments.MultiSelect = false;
             this.lvDocuments.Name = "lvDocuments";
-            this.lvDocuments.Size = new System.Drawing.Size(270, 251);
+            this.lvDocuments.Size = new System.Drawing.Size(272, 251);
             this.lvDocuments.TabIndex = 7;
             this.lvDocuments.UseCompatibleStateImageBehavior = false;
             this.lvDocuments.View = System.Windows.Forms.View.Details;
@@ -443,34 +402,238 @@
             this.superTabItem6.Name = "superTabItem6";
             this.superTabItem6.Text = "  Documents";
             // 
+            // superTabControlPanel5
+            // 
+            this.superTabControlPanel5.Controls.Add(this.labelX7);
+            this.superTabControlPanel5.Controls.Add(this.txtPurchaseOrder);
+            this.superTabControlPanel5.Controls.Add(this.labelX4);
+            this.superTabControlPanel5.Controls.Add(this.cbxPaymentMethod);
+            this.superTabControlPanel5.Controls.Add(this.txtInvoiceAddress);
+            this.superTabControlPanel5.Controls.Add(this.labelX2);
+            this.superTabControlPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel5.Location = new System.Drawing.Point(0, 27);
+            this.superTabControlPanel5.Name = "superTabControlPanel5";
+            this.superTabControlPanel5.Size = new System.Drawing.Size(616, 320);
+            this.superTabControlPanel5.TabIndex = 0;
+            this.superTabControlPanel5.TabItem = this.superTabItem5;
+            // 
+            // labelX7
+            // 
+            this.labelX7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX7.ForeColor = System.Drawing.Color.Black;
+            this.labelX7.Location = new System.Drawing.Point(14, 187);
+            this.labelX7.Name = "labelX7";
+            this.labelX7.Size = new System.Drawing.Size(120, 23);
+            this.labelX7.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.labelX7.TabIndex = 23;
+            this.labelX7.Text = "Purchase Order:";
+            // 
+            // txtPurchaseOrder
+            // 
+            this.txtPurchaseOrder.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtPurchaseOrder.Border.Class = "TextBoxBorder";
+            this.txtPurchaseOrder.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtPurchaseOrder.DisabledBackColor = System.Drawing.Color.White;
+            this.txtPurchaseOrder.ForeColor = System.Drawing.Color.Black;
+            this.txtPurchaseOrder.Location = new System.Drawing.Point(140, 187);
+            this.txtPurchaseOrder.Name = "txtPurchaseOrder";
+            this.txtPurchaseOrder.PreventEnterBeep = true;
+            this.txtPurchaseOrder.Size = new System.Drawing.Size(229, 25);
+            this.txtPurchaseOrder.TabIndex = 22;
+            // 
+            // labelX4
+            // 
+            this.labelX4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX4.ForeColor = System.Drawing.Color.Black;
+            this.labelX4.Location = new System.Drawing.Point(14, 156);
+            this.labelX4.Name = "labelX4";
+            this.labelX4.Size = new System.Drawing.Size(120, 23);
+            this.labelX4.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.labelX4.TabIndex = 21;
+            this.labelX4.Text = "Payment Method:";
+            // 
+            // cbxPaymentMethod
+            // 
+            this.cbxPaymentMethod.DisplayMember = "Text";
+            this.cbxPaymentMethod.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxPaymentMethod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxPaymentMethod.ForeColor = System.Drawing.Color.Black;
+            this.cbxPaymentMethod.FormattingEnabled = true;
+            this.cbxPaymentMethod.ItemHeight = 19;
+            this.cbxPaymentMethod.Items.AddRange(new object[] {
+            this.cbxiBacs,
+            this.cbxiCash,
+            this.cbxiCheque,
+            this.cbxiCard});
+            this.cbxPaymentMethod.Location = new System.Drawing.Point(140, 156);
+            this.cbxPaymentMethod.Name = "cbxPaymentMethod";
+            this.cbxPaymentMethod.Size = new System.Drawing.Size(229, 25);
+            this.cbxPaymentMethod.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cbxPaymentMethod.TabIndex = 20;
+            // 
+            // cbxiBacs
+            // 
+            this.cbxiBacs.Text = "BACS";
+            // 
+            // cbxiCash
+            // 
+            this.cbxiCash.Text = "Cash";
+            // 
+            // cbxiCheque
+            // 
+            this.cbxiCheque.Text = "Cheque";
+            // 
+            // cbxiCard
+            // 
+            this.cbxiCard.Text = "Debit/Credit Card";
+            // 
+            // txtInvoiceAddress
+            // 
+            this.txtInvoiceAddress.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtInvoiceAddress.Border.Class = "TextBoxBorder";
+            this.txtInvoiceAddress.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtInvoiceAddress.DisabledBackColor = System.Drawing.Color.White;
+            this.txtInvoiceAddress.ForeColor = System.Drawing.Color.Black;
+            this.txtInvoiceAddress.Location = new System.Drawing.Point(140, 18);
+            this.txtInvoiceAddress.Multiline = true;
+            this.txtInvoiceAddress.Name = "txtInvoiceAddress";
+            this.txtInvoiceAddress.PreventEnterBeep = true;
+            this.txtInvoiceAddress.Size = new System.Drawing.Size(460, 132);
+            this.txtInvoiceAddress.TabIndex = 9;
+            // 
+            // labelX2
+            // 
+            this.labelX2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX2.ForeColor = System.Drawing.Color.Black;
+            this.labelX2.Location = new System.Drawing.Point(14, 18);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(120, 23);
+            this.labelX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.labelX2.TabIndex = 8;
+            this.labelX2.Text = "Invoice Address:";
+            // 
+            // superTabItem5
+            // 
+            this.superTabItem5.AttachedControl = this.superTabControlPanel5;
+            this.superTabItem5.GlobalItem = false;
+            this.superTabItem5.Name = "superTabItem5";
+            this.superTabItem5.Text = "  Invoicing";
+            // 
+            // superTabControlPanel4
+            // 
+            this.superTabControlPanel4.Controls.Add(this.txtComments);
+            this.superTabControlPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel4.Location = new System.Drawing.Point(0, 27);
+            this.superTabControlPanel4.Name = "superTabControlPanel4";
+            this.superTabControlPanel4.Size = new System.Drawing.Size(616, 320);
+            this.superTabControlPanel4.TabIndex = 0;
+            this.superTabControlPanel4.TabItem = this.superTabItem4;
+            // 
+            // txtComments
+            // 
+            this.txtComments.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtComments.Border.Class = "TextBoxBorder";
+            this.txtComments.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtComments.DisabledBackColor = System.Drawing.Color.White;
+            this.txtComments.ForeColor = System.Drawing.Color.Black;
+            this.txtComments.Location = new System.Drawing.Point(16, 18);
+            this.txtComments.Multiline = true;
+            this.txtComments.Name = "txtComments";
+            this.txtComments.PreventEnterBeep = true;
+            this.txtComments.Size = new System.Drawing.Size(584, 286);
+            this.txtComments.TabIndex = 27;
+            // 
+            // superTabItem4
+            // 
+            this.superTabItem4.AttachedControl = this.superTabControlPanel4;
+            this.superTabItem4.GlobalItem = false;
+            this.superTabItem4.Name = "superTabItem4";
+            this.superTabItem4.Text = "  Comments";
+            // 
             // superTabControlPanel1
             // 
+            this.superTabControlPanel1.Controls.Add(this.txtContact);
+            this.superTabControlPanel1.Controls.Add(this.txtCompany);
             this.superTabControlPanel1.Controls.Add(this.btnContacts);
             this.superTabControlPanel1.Controls.Add(this.btnCompanies);
             this.superTabControlPanel1.Controls.Add(this.lvRooms);
             this.superTabControlPanel1.Controls.Add(this.txtLayout);
             this.superTabControlPanel1.Controls.Add(this.lblLayout);
             this.superTabControlPanel1.Controls.Add(this.lblRooms);
-            this.superTabControlPanel1.Controls.Add(this.lblEmail);
             this.superTabControlPanel1.Controls.Add(this.txtEmail);
             this.superTabControlPanel1.Controls.Add(this.lblPhone);
             this.superTabControlPanel1.Controls.Add(this.txtPhone);
-            this.superTabControlPanel1.Controls.Add(this.cbxContacts);
             this.superTabControlPanel1.Controls.Add(this.lblContact);
-            this.superTabControlPanel1.Controls.Add(this.cbxCompanies);
             this.superTabControlPanel1.Controls.Add(this.lblCompany);
             this.superTabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlPanel1.Location = new System.Drawing.Point(0, 27);
             this.superTabControlPanel1.Name = "superTabControlPanel1";
-            this.superTabControlPanel1.Size = new System.Drawing.Size(600, 320);
+            this.superTabControlPanel1.Size = new System.Drawing.Size(616, 321);
             this.superTabControlPanel1.TabIndex = 1;
             this.superTabControlPanel1.TabItem = this.superTabItem1;
+            // 
+            // txtContact
+            // 
+            this.txtContact.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtContact.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtContact.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtContact.Border.Class = "TextBoxBorder";
+            this.txtContact.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtContact.DisabledBackColor = System.Drawing.Color.White;
+            this.txtContact.ForeColor = System.Drawing.Color.Black;
+            this.txtContact.Location = new System.Drawing.Point(140, 49);
+            this.txtContact.Name = "txtContact";
+            this.txtContact.PreventEnterBeep = true;
+            this.txtContact.Size = new System.Drawing.Size(431, 25);
+            this.txtContact.TabIndex = 16;
+            // 
+            // txtCompany
+            // 
+            this.txtCompany.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtCompany.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtCompany.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtCompany.Border.Class = "TextBoxBorder";
+            this.txtCompany.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtCompany.DisabledBackColor = System.Drawing.Color.White;
+            this.txtCompany.ForeColor = System.Drawing.Color.Black;
+            this.txtCompany.Location = new System.Drawing.Point(140, 18);
+            this.txtCompany.Name = "txtCompany";
+            this.txtCompany.PreventEnterBeep = true;
+            this.txtCompany.Size = new System.Drawing.Size(431, 25);
+            this.txtCompany.TabIndex = 15;
             // 
             // btnContacts
             // 
             this.btnContacts.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnContacts.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnContacts.Location = new System.Drawing.Point(561, 49);
+            this.btnContacts.Location = new System.Drawing.Point(577, 49);
             this.btnContacts.Name = "btnContacts";
             this.btnContacts.Size = new System.Drawing.Size(25, 25);
             this.btnContacts.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -481,7 +644,7 @@
             // 
             this.btnCompanies.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnCompanies.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnCompanies.Location = new System.Drawing.Point(561, 18);
+            this.btnCompanies.Location = new System.Drawing.Point(577, 18);
             this.btnCompanies.Name = "btnCompanies";
             this.btnCompanies.Size = new System.Drawing.Size(25, 25);
             this.btnCompanies.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -492,9 +655,9 @@
             // 
             this.lvRooms.BackColor = System.Drawing.Color.White;
             this.lvRooms.ForeColor = System.Drawing.Color.Black;
-            this.lvRooms.Location = new System.Drawing.Point(14, 183);
+            this.lvRooms.Location = new System.Drawing.Point(14, 144);
             this.lvRooms.Name = "lvRooms";
-            this.lvRooms.Size = new System.Drawing.Size(285, 122);
+            this.lvRooms.Size = new System.Drawing.Size(291, 162);
             this.lvRooms.TabIndex = 12;
             this.lvRooms.UseCompatibleStateImageBehavior = false;
             // 
@@ -508,11 +671,11 @@
             this.txtLayout.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtLayout.DisabledBackColor = System.Drawing.Color.White;
             this.txtLayout.ForeColor = System.Drawing.Color.Black;
-            this.txtLayout.Location = new System.Drawing.Point(305, 183);
+            this.txtLayout.Location = new System.Drawing.Point(311, 144);
             this.txtLayout.Multiline = true;
             this.txtLayout.Name = "txtLayout";
             this.txtLayout.PreventEnterBeep = true;
-            this.txtLayout.Size = new System.Drawing.Size(281, 122);
+            this.txtLayout.Size = new System.Drawing.Size(291, 162);
             this.txtLayout.TabIndex = 11;
             // 
             // lblLayout
@@ -523,7 +686,7 @@
             // 
             this.lblLayout.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lblLayout.ForeColor = System.Drawing.Color.Black;
-            this.lblLayout.Location = new System.Drawing.Point(305, 157);
+            this.lblLayout.Location = new System.Drawing.Point(311, 119);
             this.lblLayout.Name = "lblLayout";
             this.lblLayout.Size = new System.Drawing.Size(120, 23);
             this.lblLayout.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -538,27 +701,12 @@
             // 
             this.lblRooms.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lblRooms.ForeColor = System.Drawing.Color.Black;
-            this.lblRooms.Location = new System.Drawing.Point(14, 157);
+            this.lblRooms.Location = new System.Drawing.Point(14, 119);
             this.lblRooms.Name = "lblRooms";
             this.lblRooms.Size = new System.Drawing.Size(120, 23);
             this.lblRooms.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.lblRooms.TabIndex = 8;
             this.lblRooms.Text = "Room(s) Booked:";
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.lblEmail.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblEmail.ForeColor = System.Drawing.Color.Black;
-            this.lblEmail.Location = new System.Drawing.Point(14, 111);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(120, 23);
-            this.lblEmail.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lblEmail.TabIndex = 7;
-            this.lblEmail.Text = "Contact E-mail:";
             // 
             // txtEmail
             // 
@@ -570,10 +718,10 @@
             this.txtEmail.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtEmail.DisabledBackColor = System.Drawing.Color.White;
             this.txtEmail.ForeColor = System.Drawing.Color.Black;
-            this.txtEmail.Location = new System.Drawing.Point(140, 111);
+            this.txtEmail.Location = new System.Drawing.Point(288, 80);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PreventEnterBeep = true;
-            this.txtEmail.Size = new System.Drawing.Size(446, 25);
+            this.txtEmail.Size = new System.Drawing.Size(314, 25);
             this.txtEmail.TabIndex = 6;
             // 
             // lblPhone
@@ -589,10 +737,12 @@
             this.lblPhone.Size = new System.Drawing.Size(120, 23);
             this.lblPhone.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.lblPhone.TabIndex = 5;
-            this.lblPhone.Text = "Contact Phone:";
+            this.lblPhone.Text = "Phone/E-mail:";
             // 
             // txtPhone
             // 
+            this.txtPhone.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtPhone.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtPhone.BackColor = System.Drawing.Color.White;
             // 
             // 
@@ -606,21 +756,6 @@
             this.txtPhone.PreventEnterBeep = true;
             this.txtPhone.Size = new System.Drawing.Size(142, 25);
             this.txtPhone.TabIndex = 4;
-            // 
-            // cbxContacts
-            // 
-            this.cbxContacts.DisplayMember = "Text";
-            this.cbxContacts.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbxContacts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxContacts.ForeColor = System.Drawing.Color.Black;
-            this.cbxContacts.FormattingEnabled = true;
-            this.cbxContacts.ItemHeight = 19;
-            this.cbxContacts.Location = new System.Drawing.Point(140, 49);
-            this.cbxContacts.Name = "cbxContacts";
-            this.cbxContacts.Size = new System.Drawing.Size(415, 25);
-            this.cbxContacts.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cbxContacts.TabIndex = 3;
-            this.cbxContacts.SelectionChangeCommitted += new System.EventHandler(this.cbxContacts_SelectionChangeCommitted);
             // 
             // lblContact
             // 
@@ -636,21 +771,6 @@
             this.lblContact.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.lblContact.TabIndex = 2;
             this.lblContact.Text = "Primary Contact:";
-            // 
-            // cbxCompanies
-            // 
-            this.cbxCompanies.DisplayMember = "Text";
-            this.cbxCompanies.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbxCompanies.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxCompanies.ForeColor = System.Drawing.Color.Black;
-            this.cbxCompanies.FormattingEnabled = true;
-            this.cbxCompanies.ItemHeight = 19;
-            this.cbxCompanies.Location = new System.Drawing.Point(140, 18);
-            this.cbxCompanies.Name = "cbxCompanies";
-            this.cbxCompanies.Size = new System.Drawing.Size(415, 25);
-            this.cbxCompanies.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cbxCompanies.TabIndex = 1;
-            this.cbxCompanies.SelectionChangeCommitted += new System.EventHandler(this.cbxCompanies_SelectionChangeCommitted);
             // 
             // lblCompany
             // 
@@ -674,6 +794,326 @@
             this.superTabItem1.Name = "superTabItem1";
             this.superTabItem1.Text = "  Contact/Room";
             // 
+            // superTabControlPanel3
+            // 
+            this.superTabControlPanel3.Controls.Add(this.txtLunchDiet);
+            this.superTabControlPanel3.Controls.Add(this.lblLunchDiet);
+            this.superTabControlPanel3.Controls.Add(this.labelX3);
+            this.superTabControlPanel3.Controls.Add(this.dtLunchTime);
+            this.superTabControlPanel3.Controls.Add(this.lblLunchAttendees);
+            this.superTabControlPanel3.Controls.Add(this.cbxLunchAttendees);
+            this.superTabControlPanel3.Controls.Add(this.txtLunchMenu);
+            this.superTabControlPanel3.Controls.Add(this.labelX6);
+            this.superTabControlPanel3.Controls.Add(this.txtRefreshmentTimes);
+            this.superTabControlPanel3.Controls.Add(this.labelX5);
+            this.superTabControlPanel3.Controls.Add(this.lblLunch);
+            this.superTabControlPanel3.Controls.Add(this.swLunch);
+            this.superTabControlPanel3.Controls.Add(this.lblRefreshments);
+            this.superTabControlPanel3.Controls.Add(this.swRefreshments);
+            this.superTabControlPanel3.Controls.Add(this.txtEquipment);
+            this.superTabControlPanel3.Controls.Add(this.lblEquipment);
+            this.superTabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel3.Location = new System.Drawing.Point(0, 27);
+            this.superTabControlPanel3.Name = "superTabControlPanel3";
+            this.superTabControlPanel3.Size = new System.Drawing.Size(616, 321);
+            this.superTabControlPanel3.TabIndex = 0;
+            this.superTabControlPanel3.TabItem = this.superTabItem3;
+            // 
+            // txtLunchDiet
+            // 
+            this.txtLunchDiet.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtLunchDiet.Border.Class = "TextBoxBorder";
+            this.txtLunchDiet.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtLunchDiet.DisabledBackColor = System.Drawing.Color.White;
+            this.txtLunchDiet.ForeColor = System.Drawing.Color.Black;
+            this.txtLunchDiet.Location = new System.Drawing.Point(140, 151);
+            this.txtLunchDiet.Multiline = true;
+            this.txtLunchDiet.Name = "txtLunchDiet";
+            this.txtLunchDiet.PreventEnterBeep = true;
+            this.txtLunchDiet.Size = new System.Drawing.Size(462, 154);
+            this.txtLunchDiet.TabIndex = 26;
+            // 
+            // lblLunchDiet
+            // 
+            this.lblLunchDiet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.lblLunchDiet.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblLunchDiet.ForeColor = System.Drawing.Color.Black;
+            this.lblLunchDiet.Location = new System.Drawing.Point(14, 151);
+            this.lblLunchDiet.Name = "lblLunchDiet";
+            this.lblLunchDiet.Size = new System.Drawing.Size(120, 23);
+            this.lblLunchDiet.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblLunchDiet.TabIndex = 25;
+            this.lblLunchDiet.Text = "Dietary Needs:";
+            // 
+            // labelX3
+            // 
+            this.labelX3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX3.ForeColor = System.Drawing.Color.Black;
+            this.labelX3.Location = new System.Drawing.Point(225, 120);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(45, 23);
+            this.labelX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.labelX3.TabIndex = 24;
+            this.labelX3.Text = "Time:";
+            // 
+            // dtLunchTime
+            // 
+            this.dtLunchTime.AllowEmptyState = false;
+            this.dtLunchTime.AutoAdvance = true;
+            this.dtLunchTime.AutoSelectDate = true;
+            this.dtLunchTime.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.dtLunchTime.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.dtLunchTime.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtLunchTime.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.dtLunchTime.ButtonDropDown.Visible = true;
+            this.dtLunchTime.ButtonFreeText.Checked = true;
+            this.dtLunchTime.CustomFormat = "HH:mm";
+            this.dtLunchTime.DateTimeSelectorVisibility = DevComponents.Editors.DateTimeAdv.eDateTimeSelectorVisibility.TimeSelector;
+            this.dtLunchTime.ForeColor = System.Drawing.Color.Black;
+            this.dtLunchTime.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
+            this.dtLunchTime.FreeTextEntryMode = true;
+            this.dtLunchTime.IsPopupCalendarOpen = false;
+            this.dtLunchTime.Location = new System.Drawing.Point(276, 120);
+            // 
+            // 
+            // 
+            // 
+            // 
+            // 
+            this.dtLunchTime.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtLunchTime.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
+            this.dtLunchTime.MonthCalendar.ClearButtonVisible = true;
+            // 
+            // 
+            // 
+            this.dtLunchTime.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.dtLunchTime.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.dtLunchTime.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.dtLunchTime.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.dtLunchTime.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.dtLunchTime.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.dtLunchTime.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtLunchTime.MonthCalendar.DisplayMonth = new System.DateTime(2016, 1, 1, 0, 0, 0, 0);
+            this.dtLunchTime.MonthCalendar.FirstDayOfWeek = System.DayOfWeek.Monday;
+            // 
+            // 
+            // 
+            this.dtLunchTime.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.dtLunchTime.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.dtLunchTime.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.dtLunchTime.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtLunchTime.MonthCalendar.TodayButtonVisible = true;
+            this.dtLunchTime.MonthCalendar.Visible = false;
+            this.dtLunchTime.Name = "dtLunchTime";
+            this.dtLunchTime.Size = new System.Drawing.Size(69, 25);
+            this.dtLunchTime.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.dtLunchTime.TabIndex = 23;
+            this.dtLunchTime.TimeSelectorTimeFormat = DevComponents.Editors.DateTimeAdv.eTimeSelectorFormat.Time24H;
+            // 
+            // lblLunchAttendees
+            // 
+            this.lblLunchAttendees.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.lblLunchAttendees.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblLunchAttendees.ForeColor = System.Drawing.Color.Black;
+            this.lblLunchAttendees.Location = new System.Drawing.Point(14, 120);
+            this.lblLunchAttendees.Name = "lblLunchAttendees";
+            this.lblLunchAttendees.Size = new System.Drawing.Size(120, 23);
+            this.lblLunchAttendees.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblLunchAttendees.TabIndex = 21;
+            this.lblLunchAttendees.Text = "Lunch Attendees:";
+            // 
+            // cbxLunchAttendees
+            // 
+            this.cbxLunchAttendees.DisplayMember = "Text";
+            this.cbxLunchAttendees.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxLunchAttendees.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxLunchAttendees.ForeColor = System.Drawing.Color.Black;
+            this.cbxLunchAttendees.FormattingEnabled = true;
+            this.cbxLunchAttendees.ItemHeight = 19;
+            this.cbxLunchAttendees.Location = new System.Drawing.Point(140, 120);
+            this.cbxLunchAttendees.Name = "cbxLunchAttendees";
+            this.cbxLunchAttendees.Size = new System.Drawing.Size(66, 25);
+            this.cbxLunchAttendees.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cbxLunchAttendees.TabIndex = 20;
+            // 
+            // txtLunchMenu
+            // 
+            this.txtLunchMenu.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtLunchMenu.Border.Class = "TextBoxBorder";
+            this.txtLunchMenu.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtLunchMenu.DisabledBackColor = System.Drawing.Color.White;
+            this.txtLunchMenu.ForeColor = System.Drawing.Color.Black;
+            this.txtLunchMenu.Location = new System.Drawing.Point(276, 89);
+            this.txtLunchMenu.Name = "txtLunchMenu";
+            this.txtLunchMenu.PreventEnterBeep = true;
+            this.txtLunchMenu.Size = new System.Drawing.Size(326, 25);
+            this.txtLunchMenu.TabIndex = 15;
+            // 
+            // labelX6
+            // 
+            this.labelX6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX6.ForeColor = System.Drawing.Color.Black;
+            this.labelX6.Location = new System.Drawing.Point(225, 89);
+            this.labelX6.Name = "labelX6";
+            this.labelX6.Size = new System.Drawing.Size(45, 23);
+            this.labelX6.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.labelX6.TabIndex = 14;
+            this.labelX6.Text = "Menu:";
+            // 
+            // txtRefreshmentTimes
+            // 
+            this.txtRefreshmentTimes.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtRefreshmentTimes.Border.Class = "TextBoxBorder";
+            this.txtRefreshmentTimes.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtRefreshmentTimes.DisabledBackColor = System.Drawing.Color.White;
+            this.txtRefreshmentTimes.ForeColor = System.Drawing.Color.Black;
+            this.txtRefreshmentTimes.Location = new System.Drawing.Point(276, 58);
+            this.txtRefreshmentTimes.Name = "txtRefreshmentTimes";
+            this.txtRefreshmentTimes.PreventEnterBeep = true;
+            this.txtRefreshmentTimes.Size = new System.Drawing.Size(326, 25);
+            this.txtRefreshmentTimes.TabIndex = 13;
+            // 
+            // labelX5
+            // 
+            this.labelX5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX5.ForeColor = System.Drawing.Color.Black;
+            this.labelX5.Location = new System.Drawing.Point(225, 58);
+            this.labelX5.Name = "labelX5";
+            this.labelX5.Size = new System.Drawing.Size(45, 23);
+            this.labelX5.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.labelX5.TabIndex = 12;
+            this.labelX5.Text = "Times:";
+            // 
+            // lblLunch
+            // 
+            this.lblLunch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.lblLunch.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblLunch.ForeColor = System.Drawing.Color.Black;
+            this.lblLunch.Location = new System.Drawing.Point(14, 89);
+            this.lblLunch.Name = "lblLunch";
+            this.lblLunch.Size = new System.Drawing.Size(120, 23);
+            this.lblLunch.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblLunch.TabIndex = 11;
+            this.lblLunch.Text = "Lunch required?";
+            // 
+            // swLunch
+            // 
+            this.swLunch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.swLunch.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.swLunch.ForeColor = System.Drawing.Color.Black;
+            this.swLunch.Location = new System.Drawing.Point(140, 89);
+            this.swLunch.Name = "swLunch";
+            this.swLunch.OffText = "No";
+            this.swLunch.OnText = "Yes";
+            this.swLunch.Size = new System.Drawing.Size(66, 23);
+            this.swLunch.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.swLunch.TabIndex = 10;
+            // 
+            // lblRefreshments
+            // 
+            this.lblRefreshments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.lblRefreshments.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblRefreshments.ForeColor = System.Drawing.Color.Black;
+            this.lblRefreshments.Location = new System.Drawing.Point(14, 58);
+            this.lblRefreshments.Name = "lblRefreshments";
+            this.lblRefreshments.Size = new System.Drawing.Size(120, 23);
+            this.lblRefreshments.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblRefreshments.TabIndex = 9;
+            this.lblRefreshments.Text = "Refreshments?";
+            // 
+            // swRefreshments
+            // 
+            this.swRefreshments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.swRefreshments.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.swRefreshments.ForeColor = System.Drawing.Color.Black;
+            this.swRefreshments.Location = new System.Drawing.Point(140, 58);
+            this.swRefreshments.Name = "swRefreshments";
+            this.swRefreshments.OffText = "No";
+            this.swRefreshments.OnText = "Yes";
+            this.swRefreshments.Size = new System.Drawing.Size(66, 23);
+            this.swRefreshments.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.swRefreshments.TabIndex = 8;
+            // 
+            // txtEquipment
+            // 
+            this.txtEquipment.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtEquipment.Border.Class = "TextBoxBorder";
+            this.txtEquipment.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtEquipment.DisabledBackColor = System.Drawing.Color.White;
+            this.txtEquipment.ForeColor = System.Drawing.Color.Black;
+            this.txtEquipment.Location = new System.Drawing.Point(140, 18);
+            this.txtEquipment.Name = "txtEquipment";
+            this.txtEquipment.PreventEnterBeep = true;
+            this.txtEquipment.Size = new System.Drawing.Size(462, 25);
+            this.txtEquipment.TabIndex = 7;
+            // 
+            // lblEquipment
+            // 
+            this.lblEquipment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.lblEquipment.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblEquipment.ForeColor = System.Drawing.Color.Black;
+            this.lblEquipment.Location = new System.Drawing.Point(14, 18);
+            this.lblEquipment.Name = "lblEquipment";
+            this.lblEquipment.Size = new System.Drawing.Size(120, 23);
+            this.lblEquipment.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblEquipment.TabIndex = 1;
+            this.lblEquipment.Text = "Equipment:";
+            // 
+            // superTabItem3
+            // 
+            this.superTabItem3.AttachedControl = this.superTabControlPanel3;
+            this.superTabItem3.GlobalItem = false;
+            this.superTabItem3.Name = "superTabItem3";
+            this.superTabItem3.Text = "  Requirements";
+            // 
             // superTabControlPanel2
             // 
             this.superTabControlPanel2.Controls.Add(this.labelX1);
@@ -694,7 +1134,7 @@
             this.superTabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlPanel2.Location = new System.Drawing.Point(0, 27);
             this.superTabControlPanel2.Name = "superTabControlPanel2";
-            this.superTabControlPanel2.Size = new System.Drawing.Size(600, 320);
+            this.superTabControlPanel2.Size = new System.Drawing.Size(616, 321);
             this.superTabControlPanel2.TabIndex = 0;
             this.superTabControlPanel2.TabItem = this.superTabItem2;
             // 
@@ -740,11 +1180,13 @@
             this.dtTimeAccessTo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.dtTimeAccessTo.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.dtTimeAccessTo.ButtonDropDown.Visible = true;
+            this.dtTimeAccessTo.ButtonFreeText.Checked = true;
             this.dtTimeAccessTo.CustomFormat = "HH:mm";
             this.dtTimeAccessTo.DateTimeSelectorVisibility = DevComponents.Editors.DateTimeAdv.eDateTimeSelectorVisibility.TimeSelector;
             this.dtTimeAccessTo.DefaultInputValues = false;
             this.dtTimeAccessTo.ForeColor = System.Drawing.Color.Black;
             this.dtTimeAccessTo.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
+            this.dtTimeAccessTo.FreeTextEntryMode = true;
             this.dtTimeAccessTo.IsPopupCalendarOpen = false;
             this.dtTimeAccessTo.Location = new System.Drawing.Point(501, 49);
             // 
@@ -812,11 +1254,13 @@
             this.dtTimeAccessFrom.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.dtTimeAccessFrom.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.dtTimeAccessFrom.ButtonDropDown.Visible = true;
+            this.dtTimeAccessFrom.ButtonFreeText.Checked = true;
             this.dtTimeAccessFrom.CustomFormat = "HH:mm";
             this.dtTimeAccessFrom.DateTimeSelectorVisibility = DevComponents.Editors.DateTimeAdv.eDateTimeSelectorVisibility.TimeSelector;
             this.dtTimeAccessFrom.DefaultInputValues = false;
             this.dtTimeAccessFrom.ForeColor = System.Drawing.Color.Black;
             this.dtTimeAccessFrom.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
+            this.dtTimeAccessFrom.FreeTextEntryMode = true;
             this.dtTimeAccessFrom.IsPopupCalendarOpen = false;
             this.dtTimeAccessFrom.Location = new System.Drawing.Point(400, 49);
             // 
@@ -899,7 +1343,7 @@
             this.txtName.Location = new System.Drawing.Point(140, 89);
             this.txtName.Name = "txtName";
             this.txtName.PreventEnterBeep = true;
-            this.txtName.Size = new System.Drawing.Size(445, 25);
+            this.txtName.Size = new System.Drawing.Size(430, 25);
             this.txtName.TabIndex = 12;
             // 
             // dtTimeTo
@@ -915,10 +1359,12 @@
             this.dtTimeTo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.dtTimeTo.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.dtTimeTo.ButtonDropDown.Visible = true;
+            this.dtTimeTo.ButtonFreeText.Checked = true;
             this.dtTimeTo.CustomFormat = "HH:mm";
             this.dtTimeTo.DateTimeSelectorVisibility = DevComponents.Editors.DateTimeAdv.eDateTimeSelectorVisibility.TimeSelector;
             this.dtTimeTo.ForeColor = System.Drawing.Color.Black;
             this.dtTimeTo.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
+            this.dtTimeTo.FreeTextEntryMode = true;
             this.dtTimeTo.IsPopupCalendarOpen = false;
             this.dtTimeTo.Location = new System.Drawing.Point(501, 18);
             // 
@@ -986,10 +1432,12 @@
             this.dtTimeFrom.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.dtTimeFrom.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.dtTimeFrom.ButtonDropDown.Visible = true;
+            this.dtTimeFrom.ButtonFreeText.Checked = true;
             this.dtTimeFrom.CustomFormat = "HH:mm";
             this.dtTimeFrom.DateTimeSelectorVisibility = DevComponents.Editors.DateTimeAdv.eDateTimeSelectorVisibility.TimeSelector;
             this.dtTimeFrom.ForeColor = System.Drawing.Color.Black;
             this.dtTimeFrom.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
+            this.dtTimeFrom.FreeTextEntryMode = true;
             this.dtTimeFrom.IsPopupCalendarOpen = false;
             this.dtTimeFrom.Location = new System.Drawing.Point(400, 18);
             // 
@@ -1171,499 +1619,12 @@
             this.superTabItem2.Name = "superTabItem2";
             this.superTabItem2.Text = "  Event";
             // 
-            // superTabControlPanel5
-            // 
-            this.superTabControlPanel5.Controls.Add(this.labelX7);
-            this.superTabControlPanel5.Controls.Add(this.txtPurchaseOrder);
-            this.superTabControlPanel5.Controls.Add(this.labelX4);
-            this.superTabControlPanel5.Controls.Add(this.cbxPaymentMethod);
-            this.superTabControlPanel5.Controls.Add(this.txtInvoiceAddress);
-            this.superTabControlPanel5.Controls.Add(this.labelX2);
-            this.superTabControlPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel5.Location = new System.Drawing.Point(0, 27);
-            this.superTabControlPanel5.Name = "superTabControlPanel5";
-            this.superTabControlPanel5.Size = new System.Drawing.Size(600, 320);
-            this.superTabControlPanel5.TabIndex = 0;
-            this.superTabControlPanel5.TabItem = this.superTabItem5;
-            // 
-            // labelX7
-            // 
-            this.labelX7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX7.ForeColor = System.Drawing.Color.Black;
-            this.labelX7.Location = new System.Drawing.Point(14, 187);
-            this.labelX7.Name = "labelX7";
-            this.labelX7.Size = new System.Drawing.Size(120, 23);
-            this.labelX7.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.labelX7.TabIndex = 23;
-            this.labelX7.Text = "Purchase Order:";
-            // 
-            // txtPurchaseOrder
-            // 
-            this.txtPurchaseOrder.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtPurchaseOrder.Border.Class = "TextBoxBorder";
-            this.txtPurchaseOrder.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtPurchaseOrder.DisabledBackColor = System.Drawing.Color.White;
-            this.txtPurchaseOrder.ForeColor = System.Drawing.Color.Black;
-            this.txtPurchaseOrder.Location = new System.Drawing.Point(140, 187);
-            this.txtPurchaseOrder.Name = "txtPurchaseOrder";
-            this.txtPurchaseOrder.PreventEnterBeep = true;
-            this.txtPurchaseOrder.Size = new System.Drawing.Size(229, 25);
-            this.txtPurchaseOrder.TabIndex = 22;
-            // 
-            // labelX4
-            // 
-            this.labelX4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX4.ForeColor = System.Drawing.Color.Black;
-            this.labelX4.Location = new System.Drawing.Point(14, 156);
-            this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(120, 23);
-            this.labelX4.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.labelX4.TabIndex = 21;
-            this.labelX4.Text = "Payment Method:";
-            // 
-            // cbxPaymentMethod
-            // 
-            this.cbxPaymentMethod.DisplayMember = "Text";
-            this.cbxPaymentMethod.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbxPaymentMethod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxPaymentMethod.ForeColor = System.Drawing.Color.Black;
-            this.cbxPaymentMethod.FormattingEnabled = true;
-            this.cbxPaymentMethod.ItemHeight = 19;
-            this.cbxPaymentMethod.Items.AddRange(new object[] {
-            this.cbxiBacs,
-            this.cbxiCash,
-            this.cbxiCheque,
-            this.cbxiCard});
-            this.cbxPaymentMethod.Location = new System.Drawing.Point(140, 156);
-            this.cbxPaymentMethod.Name = "cbxPaymentMethod";
-            this.cbxPaymentMethod.Size = new System.Drawing.Size(229, 25);
-            this.cbxPaymentMethod.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cbxPaymentMethod.TabIndex = 20;
-            // 
-            // cbxiBacs
-            // 
-            this.cbxiBacs.Text = "BACS";
-            // 
-            // cbxiCash
-            // 
-            this.cbxiCash.Text = "Cash";
-            // 
-            // cbxiCheque
-            // 
-            this.cbxiCheque.Text = "Cheque";
-            // 
-            // cbxiCard
-            // 
-            this.cbxiCard.Text = "Debit/Credit Card";
-            // 
-            // txtInvoiceAddress
-            // 
-            this.txtInvoiceAddress.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtInvoiceAddress.Border.Class = "TextBoxBorder";
-            this.txtInvoiceAddress.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtInvoiceAddress.DisabledBackColor = System.Drawing.Color.White;
-            this.txtInvoiceAddress.ForeColor = System.Drawing.Color.Black;
-            this.txtInvoiceAddress.Location = new System.Drawing.Point(140, 18);
-            this.txtInvoiceAddress.Multiline = true;
-            this.txtInvoiceAddress.Name = "txtInvoiceAddress";
-            this.txtInvoiceAddress.PreventEnterBeep = true;
-            this.txtInvoiceAddress.Size = new System.Drawing.Size(446, 132);
-            this.txtInvoiceAddress.TabIndex = 9;
-            // 
-            // labelX2
-            // 
-            this.labelX2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.ForeColor = System.Drawing.Color.Black;
-            this.labelX2.Location = new System.Drawing.Point(14, 18);
-            this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(120, 23);
-            this.labelX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.labelX2.TabIndex = 8;
-            this.labelX2.Text = "Invoice Address:";
-            // 
-            // superTabItem5
-            // 
-            this.superTabItem5.AttachedControl = this.superTabControlPanel5;
-            this.superTabItem5.GlobalItem = false;
-            this.superTabItem5.Name = "superTabItem5";
-            this.superTabItem5.Text = "  Invoicing";
-            // 
-            // superTabControlPanel3
-            // 
-            this.superTabControlPanel3.Controls.Add(this.txtLunchDiet);
-            this.superTabControlPanel3.Controls.Add(this.lblLunchDiet);
-            this.superTabControlPanel3.Controls.Add(this.labelX3);
-            this.superTabControlPanel3.Controls.Add(this.dtLunchTime);
-            this.superTabControlPanel3.Controls.Add(this.lblLunchAttendees);
-            this.superTabControlPanel3.Controls.Add(this.cbxLunchAttendees);
-            this.superTabControlPanel3.Controls.Add(this.txtLunchMenu);
-            this.superTabControlPanel3.Controls.Add(this.labelX6);
-            this.superTabControlPanel3.Controls.Add(this.txtRefreshmentTimes);
-            this.superTabControlPanel3.Controls.Add(this.labelX5);
-            this.superTabControlPanel3.Controls.Add(this.lblLunch);
-            this.superTabControlPanel3.Controls.Add(this.swLunch);
-            this.superTabControlPanel3.Controls.Add(this.lblRefreshments);
-            this.superTabControlPanel3.Controls.Add(this.swRefreshments);
-            this.superTabControlPanel3.Controls.Add(this.txtEquipment);
-            this.superTabControlPanel3.Controls.Add(this.lblEquipment);
-            this.superTabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel3.Location = new System.Drawing.Point(0, 27);
-            this.superTabControlPanel3.Name = "superTabControlPanel3";
-            this.superTabControlPanel3.Size = new System.Drawing.Size(600, 320);
-            this.superTabControlPanel3.TabIndex = 0;
-            this.superTabControlPanel3.TabItem = this.superTabItem3;
-            // 
-            // txtLunchDiet
-            // 
-            this.txtLunchDiet.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtLunchDiet.Border.Class = "TextBoxBorder";
-            this.txtLunchDiet.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtLunchDiet.DisabledBackColor = System.Drawing.Color.White;
-            this.txtLunchDiet.ForeColor = System.Drawing.Color.Black;
-            this.txtLunchDiet.Location = new System.Drawing.Point(140, 151);
-            this.txtLunchDiet.Multiline = true;
-            this.txtLunchDiet.Name = "txtLunchDiet";
-            this.txtLunchDiet.PreventEnterBeep = true;
-            this.txtLunchDiet.Size = new System.Drawing.Size(446, 154);
-            this.txtLunchDiet.TabIndex = 26;
-            // 
-            // lblLunchDiet
-            // 
-            this.lblLunchDiet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.lblLunchDiet.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblLunchDiet.ForeColor = System.Drawing.Color.Black;
-            this.lblLunchDiet.Location = new System.Drawing.Point(14, 151);
-            this.lblLunchDiet.Name = "lblLunchDiet";
-            this.lblLunchDiet.Size = new System.Drawing.Size(120, 23);
-            this.lblLunchDiet.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lblLunchDiet.TabIndex = 25;
-            this.lblLunchDiet.Text = "Dietary Needs:";
-            // 
-            // labelX3
-            // 
-            this.labelX3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.ForeColor = System.Drawing.Color.Black;
-            this.labelX3.Location = new System.Drawing.Point(225, 120);
-            this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(45, 23);
-            this.labelX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.labelX3.TabIndex = 24;
-            this.labelX3.Text = "Time:";
-            // 
-            // dtLunchTime
-            // 
-            this.dtLunchTime.AllowEmptyState = false;
-            this.dtLunchTime.AutoAdvance = true;
-            this.dtLunchTime.AutoSelectDate = true;
-            this.dtLunchTime.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.dtLunchTime.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.dtLunchTime.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtLunchTime.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.dtLunchTime.ButtonDropDown.Visible = true;
-            this.dtLunchTime.CustomFormat = "HH:mm";
-            this.dtLunchTime.DateTimeSelectorVisibility = DevComponents.Editors.DateTimeAdv.eDateTimeSelectorVisibility.TimeSelector;
-            this.dtLunchTime.ForeColor = System.Drawing.Color.Black;
-            this.dtLunchTime.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
-            this.dtLunchTime.IsPopupCalendarOpen = false;
-            this.dtLunchTime.Location = new System.Drawing.Point(276, 120);
-            // 
-            // 
-            // 
-            // 
-            // 
-            // 
-            this.dtLunchTime.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtLunchTime.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
-            this.dtLunchTime.MonthCalendar.ClearButtonVisible = true;
-            // 
-            // 
-            // 
-            this.dtLunchTime.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.dtLunchTime.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.dtLunchTime.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.dtLunchTime.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.dtLunchTime.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.dtLunchTime.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.dtLunchTime.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtLunchTime.MonthCalendar.DisplayMonth = new System.DateTime(2016, 1, 1, 0, 0, 0, 0);
-            this.dtLunchTime.MonthCalendar.FirstDayOfWeek = System.DayOfWeek.Monday;
-            // 
-            // 
-            // 
-            this.dtLunchTime.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.dtLunchTime.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.dtLunchTime.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.dtLunchTime.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtLunchTime.MonthCalendar.TodayButtonVisible = true;
-            this.dtLunchTime.MonthCalendar.Visible = false;
-            this.dtLunchTime.Name = "dtLunchTime";
-            this.dtLunchTime.Size = new System.Drawing.Size(69, 25);
-            this.dtLunchTime.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dtLunchTime.TabIndex = 23;
-            this.dtLunchTime.TimeSelectorTimeFormat = DevComponents.Editors.DateTimeAdv.eTimeSelectorFormat.Time24H;
-            // 
-            // lblLunchAttendees
-            // 
-            this.lblLunchAttendees.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.lblLunchAttendees.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblLunchAttendees.ForeColor = System.Drawing.Color.Black;
-            this.lblLunchAttendees.Location = new System.Drawing.Point(14, 120);
-            this.lblLunchAttendees.Name = "lblLunchAttendees";
-            this.lblLunchAttendees.Size = new System.Drawing.Size(120, 23);
-            this.lblLunchAttendees.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lblLunchAttendees.TabIndex = 21;
-            this.lblLunchAttendees.Text = "Lunch Attendees:";
-            // 
-            // cbxLunchAttendees
-            // 
-            this.cbxLunchAttendees.DisplayMember = "Text";
-            this.cbxLunchAttendees.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbxLunchAttendees.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxLunchAttendees.ForeColor = System.Drawing.Color.Black;
-            this.cbxLunchAttendees.FormattingEnabled = true;
-            this.cbxLunchAttendees.ItemHeight = 19;
-            this.cbxLunchAttendees.Location = new System.Drawing.Point(140, 120);
-            this.cbxLunchAttendees.Name = "cbxLunchAttendees";
-            this.cbxLunchAttendees.Size = new System.Drawing.Size(66, 25);
-            this.cbxLunchAttendees.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cbxLunchAttendees.TabIndex = 20;
-            // 
-            // txtLunchMenu
-            // 
-            this.txtLunchMenu.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtLunchMenu.Border.Class = "TextBoxBorder";
-            this.txtLunchMenu.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtLunchMenu.DisabledBackColor = System.Drawing.Color.White;
-            this.txtLunchMenu.ForeColor = System.Drawing.Color.Black;
-            this.txtLunchMenu.Location = new System.Drawing.Point(276, 89);
-            this.txtLunchMenu.Name = "txtLunchMenu";
-            this.txtLunchMenu.PreventEnterBeep = true;
-            this.txtLunchMenu.Size = new System.Drawing.Size(310, 25);
-            this.txtLunchMenu.TabIndex = 15;
-            // 
-            // labelX6
-            // 
-            this.labelX6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX6.ForeColor = System.Drawing.Color.Black;
-            this.labelX6.Location = new System.Drawing.Point(225, 89);
-            this.labelX6.Name = "labelX6";
-            this.labelX6.Size = new System.Drawing.Size(45, 23);
-            this.labelX6.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.labelX6.TabIndex = 14;
-            this.labelX6.Text = "Menu:";
-            // 
-            // txtRefreshmentTimes
-            // 
-            this.txtRefreshmentTimes.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtRefreshmentTimes.Border.Class = "TextBoxBorder";
-            this.txtRefreshmentTimes.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtRefreshmentTimes.DisabledBackColor = System.Drawing.Color.White;
-            this.txtRefreshmentTimes.ForeColor = System.Drawing.Color.Black;
-            this.txtRefreshmentTimes.Location = new System.Drawing.Point(276, 58);
-            this.txtRefreshmentTimes.Name = "txtRefreshmentTimes";
-            this.txtRefreshmentTimes.PreventEnterBeep = true;
-            this.txtRefreshmentTimes.Size = new System.Drawing.Size(310, 25);
-            this.txtRefreshmentTimes.TabIndex = 13;
-            // 
-            // labelX5
-            // 
-            this.labelX5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX5.ForeColor = System.Drawing.Color.Black;
-            this.labelX5.Location = new System.Drawing.Point(225, 58);
-            this.labelX5.Name = "labelX5";
-            this.labelX5.Size = new System.Drawing.Size(45, 23);
-            this.labelX5.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.labelX5.TabIndex = 12;
-            this.labelX5.Text = "Times:";
-            // 
-            // lblLunch
-            // 
-            this.lblLunch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.lblLunch.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblLunch.ForeColor = System.Drawing.Color.Black;
-            this.lblLunch.Location = new System.Drawing.Point(14, 89);
-            this.lblLunch.Name = "lblLunch";
-            this.lblLunch.Size = new System.Drawing.Size(120, 23);
-            this.lblLunch.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lblLunch.TabIndex = 11;
-            this.lblLunch.Text = "Lunch required?";
-            // 
-            // swLunch
-            // 
-            this.swLunch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.swLunch.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.swLunch.ForeColor = System.Drawing.Color.Black;
-            this.swLunch.Location = new System.Drawing.Point(140, 89);
-            this.swLunch.Name = "swLunch";
-            this.swLunch.OffText = "No";
-            this.swLunch.OnText = "Yes";
-            this.swLunch.Size = new System.Drawing.Size(66, 23);
-            this.swLunch.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.swLunch.TabIndex = 10;
-            // 
-            // lblRefreshments
-            // 
-            this.lblRefreshments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.lblRefreshments.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblRefreshments.ForeColor = System.Drawing.Color.Black;
-            this.lblRefreshments.Location = new System.Drawing.Point(14, 58);
-            this.lblRefreshments.Name = "lblRefreshments";
-            this.lblRefreshments.Size = new System.Drawing.Size(120, 23);
-            this.lblRefreshments.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lblRefreshments.TabIndex = 9;
-            this.lblRefreshments.Text = "Refreshments?";
-            // 
-            // swRefreshments
-            // 
-            this.swRefreshments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.swRefreshments.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.swRefreshments.ForeColor = System.Drawing.Color.Black;
-            this.swRefreshments.Location = new System.Drawing.Point(140, 58);
-            this.swRefreshments.Name = "swRefreshments";
-            this.swRefreshments.OffText = "No";
-            this.swRefreshments.OnText = "Yes";
-            this.swRefreshments.Size = new System.Drawing.Size(66, 23);
-            this.swRefreshments.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.swRefreshments.TabIndex = 8;
-            // 
-            // txtEquipment
-            // 
-            this.txtEquipment.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtEquipment.Border.Class = "TextBoxBorder";
-            this.txtEquipment.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtEquipment.DisabledBackColor = System.Drawing.Color.White;
-            this.txtEquipment.ForeColor = System.Drawing.Color.Black;
-            this.txtEquipment.Location = new System.Drawing.Point(140, 18);
-            this.txtEquipment.Name = "txtEquipment";
-            this.txtEquipment.PreventEnterBeep = true;
-            this.txtEquipment.Size = new System.Drawing.Size(446, 25);
-            this.txtEquipment.TabIndex = 7;
-            // 
-            // lblEquipment
-            // 
-            this.lblEquipment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.lblEquipment.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblEquipment.ForeColor = System.Drawing.Color.Black;
-            this.lblEquipment.Location = new System.Drawing.Point(14, 18);
-            this.lblEquipment.Name = "lblEquipment";
-            this.lblEquipment.Size = new System.Drawing.Size(120, 23);
-            this.lblEquipment.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lblEquipment.TabIndex = 1;
-            this.lblEquipment.Text = "Equipment:";
-            // 
-            // superTabItem3
-            // 
-            this.superTabItem3.AttachedControl = this.superTabControlPanel3;
-            this.superTabItem3.GlobalItem = false;
-            this.superTabItem3.Name = "superTabItem3";
-            this.superTabItem3.Text = "  Requirements";
-            // 
-            // superTabControlPanel4
-            // 
-            this.superTabControlPanel4.Controls.Add(this.txtComments);
-            this.superTabControlPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel4.Location = new System.Drawing.Point(0, 27);
-            this.superTabControlPanel4.Name = "superTabControlPanel4";
-            this.superTabControlPanel4.Size = new System.Drawing.Size(600, 320);
-            this.superTabControlPanel4.TabIndex = 0;
-            this.superTabControlPanel4.TabItem = this.superTabItem4;
-            // 
-            // txtComments
-            // 
-            this.txtComments.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtComments.Border.Class = "TextBoxBorder";
-            this.txtComments.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtComments.DisabledBackColor = System.Drawing.Color.White;
-            this.txtComments.ForeColor = System.Drawing.Color.Black;
-            this.txtComments.Location = new System.Drawing.Point(16, 18);
-            this.txtComments.Multiline = true;
-            this.txtComments.Name = "txtComments";
-            this.txtComments.PreventEnterBeep = true;
-            this.txtComments.Size = new System.Drawing.Size(568, 286);
-            this.txtComments.TabIndex = 27;
-            // 
-            // superTabItem4
-            // 
-            this.superTabItem4.AttachedControl = this.superTabControlPanel4;
-            this.superTabItem4.GlobalItem = false;
-            this.superTabItem4.Name = "superTabItem4";
-            this.superTabItem4.Text = "  Comments";
-            // 
             // btnSave
             // 
             this.btnSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSave.Location = new System.Drawing.Point(20, 406);
+            this.btnSave.Location = new System.Drawing.Point(12, 375);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(101, 34);
             this.btnSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -1676,7 +1637,7 @@
             this.btnCancel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnCancel.Location = new System.Drawing.Point(519, 406);
+            this.btnCancel.Location = new System.Drawing.Point(527, 375);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(101, 34);
             this.btnCancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -1695,9 +1656,9 @@
             this.lblUsers.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lblUsers.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsers.ForeColor = System.Drawing.Color.Black;
-            this.lblUsers.Location = new System.Drawing.Point(128, 406);
+            this.lblUsers.Location = new System.Drawing.Point(120, 375);
             this.lblUsers.Name = "lblUsers";
-            this.lblUsers.Size = new System.Drawing.Size(385, 34);
+            this.lblUsers.Size = new System.Drawing.Size(401, 34);
             this.lblUsers.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.lblUsers.TabIndex = 4;
             this.lblUsers.Text = "Added by:\r\nEdited by:";
@@ -1714,12 +1675,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(640, 460);
+            this.CaptionFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientSize = new System.Drawing.Size(640, 421);
+            this.ControlBox = false;
             this.Controls.Add(this.lblUsers);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.tc);
-            this.Controls.Add(this.ms);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
@@ -1728,14 +1691,17 @@
             this.Name = "frmBooking";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Sizable = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add Booking";
             ((System.ComponentModel.ISupportInitialize)(this.tc)).EndInit();
             this.tc.ResumeLayout(false);
             this.superTabControlPanel6.ResumeLayout(false);
+            this.superTabControlPanel5.ResumeLayout(false);
+            this.superTabControlPanel4.ResumeLayout(false);
             this.superTabControlPanel1.ResumeLayout(false);
+            this.superTabControlPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtLunchTime)).EndInit();
             this.superTabControlPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtTimeAccessTo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtTimeAccessFrom)).EndInit();
@@ -1743,17 +1709,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtTimeFrom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtDateTo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtDateFrom)).EndInit();
-            this.superTabControlPanel5.ResumeLayout(false);
-            this.superTabControlPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtLunchTime)).EndInit();
-            this.superTabControlPanel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private DevComponents.DotNetBar.Metro.MetroShell ms;
         private DevComponents.DotNetBar.StyleManager sm;
         private DevComponents.DotNetBar.SuperTabControl tc;
         private DevComponents.DotNetBar.SuperTabControlPanel superTabControlPanel1;
@@ -1771,11 +1731,8 @@
         private DevComponents.DotNetBar.ButtonX btnSave;
         private DevComponents.DotNetBar.ButtonX btnCancel;
         private DevComponents.DotNetBar.LabelX lblUsers;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cbxCompanies;
         private DevComponents.DotNetBar.LabelX lblCompany;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cbxContacts;
         private DevComponents.DotNetBar.LabelX lblContact;
-        private DevComponents.DotNetBar.LabelX lblEmail;
         private DevComponents.DotNetBar.Controls.TextBoxX txtEmail;
         private DevComponents.DotNetBar.LabelX lblPhone;
         private DevComponents.DotNetBar.Controls.TextBoxX txtPhone;
@@ -1841,5 +1798,7 @@
         private DevComponents.DotNetBar.LabelX lblFileLocation;
         private DevComponents.DotNetBar.LabelX lblFileNameVal;
         private DevComponents.DotNetBar.LabelX lblFileName;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtCompany;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtContact;
     }
 }

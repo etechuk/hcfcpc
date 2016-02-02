@@ -28,85 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ms = new DevComponents.DotNetBar.Metro.MetroShell();
-            this.cbxContacts = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.lblContacts = new DevComponents.DotNetBar.LabelX();
             this.btnCancel = new DevComponents.DotNetBar.ButtonX();
             this.btnSave = new DevComponents.DotNetBar.ButtonX();
-            this.lblTitle = new DevComponents.DotNetBar.LabelX();
-            this.txtTitle = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.lblName = new DevComponents.DotNetBar.LabelX();
-            this.txtNameFirst = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtNameLast = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.cbxTitle = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.cbxiMr = new DevComponents.Editors.ComboItem();
-            this.cbxiMiss = new DevComponents.Editors.ComboItem();
-            this.cbxiMrs = new DevComponents.Editors.ComboItem();
-            this.cbxiMs = new DevComponents.Editors.ComboItem();
-            this.cbxiMaster = new DevComponents.Editors.ComboItem();
-            this.cbxiDr = new DevComponents.Editors.ComboItem();
-            this.cbxiProf = new DevComponents.Editors.ComboItem();
-            this.cbxCompanies = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.lblCompany = new DevComponents.DotNetBar.LabelX();
-            this.btnAdd = new DevComponents.DotNetBar.ButtonX();
+            this.txtContacts = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtCompanies = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtNameFirst = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.txtNameLast = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.SuspendLayout();
-            // 
-            // ms
-            // 
-            this.ms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.ms.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ms.CanCustomize = false;
-            this.ms.CaptionFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ms.CaptionVisible = true;
-            this.ms.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ms.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ms.ForeColor = System.Drawing.Color.Black;
-            this.ms.HelpButtonText = null;
-            this.ms.HelpButtonVisible = false;
-            this.ms.KeyTipsFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ms.Location = new System.Drawing.Point(1, 1);
-            this.ms.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.ms.Name = "ms";
-            this.ms.SettingsButtonVisible = false;
-            this.ms.ShowIcon = false;
-            this.ms.Size = new System.Drawing.Size(558, 34);
-            this.ms.SystemText.MaximizeRibbonText = "&Maximize the Ribbon";
-            this.ms.SystemText.MinimizeRibbonText = "Mi&nimize the Ribbon";
-            this.ms.SystemText.QatAddItemText = "&Add to Quick Access Toolbar";
-            this.ms.SystemText.QatCustomizeMenuLabel = "<b>Customize Quick Access Toolbar</b>";
-            this.ms.SystemText.QatCustomizeText = "&Customize Quick Access Toolbar...";
-            this.ms.SystemText.QatDialogAddButton = "&Add >>";
-            this.ms.SystemText.QatDialogCancelButton = "Cancel";
-            this.ms.SystemText.QatDialogCaption = "Customize Quick Access Toolbar";
-            this.ms.SystemText.QatDialogCategoriesLabel = "&Choose commands from:";
-            this.ms.SystemText.QatDialogOkButton = "OK";
-            this.ms.SystemText.QatDialogPlacementCheckbox = "&Place Quick Access Toolbar below the Ribbon";
-            this.ms.SystemText.QatDialogRemoveButton = "&Remove";
-            this.ms.SystemText.QatPlaceAboveRibbonText = "&Place Quick Access Toolbar above the Ribbon";
-            this.ms.SystemText.QatPlaceBelowRibbonText = "&Place Quick Access Toolbar below the Ribbon";
-            this.ms.SystemText.QatRemoveItemText = "&Remove from Quick Access Toolbar";
-            this.ms.TabIndex = 1;
-            this.ms.TabStripFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // cbxContacts
-            // 
-            this.cbxContacts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxContacts.DisplayMember = "Text";
-            this.cbxContacts.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbxContacts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxContacts.ForeColor = System.Drawing.Color.Black;
-            this.cbxContacts.FormattingEnabled = true;
-            this.cbxContacts.ItemHeight = 19;
-            this.cbxContacts.Location = new System.Drawing.Point(141, 52);
-            this.cbxContacts.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cbxContacts.Name = "cbxContacts";
-            this.cbxContacts.Size = new System.Drawing.Size(400, 25);
-            this.cbxContacts.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cbxContacts.TabIndex = 5;
             // 
             // lblContacts
             // 
@@ -116,22 +47,22 @@
             // 
             this.lblContacts.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lblContacts.ForeColor = System.Drawing.Color.Black;
-            this.lblContacts.Location = new System.Drawing.Point(19, 52);
+            this.lblContacts.Location = new System.Drawing.Point(12, 21);
             this.lblContacts.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lblContacts.Name = "lblContacts";
-            this.lblContacts.Size = new System.Drawing.Size(116, 25);
+            this.lblContacts.Size = new System.Drawing.Size(98, 25);
             this.lblContacts.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.lblContacts.TabIndex = 4;
-            this.lblContacts.Text = "Existing Contacts:";
+            this.lblContacts.Text = "Contacts:";
             // 
             // btnCancel
             // 
             this.btnCancel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCancel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnCancel.Location = new System.Drawing.Point(440, 206);
+            this.btnCancel.Location = new System.Drawing.Point(12, 132);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(101, 34);
+            this.btnCancel.Size = new System.Drawing.Size(68, 34);
             this.btnCancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Cancel";
@@ -140,163 +71,15 @@
             // btnSave
             // 
             this.btnSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSave.Location = new System.Drawing.Point(19, 206);
+            this.btnSave.Location = new System.Drawing.Point(323, 132);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(101, 34);
+            this.btnSave.Size = new System.Drawing.Size(115, 34);
             this.btnSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Save / Choose";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.lblTitle.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblTitle.ForeColor = System.Drawing.Color.Black;
-            this.lblTitle.Location = new System.Drawing.Point(19, 84);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(116, 23);
-            this.lblTitle.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lblTitle.TabIndex = 9;
-            this.lblTitle.Text = "Name (Title):";
-            // 
-            // txtTitle
-            // 
-            this.txtTitle.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtTitle.Border.Class = "TextBoxBorder";
-            this.txtTitle.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtTitle.DisabledBackColor = System.Drawing.Color.White;
-            this.txtTitle.ForeColor = System.Drawing.Color.Black;
-            this.txtTitle.Location = new System.Drawing.Point(141, 84);
-            this.txtTitle.Name = "txtTitle";
-            this.txtTitle.PreventEnterBeep = true;
-            this.txtTitle.Size = new System.Drawing.Size(166, 25);
-            this.txtTitle.TabIndex = 8;
-            // 
-            // lblName
-            // 
-            this.lblName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.lblName.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblName.ForeColor = System.Drawing.Color.Black;
-            this.lblName.Location = new System.Drawing.Point(19, 116);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(116, 23);
-            this.lblName.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lblName.TabIndex = 11;
-            this.lblName.Text = "Name (First/Last):";
-            // 
-            // txtNameFirst
-            // 
-            this.txtNameFirst.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtNameFirst.Border.Class = "TextBoxBorder";
-            this.txtNameFirst.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtNameFirst.DisabledBackColor = System.Drawing.Color.White;
-            this.txtNameFirst.ForeColor = System.Drawing.Color.Black;
-            this.txtNameFirst.Location = new System.Drawing.Point(141, 116);
-            this.txtNameFirst.Name = "txtNameFirst";
-            this.txtNameFirst.PreventEnterBeep = true;
-            this.txtNameFirst.Size = new System.Drawing.Size(166, 25);
-            this.txtNameFirst.TabIndex = 10;
-            // 
-            // txtNameLast
-            // 
-            this.txtNameLast.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtNameLast.Border.Class = "TextBoxBorder";
-            this.txtNameLast.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtNameLast.DisabledBackColor = System.Drawing.Color.White;
-            this.txtNameLast.ForeColor = System.Drawing.Color.Black;
-            this.txtNameLast.Location = new System.Drawing.Point(313, 116);
-            this.txtNameLast.Name = "txtNameLast";
-            this.txtNameLast.PreventEnterBeep = true;
-            this.txtNameLast.Size = new System.Drawing.Size(228, 25);
-            this.txtNameLast.TabIndex = 12;
-            // 
-            // cbxTitle
-            // 
-            this.cbxTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxTitle.DisplayMember = "Text";
-            this.cbxTitle.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbxTitle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxTitle.ForeColor = System.Drawing.Color.Black;
-            this.cbxTitle.FormattingEnabled = true;
-            this.cbxTitle.ItemHeight = 19;
-            this.cbxTitle.Items.AddRange(new object[] {
-            this.cbxiMr,
-            this.cbxiMiss,
-            this.cbxiMrs,
-            this.cbxiMs,
-            this.cbxiMaster,
-            this.cbxiDr,
-            this.cbxiProf});
-            this.cbxTitle.Location = new System.Drawing.Point(313, 85);
-            this.cbxTitle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cbxTitle.Name = "cbxTitle";
-            this.cbxTitle.Size = new System.Drawing.Size(228, 25);
-            this.cbxTitle.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cbxTitle.TabIndex = 13;
-            // 
-            // cbxiMr
-            // 
-            this.cbxiMr.Text = "Mr";
-            // 
-            // cbxiMiss
-            // 
-            this.cbxiMiss.Text = "Miss";
-            // 
-            // cbxiMrs
-            // 
-            this.cbxiMrs.Text = "Mrs";
-            // 
-            // cbxiMs
-            // 
-            this.cbxiMs.Text = "Ms";
-            // 
-            // cbxiMaster
-            // 
-            this.cbxiMaster.Text = "Master";
-            // 
-            // cbxiDr
-            // 
-            this.cbxiDr.Text = "Dr";
-            // 
-            // cbxiProf
-            // 
-            this.cbxiProf.Text = "Prof";
-            // 
-            // cbxCompanies
-            // 
-            this.cbxCompanies.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxCompanies.DisplayMember = "Text";
-            this.cbxCompanies.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbxCompanies.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxCompanies.ForeColor = System.Drawing.Color.Black;
-            this.cbxCompanies.FormattingEnabled = true;
-            this.cbxCompanies.ItemHeight = 19;
-            this.cbxCompanies.Location = new System.Drawing.Point(141, 148);
-            this.cbxCompanies.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cbxCompanies.Name = "cbxCompanies";
-            this.cbxCompanies.Size = new System.Drawing.Size(400, 25);
-            this.cbxCompanies.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cbxCompanies.TabIndex = 15;
             // 
             // lblCompany
             // 
@@ -306,52 +89,137 @@
             // 
             this.lblCompany.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lblCompany.ForeColor = System.Drawing.Color.Black;
-            this.lblCompany.Location = new System.Drawing.Point(19, 148);
+            this.lblCompany.Location = new System.Drawing.Point(12, 84);
             this.lblCompany.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lblCompany.Name = "lblCompany";
-            this.lblCompany.Size = new System.Drawing.Size(116, 25);
+            this.lblCompany.Size = new System.Drawing.Size(98, 25);
             this.lblCompany.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.lblCompany.TabIndex = 14;
             this.lblCompany.Text = "Company:";
             // 
-            // btnAdd
+            // txtContacts
             // 
-            this.btnAdd.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAdd.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnAdd.Location = new System.Drawing.Point(230, 206);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(101, 34);
-            this.btnAdd.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnAdd.TabIndex = 16;
-            this.btnAdd.Text = "Add Contact";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.txtContacts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtContacts.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtContacts.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtContacts.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtContacts.Border.Class = "TextBoxBorder";
+            this.txtContacts.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtContacts.DisabledBackColor = System.Drawing.Color.White;
+            this.txtContacts.ForeColor = System.Drawing.Color.Black;
+            this.txtContacts.Location = new System.Drawing.Point(123, 23);
+            this.txtContacts.Name = "txtContacts";
+            this.txtContacts.PreventEnterBeep = true;
+            this.txtContacts.Size = new System.Drawing.Size(315, 25);
+            this.txtContacts.TabIndex = 17;
+            // 
+            // txtCompanies
+            // 
+            this.txtCompanies.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCompanies.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtCompanies.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtCompanies.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtCompanies.Border.Class = "TextBoxBorder";
+            this.txtCompanies.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtCompanies.DisabledBackColor = System.Drawing.Color.White;
+            this.txtCompanies.ForeColor = System.Drawing.Color.Black;
+            this.txtCompanies.Location = new System.Drawing.Point(123, 85);
+            this.txtCompanies.Name = "txtCompanies";
+            this.txtCompanies.PreventEnterBeep = true;
+            this.txtCompanies.Size = new System.Drawing.Size(315, 25);
+            this.txtCompanies.TabIndex = 18;
+            // 
+            // txtNameFirst
+            // 
+            this.txtNameFirst.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNameFirst.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtNameFirst.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtNameFirst.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtNameFirst.Border.Class = "TextBoxBorder";
+            this.txtNameFirst.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtNameFirst.DisabledBackColor = System.Drawing.Color.White;
+            this.txtNameFirst.ForeColor = System.Drawing.Color.Black;
+            this.txtNameFirst.Location = new System.Drawing.Point(123, 54);
+            this.txtNameFirst.Name = "txtNameFirst";
+            this.txtNameFirst.PreventEnterBeep = true;
+            this.txtNameFirst.Size = new System.Drawing.Size(132, 25);
+            this.txtNameFirst.TabIndex = 20;
+            this.txtNameFirst.TextChanged += new System.EventHandler(this.txtNameFirst_TextChanged);
+            // 
+            // labelX1
+            // 
+            this.labelX1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX1.ForeColor = System.Drawing.Color.Black;
+            this.labelX1.Location = new System.Drawing.Point(12, 52);
+            this.labelX1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(98, 25);
+            this.labelX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.labelX1.TabIndex = 19;
+            this.labelX1.Text = "First/Last Name:";
+            // 
+            // txtNameLast
+            // 
+            this.txtNameLast.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNameLast.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtNameLast.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtNameLast.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtNameLast.Border.Class = "TextBoxBorder";
+            this.txtNameLast.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtNameLast.DisabledBackColor = System.Drawing.Color.White;
+            this.txtNameLast.ForeColor = System.Drawing.Color.Black;
+            this.txtNameLast.Location = new System.Drawing.Point(261, 54);
+            this.txtNameLast.Name = "txtNameLast";
+            this.txtNameLast.PreventEnterBeep = true;
+            this.txtNameLast.Size = new System.Drawing.Size(177, 25);
+            this.txtNameLast.TabIndex = 21;
+            this.txtNameLast.TextChanged += new System.EventHandler(this.txtNameLast_TextChanged);
             // 
             // frmContacts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 260);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.cbxCompanies);
-            this.Controls.Add(this.lblCompany);
-            this.Controls.Add(this.cbxTitle);
+            this.CaptionFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientSize = new System.Drawing.Size(450, 178);
+            this.ControlBox = false;
             this.Controls.Add(this.txtNameLast);
-            this.Controls.Add(this.lblName);
             this.Controls.Add(this.txtNameFirst);
-            this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.txtTitle);
+            this.Controls.Add(this.labelX1);
+            this.Controls.Add(this.txtCompanies);
+            this.Controls.Add(this.txtContacts);
+            this.Controls.Add(this.lblCompany);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.cbxContacts);
             this.Controls.Add(this.lblContacts);
-            this.Controls.Add(this.ms);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(560, 260);
+            this.MinimumSize = new System.Drawing.Size(450, 215);
             this.Name = "frmContacts";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Contacts";
             this.ResumeLayout(false);
@@ -359,27 +227,14 @@
         }
 
         #endregion
-
-        private DevComponents.DotNetBar.Metro.MetroShell ms;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cbxContacts;
         private DevComponents.DotNetBar.LabelX lblContacts;
         private DevComponents.DotNetBar.ButtonX btnCancel;
         private DevComponents.DotNetBar.ButtonX btnSave;
-        private DevComponents.DotNetBar.LabelX lblTitle;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtTitle;
-        private DevComponents.DotNetBar.LabelX lblName;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtNameFirst;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtNameLast;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cbxTitle;
-        private DevComponents.Editors.ComboItem cbxiMr;
-        private DevComponents.Editors.ComboItem cbxiMiss;
-        private DevComponents.Editors.ComboItem cbxiMrs;
-        private DevComponents.Editors.ComboItem cbxiMs;
-        private DevComponents.Editors.ComboItem cbxiMaster;
-        private DevComponents.Editors.ComboItem cbxiDr;
-        private DevComponents.Editors.ComboItem cbxiProf;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cbxCompanies;
         private DevComponents.DotNetBar.LabelX lblCompany;
-        private DevComponents.DotNetBar.ButtonX btnAdd;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtContacts;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtCompanies;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtNameFirst;
+        private DevComponents.DotNetBar.LabelX labelX1;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtNameLast;
     }
 }

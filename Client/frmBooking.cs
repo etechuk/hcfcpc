@@ -12,7 +12,7 @@ using DevComponents.DotNetBar.Metro;
 
 namespace Client
 {
-    public partial class frmBooking : MetroAppForm
+    public partial class frmBooking : MetroForm
     {
         #region Members
 
@@ -22,6 +22,8 @@ namespace Client
         List<string> sDocuments = new List<string>();
 
         #endregion
+
+        #region Form
 
         public frmBooking()
         {
@@ -36,14 +38,12 @@ namespace Client
             DataSet ds = Program.DB.SelectAll("SELECT ID,Name FROM Companies;");
             if (ds.Tables.Count > 0)
             {
-                List<ComboItem> items = new List<ComboItem>() { new ComboItem() { Text = "", Value = -1 } };
+                AutoCompleteStringCollection asCompanies = new AutoCompleteStringCollection();
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
-                    items.Add(new ComboItem() { Text = dr["Name"].ToString().Trim(), Value = Convert.ToInt32(dr["ID"]) });
+                    asCompanies.Add(dr["Name"].ToString().Trim());
                 }
-                cbxCompanies.DataSource = items;
-                cbxCompanies.DisplayMember = "Text";
-                cbxCompanies.ValueMember = "Value";
+                txtCompany.AutoCompleteCustomSource = asCompanies;
             }
 
             ds = Program.DB.SelectAll("SELECT ID,Name,IsZone FROM Rooms;");
@@ -88,38 +88,30 @@ namespace Client
                     {
                         if (row["BCompany"] != DBNull.Value && row["BCompany"].ToString().All(char.IsDigit))
                         {
-                            foreach (ComboItem item in cbxCompanies.Items)
+                            DataSet d = Program.DB.SelectAll("SELECT Name FROM Companies WHERE ID=" + row["BCompany"].ToString() + ";");
+                            if (d.Tables.Count > 0 && d.Tables[0].Rows.Count > 0)
                             {
-                                if (item.Value == Convert.ToInt32(row["BCompany"].ToString()))
-                                {
-                                    cbxCompanies.SelectedItem = item;
-                                    break;
-                                }
+                                txtCompany.Text = d.Tables[0].Rows[0]["Name"].ToString();
                             }
                         }
 
-                        if (cbxCompanies.SelectedIndex > -1 && row["BContact"] != DBNull.Value && row["BContact"].ToString().All(char.IsDigit))
+                        if (txtCompany.Text.Trim() != "" && row["BContact"] != DBNull.Value && row["BContact"].ToString().All(char.IsDigit))
                         {
+                            AutoCompleteStringCollection asContacts = new AutoCompleteStringCollection();
                             DataSet d = Program.DB.SelectAll("SELECT ID,NameTitle,NameFirst,NameLast FROM Contacts WHERE Company='" + row["BCompany"].ToString() + "'");
                             if (d.Tables.Count > 0 && d.Tables[0].Rows.Count > 0)
                             {
-                                cbxContacts.Items.Clear();
-                                List<ComboItem> items = new List<ComboItem>();
+                                string sSelected = "";
                                 foreach (DataRow r in d.Tables[0].Rows)
                                 {
-                                    items.Add(new ComboItem() { Text = (r["NameLast"].ToString() + ", " + r["NameFirst"].ToString()).Trim(), Value = Convert.ToInt32(r["ID"]) });
+                                    asContacts.Add(r["NameLast"].ToString() + ", " + r["NameFirst"].ToString());
+                                    if (r["ID"] == row["BContact"])
+                                    {
+                                        sSelected = r["NameLast"].ToString() + ", " + r["NameFirst"].ToString();
+                                    }
                                 }
-                                cbxContacts.DataSource = items;
-                                cbxContacts.DisplayMember = "Text";
-                                cbxContacts.ValueMember = "Value";
-                            }
-                            foreach (ComboItem item in cbxContacts.Items)
-                            {
-                                if (item.Value == Convert.ToInt32(row["BContact"].ToString()))
-                                {
-                                    cbxContacts.SelectedItem = item;
-                                    break;
-                                }
+                                txtContact.AutoCompleteCustomSource = asContacts;
+                                txtContact.Text = sSelected;
                             }
                         }
 
@@ -261,6 +253,10 @@ namespace Client
             }
         }
 
+        #endregion
+
+        #region Changed
+
         private void dtDateFrom_ValueChanged(object sender, EventArgs e)
         {
             dtDateTo.Value = dtDateFrom.Value;
@@ -268,7 +264,7 @@ namespace Client
 
         private void cbxContacts_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            string sContact = cbxContacts.SelectedValue != null ? cbxContacts.SelectedValue.ToString() : "";
+            string sContact = txtContact.Text.Trim() != "" ? txtContact.Text.Trim() : "";
             if (sContact != "")
             {
                 DataSet d, ds = Program.DB.SelectAll("SELECT Phones,Emails FROM Contacts WHERE ID=" + sContact + ";");
@@ -296,6 +292,14 @@ namespace Client
             }
         }
 
+        private void cbxCompanies_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+        }
+
+        #endregion
+
+        #region Clicked
+
         private void btnCompanies_Click(object sender, EventArgs e)
         {
             Form frmCompanies = new frmCompanies();
@@ -310,9 +314,6 @@ namespace Client
                     {
                         items.Add(new ComboItem() { Text = dr["Name"].ToString().Trim(), Value = Convert.ToInt32(dr["ID"]) });
                     }
-                    cbxCompanies.DataSource = items;
-                    cbxCompanies.DisplayMember = "Text";
-                    cbxCompanies.ValueMember = "Value";
                 }
             }
         }
@@ -321,9 +322,9 @@ namespace Client
         {
             Form frmContacts = new frmContacts();
             DialogResult dlg = frmContacts.ShowDialog();
-            if (dlg == DialogResult.OK && cbxCompanies.SelectedItem != null)
+            if (dlg == DialogResult.OK && txtCompany.Text.Trim() != "")
             {
-                DataSet ds = Program.DB.SelectAll("SELECT ID FROM Companies WHERE Name='" + cbxCompanies.SelectedItem.ToString() + "';");
+                DataSet ds = Program.DB.SelectAll("SELECT ID FROM Companies WHERE Name='" + txtCompany.Text.Trim() + "';");
                 if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
                 {
                     ds = Program.DB.SelectAll("SELECT ID,NameTitle,NameFirst,NameLast FROM Contacts WHERE Company='" + ds.Tables[0].Rows[0]["ID"].ToString() + "'");
@@ -334,30 +335,7 @@ namespace Client
                         {
                             items.Add(new ComboItem() { Text = (dr["NameLast"].ToString() + ", " + dr["NameFirst"].ToString()).Trim(), Value = Convert.ToInt32(dr["ID"]) });
                         }
-                        cbxContacts.DataSource = items;
-                        cbxContacts.DisplayMember = "Text";
-                        cbxContacts.ValueMember = "Value";
                     }
-                }
-            }
-        }
-
-        private void cbxCompanies_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            cbxContacts.Items.Clear();
-            if (cbxCompanies.SelectedValue != null && cbxCompanies.SelectedValue.ToString() != "")
-            {
-                DataSet ds = Program.DB.SelectAll("SELECT ID,NameTitle,NameFirst,NameLast FROM Contacts WHERE Company='" + cbxCompanies.SelectedValue.ToString() + "'");
-                if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
-                {
-                    List<ComboItem> items = new List<ComboItem>();
-                    foreach (DataRow dr in ds.Tables[0].Rows)
-                    {
-                        items.Add(new ComboItem() { Text = (dr["NameLast"].ToString() + ", " + dr["NameFirst"].ToString()).Trim(), Value = Convert.ToInt32(dr["ID"]) });
-                    }
-                    cbxContacts.DataSource = items;
-                    cbxContacts.DisplayMember = "Text";
-                    cbxContacts.ValueMember = "Value";
                 }
             }
         }
@@ -392,6 +370,46 @@ namespace Client
             string sDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             string sInsertCols = "", sInsertVals = "", sUpdateVals = "";
 
+            int iCompany = 0, iContact = 0;
+
+            if (txtCompany.Text.Trim() != "")
+            {
+                sUpdateVals += ",BCompany=@company";
+                sInsertCols += ",BCompany";
+                sInsertVals += ",@company";
+                Program.DB.AddParameter("Name", txtCompany.Text.Trim());
+                DataSet d = Program.DB.SelectAll("SELECT ID FROM Companies WHERE Name=@Name;");
+                if (d.Tables.Count > 0 && d.Tables[0].Rows.Count > 0)
+                {
+                    iCompany = Convert.ToInt32(d.Tables[0].Rows[0]["ID"]);
+                }
+            }
+
+            if (txtContact.Text.Trim() != "")
+            {
+                sUpdateVals += ",BContact=@contact";
+                sInsertCols += ",BContact";
+                sInsertVals += ",@contact";
+                string[] sName = txtContact.Text.Trim().Split(' ');
+                Program.DB.AddParameter("NameFirst", sName[0]);
+                Program.DB.AddParameter("NameLast", sName[1]);
+                DataSet d = Program.DB.SelectAll("SELECT ID FROM Contacts WHERE NameFirst=@NameFirst AND NameLast=@NameLast;");
+                if (d.Tables.Count > 0 && d.Tables[0].Rows.Count > 0)
+                {
+                    iContact = Convert.ToInt32(d.Tables[0].Rows[0]["ID"]);
+                }
+            }
+
+            if (iCompany > 0)
+            {
+                Program.DB.AddParameter("@company", iCompany);
+            }
+
+            if (iContact > 0)
+            {
+                Program.DB.AddParameter("@contact", iContact);
+            }
+
             if (txtName.Text.Trim() == "")
             {
                 MessageBox.Show("Please enter an event name to continue.", "Contact name", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -402,24 +420,6 @@ namespace Client
             sInsertCols += "BName";
             sInsertVals += "@name";
             Program.DB.AddParameter("@name", txtName.Text.Trim());
-
-            string sCompany = cbxCompanies.SelectedValue != null ? cbxCompanies.SelectedValue.ToString() : "";
-            if (sCompany != "")
-            {
-                sUpdateVals += ",BCompany=@company";
-                sInsertCols += ",BCompany";
-                sInsertVals += ",@company";
-                Program.DB.AddParameter("@company", Convert.ToInt32(sCompany));
-            }
-
-            string sContact = cbxContacts.SelectedValue != null ? cbxContacts.SelectedValue.ToString() : "";
-            if (sContact != "")
-            {
-                sUpdateVals += ",BContact=@contact";
-                sInsertCols += ",BContact";
-                sInsertVals += ",@contact";
-                Program.DB.AddParameter("@contact", Convert.ToInt32(sContact));
-            }
 
             if (txtPhone.Text.Trim() != "")
             {
@@ -740,5 +740,7 @@ namespace Client
                 sDocuments.Add(inf.FullName);
             }
         }
+
+        #endregion
     }
 }

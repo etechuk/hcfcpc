@@ -57,6 +57,8 @@
             this.lblDataHost = new DevComponents.DotNetBar.LabelX();
             this.lblInstructions = new DevComponents.DotNetBar.LabelX();
             this.lblSettings = new DevComponents.DotNetBar.LabelX();
+            this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
+            this.ms = new DevComponents.DotNetBar.Metro.MetroShell();
             this.pSign.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).BeginInit();
             this.pSettings.SuspendLayout();
@@ -65,13 +67,14 @@
             // sm
             // 
             this.sm.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2016;
-            this.sm.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(115)))), ((int)(((byte)(199))))));
+            this.sm.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(87)))), ((int)(((byte)(154))))));
             // 
             // pSign
             // 
             this.pSign.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pSign.BackColor = System.Drawing.Color.White;
             this.pSign.Controls.Add(this.cbxRemember);
             this.pSign.Controls.Add(this.cpMain);
             this.pSign.Controls.Add(this.btnExit);
@@ -83,21 +86,24 @@
             this.pSign.Controls.Add(this.lblUser);
             this.pSign.Controls.Add(this.lblSign);
             this.pSign.Controls.Add(this.pbxLogo);
-            this.pSign.Location = new System.Drawing.Point(12, 12);
+            this.pSign.ForeColor = System.Drawing.Color.Black;
+            this.pSign.Location = new System.Drawing.Point(12, 46);
             this.pSign.Name = "pSign";
-            this.pSign.Size = new System.Drawing.Size(326, 446);
+            this.pSign.Size = new System.Drawing.Size(326, 422);
             this.pSign.TabIndex = 5;
             // 
             // cbxRemember
             // 
+            this.cbxRemember.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             // 
             // 
             // 
             this.cbxRemember.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.cbxRemember.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxRemember.Location = new System.Drawing.Point(126, 283);
+            this.cbxRemember.ForeColor = System.Drawing.Color.Black;
+            this.cbxRemember.Location = new System.Drawing.Point(126, 270);
             this.cbxRemember.Name = "cbxRemember";
-            this.cbxRemember.Size = new System.Drawing.Size(163, 23);
+            this.cbxRemember.Size = new System.Drawing.Size(156, 23);
             this.cbxRemember.Style = DevComponents.DotNetBar.eDotNetBarStyle.Windows7;
             this.cbxRemember.TabIndex = 3;
             this.cbxRemember.Text = " Remember username";
@@ -105,11 +111,12 @@
             // cpMain
             // 
             this.cpMain.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.cpMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             // 
             // 
             // 
             this.cpMain.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.cpMain.Location = new System.Drawing.Point(126, 385);
+            this.cpMain.Location = new System.Drawing.Point(126, 361);
             this.cpMain.Name = "cpMain";
             this.cpMain.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(159)))));
             this.cpMain.Size = new System.Drawing.Size(75, 49);
@@ -124,7 +131,7 @@
             this.btnExit.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnExit.Location = new System.Drawing.Point(238, 403);
+            this.btnExit.Location = new System.Drawing.Point(238, 379);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 31);
             this.btnExit.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -139,7 +146,7 @@
             this.btnSettings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSettings.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnSettings.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSettings.Location = new System.Drawing.Point(13, 403);
+            this.btnSettings.Location = new System.Drawing.Point(13, 379);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(75, 31);
             this.btnSettings.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -153,7 +160,7 @@
             this.btnSign.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSign.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnSign.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSign.Location = new System.Drawing.Point(126, 323);
+            this.btnSign.Location = new System.Drawing.Point(126, 310);
             this.btnSign.Name = "btnSign";
             this.btnSign.Size = new System.Drawing.Size(75, 31);
             this.btnSign.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -174,7 +181,7 @@
             this.txtPass.DisabledBackColor = System.Drawing.Color.White;
             this.txtPass.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPass.ForeColor = System.Drawing.Color.Black;
-            this.txtPass.Location = new System.Drawing.Point(126, 247);
+            this.txtPass.Location = new System.Drawing.Point(126, 238);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
             this.txtPass.PreventEnterBeep = true;
@@ -184,11 +191,13 @@
             // 
             // lblPass
             // 
+            this.lblPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             // 
             // 
             // 
             this.lblPass.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblPass.Location = new System.Drawing.Point(40, 248);
+            this.lblPass.ForeColor = System.Drawing.Color.Black;
+            this.lblPass.Location = new System.Drawing.Point(40, 239);
             this.lblPass.Name = "lblPass";
             this.lblPass.Size = new System.Drawing.Size(80, 23);
             this.lblPass.Style = DevComponents.DotNetBar.eDotNetBarStyle.Windows7;
@@ -207,7 +216,7 @@
             this.txtUser.DisabledBackColor = System.Drawing.Color.White;
             this.txtUser.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUser.ForeColor = System.Drawing.Color.Black;
-            this.txtUser.Location = new System.Drawing.Point(126, 216);
+            this.txtUser.Location = new System.Drawing.Point(126, 207);
             this.txtUser.Name = "txtUser";
             this.txtUser.PreventEnterBeep = true;
             this.txtUser.Size = new System.Drawing.Size(156, 25);
@@ -216,11 +225,13 @@
             // 
             // lblUser
             // 
+            this.lblUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             // 
             // 
             // 
             this.lblUser.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblUser.Location = new System.Drawing.Point(40, 217);
+            this.lblUser.ForeColor = System.Drawing.Color.Black;
+            this.lblUser.Location = new System.Drawing.Point(40, 208);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(80, 23);
             this.lblUser.Style = DevComponents.DotNetBar.eDotNetBarStyle.Windows7;
@@ -229,12 +240,14 @@
             // 
             // lblSign
             // 
+            this.lblSign.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             // 
             // 
             // 
             this.lblSign.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lblSign.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSign.Location = new System.Drawing.Point(13, 171);
+            this.lblSign.ForeColor = System.Drawing.Color.Black;
+            this.lblSign.Location = new System.Drawing.Point(13, 162);
             this.lblSign.Name = "lblSign";
             this.lblSign.Size = new System.Drawing.Size(300, 23);
             this.lblSign.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -244,7 +257,9 @@
             // 
             // pbxLogo
             // 
+            this.pbxLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.pbxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbxLogo.ForeColor = System.Drawing.Color.Black;
             this.pbxLogo.Image = global::Client.Properties.Resources.logo_signin;
             this.pbxLogo.ImageLocation = "";
             this.pbxLogo.Location = new System.Drawing.Point(13, 3);
@@ -275,9 +290,9 @@
             this.pSettings.Controls.Add(this.lblInstructions);
             this.pSettings.Controls.Add(this.lblSettings);
             this.pSettings.DisabledBackColor = System.Drawing.Color.Empty;
-            this.pSettings.Location = new System.Drawing.Point(12, 12);
+            this.pSettings.Location = new System.Drawing.Point(12, 46);
             this.pSettings.Name = "pSettings";
-            this.pSettings.Size = new System.Drawing.Size(326, 446);
+            this.pSettings.Size = new System.Drawing.Size(326, 422);
             this.pSettings.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.pSettings.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.pSettings.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
@@ -338,6 +353,7 @@
             // 
             // 
             this.lblDataName.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblDataName.ForeColor = System.Drawing.Color.Black;
             this.lblDataName.Location = new System.Drawing.Point(13, 268);
             this.lblDataName.Name = "lblDataName";
             this.lblDataName.Size = new System.Drawing.Size(85, 23);
@@ -368,6 +384,7 @@
             // 
             // 
             this.lblDataPass.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblDataPass.ForeColor = System.Drawing.Color.Black;
             this.lblDataPass.Location = new System.Drawing.Point(13, 237);
             this.lblDataPass.Name = "lblDataPass";
             this.lblDataPass.Size = new System.Drawing.Size(85, 23);
@@ -398,6 +415,7 @@
             // 
             // 
             this.lblDataUser.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblDataUser.ForeColor = System.Drawing.Color.Black;
             this.lblDataUser.Location = new System.Drawing.Point(13, 207);
             this.lblDataUser.Name = "lblDataUser";
             this.lblDataUser.Size = new System.Drawing.Size(85, 23);
@@ -428,6 +446,7 @@
             // 
             // 
             this.lblDataPort.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblDataPort.ForeColor = System.Drawing.Color.Black;
             this.lblDataPort.Location = new System.Drawing.Point(13, 175);
             this.lblDataPort.Name = "lblDataPort";
             this.lblDataPort.Size = new System.Drawing.Size(85, 23);
@@ -458,6 +477,7 @@
             // 
             // 
             this.lblDataHost.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblDataHost.ForeColor = System.Drawing.Color.Black;
             this.lblDataHost.Location = new System.Drawing.Point(13, 144);
             this.lblDataHost.Name = "lblDataHost";
             this.lblDataHost.Size = new System.Drawing.Size(85, 23);
@@ -471,6 +491,7 @@
             // 
             // 
             this.lblInstructions.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblInstructions.ForeColor = System.Drawing.Color.Black;
             this.lblInstructions.Location = new System.Drawing.Point(13, 55);
             this.lblInstructions.Name = "lblInstructions";
             this.lblInstructions.Size = new System.Drawing.Size(300, 72);
@@ -486,6 +507,7 @@
             // 
             this.lblSettings.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lblSettings.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSettings.ForeColor = System.Drawing.Color.Black;
             this.lblSettings.Location = new System.Drawing.Point(13, 12);
             this.lblSettings.Name = "lblSettings";
             this.lblSettings.Size = new System.Drawing.Size(300, 23);
@@ -494,23 +516,69 @@
             this.lblSettings.Text = "Database Connection Details";
             this.lblSettings.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
+            // styleManager1
+            // 
+            this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2016;
+            this.styleManager1.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(87)))), ((int)(((byte)(154))))));
+            // 
+            // ms
+            // 
+            this.ms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.ms.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ms.CanCustomize = false;
+            this.ms.CaptionFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ms.CaptionVisible = true;
+            this.ms.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ms.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ms.ForeColor = System.Drawing.Color.Black;
+            this.ms.HelpButtonText = null;
+            this.ms.HelpButtonVisible = false;
+            this.ms.KeyTipsFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ms.Location = new System.Drawing.Point(1, 1);
+            this.ms.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.ms.Name = "ms";
+            this.ms.SettingsButtonVisible = false;
+            this.ms.ShowIcon = false;
+            this.ms.Size = new System.Drawing.Size(348, 35);
+            this.ms.SystemText.MaximizeRibbonText = "&Maximize the Ribbon";
+            this.ms.SystemText.MinimizeRibbonText = "Mi&nimize the Ribbon";
+            this.ms.SystemText.QatAddItemText = "&Add to Quick Access Toolbar";
+            this.ms.SystemText.QatCustomizeMenuLabel = "<b>Customize Quick Access Toolbar</b>";
+            this.ms.SystemText.QatCustomizeText = "&Customize Quick Access Toolbar...";
+            this.ms.SystemText.QatDialogAddButton = "&Add >>";
+            this.ms.SystemText.QatDialogCancelButton = "Cancel";
+            this.ms.SystemText.QatDialogCaption = "Customize Quick Access Toolbar";
+            this.ms.SystemText.QatDialogCategoriesLabel = "&Choose commands from:";
+            this.ms.SystemText.QatDialogOkButton = "OK";
+            this.ms.SystemText.QatDialogPlacementCheckbox = "&Place Quick Access Toolbar below the Ribbon";
+            this.ms.SystemText.QatDialogRemoveButton = "&Remove";
+            this.ms.SystemText.QatPlaceAboveRibbonText = "&Place Quick Access Toolbar above the Ribbon";
+            this.ms.SystemText.QatPlaceBelowRibbonText = "&Place Quick Access Toolbar below the Ribbon";
+            this.ms.SystemText.QatRemoveItemText = "&Remove from Quick Access Toolbar";
+            this.ms.TabIndex = 13;
+            this.ms.TabStripFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
             // frmSignIn
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(350, 470);
-            this.ControlBox = false;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ClientSize = new System.Drawing.Size(350, 480);
+            this.Controls.Add(this.ms);
             this.Controls.Add(this.pSign);
             this.Controls.Add(this.pSettings);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(350, 450);
+            this.MinimumSize = new System.Drawing.Size(350, 480);
             this.Name = "frmSignIn";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "HCF Client";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmSignIn_FormClosing);
             this.Shown += new System.EventHandler(this.frmSignIn_Shown);
             this.pSign.ResumeLayout(false);
@@ -549,5 +617,7 @@
         private DevComponents.DotNetBar.LabelX lblDataHost;
         private DevComponents.DotNetBar.LabelX lblInstructions;
         private DevComponents.DotNetBar.LabelX lblSettings;
+        private DevComponents.DotNetBar.StyleManager styleManager1;
+        private DevComponents.DotNetBar.Metro.MetroShell ms;
     }
 }

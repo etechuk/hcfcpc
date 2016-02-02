@@ -7,9 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+using DevComponents.DotNetBar.Metro;
+
 namespace Client
 {
-    public partial class frmOptions : Form
+    public partial class frmOptions : MetroForm
     {
         public frmOptions()
         {

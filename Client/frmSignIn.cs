@@ -7,9 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+using DevComponents.DotNetBar.Metro;
+
 namespace Client
 {
-    public partial class frmSignIn : Form
+    public partial class frmSignIn : MetroAppForm
     {
         #region Form
 

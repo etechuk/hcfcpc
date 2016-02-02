@@ -11,38 +11,45 @@ using DevComponents.DotNetBar.Metro;
 
 namespace Client
 {
-    public partial class frmContacts : MetroAppForm
+    public partial class frmContacts : MetroForm
     {
         public frmContacts()
         {
             InitializeComponent();
 
-            DataSet ds = Program.DB.SelectAll("SELECT ID,NameFirst,NameLast FROM Contacts;");
+            DataSet ds = Program.DB.SelectAll("SELECT ID,Name FROM Companies;");
             if (ds.Tables.Count > 0)
             {
-                List<ComboItem> items = new List<ComboItem>();
+                AutoCompleteStringCollection asCompanies = new AutoCompleteStringCollection();
+                foreach (DataRow r in ds.Tables[0].Rows)
+                {
+                    string sName = r["Name"].ToString();
+                    asCompanies.Add(sName);
+                }
+                txtCompanies.AutoCompleteCustomSource = asCompanies;
+            }
+
+            ds = Program.DB.SelectAll("SELECT ID,NameFirst,NameLast FROM Contacts;");
+            if (ds.Tables.Count > 0)
+            {
+                AutoCompleteStringCollection asContacts = new AutoCompleteStringCollection();
                 foreach (DataRow r in ds.Tables[0].Rows)
                 {
                     string sName = r["NameLast"].ToString() + (r["NameFirst"].ToString() != "" ? ", " + r["NameFirst"].ToString() : "");
-                    items.Add(new ComboItem() { Text = sName, Value = Convert.ToInt32(r["ID"]) });
+                    asContacts.Add(sName);
                 }
-                cbxContacts.DataSource = items;
-                cbxContacts.DisplayMember = "Text";
-                cbxContacts.ValueMember = "Value";
-                cbxContacts.SelectedIndex = -1;
+                txtContacts.AutoCompleteCustomSource = asContacts;
             }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            cbxContacts.SelectedIndex = -1;
-            cbxCompanies.SelectedIndex = -1;
-            cbxTitle.SelectedIndex = -1;
-            txtTitle.Text = "";
+            txtContacts.Text = "";
+            txtCompanies.Text = "";
             txtNameFirst.Text = "";
             txtNameLast.Text = "";
-            ActiveControl = txtTitle;
-            txtTitle.Focus();
+            ActiveControl = txtNameFirst;
+            txtNameFirst.Focus();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -65,18 +72,21 @@ namespace Client
                 return;
             }
 
+            if (txtCompanies.Text.Trim().Length > 0)
+            {
+                Program.DB.AddParameter("Name", txtCompanies.Text.Trim());
+                DataSet ds = Program.DB.SelectAll("SELECT ID FROM Companies WHERE Name=@Name;");
+                if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+                {
+                    SharedData.iCompanyID = Convert.ToInt32(ds.Tables[0].Rows[0]["ID"]);
+                }
+            }
+
             int iID = 0;
-            if (cbxContacts.SelectedIndex < 0)
+            if (txtContacts.Text.Trim().Length == 0)
             {
                 string sDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                 string sInsertCols = "", sInsertVals = "";
-
-                if (txtTitle.Text.Trim() != "")
-                {
-                    sInsertCols += sInsertCols != "" ? ",Title" : "Title";
-                    sInsertVals += sInsertVals != "" ? ",@title" : "@title";
-                    Program.DB.AddParameter("@title", txtTitle.Text.Trim());
-                }
 
                 sInsertCols += sInsertCols != "" ? ",NameFirst" : "NameFirst";
                 sInsertVals += sInsertVals != "" ? ",@fname" : "@fname";
@@ -86,9 +96,12 @@ namespace Client
                 sInsertVals += sInsertVals != "" ? ",@lname" : "@lname";
                 Program.DB.AddParameter("@lname", txtNameLast.Text.Trim());
 
-                sInsertCols += sInsertCols != "" ? ",Company" : "Company";
-                sInsertVals += sInsertVals != "" ? ",@company" : "@company";
-                Program.DB.AddParameter("@company", SharedData.iCompanyID);
+                if (SharedData.iCompanyID > 0)
+                {
+                    sInsertCols += sInsertCols != "" ? ",Company" : "Company";
+                    sInsertVals += sInsertVals != "" ? ",@company" : "@company";
+                    Program.DB.AddParameter("@company", SharedData.iCompanyID);
+                }
 
                 sInsertCols += sInsertCols != "" ? ",Modified" : "Modified";
                 sInsertVals += sInsertVals != "" ? ",@mod" : "@mod";
@@ -112,11 +125,27 @@ namespace Client
             }
             else
             {
-                SharedData.iContactID = Convert.ToInt32(cbxContacts.SelectedValue);
+                Program.DB.AddParameter("NameFirst", txtNameFirst.Text.Trim());
+                Program.DB.AddParameter("NameLast", txtNameLast.Text.Trim());
+                DataSet d = Program.DB.SelectAll("SELECT ID FROM Contacts WHERE NameFirst=@NameFirst AND NameLast=@NameLast;");
+                if (d.Tables.Count > 0 && d.Tables[0].Rows.Count > 0)
+                {
+                    SharedData.iContactID = Convert.ToInt32(d.Tables[0].Rows[0]["ID"]);
+                }
             }
 
             DialogResult = DialogResult.OK;
             Close();
+        }
+
+        private void txtNameFirst_TextChanged(object sender, EventArgs e)
+        {
+            txtContacts.Text = "";
+        }
+
+        private void txtNameLast_TextChanged(object sender, EventArgs e)
+        {
+            txtContacts.Text = "";
         }
     }
 }
