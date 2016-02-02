@@ -60,7 +60,7 @@
             this.btnCancel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCancel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnCancel.Location = new System.Drawing.Point(12, 132);
+            this.btnCancel.Location = new System.Drawing.Point(12, 130);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(68, 34);
             this.btnCancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -73,7 +73,7 @@
             this.btnSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSave.Location = new System.Drawing.Point(323, 132);
+            this.btnSave.Location = new System.Drawing.Point(323, 130);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(115, 34);
             this.btnSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -141,8 +141,6 @@
             // 
             this.txtNameFirst.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNameFirst.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txtNameFirst.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtNameFirst.BackColor = System.Drawing.Color.White;
             // 
             // 
@@ -178,8 +176,6 @@
             // 
             this.txtNameLast.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNameLast.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txtNameLast.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtNameLast.BackColor = System.Drawing.Color.White;
             // 
             // 
@@ -200,7 +196,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CaptionFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClientSize = new System.Drawing.Size(450, 178);
+            this.ClientSize = new System.Drawing.Size(450, 176);
             this.ControlBox = false;
             this.Controls.Add(this.txtNameLast);
             this.Controls.Add(this.txtNameFirst);

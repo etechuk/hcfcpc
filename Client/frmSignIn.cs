@@ -11,7 +11,7 @@ using DevComponents.DotNetBar.Metro;
 
 namespace Client
 {
-    public partial class frmSignIn : MetroAppForm
+    public partial class frmSignIn : MetroForm
     {
         #region Form
 

@@ -8,8 +8,8 @@
     <Setting Name="UserName" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="DefaultView" Type="System.String" Scope="User">
-      <Value Profile="(Default)">BookingsMonth</Value>
+    <Setting Name="DefaultView" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2</Value>
     </Setting>
     <Setting Name="PathToData" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -28,6 +28,9 @@
     </Setting>
     <Setting Name="DataName" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="StartMaximised" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>

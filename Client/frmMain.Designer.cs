@@ -229,8 +229,8 @@
             this.ms.CanCustomize = false;
             this.ms.CaptionFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ms.CaptionVisible = true;
-            this.ms.Controls.Add(this.pEnquiries);
             this.ms.Controls.Add(this.pBookings);
+            this.ms.Controls.Add(this.pEnquiries);
             this.ms.Controls.Add(this.pContacts);
             this.ms.Controls.Add(this.pCompanies);
             this.ms.Controls.Add(this.pCourses);
@@ -295,6 +295,7 @@
             // 
             this.pEnquiries.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.pEnquiries.TabIndex = 5;
+            this.pEnquiries.Visible = false;
             // 
             // scEnquiries
             // 
@@ -545,7 +546,6 @@
             // 
             this.pBookings.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.pBookings.TabIndex = 1;
-            this.pBookings.Visible = false;
             // 
             // pBookingsList
             // 
@@ -1923,6 +1923,7 @@
             // 
             // mtBookings
             // 
+            this.mtBookings.Checked = true;
             this.mtBookings.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtBookings.Name = "mtBookings";
             this.mtBookings.Panel = this.pBookings;
@@ -1932,7 +1933,6 @@
             // 
             // mtEnquiries
             // 
-            this.mtEnquiries.Checked = true;
             this.mtEnquiries.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtEnquiries.Name = "mtEnquiries";
             this.mtEnquiries.Panel = this.pEnquiries;

@@ -49,10 +49,10 @@ namespace Client.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("BookingsMonth")]
-        public string DefaultView {
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        public int DefaultView {
             get {
-                return ((string)(this["DefaultView"]));
+                return ((int)(this["DefaultView"]));
             }
             set {
                 this["DefaultView"] = value;
@@ -128,6 +128,18 @@ namespace Client.Properties {
             }
             set {
                 this["DataName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool StartMaximised {
+            get {
+                return ((bool)(this["StartMaximised"]));
+            }
+            set {
+                this["StartMaximised"] = value;
             }
         }
     }

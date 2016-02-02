@@ -64,6 +64,11 @@ namespace Client
 
             CompanyFilterInit();
             Set_DefaultView();
+
+            if (Properties.Settings.Default.StartMaximised)
+            {
+                WindowState = FormWindowState.Maximized;
+            }
         }
 
         private void frmMain_Shown(object sender, EventArgs e)
@@ -143,6 +148,7 @@ namespace Client
 
         private void btnOptions_Click(object sender, EventArgs e)
         {
+            ab.ClosePopup();
             Form frmOptions = new frmOptions();
             frmOptions.ShowDialog();
         }
@@ -479,7 +485,7 @@ namespace Client
         {
             switch (Properties.Settings.Default.DefaultView)
             {
-                case "BookingsDay": // Bookings tab, day view
+                case 0: // Bookings tab, day view
                     LoadBookings();
                     cvBookings.SelectedView = eCalendarView.Day;
                     pBookingsGrid.Visible = false;
@@ -488,7 +494,7 @@ namespace Client
                     biBookingsViewDay.Checked = true;
                     ms.SelectedTab = mtBookings;
                     break;
-                case "BookingsWeek": // Bookings tab, week view
+                case 1: // Bookings tab, week view
                     LoadBookings();
                     cvBookings.SelectedView = eCalendarView.Week;
                     pBookingsGrid.Visible = false;
@@ -497,7 +503,7 @@ namespace Client
                     biBookingsViewWeek.Checked = true;
                     ms.SelectedTab = mtBookings;
                     break;
-                case "BookingsYear": // Bookings tab, year view
+                case 3: // Bookings tab, year view
                     LoadBookings();
                     cvBookings.SelectedView = eCalendarView.Year;
                     pBookingsGrid.Visible = false;
@@ -506,7 +512,7 @@ namespace Client
                     biBookingsViewYear.Checked = true;
                     ms.SelectedTab = mtBookings;
                     break;
-                case "BookingsGrid": // Bookings tab, grid view
+                case 4: // Bookings tab, grid view
                     LoadBookingsGrid();
                     pBookingsGrid.Visible = true;
                     pBookingsList.Visible = false;
@@ -514,19 +520,25 @@ namespace Client
                     biBookingsGrid.Checked = true;
                     ms.SelectedTab = mtBookings;
                     break;
-                case "BookingsList": // Bookings tab, list view
+                case 5: // Bookings tab, list view
                     pBookingsGrid.Visible = false;
                     pBookingsList.Visible = true;
                     pBookingsCalendar.Visible = false;
                     biBookingsList.Checked = true;
                     ms.SelectedTab = mtBookings;
                     break;
-                case "Courses": // Courses tab
-                    ms.SelectedTab = mtCourses;
-                    break;
-                case "Enquiries": // Enquiries tab
+                case 6: // Enquiries tab
                     LoadEnquiries();
                     ms.SelectedTab = mtEnquiries;
+                    break;
+                case 7: // Courses tab
+                    ms.SelectedTab = mtCourses;
+                    break;
+                case 8: // Companies tab
+                    ms.SelectedTab = mtCompanies;
+                    break;
+                case 9: // Contacts tab
+                    ms.SelectedTab = mtContacts;
                     break;
                 default: // Bookings tab, month view
                     cvBookings.SelectedView = eCalendarView.Month;
