@@ -55,6 +55,7 @@ namespace Client
         public static int iAddressID = 0;
         public static int iEmailID = 0;
         public static int iPhoneID = 0;
+        public static int iCommentID = 0;
         public static Dictionary<string, string> dSchedule = new Dictionary<string, string>();
         public static DateTime dtSelectedStart = DateTime.Today;
         public static DateTime dtSelectedFinish = DateTime.Today;

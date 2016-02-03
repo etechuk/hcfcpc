@@ -62,7 +62,7 @@ namespace Client
             pEnquiriesGrid.Width = pBookings.Width;
             pEnquiriesGrid.Height = pBookings.Height;
 
-            CompanyFilterInit();
+            CompanyListInit();
             Set_DefaultView();
 
             if (Properties.Settings.Default.StartMaximised)
@@ -95,7 +95,7 @@ namespace Client
             pBookingsList.Visible = false;
             pBookingsCalendar.Visible = true;
             biBookingsViewDay.Checked = true;
-            ms.SelectedTab = mtBookings;
+            LoadBookings();
         }
 
         private void biBookingsViewWeek_Click(object sender, EventArgs e)
@@ -105,7 +105,7 @@ namespace Client
             pBookingsList.Visible = false;
             pBookingsCalendar.Visible = true;
             biBookingsViewWeek.Checked = true;
-            ms.SelectedTab = mtBookings;
+            LoadBookings();
         }
 
         private void biBookingsViewMonth_Click(object sender, EventArgs e)
@@ -115,7 +115,7 @@ namespace Client
             pBookingsList.Visible = false;
             pBookingsCalendar.Visible = true;
             biBookingsViewMonth.Checked = true;
-            ms.SelectedTab = mtBookings;
+            LoadBookings();
         }
 
         private void biBookingsViewYear_Click(object sender, EventArgs e)
@@ -125,7 +125,7 @@ namespace Client
             pBookingsList.Visible = false;
             pBookingsCalendar.Visible = true;
             biBookingsViewYear.Checked = true;
-            ms.SelectedTab = mtBookings;
+            LoadBookings();
         }
 
         private void biBookingsViewGrid_Click(object sender, EventArgs e)
@@ -134,7 +134,7 @@ namespace Client
             pBookingsList.Visible = false;
             pBookingsCalendar.Visible = false;
             biBookingsGrid.Checked = true;
-            ms.SelectedTab = mtBookings;
+            LoadBookingsGrid();
         }
 
         private void biBookingsViewList_Click(object sender, EventArgs e)
@@ -143,7 +143,7 @@ namespace Client
             pBookingsList.Visible = true;
             pBookingsCalendar.Visible = false;
             biBookingsList.Checked = true;
-            ms.SelectedTab = mtBookings;
+            LoadBookings();
         }
 
         private void btnOptions_Click(object sender, EventArgs e)
@@ -240,11 +240,11 @@ namespace Client
                 appointment.Locked = true;
                 appointment.Tag = SharedData.iBookingID;
                 cmBookings.Appointments.Add(appointment);
+
+                cvBookings.CalendarModel = cmBookings;
             }
 
-            cvBookings.CalendarModel = cmBookings;
             SharedData.iBookingID = 0;
-
             LoadBookings();
         }
 
@@ -486,7 +486,6 @@ namespace Client
             switch (Properties.Settings.Default.DefaultView)
             {
                 case 0: // Bookings tab, day view
-                    LoadBookings();
                     cvBookings.SelectedView = eCalendarView.Day;
                     pBookingsGrid.Visible = false;
                     pBookingsList.Visible = false;
@@ -495,7 +494,6 @@ namespace Client
                     ms.SelectedTab = mtBookings;
                     break;
                 case 1: // Bookings tab, week view
-                    LoadBookings();
                     cvBookings.SelectedView = eCalendarView.Week;
                     pBookingsGrid.Visible = false;
                     pBookingsList.Visible = false;
@@ -504,7 +502,6 @@ namespace Client
                     ms.SelectedTab = mtBookings;
                     break;
                 case 3: // Bookings tab, year view
-                    LoadBookings();
                     cvBookings.SelectedView = eCalendarView.Year;
                     pBookingsGrid.Visible = false;
                     pBookingsList.Visible = false;
@@ -513,7 +510,6 @@ namespace Client
                     ms.SelectedTab = mtBookings;
                     break;
                 case 4: // Bookings tab, grid view
-                    LoadBookingsGrid();
                     pBookingsGrid.Visible = true;
                     pBookingsList.Visible = false;
                     pBookingsCalendar.Visible = false;
@@ -766,21 +762,6 @@ namespace Client
 
             DataSet d, ds = Program.DB.SelectAll("SELECT ID,Job,EName,ECompany,EPhone,EEmail,EType,EReferer,EUser,EEntered FROM Jobs WHERE EName IS NOT NULL AND EUser IS NOT NULL ORDER BY Job DESC");
 
-            d = Program.DB.SelectAll("SELECT ID,Name FROM Companies;");
-            List<ComboItem> companies = new List<ComboItem>();
-            companies.Add(new ComboItem() { });
-            if (d.Tables.Count > 0)
-            {
-                foreach (DataRow r in d.Tables[0].Rows)
-                {
-                    companies.Add(new ComboItem() { Value = Convert.ToInt32(r["ID"]), Text = r["Name"].ToString() });
-                }
-            }
-
-            cbxEnquiriesCompany.DataSource = companies;
-            cbxEnquiriesCompany.DisplayMember = "Text";
-            cbxEnquiriesCompany.ValueMember = "Value";
-
             if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
             {
                 foreach (DataRow row in ds.Tables[0].Rows)
@@ -795,7 +776,172 @@ namespace Client
             }
         }
 
-        private void CompanyFilterInit()
+        private void LoadCourses()
+        {
+            gCourses.PrimaryGrid.Rows.Clear();
+
+            DataSet ds = Program.DB.SelectAll("SELECT * FROM Courses;");
+            if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+            {
+                DataSet d;
+
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    GridRow r = new GridRow(new object[] {
+                        false, row["ID"].ToString(), row["Name"].ToString(), row["Certification"].ToString(),
+                        row["Duration"].ToString().Replace(Environment.NewLine, "; "), row["Pricing"].ToString().Replace(Environment.NewLine, "; ")
+                    });
+                    r.Tag = row["ID"];
+                    gCourses.PrimaryGrid.Rows.Add(r);
+                }
+            }
+        }
+
+        private void LoadCompanies()
+        {
+            gCompanies.PrimaryGrid.Rows.Clear();
+
+            DataSet ds = Program.DB.SelectAll("SELECT * FROM Companies;");
+            if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+            {
+                DataSet d;
+
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    string sContacts = "";
+                    if (row["Contacts"].ToString().Length > 0)
+                    {
+                        d = Program.DB.SelectAll("SELECT NameFirst,NameLast FROM Contacts WHERE ID IN (" + row["Contacts"].ToString() + ");");
+                        if (d.Tables.Count > 0 && d.Tables[0].Rows.Count > 0)
+                        {
+                            foreach (DataRow pr in d.Tables[0].Rows)
+                            {
+                                string sName = pr["NameFirst"].ToString() + " " + pr["NameFirst"].ToString();
+                                sContacts = sContacts.Length > 0 ? ", " + sName: sName;
+                            }
+                        }
+                    }
+
+                    string sPhones = "";
+                    if (row["Phones"].ToString().Length > 0)
+                    {
+                        d = Program.DB.SelectAll("SELECT Number FROM Phones WHERE ID IN (" + row["Phones"].ToString() + ");");
+                        if (d.Tables.Count > 0 && d.Tables[0].Rows.Count > 0)
+                        {
+                            foreach (DataRow pr in d.Tables[0].Rows)
+                            {
+                                sPhones = sPhones.Length > 0 ? ", " + pr["Number"].ToString() : pr["Number"].ToString();
+                            }
+                        }
+                    }
+
+                    string sEmails = "";
+                    if (row["Emails"].ToString().Length > 0)
+                    {
+                        d = Program.DB.SelectAll("SELECT Address FROM Emails WHERE ID IN (" + row["Emails"].ToString() + ");");
+                        if (d.Tables.Count > 0 && d.Tables[0].Rows.Count > 0)
+                        {
+                            foreach (DataRow pr in d.Tables[0].Rows)
+                            {
+                                sEmails = sEmails.Length > 0 ? ", " + pr["Address"].ToString() : pr["Address"].ToString();
+                            }
+                        }
+                    }
+
+                    string sAddresses = "";
+                    if (row["Emails"].ToString().Length > 0)
+                    {
+                        d = Program.DB.SelectAll("SELECT * FROM Addresses WHERE ID IN (" + row["Addresses"].ToString() + ");");
+                        if (d.Tables.Count > 0 && d.Tables[0].Rows.Count > 0)
+                        {
+                            foreach (DataRow pr in d.Tables[0].Rows)
+                            {
+                                string sAddress = pr["Line1"].ToString() + ", " + pr["Postcode"].ToString();
+                                sAddresses = sAddresses.Length > 0 ? "; " + sAddress : sAddress;
+                            }
+                        }
+                    }
+
+                    GridRow r = new GridRow(new object[] {
+                        false, row["ID"].ToString(), row["Name"].ToString(), sContacts, sPhones, sEmails, sAddresses, row["RegNumber"].ToString(), row["RegNumberVat"].ToString()
+                    });
+                    r.Tag = row["ID"];
+                    gCompanies.PrimaryGrid.Rows.Add(r);
+                }
+
+            }
+        }
+
+        private void LoadContacts()
+        {
+            gContacts.PrimaryGrid.Rows.Clear();
+
+            DataSet ds = Program.DB.SelectAll("SELECT * FROM Contacts;");
+            if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+            {
+                DataSet d;
+
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    string sCompany = row["Company"].ToString();
+
+                    Program.DB.AddParameter("ID", row["Company"]);
+                    d = Program.DB.SelectAll("SELECT Name FROM Companies WHERE ID=@ID;");
+                    if (d.Tables.Count > 0 && d.Tables[0].Rows.Count > 0)
+                    {
+                        sCompany = d.Tables[0].Rows[0]["Name"].ToString();
+                    }
+
+                    string sPhones = "";
+                    if (row["Phones"].ToString().Length > 0)
+                    {
+                        d = Program.DB.SelectAll("SELECT Number FROM Phones WHERE ID IN (" + row["Phones"].ToString() + ");");
+                        if (d.Tables.Count > 0 && d.Tables[0].Rows.Count > 0)
+                        {
+                            foreach (DataRow pr in d.Tables[0].Rows)
+                            {
+                                sPhones = sPhones.Length > 0 ? ", " + pr["Number"].ToString() : pr["Number"].ToString();
+                            }
+                        }
+                    }
+
+                    string sEmails = "";
+                    if (row["Emails"].ToString().Length > 0)
+                    {
+                        d = Program.DB.SelectAll("SELECT Address FROM Emails WHERE ID IN (" + row["Emails"].ToString() + ");");
+                        if (d.Tables.Count > 0 && d.Tables[0].Rows.Count > 0)
+                        {
+                            foreach (DataRow pr in d.Tables[0].Rows)
+                            {
+                                sEmails = sEmails.Length > 0 ? ", " + pr["Address"].ToString() : pr["Address"].ToString();
+                            }
+                        }
+                    }
+
+                    string sAddresses = "";
+                    if (row["Emails"].ToString().Length > 0)
+                    {
+                        d = Program.DB.SelectAll("SELECT * FROM Addresses WHERE ID IN (" + row["Addresses"].ToString() + ");");
+                        if (d.Tables.Count > 0 && d.Tables[0].Rows.Count > 0)
+                        {
+                            foreach (DataRow pr in d.Tables[0].Rows)
+                            {
+                                string sAddress = pr["Line1"].ToString() + ", " + pr["Postcode"].ToString();
+                                sAddresses = sAddresses.Length > 0 ? "; " + sAddress : sAddress;
+                            }
+                        }
+                    }
+
+                    GridRow r = new GridRow(new object[] {
+                        false, row["ID"].ToString(), row["NameTitle"].ToString(), row["NameFirst"].ToString(), row["NameLast"].ToString(), sCompany, sPhones, sEmails, sAddresses
+                    });
+                    r.Tag = row["ID"];
+                    gContacts.PrimaryGrid.Rows.Add(r);
+                }
+            }
+        }
+
+        private void CompanyListInit()
         {
             DataSet dsCompanies = Program.DB.SelectAll("SELECT Name FROM Companies;");
             if (dsCompanies.Tables.Count > 0 && dsCompanies.Tables[0].Rows.Count > 0)
@@ -807,6 +953,8 @@ namespace Client
                 }
                 txtGridCompany.AutoCompleteCustomSource = asCompanies;
                 txtListCompany.AutoCompleteCustomSource = asCompanies;
+                txtContactCompany.AutoCompleteCustomSource = asCompanies;
+                txtEnquiriesListCompany.AutoCompleteCustomSource = asCompanies;
             }
         }
 
@@ -1060,12 +1208,57 @@ namespace Client
             switch (ms.SelectedTab.Text)
             {
                 case "Bookings":
-                    Set_DefaultView();
+                    LoadBookings();
+                    LoadBookingsGrid();
                     break;
                 case "Enquiries":
                     LoadEnquiries();
                     break;
+                case "Courses":
+                    LoadCourses();
+                    break;
+                case "Companies":
+                    LoadCompanies();
+                    break;
+                case "Contacts":
+                    LoadContacts();
+                    break;
             }
+        }
+
+        private void gContacts_RowClick(object sender, GridRowClickEventArgs e)
+        {
+            if (e.MouseEventArgs.Button == MouseButtons.Right)
+            {
+                Point pos = gContacts.PointToClient(Cursor.Position);
+                mContacts.Show(gContacts, pos);
+            }
+            else if (e.MouseEventArgs.Button == MouseButtons.Left)
+            {
+                if (e.GridRow.RowIndex > -1 && e.MouseEventArgs.Button == MouseButtons.Left)
+                {
+                    GridElement row = gContacts.PrimaryGrid.Rows[e.GridRow.RowIndex];
+
+                    Program.DB.AddParameter("ID", row.Tag);
+                    DataSet c = Program.DB.SelectAll("SELECT * FROM Users WHERE ID=@ID");
+                    if (c.Tables.Count > 0 && c.Tables[0].Rows.Count > 0)
+                    {
+                        SharedData.iCommentID = Convert.ToInt32(c.Tables[0].Rows[0]["ID"]);
+                        txtContactPhone.Text = c.Tables[0].Rows[0]["Phone"].ToString();
+                        txtContactEmail.Text = c.Tables[0].Rows[0]["Email"].ToString();
+                    }
+                }
+            }
+        }
+
+        private void mContactsAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mContactsRemove_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

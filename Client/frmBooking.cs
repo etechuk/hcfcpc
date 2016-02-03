@@ -9,6 +9,7 @@ using System.Text;
 using System.Windows.Forms;
 
 using DevComponents.DotNetBar.Metro;
+using DevComponents.DotNetBar.SuperGrid;
 
 namespace Client
 {
@@ -20,6 +21,7 @@ namespace Client
         int iNextID = 0;
 
         List<string> sDocuments = new List<string>();
+        List<int> iRooms = new List<int>();
 
         #endregion
 
@@ -50,6 +52,8 @@ namespace Client
             Dictionary<int, string> zones = new Dictionary<int, string>();
             if (ds.Tables.Count > 0)
             {
+                TreeNode tnRoot = new TreeNode();
+
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
                     if (dr["IsZone"] != DBNull.Value && dr["IsZone"].Equals("Y"))
@@ -60,18 +64,22 @@ namespace Client
 
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
-                    string sZone = "";
-                    foreach (KeyValuePair<int, string> zone in zones)
+                    if (dr["IsZone"] != DBNull.Value && dr["IsZone"].Equals("Y"))
                     {
-                        if (dr["Name"] != DBNull.Value && Convert.ToInt32(dr["ID"]) == zone.Key)
-                        {
-                            sZone = zone.Value.Replace("|", " - ") + " - ";
-                            break;
-                        }
+                        tvRooms.Nodes.Add(dr["Name"].ToString().Replace("|", " - "));
+                        tnRoot = tvRooms.Nodes[tvRooms.Nodes.Count - 1];
+                        tnRoot.Tag = dr["ID"];
                     }
-
-                    string sRoom = sZone + dr["Name"].ToString();
-                    lvRooms.Items.Add(sRoom);
+                    else if (dr["IsZone"] != DBNull.Value && dr["IsZone"].Equals("B"))
+                    {
+                        tvRooms.Nodes.Add(dr["Name"].ToString().Replace("|", " - "));
+                        tvRooms.Nodes[tvRooms.Nodes.Count - 1].Tag = dr["ID"];
+                    }
+                    else
+                    {
+                        tnRoot.Nodes.Add(dr["Name"].ToString());
+                        tnRoot.Nodes[tnRoot.Nodes.Count - 1].Tag = dr["ID"];
+                    }
                 }
             }
 
@@ -121,7 +129,7 @@ namespace Client
                         if (row["BRoom"] != DBNull.Value && row["BRoom"].ToString() != "")
                         {
                             string[] sRooms = row["BRoom"].ToString().Split('|');
-                            foreach (ListViewItem item in lvRooms.Items)
+                            foreach (TreeNode item in tvRooms.Nodes)
                             {
                                 foreach (string sRoom in sRooms)
                                 {
@@ -226,6 +234,27 @@ namespace Client
                         }
 
                         Text = "Edit Booking: " + Convert.ToInt32(row["Job"]).ToString(sNextIDFormat);
+
+                        Program.DB.AddParameter("Job", row["Job"]);
+                        DataSet c = Program.DB.SelectAll("SELECT * FROM Comments WHERE Job=@Job;");
+                        if (c.Tables.Count > 0 && c.Tables[0].Rows.Count > 0)
+                        {
+                            foreach (DataRow r in c.Tables[0].Rows)
+                            {
+                                string sUser = r["UserID"].ToString();
+                                Program.DB.AddParameter("ID", r["UserID"]);
+                                DataSet cu = Program.DB.SelectAll("SELECT NameFirst,NameLast FROM Users WHERE ID=@ID;");
+                                if (cu.Tables.Count > 0 && cu.Tables[0].Rows.Count > 0)
+                                {
+                                    sUser = cu.Tables[0].Rows[0]["NameFirst"] + " " + cu.Tables[0].Rows[0]["NameFirst"];
+                                }
+
+                                GridRow cr = new GridRow(new object[] {
+                                    r["Entered"].ToString(), sUser, r["Comment"].ToString()
+                                });
+                                cr.Tag = r["ID"];
+                            }
+                        }
                     }
                 }
             }
@@ -244,7 +273,7 @@ namespace Client
                     iNextID = 1;
                 }
 
-                foreach (ListViewItem item in lvRooms.Items)
+                foreach (TreeNode item in tvRooms.Nodes)
                 {
                     item.Checked = false;
                 }
@@ -294,6 +323,22 @@ namespace Client
 
         private void cbxCompanies_SelectionChangeCommitted(object sender, EventArgs e)
         {
+        }
+
+        private void tvRooms_AfterCheck(object sender, TreeViewEventArgs e)
+        {
+            int iID = e.Node.Tag != null ? Convert.ToInt32(e.Node.Tag) : -1;
+            if (e.Node.Checked && iID > -1)
+            {
+                iRooms.Add(iID);
+            }
+            else
+            {
+                if (iRooms.Contains(iID))
+                {
+                    iRooms.Remove(iID);
+                }
+            }
         }
 
         #endregion
@@ -437,16 +482,13 @@ namespace Client
                 Program.DB.AddParameter("@email", txtEmail.Text.Trim());
             }
 
-            string sRooms = "";
-            foreach (ListViewItem item in lvRooms.Items)
+            if (iRooms.Count > 0)
             {
-                if (item.Checked == true)
+                string sRooms = "";
+                foreach (int iRoom in iRooms)
                 {
-                    sRooms += sRooms.Length > 0 ? "|" + item.Name : item.Name;
+                    sRooms += sRooms.Length > 0 ? "|" + iRoom.ToString() : iRoom.ToString();
                 }
-            }
-            if (sRooms != "")
-            {
                 sUpdateVals += ",BRoom=@room";
                 sInsertCols += ",BRoom";
                 sInsertVals += ",@room";
@@ -704,7 +746,6 @@ namespace Client
             SharedData.dSchedule.Add("name", txtName.Text.Trim());
             SharedData.dSchedule.Add("dates", dtDateFrom.Value.ToString() != "" && dtDateTo.Value.ToString() != "" ? dtDateFrom.Value + "|" + dtDateTo.Value : "");
             SharedData.dSchedule.Add("times", dtTimeFrom.Value.ToString() != null && dtTimeTo.Value.ToString() != null ? dtTimeFrom.Value.ToString() + "|" + dtTimeTo.Value.ToString() : "");
-            SharedData.dSchedule.Add("comments", txtComments.Text.Trim());
 
             DialogResult = DialogResult.OK;
             Close();
@@ -742,5 +783,65 @@ namespace Client
         }
 
         #endregion
+
+        private void gComments_RowClick(object sender, GridRowClickEventArgs e)
+        {
+            if (e.MouseEventArgs.Button == MouseButtons.Right)
+            {
+                Point pos = gComments.PointToClient(Cursor.Position);
+                mComments.Show(gComments, pos);
+            }
+            else if (e.MouseEventArgs.Button == MouseButtons.Left)
+            {
+                if (e.GridRow.RowIndex > -1 && e.MouseEventArgs.Button == MouseButtons.Left)
+                {
+                    GridElement row = gComments.PrimaryGrid.Rows[e.GridRow.RowIndex];
+
+                    Program.DB.AddParameter("ID", row.Tag);
+                    DataSet c = Program.DB.SelectAll("SELECT ID,Comment FROM Comments WHERE ID=@ID");
+                    if (c.Tables.Count > 0 && c.Tables[0].Rows.Count > 0)
+                    {
+                        SharedData.iCommentID = Convert.ToInt32(c.Tables[0].Rows[0]["ID"]);
+                        txtComments.Text = c.Tables[0].Rows[0]["Comment"].ToString();
+                    }
+                }
+            }
+        }
+
+        private void mCommentsAdd_Click(object sender, EventArgs e)
+        {
+            btnSaveComment.Visible = true;
+        }
+
+        private void btnSaveComment_Click(object sender, EventArgs e)
+        {
+            if (txtComments.Text.Trim().Length > 0)
+            {
+                int iRes = 0;
+                Program.DB.AddParameter("Comment", txtComments.Text.Trim());
+                if (SharedData.iCommentID > 0)
+                {
+                    Program.DB.AddParameter("ID", SharedData.iCommentID);
+                    Program.DB.AddParameter("Modified", DateTime.Now);
+                    iRes = Program.DB.Update("UPDATE Comments SET Comment=@Comment,Modified=@Modified WHERE ID=@ID");
+                }
+                else
+                {
+                    Program.DB.AddParameter("UserID", Program.Global.UserID);
+                    Program.DB.AddParameter("Entered", DateTime.Now);
+                    iRes = Program.DB.Update("INSERT INTO Comments (Comment,UserID,Entered) VALUES (@Comment,@UserID,@Entered)");
+                }
+
+                if (iRes < 1)
+                {
+                    MessageBox.Show("Couldn't save the comment. Please try again.", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Comment saved successfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnSaveComment.Visible = false;
+                }
+            }
+        }
     }
 }

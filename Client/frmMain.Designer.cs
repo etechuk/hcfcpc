@@ -31,26 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.ms = new DevComponents.DotNetBar.Metro.MetroShell();
-            this.pEnquiries = new DevComponents.DotNetBar.Metro.MetroTabPanel();
-            this.scEnquiries = new DevComponents.DotNetBar.Controls.CollapsibleSplitContainer();
-            this.pEnquiriesGrid = new DevComponents.DotNetBar.PanelEx();
-            this.pEnquiriesGridTools = new DevComponents.DotNetBar.PanelEx();
-            this.lblGridEnquiries = new DevComponents.DotNetBar.LabelX();
-            this.cbxEnquiriesCompany = new System.Windows.Forms.ComboBox();
-            this.lblEnquiriesCompany = new DevComponents.DotNetBar.LabelX();
-            this.gEnquiries = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
-            this.gEnquiriesChk = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gEnquiriesJob = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gEnquiriesDates = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gEnquiriesStart = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gEnquiriesFinish = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gEnquiriesName = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gEnquiriesRooms = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gEnquiriesCompany = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gEnquiriesPhone = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gEnquiriesEmail = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gEnquiriesLayout = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.pEnquiry = new DevComponents.DotNetBar.PanelEx();
             this.pBookings = new DevComponents.DotNetBar.Metro.MetroTabPanel();
             this.pBookingsList = new DevComponents.DotNetBar.PanelEx();
             this.pBookingsListTools = new DevComponents.DotNetBar.PanelEx();
@@ -113,19 +93,37 @@
             this.biBookingsViewList = new DevComponents.DotNetBar.ButtonItem();
             this.dnBookings = new DevComponents.DotNetBar.Schedule.DateNavigator();
             this.cvBookings = new DevComponents.DotNetBar.Schedule.CalendarView();
-            this.pContacts = new DevComponents.DotNetBar.Metro.MetroTabPanel();
-            this.scContacts = new DevComponents.DotNetBar.Controls.CollapsibleSplitContainer();
-            this.gContacts = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
-            this.gContactsChk = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gContactsID = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gContactsTitle = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gContactsNameFirst = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gContactsNameLast = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gContactsCompany = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gContactsPhone = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gContactsEmail = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gContactsAddress = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.pContact = new DevComponents.DotNetBar.PanelEx();
+            this.pEnquiries = new DevComponents.DotNetBar.Metro.MetroTabPanel();
+            this.scEnquiries = new DevComponents.DotNetBar.Controls.CollapsibleSplitContainer();
+            this.pEnquiriesGrid = new DevComponents.DotNetBar.PanelEx();
+            this.pEnquiriesGridTools = new DevComponents.DotNetBar.PanelEx();
+            this.btnEnquiriesListCompany = new DevComponents.DotNetBar.ButtonX();
+            this.txtEnquiriesListCompany = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.lblGridEnquiries = new DevComponents.DotNetBar.LabelX();
+            this.lblEnquiriesCompany = new DevComponents.DotNetBar.LabelX();
+            this.gEnquiries = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+            this.gEnquiriesChk = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gEnquiriesJob = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gEnquiriesDates = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gEnquiriesStart = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gEnquiriesFinish = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gEnquiriesName = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gEnquiriesRooms = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gEnquiriesCompany = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gEnquiriesPhone = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gEnquiriesEmail = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gEnquiriesLayout = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.pEnquiry = new DevComponents.DotNetBar.PanelEx();
+            this.pCourses = new DevComponents.DotNetBar.Metro.MetroTabPanel();
+            this.scCourses = new DevComponents.DotNetBar.Controls.CollapsibleSplitContainer();
+            this.gCourses = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+            this.gCoursesChk = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gCoursesID = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gCoursesName = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gCoursesCert = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gCoursesDuration = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gCoursesPrice = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.pCourse = new DevComponents.DotNetBar.PanelEx();
             this.pCompanies = new DevComponents.DotNetBar.Metro.MetroTabPanel();
             this.scCompanies = new DevComponents.DotNetBar.Controls.CollapsibleSplitContainer();
             this.gCompanies = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
@@ -139,16 +137,38 @@
             this.gCompaniesReg = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gCompaniesVat = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.pCompany = new DevComponents.DotNetBar.PanelEx();
-            this.pCourses = new DevComponents.DotNetBar.Metro.MetroTabPanel();
-            this.scCourses = new DevComponents.DotNetBar.Controls.CollapsibleSplitContainer();
-            this.gCourses = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
-            this.gCoursesChk = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gCoursesID = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gCoursesName = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gCoursesCert = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gCoursesDuration = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gCoursesPrice = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.pCourse = new DevComponents.DotNetBar.PanelEx();
+            this.pContacts = new DevComponents.DotNetBar.Metro.MetroTabPanel();
+            this.scContacts = new DevComponents.DotNetBar.Controls.CollapsibleSplitContainer();
+            this.gContacts = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+            this.gContactsChk = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gContactsID = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gContactsTitle = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gContactsNameFirst = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gContactsNameLast = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gContactsCompany = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gContactsPhone = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gContactsEmail = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gContactsAddress = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.pContact = new DevComponents.DotNetBar.PanelEx();
+            this.comboBoxEx1 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.cbxiContactTitleMr = new DevComponents.Editors.ComboItem();
+            this.cbxiContactTitleMrs = new DevComponents.Editors.ComboItem();
+            this.cbxiContactTitleMiss = new DevComponents.Editors.ComboItem();
+            this.cbxiContactTitleMs = new DevComponents.Editors.ComboItem();
+            this.cbxiContactTitleMaster = new DevComponents.Editors.ComboItem();
+            this.cbxiContactTitleDr = new DevComponents.Editors.ComboItem();
+            this.cbxiContactTitleProf = new DevComponents.Editors.ComboItem();
+            this.cbxiContactTitleOfc = new DevComponents.Editors.ComboItem();
+            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.txtContactNameLast = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtContactNameFirst = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtContactCompany = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtContactEmail = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.lblContactPhone = new DevComponents.DotNetBar.LabelX();
+            this.txtContactPhone = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.lblContactName = new DevComponents.DotNetBar.LabelX();
+            this.lblContactCompany = new DevComponents.DotNetBar.LabelX();
             this.ab = new DevComponents.DotNetBar.Metro.MetroAppButton();
             this.bsv = new DevComponents.DotNetBar.SuperTabControl();
             this.bsvTpPrint = new DevComponents.DotNetBar.SuperTabControlPanel();
@@ -175,14 +195,22 @@
             this.mBookingsListRemove = new System.Windows.Forms.ToolStripMenuItem();
             this.mBookingsListS1 = new System.Windows.Forms.ToolStripSeparator();
             this.mBookingsListComplete = new System.Windows.Forms.ToolStripMenuItem();
+            this.mContacts = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mContactsAdd = new System.Windows.Forms.ToolStripMenuItem();
+            this.mContactsRemove = new System.Windows.Forms.ToolStripMenuItem();
+            this.mEnquiries = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mEnquiriesAdd = new System.Windows.Forms.ToolStripMenuItem();
+            this.mEnquiriesRemove = new System.Windows.Forms.ToolStripMenuItem();
+            this.mCourses = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mCoursesAdd = new System.Windows.Forms.ToolStripMenuItem();
+            this.mCoursesRemove = new System.Windows.Forms.ToolStripMenuItem();
+            this.mCompanies = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mCompaniesAdd = new System.Windows.Forms.ToolStripMenuItem();
+            this.mCompaniesRemove = new System.Windows.Forms.ToolStripMenuItem();
+            this.mEnquiriesS1 = new System.Windows.Forms.ToolStripSeparator();
+            this.mEnquiriesBooking = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblContactEmail = new DevComponents.DotNetBar.LabelX();
             this.ms.SuspendLayout();
-            this.pEnquiries.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.scEnquiries)).BeginInit();
-            this.scEnquiries.Panel1.SuspendLayout();
-            this.scEnquiries.Panel2.SuspendLayout();
-            this.scEnquiries.SuspendLayout();
-            this.pEnquiriesGrid.SuspendLayout();
-            this.pEnquiriesGridTools.SuspendLayout();
             this.pBookings.SuspendLayout();
             this.pBookingsList.SuspendLayout();
             this.pBookingsListTools.SuspendLayout();
@@ -195,25 +223,37 @@
             this.pBookingsCalendar.SuspendLayout();
             this.pBookingsCalendarTools.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nbBookings)).BeginInit();
-            this.pContacts.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.scContacts)).BeginInit();
-            this.scContacts.Panel1.SuspendLayout();
-            this.scContacts.Panel2.SuspendLayout();
-            this.scContacts.SuspendLayout();
-            this.pCompanies.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.scCompanies)).BeginInit();
-            this.scCompanies.Panel1.SuspendLayout();
-            this.scCompanies.Panel2.SuspendLayout();
-            this.scCompanies.SuspendLayout();
+            this.pEnquiries.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.scEnquiries)).BeginInit();
+            this.scEnquiries.Panel1.SuspendLayout();
+            this.scEnquiries.Panel2.SuspendLayout();
+            this.scEnquiries.SuspendLayout();
+            this.pEnquiriesGrid.SuspendLayout();
+            this.pEnquiriesGridTools.SuspendLayout();
             this.pCourses.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scCourses)).BeginInit();
             this.scCourses.Panel1.SuspendLayout();
             this.scCourses.Panel2.SuspendLayout();
             this.scCourses.SuspendLayout();
+            this.pCompanies.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.scCompanies)).BeginInit();
+            this.scCompanies.Panel1.SuspendLayout();
+            this.scCompanies.Panel2.SuspendLayout();
+            this.scCompanies.SuspendLayout();
+            this.pContacts.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.scContacts)).BeginInit();
+            this.scContacts.Panel1.SuspendLayout();
+            this.scContacts.Panel2.SuspendLayout();
+            this.scContacts.SuspendLayout();
+            this.pContact.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsv)).BeginInit();
             this.bsv.SuspendLayout();
             this.mTools.SuspendLayout();
             this.mBookingsList.SuspendLayout();
+            this.mContacts.SuspendLayout();
+            this.mEnquiries.SuspendLayout();
+            this.mCourses.SuspendLayout();
+            this.mCompanies.SuspendLayout();
             this.SuspendLayout();
             // 
             // ms
@@ -229,11 +269,11 @@
             this.ms.CanCustomize = false;
             this.ms.CaptionFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ms.CaptionVisible = true;
-            this.ms.Controls.Add(this.pBookings);
-            this.ms.Controls.Add(this.pEnquiries);
             this.ms.Controls.Add(this.pContacts);
             this.ms.Controls.Add(this.pCompanies);
             this.ms.Controls.Add(this.pCourses);
+            this.ms.Controls.Add(this.pEnquiries);
+            this.ms.Controls.Add(this.pBookings);
             this.ms.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ms.ForeColor = System.Drawing.Color.Black;
             this.ms.HelpButtonText = "Help";
@@ -273,254 +313,6 @@
             this.ms.TabStripFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ms.SelectedTabChanged += new System.EventHandler(this.ms_SelectedTabChanged);
             // 
-            // pEnquiries
-            // 
-            this.pEnquiries.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.pEnquiries.Controls.Add(this.scEnquiries);
-            this.pEnquiries.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pEnquiries.Location = new System.Drawing.Point(0, 61);
-            this.pEnquiries.Name = "pEnquiries";
-            this.pEnquiries.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.pEnquiries.Size = new System.Drawing.Size(960, 535);
-            // 
-            // 
-            // 
-            this.pEnquiries.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.pEnquiries.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.pEnquiries.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.pEnquiries.TabIndex = 5;
-            this.pEnquiries.Visible = false;
-            // 
-            // scEnquiries
-            // 
-            this.scEnquiries.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.scEnquiries.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.scEnquiries.ButtonPosition = DevComponents.DotNetBar.Controls.eSplitterButtonPosition.Center;
-            this.scEnquiries.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.scEnquiries.ForeColor = System.Drawing.Color.Black;
-            this.scEnquiries.IsSplitterFixed = true;
-            this.scEnquiries.Location = new System.Drawing.Point(0, 0);
-            this.scEnquiries.Name = "scEnquiries";
-            this.scEnquiries.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // scEnquiries.Panel1
-            // 
-            this.scEnquiries.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.scEnquiries.Panel1.Controls.Add(this.pEnquiriesGrid);
-            this.scEnquiries.Panel1.ForeColor = System.Drawing.Color.Black;
-            // 
-            // scEnquiries.Panel2
-            // 
-            this.scEnquiries.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.scEnquiries.Panel2.Controls.Add(this.pEnquiry);
-            this.scEnquiries.Panel2.ForeColor = System.Drawing.Color.Black;
-            this.scEnquiries.Size = new System.Drawing.Size(960, 536);
-            this.scEnquiries.SplitterDistance = 180;
-            this.scEnquiries.SplitterWidth = 20;
-            this.scEnquiries.TabIndex = 26;
-            // 
-            // pEnquiriesGrid
-            // 
-            this.pEnquiriesGrid.CanvasColor = System.Drawing.SystemColors.Control;
-            this.pEnquiriesGrid.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.pEnquiriesGrid.Controls.Add(this.pEnquiriesGridTools);
-            this.pEnquiriesGrid.Controls.Add(this.gEnquiries);
-            this.pEnquiriesGrid.DisabledBackColor = System.Drawing.Color.Empty;
-            this.pEnquiriesGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pEnquiriesGrid.Location = new System.Drawing.Point(0, 0);
-            this.pEnquiriesGrid.Name = "pEnquiriesGrid";
-            this.pEnquiriesGrid.Size = new System.Drawing.Size(960, 180);
-            this.pEnquiriesGrid.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.pEnquiriesGrid.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.pEnquiriesGrid.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.pEnquiriesGrid.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.pEnquiriesGrid.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.pEnquiriesGrid.Style.GradientAngle = 90;
-            this.pEnquiriesGrid.TabIndex = 26;
-            // 
-            // pEnquiriesGridTools
-            // 
-            this.pEnquiriesGridTools.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pEnquiriesGridTools.CanvasColor = System.Drawing.SystemColors.Control;
-            this.pEnquiriesGridTools.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.pEnquiriesGridTools.Controls.Add(this.lblGridEnquiries);
-            this.pEnquiriesGridTools.Controls.Add(this.cbxEnquiriesCompany);
-            this.pEnquiriesGridTools.Controls.Add(this.lblEnquiriesCompany);
-            this.pEnquiriesGridTools.DisabledBackColor = System.Drawing.Color.Empty;
-            this.pEnquiriesGridTools.Location = new System.Drawing.Point(0, 0);
-            this.pEnquiriesGridTools.Name = "pEnquiriesGridTools";
-            this.pEnquiriesGridTools.Size = new System.Drawing.Size(960, 35);
-            this.pEnquiriesGridTools.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.pEnquiriesGridTools.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.pEnquiriesGridTools.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.pEnquiriesGridTools.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.pEnquiriesGridTools.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.pEnquiriesGridTools.Style.GradientAngle = 90;
-            this.pEnquiriesGridTools.TabIndex = 4;
-            // 
-            // lblGridEnquiries
-            // 
-            this.lblGridEnquiries.AutoSize = true;
-            // 
-            // 
-            // 
-            this.lblGridEnquiries.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblGridEnquiries.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGridEnquiries.ForeColor = System.Drawing.Color.Black;
-            this.lblGridEnquiries.Location = new System.Drawing.Point(314, 8);
-            this.lblGridEnquiries.Name = "lblGridEnquiries";
-            this.lblGridEnquiries.Size = new System.Drawing.Size(76, 17);
-            this.lblGridEnquiries.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lblGridEnquiries.TabIndex = 26;
-            this.lblGridEnquiries.Text = "Total enquiries:";
-            // 
-            // cbxEnquiriesCompany
-            // 
-            this.cbxEnquiriesCompany.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cbxEnquiriesCompany.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxEnquiriesCompany.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxEnquiriesCompany.ForeColor = System.Drawing.Color.Black;
-            this.cbxEnquiriesCompany.FormattingEnabled = true;
-            this.cbxEnquiriesCompany.Location = new System.Drawing.Point(64, 5);
-            this.cbxEnquiriesCompany.Name = "cbxEnquiriesCompany";
-            this.cbxEnquiriesCompany.Size = new System.Drawing.Size(244, 25);
-            this.cbxEnquiriesCompany.TabIndex = 25;
-            // 
-            // lblEnquiriesCompany
-            // 
-            this.lblEnquiriesCompany.AutoSize = true;
-            // 
-            // 
-            // 
-            this.lblEnquiriesCompany.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblEnquiriesCompany.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEnquiriesCompany.ForeColor = System.Drawing.Color.Black;
-            this.lblEnquiriesCompany.Location = new System.Drawing.Point(7, 9);
-            this.lblEnquiriesCompany.Name = "lblEnquiriesCompany";
-            this.lblEnquiriesCompany.Size = new System.Drawing.Size(51, 17);
-            this.lblEnquiriesCompany.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lblEnquiriesCompany.TabIndex = 24;
-            this.lblEnquiriesCompany.Text = "Company:";
-            // 
-            // gEnquiries
-            // 
-            this.gEnquiries.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gEnquiries.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.gEnquiries.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.gEnquiries.ForeColor = System.Drawing.Color.Black;
-            this.gEnquiries.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
-            this.gEnquiries.Location = new System.Drawing.Point(0, 34);
-            this.gEnquiries.Name = "gEnquiries";
-            // 
-            // 
-            // 
-            this.gEnquiries.PrimaryGrid.AllowRowDelete = true;
-            this.gEnquiries.PrimaryGrid.Columns.Add(this.gEnquiriesChk);
-            this.gEnquiries.PrimaryGrid.Columns.Add(this.gEnquiriesJob);
-            this.gEnquiries.PrimaryGrid.Columns.Add(this.gEnquiriesDates);
-            this.gEnquiries.PrimaryGrid.Columns.Add(this.gEnquiriesStart);
-            this.gEnquiries.PrimaryGrid.Columns.Add(this.gEnquiriesFinish);
-            this.gEnquiries.PrimaryGrid.Columns.Add(this.gEnquiriesName);
-            this.gEnquiries.PrimaryGrid.Columns.Add(this.gEnquiriesRooms);
-            this.gEnquiries.PrimaryGrid.Columns.Add(this.gEnquiriesCompany);
-            this.gEnquiries.PrimaryGrid.Columns.Add(this.gEnquiriesPhone);
-            this.gEnquiries.PrimaryGrid.Columns.Add(this.gEnquiriesEmail);
-            this.gEnquiries.PrimaryGrid.Columns.Add(this.gEnquiriesLayout);
-            this.gEnquiries.PrimaryGrid.ShowRowHeaders = false;
-            this.gEnquiries.PrimaryGrid.UseAlternateRowStyle = true;
-            this.gEnquiries.Size = new System.Drawing.Size(960, 146);
-            this.gEnquiries.TabIndex = 0;
-            this.gEnquiries.Text = "superGridControl1";
-            // 
-            // gEnquiriesChk
-            // 
-            this.gEnquiriesChk.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
-            this.gEnquiriesChk.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            this.gEnquiriesChk.MinimumWidth = 32;
-            this.gEnquiriesChk.Name = "";
-            this.gEnquiriesChk.Width = 32;
-            // 
-            // gEnquiriesJob
-            // 
-            this.gEnquiriesJob.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
-            this.gEnquiriesJob.HeaderText = "EID";
-            this.gEnquiriesJob.MinimumWidth = 60;
-            this.gEnquiriesJob.Name = "Job";
-            this.gEnquiriesJob.Width = 60;
-            // 
-            // gEnquiriesDates
-            // 
-            this.gEnquiriesDates.HeaderText = "Dates";
-            this.gEnquiriesDates.Name = "Dates";
-            // 
-            // gEnquiriesStart
-            // 
-            this.gEnquiriesStart.HeaderText = "Start";
-            this.gEnquiriesStart.Name = "Start";
-            // 
-            // gEnquiriesFinish
-            // 
-            this.gEnquiriesFinish.HeaderText = "Finish";
-            this.gEnquiriesFinish.Name = "Finish";
-            // 
-            // gEnquiriesName
-            // 
-            this.gEnquiriesName.HeaderText = "Event Name";
-            this.gEnquiriesName.Name = "Name";
-            // 
-            // gEnquiriesRooms
-            // 
-            this.gEnquiriesRooms.HeaderText = "Rooms";
-            this.gEnquiriesRooms.Name = "Rooms";
-            // 
-            // gEnquiriesCompany
-            // 
-            this.gEnquiriesCompany.HeaderText = "Company";
-            this.gEnquiriesCompany.Name = "Company";
-            // 
-            // gEnquiriesPhone
-            // 
-            this.gEnquiriesPhone.HeaderText = "Phone";
-            this.gEnquiriesPhone.Name = "Phone";
-            // 
-            // gEnquiriesEmail
-            // 
-            this.gEnquiriesEmail.HeaderText = "E-mail Address";
-            this.gEnquiriesEmail.Name = "Email";
-            // 
-            // gEnquiriesLayout
-            // 
-            this.gEnquiriesLayout.HeaderText = "Room Layout";
-            this.gEnquiriesLayout.Name = "RoomLayout";
-            // 
-            // pEnquiry
-            // 
-            this.pEnquiry.CanvasColor = System.Drawing.SystemColors.Control;
-            this.pEnquiry.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.pEnquiry.DisabledBackColor = System.Drawing.Color.Empty;
-            this.pEnquiry.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pEnquiry.Location = new System.Drawing.Point(0, 0);
-            this.pEnquiry.Name = "pEnquiry";
-            this.pEnquiry.Size = new System.Drawing.Size(960, 336);
-            this.pEnquiry.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.pEnquiry.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.pEnquiry.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.pEnquiry.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.pEnquiry.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.pEnquiry.Style.GradientAngle = 90;
-            this.pEnquiry.TabIndex = 4;
-            // 
             // pBookings
             // 
             this.pBookings.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -546,6 +338,7 @@
             // 
             this.pBookings.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.pBookings.TabIndex = 1;
+            this.pBookings.Visible = false;
             // 
             // pBookingsList
             // 
@@ -583,7 +376,7 @@
             this.pBookingsListTools.DisabledBackColor = System.Drawing.Color.Empty;
             this.pBookingsListTools.Location = new System.Drawing.Point(0, 0);
             this.pBookingsListTools.Name = "pBookingsListTools";
-            this.pBookingsListTools.Size = new System.Drawing.Size(880, 34);
+            this.pBookingsListTools.Size = new System.Drawing.Size(880, 35);
             this.pBookingsListTools.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.pBookingsListTools.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.pBookingsListTools.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
@@ -749,12 +542,12 @@
             this.gBookings.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.gBookings.ForeColor = System.Drawing.Color.Black;
             this.gBookings.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
-            this.gBookings.Location = new System.Drawing.Point(0, 33);
+            this.gBookings.Location = new System.Drawing.Point(0, 34);
             this.gBookings.Name = "gBookings";
             // 
             // 
             // 
-            this.gBookings.PrimaryGrid.AllowRowDelete = true;
+            this.gBookings.PrimaryGrid.AllowEdit = false;
             this.gBookings.PrimaryGrid.Columns.Add(this.gBookingsChk);
             this.gBookings.PrimaryGrid.Columns.Add(this.gBookingsJob);
             this.gBookings.PrimaryGrid.Columns.Add(this.gBookingsDates);
@@ -766,9 +559,11 @@
             this.gBookings.PrimaryGrid.Columns.Add(this.gBookingsPhone);
             this.gBookings.PrimaryGrid.Columns.Add(this.gBookingsEmail);
             this.gBookings.PrimaryGrid.Columns.Add(this.gBookingsRoomLayout);
+            this.gBookings.PrimaryGrid.MultiSelect = false;
+            this.gBookings.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
             this.gBookings.PrimaryGrid.ShowRowHeaders = false;
             this.gBookings.PrimaryGrid.UseAlternateRowStyle = true;
-            this.gBookings.Size = new System.Drawing.Size(880, 139);
+            this.gBookings.Size = new System.Drawing.Size(880, 138);
             this.gBookings.TabIndex = 0;
             this.gBookings.Text = "superGridControl1";
             this.gBookings.RowActivated += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowActivatedEventArgs>(this.gBookings_RowActivated);
@@ -903,7 +698,7 @@
             this.rgBookings.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rgBookings.ForeColor = System.Drawing.Color.Black;
             this.rgBookings.LeadHeaderContextMenuStrip = null;
-            this.rgBookings.Location = new System.Drawing.Point(0, 34);
+            this.rgBookings.Location = new System.Drawing.Point(0, 35);
             this.rgBookings.Name = "rgBookings";
             this.rgBookings.RowHeaderContextMenuStrip = null;
             this.rgBookings.Script = null;
@@ -966,7 +761,7 @@
             this.pBookingsGridTools.DisabledBackColor = System.Drawing.Color.Empty;
             this.pBookingsGridTools.Location = new System.Drawing.Point(0, 0);
             this.pBookingsGridTools.Name = "pBookingsGridTools";
-            this.pBookingsGridTools.Size = new System.Drawing.Size(880, 34);
+            this.pBookingsGridTools.Size = new System.Drawing.Size(880, 35);
             this.pBookingsGridTools.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.pBookingsGridTools.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.pBookingsGridTools.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
@@ -1155,7 +950,7 @@
             this.pBookingsCalendarTools.DisabledBackColor = System.Drawing.Color.Empty;
             this.pBookingsCalendarTools.Location = new System.Drawing.Point(0, 0);
             this.pBookingsCalendarTools.Name = "pBookingsCalendarTools";
-            this.pBookingsCalendarTools.Size = new System.Drawing.Size(880, 34);
+            this.pBookingsCalendarTools.Size = new System.Drawing.Size(880, 35);
             this.pBookingsCalendarTools.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.pBookingsCalendarTools.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.pBookingsCalendarTools.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
@@ -1300,11 +1095,11 @@
             this.cvBookings.HighlightCurrentDay = true;
             this.cvBookings.Is24HourFormat = true;
             this.cvBookings.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
-            this.cvBookings.Location = new System.Drawing.Point(0, 33);
+            this.cvBookings.Location = new System.Drawing.Point(0, 34);
             this.cvBookings.MultiUserTabHeight = 21;
             this.cvBookings.Name = "cvBookings";
             this.cvBookings.SelectedView = DevComponents.DotNetBar.Schedule.eCalendarView.Month;
-            this.cvBookings.Size = new System.Drawing.Size(880, 145);
+            this.cvBookings.Size = new System.Drawing.Size(880, 144);
             this.cvBookings.TabIndex = 4;
             this.cvBookings.TimeIndicator.BorderColor = System.Drawing.Color.Empty;
             this.cvBookings.TimeIndicator.Tag = null;
@@ -1314,176 +1109,420 @@
             this.cvBookings.MouseEnter += new System.EventHandler(this.cvBookings_MouseEnter);
             this.cvBookings.MouseLeave += new System.EventHandler(this.cvBookings_MouseLeave);
             // 
-            // pContacts
+            // pEnquiries
             // 
-            this.pContacts.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.pContacts.Controls.Add(this.scContacts);
-            this.pContacts.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pContacts.Location = new System.Drawing.Point(0, 61);
-            this.pContacts.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pContacts.Name = "pContacts";
-            this.pContacts.Padding = new System.Windows.Forms.Padding(3, 0, 3, 4);
-            this.pContacts.Size = new System.Drawing.Size(960, 535);
-            // 
-            // 
-            // 
-            this.pContacts.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.pEnquiries.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.pEnquiries.Controls.Add(this.scEnquiries);
+            this.pEnquiries.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pEnquiries.Location = new System.Drawing.Point(0, 61);
+            this.pEnquiries.Name = "pEnquiries";
+            this.pEnquiries.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.pEnquiries.Size = new System.Drawing.Size(960, 535);
             // 
             // 
             // 
-            this.pContacts.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.pEnquiries.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.pContacts.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.pContacts.TabIndex = 4;
-            this.pContacts.Visible = false;
+            this.pEnquiries.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
-            // scContacts
             // 
-            this.scContacts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            // 
+            this.pEnquiries.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.pEnquiries.TabIndex = 5;
+            this.pEnquiries.Visible = false;
+            // 
+            // scEnquiries
+            // 
+            this.scEnquiries.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.scContacts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.scContacts.ButtonPosition = DevComponents.DotNetBar.Controls.eSplitterButtonPosition.Center;
-            this.scContacts.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.scContacts.ForeColor = System.Drawing.Color.Black;
-            this.scContacts.IsSplitterFixed = true;
-            this.scContacts.Location = new System.Drawing.Point(0, 0);
-            this.scContacts.Name = "scContacts";
-            this.scContacts.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.scEnquiries.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.scEnquiries.ButtonPosition = DevComponents.DotNetBar.Controls.eSplitterButtonPosition.Center;
+            this.scEnquiries.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.scEnquiries.ForeColor = System.Drawing.Color.Black;
+            this.scEnquiries.IsSplitterFixed = true;
+            this.scEnquiries.Location = new System.Drawing.Point(0, 0);
+            this.scEnquiries.Name = "scEnquiries";
+            this.scEnquiries.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
-            // scContacts.Panel1
+            // scEnquiries.Panel1
             // 
-            this.scContacts.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.scContacts.Panel1.Controls.Add(this.gContacts);
-            this.scContacts.Panel1.ForeColor = System.Drawing.Color.Black;
+            this.scEnquiries.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.scEnquiries.Panel1.Controls.Add(this.pEnquiriesGrid);
+            this.scEnquiries.Panel1.ForeColor = System.Drawing.Color.Black;
             // 
-            // scContacts.Panel2
+            // scEnquiries.Panel2
             // 
-            this.scContacts.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.scContacts.Panel2.Controls.Add(this.pContact);
-            this.scContacts.Panel2.ForeColor = System.Drawing.Color.Black;
-            this.scContacts.Size = new System.Drawing.Size(960, 535);
-            this.scContacts.SplitterDistance = 180;
-            this.scContacts.SplitterWidth = 20;
-            this.scContacts.TabIndex = 1;
+            this.scEnquiries.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.scEnquiries.Panel2.Controls.Add(this.pEnquiry);
+            this.scEnquiries.Panel2.ForeColor = System.Drawing.Color.Black;
+            this.scEnquiries.Size = new System.Drawing.Size(960, 536);
+            this.scEnquiries.SplitterDistance = 180;
+            this.scEnquiries.SplitterWidth = 20;
+            this.scEnquiries.TabIndex = 26;
             // 
-            // gContacts
+            // pEnquiriesGrid
             // 
-            this.gContacts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.gContacts.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gContacts.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.gContacts.ForeColor = System.Drawing.Color.Black;
-            this.gContacts.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
-            this.gContacts.Location = new System.Drawing.Point(0, 0);
-            this.gContacts.Name = "gContacts";
+            this.pEnquiriesGrid.CanvasColor = System.Drawing.SystemColors.Control;
+            this.pEnquiriesGrid.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.pEnquiriesGrid.Controls.Add(this.pEnquiriesGridTools);
+            this.pEnquiriesGrid.Controls.Add(this.gEnquiries);
+            this.pEnquiriesGrid.DisabledBackColor = System.Drawing.Color.Empty;
+            this.pEnquiriesGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pEnquiriesGrid.Location = new System.Drawing.Point(0, 0);
+            this.pEnquiriesGrid.Name = "pEnquiriesGrid";
+            this.pEnquiriesGrid.Size = new System.Drawing.Size(960, 180);
+            this.pEnquiriesGrid.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.pEnquiriesGrid.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.pEnquiriesGrid.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.pEnquiriesGrid.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.pEnquiriesGrid.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.pEnquiriesGrid.Style.GradientAngle = 90;
+            this.pEnquiriesGrid.TabIndex = 26;
+            // 
+            // pEnquiriesGridTools
+            // 
+            this.pEnquiriesGridTools.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pEnquiriesGridTools.CanvasColor = System.Drawing.SystemColors.Control;
+            this.pEnquiriesGridTools.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.pEnquiriesGridTools.Controls.Add(this.btnEnquiriesListCompany);
+            this.pEnquiriesGridTools.Controls.Add(this.txtEnquiriesListCompany);
+            this.pEnquiriesGridTools.Controls.Add(this.lblGridEnquiries);
+            this.pEnquiriesGridTools.Controls.Add(this.lblEnquiriesCompany);
+            this.pEnquiriesGridTools.DisabledBackColor = System.Drawing.Color.Empty;
+            this.pEnquiriesGridTools.Location = new System.Drawing.Point(0, 0);
+            this.pEnquiriesGridTools.Name = "pEnquiriesGridTools";
+            this.pEnquiriesGridTools.Size = new System.Drawing.Size(960, 35);
+            this.pEnquiriesGridTools.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.pEnquiriesGridTools.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.pEnquiriesGridTools.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.pEnquiriesGridTools.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.pEnquiriesGridTools.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.pEnquiriesGridTools.Style.GradientAngle = 90;
+            this.pEnquiriesGridTools.TabIndex = 4;
+            // 
+            // btnEnquiriesListCompany
+            // 
+            this.btnEnquiriesListCompany.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnEnquiriesListCompany.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnEnquiriesListCompany.Location = new System.Drawing.Point(312, 5);
+            this.btnEnquiriesListCompany.Name = "btnEnquiriesListCompany";
+            this.btnEnquiriesListCompany.Size = new System.Drawing.Size(25, 25);
+            this.btnEnquiriesListCompany.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnEnquiriesListCompany.TabIndex = 28;
+            // 
+            // txtEnquiriesListCompany
+            // 
+            this.txtEnquiriesListCompany.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtEnquiriesListCompany.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtEnquiriesListCompany.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
-            this.gContacts.PrimaryGrid.AllowRowDelete = true;
-            this.gContacts.PrimaryGrid.Columns.Add(this.gContactsChk);
-            this.gContacts.PrimaryGrid.Columns.Add(this.gContactsID);
-            this.gContacts.PrimaryGrid.Columns.Add(this.gContactsTitle);
-            this.gContacts.PrimaryGrid.Columns.Add(this.gContactsNameFirst);
-            this.gContacts.PrimaryGrid.Columns.Add(this.gContactsNameLast);
-            this.gContacts.PrimaryGrid.Columns.Add(this.gContactsCompany);
-            this.gContacts.PrimaryGrid.Columns.Add(this.gContactsPhone);
-            this.gContacts.PrimaryGrid.Columns.Add(this.gContactsEmail);
-            this.gContacts.PrimaryGrid.Columns.Add(this.gContactsAddress);
-            this.gContacts.PrimaryGrid.ShowRowHeaders = false;
-            this.gContacts.PrimaryGrid.UseAlternateRowStyle = true;
-            this.gContacts.Size = new System.Drawing.Size(960, 180);
-            this.gContacts.TabIndex = 2;
-            this.gContacts.Text = "superGridControl1";
+            this.txtEnquiriesListCompany.Border.Class = "TextBoxBorder";
+            this.txtEnquiriesListCompany.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtEnquiriesListCompany.DisabledBackColor = System.Drawing.Color.White;
+            this.txtEnquiriesListCompany.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEnquiriesListCompany.ForeColor = System.Drawing.Color.Black;
+            this.txtEnquiriesListCompany.Location = new System.Drawing.Point(64, 5);
+            this.txtEnquiriesListCompany.Name = "txtEnquiriesListCompany";
+            this.txtEnquiriesListCompany.PreventEnterBeep = true;
+            this.txtEnquiriesListCompany.Size = new System.Drawing.Size(244, 25);
+            this.txtEnquiriesListCompany.TabIndex = 27;
             // 
-            // gContactsChk
+            // lblGridEnquiries
             // 
-            this.gContactsChk.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
-            this.gContactsChk.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            this.gContactsChk.MinimumWidth = 32;
-            this.gContactsChk.Name = "";
-            this.gContactsChk.Width = 32;
+            this.lblGridEnquiries.AutoSize = true;
             // 
-            // gContactsID
             // 
-            this.gContactsID.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
-            this.gContactsID.HeaderText = "ID";
-            this.gContactsID.MinimumWidth = 60;
-            this.gContactsID.Name = "ID";
-            this.gContactsID.Width = 60;
             // 
-            // gContactsTitle
+            this.lblGridEnquiries.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblGridEnquiries.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGridEnquiries.ForeColor = System.Drawing.Color.Black;
+            this.lblGridEnquiries.Location = new System.Drawing.Point(351, 9);
+            this.lblGridEnquiries.Name = "lblGridEnquiries";
+            this.lblGridEnquiries.Size = new System.Drawing.Size(76, 17);
+            this.lblGridEnquiries.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblGridEnquiries.TabIndex = 26;
+            this.lblGridEnquiries.Text = "Total enquiries:";
             // 
-            this.gContactsTitle.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
-            this.gContactsTitle.HeaderText = "Title";
-            this.gContactsTitle.MinimumWidth = 75;
-            this.gContactsTitle.Name = "NameTitle";
-            this.gContactsTitle.Width = 75;
+            // lblEnquiriesCompany
             // 
-            // gContactsNameFirst
+            this.lblEnquiriesCompany.AutoSize = true;
             // 
-            this.gContactsNameFirst.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
-            this.gContactsNameFirst.HeaderText = "First Name";
-            this.gContactsNameFirst.MinimumWidth = 100;
-            this.gContactsNameFirst.Name = "NameFirst";
             // 
-            // gContactsNameLast
             // 
-            this.gContactsNameLast.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
-            this.gContactsNameLast.HeaderText = "Last Name";
-            this.gContactsNameLast.MinimumWidth = 150;
-            this.gContactsNameLast.Name = "NameLast";
-            this.gContactsNameLast.Width = 150;
+            this.lblEnquiriesCompany.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblEnquiriesCompany.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEnquiriesCompany.ForeColor = System.Drawing.Color.Black;
+            this.lblEnquiriesCompany.Location = new System.Drawing.Point(7, 9);
+            this.lblEnquiriesCompany.Name = "lblEnquiriesCompany";
+            this.lblEnquiriesCompany.Size = new System.Drawing.Size(51, 17);
+            this.lblEnquiriesCompany.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblEnquiriesCompany.TabIndex = 24;
+            this.lblEnquiriesCompany.Text = "Company:";
             // 
-            // gContactsCompany
+            // gEnquiries
             // 
-            this.gContactsCompany.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
-            this.gContactsCompany.HeaderText = "Company";
-            this.gContactsCompany.MinimumWidth = 150;
-            this.gContactsCompany.Name = "Company";
-            this.gContactsCompany.Width = 150;
+            this.gEnquiries.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gEnquiries.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.gEnquiries.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.gEnquiries.ForeColor = System.Drawing.Color.Black;
+            this.gEnquiries.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
+            this.gEnquiries.Location = new System.Drawing.Point(0, 34);
+            this.gEnquiries.Name = "gEnquiries";
             // 
-            // gContactsPhone
             // 
-            this.gContactsPhone.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
-            this.gContactsPhone.HeaderText = "Phone";
-            this.gContactsPhone.MinimumWidth = 125;
-            this.gContactsPhone.Name = "Phone";
-            this.gContactsPhone.Width = 125;
             // 
-            // gContactsEmail
+            this.gEnquiries.PrimaryGrid.AllowEdit = false;
+            this.gEnquiries.PrimaryGrid.Columns.Add(this.gEnquiriesChk);
+            this.gEnquiries.PrimaryGrid.Columns.Add(this.gEnquiriesJob);
+            this.gEnquiries.PrimaryGrid.Columns.Add(this.gEnquiriesDates);
+            this.gEnquiries.PrimaryGrid.Columns.Add(this.gEnquiriesStart);
+            this.gEnquiries.PrimaryGrid.Columns.Add(this.gEnquiriesFinish);
+            this.gEnquiries.PrimaryGrid.Columns.Add(this.gEnquiriesName);
+            this.gEnquiries.PrimaryGrid.Columns.Add(this.gEnquiriesRooms);
+            this.gEnquiries.PrimaryGrid.Columns.Add(this.gEnquiriesCompany);
+            this.gEnquiries.PrimaryGrid.Columns.Add(this.gEnquiriesPhone);
+            this.gEnquiries.PrimaryGrid.Columns.Add(this.gEnquiriesEmail);
+            this.gEnquiries.PrimaryGrid.Columns.Add(this.gEnquiriesLayout);
+            this.gEnquiries.PrimaryGrid.MultiSelect = false;
+            this.gEnquiries.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
+            this.gEnquiries.PrimaryGrid.ShowRowHeaders = false;
+            this.gEnquiries.PrimaryGrid.UseAlternateRowStyle = true;
+            this.gEnquiries.Size = new System.Drawing.Size(960, 146);
+            this.gEnquiries.TabIndex = 0;
+            this.gEnquiries.Text = "superGridControl1";
             // 
-            this.gContactsEmail.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
-            this.gContactsEmail.HeaderText = "E-mail Address";
-            this.gContactsEmail.MinimumWidth = 250;
-            this.gContactsEmail.Name = "Email";
-            this.gContactsEmail.Width = 250;
+            // gEnquiriesChk
             // 
-            // gContactsAddress
+            this.gEnquiriesChk.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
+            this.gEnquiriesChk.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            this.gEnquiriesChk.MinimumWidth = 32;
+            this.gEnquiriesChk.Name = "";
+            this.gEnquiriesChk.Width = 32;
             // 
-            this.gContactsAddress.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
-            this.gContactsAddress.HeaderText = "Address";
-            this.gContactsAddress.MinimumWidth = 250;
-            this.gContactsAddress.Name = "Address";
-            this.gContactsAddress.Width = 250;
+            // gEnquiriesJob
             // 
-            // pContact
+            this.gEnquiriesJob.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
+            this.gEnquiriesJob.HeaderText = "EID";
+            this.gEnquiriesJob.MinimumWidth = 60;
+            this.gEnquiriesJob.Name = "Job";
+            this.gEnquiriesJob.Width = 60;
             // 
-            this.pContact.CanvasColor = System.Drawing.SystemColors.Control;
-            this.pContact.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.pContact.DisabledBackColor = System.Drawing.Color.Empty;
-            this.pContact.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pContact.Location = new System.Drawing.Point(0, 0);
-            this.pContact.Name = "pContact";
-            this.pContact.Size = new System.Drawing.Size(960, 335);
-            this.pContact.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.pContact.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.pContact.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.pContact.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.pContact.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.pContact.Style.GradientAngle = 90;
-            this.pContact.TabIndex = 8;
+            // gEnquiriesDates
+            // 
+            this.gEnquiriesDates.HeaderText = "Dates";
+            this.gEnquiriesDates.Name = "Dates";
+            // 
+            // gEnquiriesStart
+            // 
+            this.gEnquiriesStart.HeaderText = "Start";
+            this.gEnquiriesStart.Name = "Start";
+            // 
+            // gEnquiriesFinish
+            // 
+            this.gEnquiriesFinish.HeaderText = "Finish";
+            this.gEnquiriesFinish.Name = "Finish";
+            // 
+            // gEnquiriesName
+            // 
+            this.gEnquiriesName.HeaderText = "Event Name";
+            this.gEnquiriesName.Name = "Name";
+            // 
+            // gEnquiriesRooms
+            // 
+            this.gEnquiriesRooms.HeaderText = "Rooms";
+            this.gEnquiriesRooms.Name = "Rooms";
+            // 
+            // gEnquiriesCompany
+            // 
+            this.gEnquiriesCompany.HeaderText = "Company";
+            this.gEnquiriesCompany.Name = "Company";
+            // 
+            // gEnquiriesPhone
+            // 
+            this.gEnquiriesPhone.HeaderText = "Phone";
+            this.gEnquiriesPhone.Name = "Phone";
+            // 
+            // gEnquiriesEmail
+            // 
+            this.gEnquiriesEmail.HeaderText = "E-mail Address";
+            this.gEnquiriesEmail.Name = "Email";
+            // 
+            // gEnquiriesLayout
+            // 
+            this.gEnquiriesLayout.HeaderText = "Room Layout";
+            this.gEnquiriesLayout.Name = "RoomLayout";
+            // 
+            // pEnquiry
+            // 
+            this.pEnquiry.CanvasColor = System.Drawing.SystemColors.Control;
+            this.pEnquiry.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.pEnquiry.DisabledBackColor = System.Drawing.Color.Empty;
+            this.pEnquiry.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pEnquiry.Location = new System.Drawing.Point(0, 0);
+            this.pEnquiry.Name = "pEnquiry";
+            this.pEnquiry.Size = new System.Drawing.Size(960, 336);
+            this.pEnquiry.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.pEnquiry.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.pEnquiry.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.pEnquiry.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.pEnquiry.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.pEnquiry.Style.GradientAngle = 90;
+            this.pEnquiry.TabIndex = 4;
+            // 
+            // pCourses
+            // 
+            this.pCourses.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.pCourses.Controls.Add(this.scCourses);
+            this.pCourses.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pCourses.Location = new System.Drawing.Point(0, 61);
+            this.pCourses.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pCourses.Name = "pCourses";
+            this.pCourses.Padding = new System.Windows.Forms.Padding(3, 0, 3, 4);
+            this.pCourses.Size = new System.Drawing.Size(960, 535);
+            // 
+            // 
+            // 
+            this.pCourses.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.pCourses.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.pCourses.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.pCourses.TabIndex = 2;
+            this.pCourses.Visible = false;
+            // 
+            // scCourses
+            // 
+            this.scCourses.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.scCourses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.scCourses.ButtonPosition = DevComponents.DotNetBar.Controls.eSplitterButtonPosition.Center;
+            this.scCourses.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.scCourses.ForeColor = System.Drawing.Color.Black;
+            this.scCourses.IsSplitterFixed = true;
+            this.scCourses.Location = new System.Drawing.Point(0, 0);
+            this.scCourses.Name = "scCourses";
+            this.scCourses.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // scCourses.Panel1
+            // 
+            this.scCourses.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.scCourses.Panel1.Controls.Add(this.gCourses);
+            this.scCourses.Panel1.ForeColor = System.Drawing.Color.Black;
+            // 
+            // scCourses.Panel2
+            // 
+            this.scCourses.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.scCourses.Panel2.Controls.Add(this.pCourse);
+            this.scCourses.Panel2.ForeColor = System.Drawing.Color.Black;
+            this.scCourses.Size = new System.Drawing.Size(960, 535);
+            this.scCourses.SplitterDistance = 180;
+            this.scCourses.SplitterWidth = 20;
+            this.scCourses.TabIndex = 2;
+            // 
+            // gCourses
+            // 
+            this.gCourses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.gCourses.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gCourses.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.gCourses.ForeColor = System.Drawing.Color.Black;
+            this.gCourses.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
+            this.gCourses.Location = new System.Drawing.Point(0, 0);
+            this.gCourses.Name = "gCourses";
+            // 
+            // 
+            // 
+            this.gCourses.PrimaryGrid.AllowEdit = false;
+            this.gCourses.PrimaryGrid.Columns.Add(this.gCoursesChk);
+            this.gCourses.PrimaryGrid.Columns.Add(this.gCoursesID);
+            this.gCourses.PrimaryGrid.Columns.Add(this.gCoursesName);
+            this.gCourses.PrimaryGrid.Columns.Add(this.gCoursesCert);
+            this.gCourses.PrimaryGrid.Columns.Add(this.gCoursesDuration);
+            this.gCourses.PrimaryGrid.Columns.Add(this.gCoursesPrice);
+            this.gCourses.PrimaryGrid.MultiSelect = false;
+            this.gCourses.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
+            this.gCourses.PrimaryGrid.ShowRowHeaders = false;
+            this.gCourses.PrimaryGrid.UseAlternateRowStyle = true;
+            this.gCourses.Size = new System.Drawing.Size(960, 180);
+            this.gCourses.TabIndex = 2;
+            this.gCourses.Text = "superGridControl1";
+            // 
+            // gCoursesChk
+            // 
+            this.gCoursesChk.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
+            this.gCoursesChk.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            this.gCoursesChk.MinimumWidth = 32;
+            this.gCoursesChk.Name = "";
+            this.gCoursesChk.Width = 32;
+            // 
+            // gCoursesID
+            // 
+            this.gCoursesID.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
+            this.gCoursesID.HeaderText = "ID";
+            this.gCoursesID.MinimumWidth = 60;
+            this.gCoursesID.Name = "ID";
+            this.gCoursesID.Width = 60;
+            // 
+            // gCoursesName
+            // 
+            this.gCoursesName.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
+            this.gCoursesName.HeaderText = "Name";
+            this.gCoursesName.MinimumWidth = 300;
+            this.gCoursesName.Name = "Name";
+            this.gCoursesName.Width = 300;
+            // 
+            // gCoursesCert
+            // 
+            this.gCoursesCert.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
+            this.gCoursesCert.HeaderText = "Certification";
+            this.gCoursesCert.MinimumWidth = 150;
+            this.gCoursesCert.Name = "Certification";
+            this.gCoursesCert.Width = 150;
+            // 
+            // gCoursesDuration
+            // 
+            this.gCoursesDuration.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
+            this.gCoursesDuration.HeaderText = "Duration";
+            this.gCoursesDuration.MinimumWidth = 250;
+            this.gCoursesDuration.Name = "Duration";
+            this.gCoursesDuration.Width = 250;
+            // 
+            // gCoursesPrice
+            // 
+            this.gCoursesPrice.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
+            this.gCoursesPrice.HeaderText = "Pricing";
+            this.gCoursesPrice.MinimumWidth = 250;
+            this.gCoursesPrice.Name = "Pricing";
+            this.gCoursesPrice.Width = 250;
+            // 
+            // pCourse
+            // 
+            this.pCourse.CanvasColor = System.Drawing.SystemColors.Control;
+            this.pCourse.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.pCourse.DisabledBackColor = System.Drawing.Color.Empty;
+            this.pCourse.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pCourse.Location = new System.Drawing.Point(0, 0);
+            this.pCourse.Name = "pCourse";
+            this.pCourse.Size = new System.Drawing.Size(960, 335);
+            this.pCourse.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.pCourse.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.pCourse.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.pCourse.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.pCourse.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.pCourse.Style.GradientAngle = 90;
+            this.pCourse.TabIndex = 8;
             // 
             // pCompanies
             // 
@@ -1552,7 +1591,7 @@
             // 
             // 
             // 
-            this.gCompanies.PrimaryGrid.AllowRowDelete = true;
+            this.gCompanies.PrimaryGrid.AllowEdit = false;
             this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesChk);
             this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesID);
             this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesName);
@@ -1562,6 +1601,8 @@
             this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesAddress);
             this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesReg);
             this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesVat);
+            this.gCompanies.PrimaryGrid.MultiSelect = false;
+            this.gCompanies.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
             this.gCompanies.PrimaryGrid.ShowRowHeaders = false;
             this.gCompanies.PrimaryGrid.UseAlternateRowStyle = true;
             this.gCompanies.Size = new System.Drawing.Size(960, 180);
@@ -1654,150 +1695,410 @@
             this.pCompany.Style.GradientAngle = 90;
             this.pCompany.TabIndex = 8;
             // 
-            // pCourses
+            // pContacts
             // 
-            this.pCourses.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.pCourses.Controls.Add(this.scCourses);
-            this.pCourses.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pCourses.Location = new System.Drawing.Point(0, 61);
-            this.pCourses.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pCourses.Name = "pCourses";
-            this.pCourses.Padding = new System.Windows.Forms.Padding(3, 0, 3, 4);
-            this.pCourses.Size = new System.Drawing.Size(960, 535);
-            // 
-            // 
-            // 
-            this.pCourses.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.pContacts.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.pContacts.Controls.Add(this.scContacts);
+            this.pContacts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pContacts.Location = new System.Drawing.Point(0, 61);
+            this.pContacts.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pContacts.Name = "pContacts";
+            this.pContacts.Padding = new System.Windows.Forms.Padding(3, 0, 3, 4);
+            this.pContacts.Size = new System.Drawing.Size(960, 535);
             // 
             // 
             // 
-            this.pCourses.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.pContacts.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.pCourses.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.pCourses.TabIndex = 2;
-            this.pCourses.Visible = false;
+            this.pContacts.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
-            // scCourses
             // 
-            this.scCourses.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            // 
+            this.pContacts.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.pContacts.TabIndex = 4;
+            // 
+            // scContacts
+            // 
+            this.scContacts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.scCourses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.scCourses.ButtonPosition = DevComponents.DotNetBar.Controls.eSplitterButtonPosition.Center;
-            this.scCourses.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.scCourses.ForeColor = System.Drawing.Color.Black;
-            this.scCourses.IsSplitterFixed = true;
-            this.scCourses.Location = new System.Drawing.Point(0, 0);
-            this.scCourses.Name = "scCourses";
-            this.scCourses.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.scContacts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.scContacts.ButtonPosition = DevComponents.DotNetBar.Controls.eSplitterButtonPosition.Center;
+            this.scContacts.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.scContacts.ForeColor = System.Drawing.Color.Black;
+            this.scContacts.IsSplitterFixed = true;
+            this.scContacts.Location = new System.Drawing.Point(0, 0);
+            this.scContacts.Name = "scContacts";
+            this.scContacts.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
-            // scCourses.Panel1
+            // scContacts.Panel1
             // 
-            this.scCourses.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.scCourses.Panel1.Controls.Add(this.gCourses);
-            this.scCourses.Panel1.ForeColor = System.Drawing.Color.Black;
+            this.scContacts.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.scContacts.Panel1.Controls.Add(this.gContacts);
+            this.scContacts.Panel1.ForeColor = System.Drawing.Color.Black;
             // 
-            // scCourses.Panel2
+            // scContacts.Panel2
             // 
-            this.scCourses.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.scCourses.Panel2.Controls.Add(this.pCourse);
-            this.scCourses.Panel2.ForeColor = System.Drawing.Color.Black;
-            this.scCourses.Size = new System.Drawing.Size(960, 535);
-            this.scCourses.SplitterDistance = 180;
-            this.scCourses.SplitterWidth = 20;
-            this.scCourses.TabIndex = 2;
+            this.scContacts.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.scContacts.Panel2.Controls.Add(this.pContact);
+            this.scContacts.Panel2.ForeColor = System.Drawing.Color.Black;
+            this.scContacts.Size = new System.Drawing.Size(960, 535);
+            this.scContacts.SplitterDistance = 180;
+            this.scContacts.SplitterWidth = 20;
+            this.scContacts.TabIndex = 1;
             // 
-            // gCourses
+            // gContacts
             // 
-            this.gCourses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.gCourses.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gCourses.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.gCourses.ForeColor = System.Drawing.Color.Black;
-            this.gCourses.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
-            this.gCourses.Location = new System.Drawing.Point(0, 0);
-            this.gCourses.Name = "gCourses";
+            this.gContacts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.gContacts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gContacts.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.gContacts.ForeColor = System.Drawing.Color.Black;
+            this.gContacts.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
+            this.gContacts.Location = new System.Drawing.Point(0, 0);
+            this.gContacts.Name = "gContacts";
             // 
             // 
             // 
-            this.gCourses.PrimaryGrid.AllowRowDelete = true;
-            this.gCourses.PrimaryGrid.Columns.Add(this.gCoursesChk);
-            this.gCourses.PrimaryGrid.Columns.Add(this.gCoursesID);
-            this.gCourses.PrimaryGrid.Columns.Add(this.gCoursesName);
-            this.gCourses.PrimaryGrid.Columns.Add(this.gCoursesCert);
-            this.gCourses.PrimaryGrid.Columns.Add(this.gCoursesDuration);
-            this.gCourses.PrimaryGrid.Columns.Add(this.gCoursesPrice);
-            this.gCourses.PrimaryGrid.ShowRowHeaders = false;
-            this.gCourses.PrimaryGrid.UseAlternateRowStyle = true;
-            this.gCourses.Size = new System.Drawing.Size(960, 180);
-            this.gCourses.TabIndex = 2;
-            this.gCourses.Text = "superGridControl1";
+            this.gContacts.PrimaryGrid.AllowEdit = false;
+            this.gContacts.PrimaryGrid.Columns.Add(this.gContactsChk);
+            this.gContacts.PrimaryGrid.Columns.Add(this.gContactsID);
+            this.gContacts.PrimaryGrid.Columns.Add(this.gContactsTitle);
+            this.gContacts.PrimaryGrid.Columns.Add(this.gContactsNameFirst);
+            this.gContacts.PrimaryGrid.Columns.Add(this.gContactsNameLast);
+            this.gContacts.PrimaryGrid.Columns.Add(this.gContactsCompany);
+            this.gContacts.PrimaryGrid.Columns.Add(this.gContactsPhone);
+            this.gContacts.PrimaryGrid.Columns.Add(this.gContactsEmail);
+            this.gContacts.PrimaryGrid.Columns.Add(this.gContactsAddress);
+            this.gContacts.PrimaryGrid.MultiSelect = false;
+            this.gContacts.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
+            this.gContacts.PrimaryGrid.ShowRowHeaders = false;
+            this.gContacts.PrimaryGrid.UseAlternateRowStyle = true;
+            this.gContacts.Size = new System.Drawing.Size(960, 180);
+            this.gContacts.TabIndex = 2;
+            this.gContacts.RowClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowClickEventArgs>(this.gContacts_RowClick);
             // 
-            // gCoursesChk
+            // gContactsChk
             // 
-            this.gCoursesChk.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
-            this.gCoursesChk.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            this.gCoursesChk.MinimumWidth = 32;
-            this.gCoursesChk.Name = "";
-            this.gCoursesChk.Width = 32;
+            this.gContactsChk.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
+            this.gContactsChk.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            this.gContactsChk.MinimumWidth = 32;
+            this.gContactsChk.Name = "";
+            this.gContactsChk.Width = 32;
             // 
-            // gCoursesID
+            // gContactsID
             // 
-            this.gCoursesID.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
-            this.gCoursesID.HeaderText = "ID";
-            this.gCoursesID.MinimumWidth = 60;
-            this.gCoursesID.Name = "ID";
-            this.gCoursesID.Width = 60;
+            this.gContactsID.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
+            this.gContactsID.HeaderText = "ID";
+            this.gContactsID.MinimumWidth = 60;
+            this.gContactsID.Name = "ID";
+            this.gContactsID.Width = 60;
             // 
-            // gCoursesName
+            // gContactsTitle
             // 
-            this.gCoursesName.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
-            this.gCoursesName.HeaderText = "Name";
-            this.gCoursesName.MinimumWidth = 300;
-            this.gCoursesName.Name = "Name";
-            this.gCoursesName.Width = 300;
+            this.gContactsTitle.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
+            this.gContactsTitle.HeaderText = "Title";
+            this.gContactsTitle.MinimumWidth = 75;
+            this.gContactsTitle.Name = "NameTitle";
+            this.gContactsTitle.Width = 75;
             // 
-            // gCoursesCert
+            // gContactsNameFirst
             // 
-            this.gCoursesCert.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
-            this.gCoursesCert.HeaderText = "Certification";
-            this.gCoursesCert.MinimumWidth = 150;
-            this.gCoursesCert.Name = "Certification";
-            this.gCoursesCert.Width = 150;
+            this.gContactsNameFirst.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
+            this.gContactsNameFirst.HeaderText = "First Name";
+            this.gContactsNameFirst.MinimumWidth = 100;
+            this.gContactsNameFirst.Name = "NameFirst";
             // 
-            // gCoursesDuration
+            // gContactsNameLast
             // 
-            this.gCoursesDuration.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
-            this.gCoursesDuration.HeaderText = "Duration";
-            this.gCoursesDuration.MinimumWidth = 250;
-            this.gCoursesDuration.Name = "Duration";
-            this.gCoursesDuration.Width = 250;
+            this.gContactsNameLast.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
+            this.gContactsNameLast.HeaderText = "Last Name";
+            this.gContactsNameLast.MinimumWidth = 150;
+            this.gContactsNameLast.Name = "NameLast";
+            this.gContactsNameLast.Width = 150;
             // 
-            // gCoursesPrice
+            // gContactsCompany
             // 
-            this.gCoursesPrice.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
-            this.gCoursesPrice.HeaderText = "Pricing";
-            this.gCoursesPrice.MinimumWidth = 250;
-            this.gCoursesPrice.Name = "Pricing";
-            this.gCoursesPrice.Width = 250;
+            this.gContactsCompany.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
+            this.gContactsCompany.HeaderText = "Company";
+            this.gContactsCompany.MinimumWidth = 150;
+            this.gContactsCompany.Name = "Company";
+            this.gContactsCompany.Width = 150;
             // 
-            // pCourse
+            // gContactsPhone
             // 
-            this.pCourse.CanvasColor = System.Drawing.SystemColors.Control;
-            this.pCourse.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.pCourse.DisabledBackColor = System.Drawing.Color.Empty;
-            this.pCourse.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pCourse.Location = new System.Drawing.Point(0, 0);
-            this.pCourse.Name = "pCourse";
-            this.pCourse.Size = new System.Drawing.Size(960, 335);
-            this.pCourse.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.pCourse.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.pCourse.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.pCourse.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.pCourse.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.pCourse.Style.GradientAngle = 90;
-            this.pCourse.TabIndex = 8;
+            this.gContactsPhone.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
+            this.gContactsPhone.HeaderText = "Phone";
+            this.gContactsPhone.MinimumWidth = 125;
+            this.gContactsPhone.Name = "Phone";
+            this.gContactsPhone.Width = 125;
+            // 
+            // gContactsEmail
+            // 
+            this.gContactsEmail.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
+            this.gContactsEmail.HeaderText = "E-mail Address";
+            this.gContactsEmail.MinimumWidth = 250;
+            this.gContactsEmail.Name = "Email";
+            this.gContactsEmail.Width = 250;
+            // 
+            // gContactsAddress
+            // 
+            this.gContactsAddress.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
+            this.gContactsAddress.HeaderText = "Address";
+            this.gContactsAddress.MinimumWidth = 250;
+            this.gContactsAddress.Name = "Address";
+            this.gContactsAddress.Width = 250;
+            // 
+            // pContact
+            // 
+            this.pContact.CanvasColor = System.Drawing.SystemColors.Control;
+            this.pContact.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.pContact.Controls.Add(this.lblContactEmail);
+            this.pContact.Controls.Add(this.comboBoxEx1);
+            this.pContact.Controls.Add(this.textBoxX1);
+            this.pContact.Controls.Add(this.labelX1);
+            this.pContact.Controls.Add(this.txtContactNameLast);
+            this.pContact.Controls.Add(this.txtContactNameFirst);
+            this.pContact.Controls.Add(this.txtContactCompany);
+            this.pContact.Controls.Add(this.txtContactEmail);
+            this.pContact.Controls.Add(this.lblContactPhone);
+            this.pContact.Controls.Add(this.txtContactPhone);
+            this.pContact.Controls.Add(this.lblContactName);
+            this.pContact.Controls.Add(this.lblContactCompany);
+            this.pContact.DisabledBackColor = System.Drawing.Color.Empty;
+            this.pContact.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pContact.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pContact.Location = new System.Drawing.Point(0, 0);
+            this.pContact.Name = "pContact";
+            this.pContact.Size = new System.Drawing.Size(960, 335);
+            this.pContact.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.pContact.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.pContact.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.pContact.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.pContact.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.pContact.Style.GradientAngle = 90;
+            this.pContact.TabIndex = 8;
+            // 
+            // comboBoxEx1
+            // 
+            this.comboBoxEx1.DisplayMember = "Text";
+            this.comboBoxEx1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxEx1.ForeColor = System.Drawing.Color.Black;
+            this.comboBoxEx1.FormattingEnabled = true;
+            this.comboBoxEx1.ItemHeight = 19;
+            this.comboBoxEx1.Items.AddRange(new object[] {
+            this.cbxiContactTitleMr,
+            this.cbxiContactTitleMrs,
+            this.cbxiContactTitleMiss,
+            this.cbxiContactTitleMs,
+            this.cbxiContactTitleMaster,
+            this.cbxiContactTitleDr,
+            this.cbxiContactTitleProf,
+            this.cbxiContactTitleOfc});
+            this.comboBoxEx1.Location = new System.Drawing.Point(297, 53);
+            this.comboBoxEx1.Name = "comboBoxEx1";
+            this.comboBoxEx1.Size = new System.Drawing.Size(197, 25);
+            this.comboBoxEx1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.comboBoxEx1.TabIndex = 29;
+            // 
+            // cbxiContactTitleMr
+            // 
+            this.cbxiContactTitleMr.Text = "Mr";
+            this.cbxiContactTitleMr.Value = "mr";
+            // 
+            // cbxiContactTitleMrs
+            // 
+            this.cbxiContactTitleMrs.Text = "Mrs";
+            this.cbxiContactTitleMrs.Value = "mrs";
+            // 
+            // cbxiContactTitleMiss
+            // 
+            this.cbxiContactTitleMiss.Text = "Miss";
+            this.cbxiContactTitleMiss.Value = "miss";
+            // 
+            // cbxiContactTitleMs
+            // 
+            this.cbxiContactTitleMs.Text = "Ms";
+            this.cbxiContactTitleMs.Value = "ms";
+            // 
+            // cbxiContactTitleMaster
+            // 
+            this.cbxiContactTitleMaster.Text = "Master";
+            this.cbxiContactTitleMaster.Value = "master";
+            // 
+            // cbxiContactTitleDr
+            // 
+            this.cbxiContactTitleDr.Text = "Doctor (Dr)";
+            this.cbxiContactTitleDr.Value = "dr";
+            // 
+            // cbxiContactTitleProf
+            // 
+            this.cbxiContactTitleProf.Text = "Professor (Prof)";
+            this.cbxiContactTitleProf.Value = "prof";
+            // 
+            // cbxiContactTitleOfc
+            // 
+            this.cbxiContactTitleOfc.Text = "Office (Ofc)";
+            this.cbxiContactTitleOfc.Value = "ofc";
+            // 
+            // textBoxX1
+            // 
+            this.textBoxX1.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.textBoxX1.Border.Class = "TextBoxBorder";
+            this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.textBoxX1.DisabledBackColor = System.Drawing.Color.White;
+            this.textBoxX1.ForeColor = System.Drawing.Color.Black;
+            this.textBoxX1.Location = new System.Drawing.Point(149, 53);
+            this.textBoxX1.Name = "textBoxX1";
+            this.textBoxX1.PreventEnterBeep = true;
+            this.textBoxX1.Size = new System.Drawing.Size(142, 25);
+            this.textBoxX1.TabIndex = 28;
+            // 
+            // labelX1
+            // 
+            this.labelX1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX1.ForeColor = System.Drawing.Color.Black;
+            this.labelX1.Location = new System.Drawing.Point(23, 53);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(120, 23);
+            this.labelX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.labelX1.TabIndex = 27;
+            this.labelX1.Text = "Name Title:";
+            // 
+            // txtContactNameLast
+            // 
+            this.txtContactNameLast.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtContactNameLast.Border.Class = "TextBoxBorder";
+            this.txtContactNameLast.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtContactNameLast.DisabledBackColor = System.Drawing.Color.White;
+            this.txtContactNameLast.ForeColor = System.Drawing.Color.Black;
+            this.txtContactNameLast.Location = new System.Drawing.Point(297, 84);
+            this.txtContactNameLast.Name = "txtContactNameLast";
+            this.txtContactNameLast.PreventEnterBeep = true;
+            this.txtContactNameLast.Size = new System.Drawing.Size(197, 25);
+            this.txtContactNameLast.TabIndex = 26;
+            // 
+            // txtContactNameFirst
+            // 
+            this.txtContactNameFirst.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtContactNameFirst.Border.Class = "TextBoxBorder";
+            this.txtContactNameFirst.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtContactNameFirst.DisabledBackColor = System.Drawing.Color.White;
+            this.txtContactNameFirst.ForeColor = System.Drawing.Color.Black;
+            this.txtContactNameFirst.Location = new System.Drawing.Point(149, 84);
+            this.txtContactNameFirst.Name = "txtContactNameFirst";
+            this.txtContactNameFirst.PreventEnterBeep = true;
+            this.txtContactNameFirst.Size = new System.Drawing.Size(142, 25);
+            this.txtContactNameFirst.TabIndex = 25;
+            // 
+            // txtContactCompany
+            // 
+            this.txtContactCompany.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtContactCompany.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtContactCompany.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtContactCompany.Border.Class = "TextBoxBorder";
+            this.txtContactCompany.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtContactCompany.DisabledBackColor = System.Drawing.Color.White;
+            this.txtContactCompany.ForeColor = System.Drawing.Color.Black;
+            this.txtContactCompany.Location = new System.Drawing.Point(149, 22);
+            this.txtContactCompany.Name = "txtContactCompany";
+            this.txtContactCompany.PreventEnterBeep = true;
+            this.txtContactCompany.Size = new System.Drawing.Size(345, 25);
+            this.txtContactCompany.TabIndex = 24;
+            // 
+            // txtContactEmail
+            // 
+            this.txtContactEmail.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtContactEmail.Border.Class = "TextBoxBorder";
+            this.txtContactEmail.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtContactEmail.DisabledBackColor = System.Drawing.Color.White;
+            this.txtContactEmail.ForeColor = System.Drawing.Color.Black;
+            this.txtContactEmail.Location = new System.Drawing.Point(149, 146);
+            this.txtContactEmail.Name = "txtContactEmail";
+            this.txtContactEmail.PreventEnterBeep = true;
+            this.txtContactEmail.Size = new System.Drawing.Size(345, 25);
+            this.txtContactEmail.TabIndex = 21;
+            // 
+            // lblContactPhone
+            // 
+            this.lblContactPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.lblContactPhone.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblContactPhone.ForeColor = System.Drawing.Color.Black;
+            this.lblContactPhone.Location = new System.Drawing.Point(23, 115);
+            this.lblContactPhone.Name = "lblContactPhone";
+            this.lblContactPhone.Size = new System.Drawing.Size(120, 23);
+            this.lblContactPhone.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblContactPhone.TabIndex = 20;
+            this.lblContactPhone.Text = "Phone Number:";
+            // 
+            // txtContactPhone
+            // 
+            this.txtContactPhone.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtContactPhone.Border.Class = "TextBoxBorder";
+            this.txtContactPhone.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtContactPhone.DisabledBackColor = System.Drawing.Color.White;
+            this.txtContactPhone.ForeColor = System.Drawing.Color.Black;
+            this.txtContactPhone.Location = new System.Drawing.Point(149, 115);
+            this.txtContactPhone.Name = "txtContactPhone";
+            this.txtContactPhone.PreventEnterBeep = true;
+            this.txtContactPhone.Size = new System.Drawing.Size(142, 25);
+            this.txtContactPhone.TabIndex = 19;
+            // 
+            // lblContactName
+            // 
+            this.lblContactName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.lblContactName.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblContactName.ForeColor = System.Drawing.Color.Black;
+            this.lblContactName.Location = new System.Drawing.Point(23, 84);
+            this.lblContactName.Name = "lblContactName";
+            this.lblContactName.Size = new System.Drawing.Size(120, 23);
+            this.lblContactName.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblContactName.TabIndex = 18;
+            this.lblContactName.Text = "Name First/Last:";
+            // 
+            // lblContactCompany
+            // 
+            this.lblContactCompany.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.lblContactCompany.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblContactCompany.ForeColor = System.Drawing.Color.Black;
+            this.lblContactCompany.Location = new System.Drawing.Point(23, 22);
+            this.lblContactCompany.Name = "lblContactCompany";
+            this.lblContactCompany.Size = new System.Drawing.Size(120, 23);
+            this.lblContactCompany.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblContactCompany.TabIndex = 17;
+            this.lblContactCompany.Text = "Company:";
             // 
             // ab
             // 
@@ -1923,7 +2224,6 @@
             // 
             // mtBookings
             // 
-            this.mtBookings.Checked = true;
             this.mtBookings.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtBookings.Name = "mtBookings";
             this.mtBookings.Panel = this.pBookings;
@@ -1960,6 +2260,7 @@
             // mtContacts
             // 
             this.mtContacts.CanCustomize = false;
+            this.mtContacts.Checked = true;
             this.mtContacts.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtContacts.ItemAlignment = DevComponents.DotNetBar.eItemAlignment.Far;
             this.mtContacts.Name = "mtContacts";
@@ -2068,6 +2369,116 @@
             this.mBookingsListComplete.Text = "Mark as complete";
             this.mBookingsListComplete.Click += new System.EventHandler(this.mBookingsListComplete_Click);
             // 
+            // mContacts
+            // 
+            this.mContacts.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mContactsAdd,
+            this.mContactsRemove});
+            this.mContacts.Name = "mContacts";
+            this.mContacts.Size = new System.Drawing.Size(161, 48);
+            // 
+            // mContactsAdd
+            // 
+            this.mContactsAdd.Name = "mContactsAdd";
+            this.mContactsAdd.Size = new System.Drawing.Size(160, 22);
+            this.mContactsAdd.Text = "Add contact";
+            this.mContactsAdd.Click += new System.EventHandler(this.mContactsAdd_Click);
+            // 
+            // mContactsRemove
+            // 
+            this.mContactsRemove.Name = "mContactsRemove";
+            this.mContactsRemove.Size = new System.Drawing.Size(160, 22);
+            this.mContactsRemove.Text = "Remove contact";
+            this.mContactsRemove.Click += new System.EventHandler(this.mContactsRemove_Click);
+            // 
+            // mEnquiries
+            // 
+            this.mEnquiries.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mEnquiriesAdd,
+            this.mEnquiriesRemove,
+            this.mEnquiriesS1,
+            this.mEnquiriesBooking});
+            this.mEnquiries.Name = "mContacts";
+            this.mEnquiries.Size = new System.Drawing.Size(165, 76);
+            // 
+            // mEnquiriesAdd
+            // 
+            this.mEnquiriesAdd.Name = "mEnquiriesAdd";
+            this.mEnquiriesAdd.Size = new System.Drawing.Size(164, 22);
+            this.mEnquiriesAdd.Text = "Add enquiry";
+            // 
+            // mEnquiriesRemove
+            // 
+            this.mEnquiriesRemove.Name = "mEnquiriesRemove";
+            this.mEnquiriesRemove.Size = new System.Drawing.Size(164, 22);
+            this.mEnquiriesRemove.Text = "Remove enquiry";
+            // 
+            // mCourses
+            // 
+            this.mCourses.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mCoursesAdd,
+            this.mCoursesRemove});
+            this.mCourses.Name = "mContacts";
+            this.mCourses.Size = new System.Drawing.Size(156, 48);
+            // 
+            // mCoursesAdd
+            // 
+            this.mCoursesAdd.Name = "mCoursesAdd";
+            this.mCoursesAdd.Size = new System.Drawing.Size(155, 22);
+            this.mCoursesAdd.Text = "Add course";
+            // 
+            // mCoursesRemove
+            // 
+            this.mCoursesRemove.Name = "mCoursesRemove";
+            this.mCoursesRemove.Size = new System.Drawing.Size(155, 22);
+            this.mCoursesRemove.Text = "Remove course";
+            // 
+            // mCompanies
+            // 
+            this.mCompanies.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mCompaniesAdd,
+            this.mCompaniesRemove});
+            this.mCompanies.Name = "mContacts";
+            this.mCompanies.Size = new System.Drawing.Size(171, 48);
+            // 
+            // mCompaniesAdd
+            // 
+            this.mCompaniesAdd.Name = "mCompaniesAdd";
+            this.mCompaniesAdd.Size = new System.Drawing.Size(170, 22);
+            this.mCompaniesAdd.Text = "Add company";
+            // 
+            // mCompaniesRemove
+            // 
+            this.mCompaniesRemove.Name = "mCompaniesRemove";
+            this.mCompaniesRemove.Size = new System.Drawing.Size(170, 22);
+            this.mCompaniesRemove.Text = "Remove company";
+            // 
+            // mEnquiriesS1
+            // 
+            this.mEnquiriesS1.Name = "mEnquiriesS1";
+            this.mEnquiriesS1.Size = new System.Drawing.Size(161, 6);
+            // 
+            // mEnquiriesBooking
+            // 
+            this.mEnquiriesBooking.Name = "mEnquiriesBooking";
+            this.mEnquiriesBooking.Size = new System.Drawing.Size(164, 22);
+            this.mEnquiriesBooking.Text = "Create booking...";
+            // 
+            // lblContactEmail
+            // 
+            this.lblContactEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.lblContactEmail.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblContactEmail.ForeColor = System.Drawing.Color.Black;
+            this.lblContactEmail.Location = new System.Drawing.Point(23, 146);
+            this.lblContactEmail.Name = "lblContactEmail";
+            this.lblContactEmail.Size = new System.Drawing.Size(120, 23);
+            this.lblContactEmail.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblContactEmail.TabIndex = 30;
+            this.lblContactEmail.Text = "Phone Number:";
+            // 
             // frmMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -2084,14 +2495,6 @@
             this.Shown += new System.EventHandler(this.frmMain_Shown);
             this.ms.ResumeLayout(false);
             this.ms.PerformLayout();
-            this.pEnquiries.ResumeLayout(false);
-            this.scEnquiries.Panel1.ResumeLayout(false);
-            this.scEnquiries.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.scEnquiries)).EndInit();
-            this.scEnquiries.ResumeLayout(false);
-            this.pEnquiriesGrid.ResumeLayout(false);
-            this.pEnquiriesGridTools.ResumeLayout(false);
-            this.pEnquiriesGridTools.PerformLayout();
             this.pBookings.ResumeLayout(false);
             this.pBookingsList.ResumeLayout(false);
             this.pBookingsListTools.ResumeLayout(false);
@@ -2107,25 +2510,38 @@
             this.pBookingsCalendarTools.ResumeLayout(false);
             this.pBookingsCalendarTools.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nbBookings)).EndInit();
-            this.pContacts.ResumeLayout(false);
-            this.scContacts.Panel1.ResumeLayout(false);
-            this.scContacts.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.scContacts)).EndInit();
-            this.scContacts.ResumeLayout(false);
-            this.pCompanies.ResumeLayout(false);
-            this.scCompanies.Panel1.ResumeLayout(false);
-            this.scCompanies.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.scCompanies)).EndInit();
-            this.scCompanies.ResumeLayout(false);
+            this.pEnquiries.ResumeLayout(false);
+            this.scEnquiries.Panel1.ResumeLayout(false);
+            this.scEnquiries.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.scEnquiries)).EndInit();
+            this.scEnquiries.ResumeLayout(false);
+            this.pEnquiriesGrid.ResumeLayout(false);
+            this.pEnquiriesGridTools.ResumeLayout(false);
+            this.pEnquiriesGridTools.PerformLayout();
             this.pCourses.ResumeLayout(false);
             this.scCourses.Panel1.ResumeLayout(false);
             this.scCourses.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.scCourses)).EndInit();
             this.scCourses.ResumeLayout(false);
+            this.pCompanies.ResumeLayout(false);
+            this.scCompanies.Panel1.ResumeLayout(false);
+            this.scCompanies.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.scCompanies)).EndInit();
+            this.scCompanies.ResumeLayout(false);
+            this.pContacts.ResumeLayout(false);
+            this.scContacts.Panel1.ResumeLayout(false);
+            this.scContacts.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.scContacts)).EndInit();
+            this.scContacts.ResumeLayout(false);
+            this.pContact.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bsv)).EndInit();
             this.bsv.ResumeLayout(false);
             this.mTools.ResumeLayout(false);
             this.mBookingsList.ResumeLayout(false);
+            this.mContacts.ResumeLayout(false);
+            this.mEnquiries.ResumeLayout(false);
+            this.mCourses.ResumeLayout(false);
+            this.mCompanies.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2251,7 +2667,6 @@
         private DevComponents.DotNetBar.SuperGrid.GridColumn gEnquiriesChk;
         private DevComponents.DotNetBar.SuperGrid.SuperGridControl gEnquiries;
         private DevComponents.DotNetBar.LabelX lblEnquiriesCompany;
-        private System.Windows.Forms.ComboBox cbxEnquiriesCompany;
         private DevComponents.DotNetBar.LabelX lblGridEnquiries;
         private DevComponents.DotNetBar.PanelEx pEnquiriesGridTools;
         private DevComponents.DotNetBar.PanelEx pEnquiriesGrid;
@@ -2277,5 +2692,41 @@
         private DevComponents.DotNetBar.PanelEx pCourse;
         private DevComponents.DotNetBar.PanelEx pCompany;
         private DevComponents.DotNetBar.PanelEx pContact;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtContactNameFirst;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtContactCompany;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtContactEmail;
+        private DevComponents.DotNetBar.LabelX lblContactPhone;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtContactPhone;
+        private DevComponents.DotNetBar.LabelX lblContactName;
+        private DevComponents.DotNetBar.LabelX lblContactCompany;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtContactNameLast;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx comboBoxEx1;
+        private DevComponents.Editors.ComboItem cbxiContactTitleMr;
+        private DevComponents.Editors.ComboItem cbxiContactTitleMrs;
+        private DevComponents.Editors.ComboItem cbxiContactTitleMiss;
+        private DevComponents.Editors.ComboItem cbxiContactTitleMs;
+        private DevComponents.Editors.ComboItem cbxiContactTitleMaster;
+        private DevComponents.Editors.ComboItem cbxiContactTitleDr;
+        private DevComponents.Editors.ComboItem cbxiContactTitleProf;
+        private DevComponents.Editors.ComboItem cbxiContactTitleOfc;
+        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
+        private DevComponents.DotNetBar.LabelX labelX1;
+        private System.Windows.Forms.ContextMenuStrip mContacts;
+        private System.Windows.Forms.ToolStripMenuItem mContactsAdd;
+        private System.Windows.Forms.ToolStripMenuItem mContactsRemove;
+        private DevComponents.DotNetBar.ButtonX btnEnquiriesListCompany;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtEnquiriesListCompany;
+        private System.Windows.Forms.ContextMenuStrip mEnquiries;
+        private System.Windows.Forms.ToolStripMenuItem mEnquiriesAdd;
+        private System.Windows.Forms.ToolStripMenuItem mEnquiriesRemove;
+        private System.Windows.Forms.ToolStripSeparator mEnquiriesS1;
+        private System.Windows.Forms.ToolStripMenuItem mEnquiriesBooking;
+        private System.Windows.Forms.ContextMenuStrip mCourses;
+        private System.Windows.Forms.ToolStripMenuItem mCoursesAdd;
+        private System.Windows.Forms.ToolStripMenuItem mCoursesRemove;
+        private System.Windows.Forms.ContextMenuStrip mCompanies;
+        private System.Windows.Forms.ToolStripMenuItem mCompaniesAdd;
+        private System.Windows.Forms.ToolStripMenuItem mCompaniesRemove;
+        private DevComponents.DotNetBar.LabelX lblContactEmail;
     }
 }
