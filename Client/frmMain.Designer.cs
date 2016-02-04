@@ -31,42 +31,68 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.ms = new DevComponents.DotNetBar.Metro.MetroShell();
-            this.pCompanies = new DevComponents.DotNetBar.Metro.MetroTabPanel();
-            this.scCompanies = new DevComponents.DotNetBar.Controls.CollapsibleSplitContainer();
-            this.gCompanies = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
-            this.gCompaniesChk = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gCompaniesID = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gCompaniesName = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gCompaniesContact = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gCompaniesPhone = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gCompaniesEmail = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gCompaniesAddress = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gCompaniesReg = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gCompaniesVat = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.pCompany = new DevComponents.DotNetBar.PanelEx();
-            this.btnCompanyCancel = new DevComponents.DotNetBar.ButtonX();
-            this.btnCompanySave = new DevComponents.DotNetBar.ButtonX();
-            this.scCompany = new DevComponents.DotNetBar.SuperTabControl();
-            this.superTabControlPanel4 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.lblCompanyContact = new DevComponents.DotNetBar.LabelX();
-            this.txtCompanyContact = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtCompanyAddress = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.lblCompanyAddress = new DevComponents.DotNetBar.LabelX();
-            this.lblCompanyEmail = new DevComponents.DotNetBar.LabelX();
-            this.txtCompanyTrading = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.lblCompanyTrading = new DevComponents.DotNetBar.LabelX();
-            this.txtCompanyRegVat = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtCompanyReg = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtCompanyName = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtCompanyEmail = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.lblCompanyPhone = new DevComponents.DotNetBar.LabelX();
-            this.txtCompanyPhone = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.lblCompanyReg = new DevComponents.DotNetBar.LabelX();
-            this.lblCompanyName = new DevComponents.DotNetBar.LabelX();
-            this.tiCompanyGeneral = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabControlPanel6 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.txtCompanyNotes = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.tiCompanyNotes = new DevComponents.DotNetBar.SuperTabItem();
+            this.pBookings = new DevComponents.DotNetBar.Metro.MetroTabPanel();
+            this.pBookingsList = new DevComponents.DotNetBar.PanelEx();
+            this.pBookingsListTools = new DevComponents.DotNetBar.PanelEx();
+            this.btnListCompanyReset = new DevComponents.DotNetBar.ButtonX();
+            this.txtListCompany = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.lblListBookings = new DevComponents.DotNetBar.LabelX();
+            this.lblBookingsListCompany = new DevComponents.DotNetBar.LabelX();
+            this.nbBookingsList = new DevComponents.DotNetBar.NavigationBar();
+            this.biBookingsListDay = new DevComponents.DotNetBar.ButtonItem();
+            this.biBookingsListWeek = new DevComponents.DotNetBar.ButtonItem();
+            this.biBookingsListMonth = new DevComponents.DotNetBar.ButtonItem();
+            this.biBookingsListYear = new DevComponents.DotNetBar.ButtonItem();
+            this.biBookingsListGrid = new DevComponents.DotNetBar.ButtonItem();
+            this.biBookingsList = new DevComponents.DotNetBar.ButtonItem();
+            this.gBookings = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+            this.mBookings = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mBookingsAdd = new System.Windows.Forms.ToolStripMenuItem();
+            this.mBookingsRemove = new System.Windows.Forms.ToolStripMenuItem();
+            this.mBookingsS1 = new System.Windows.Forms.ToolStripSeparator();
+            this.mBookingsComplete = new System.Windows.Forms.ToolStripMenuItem();
+            this.gBookingsChk = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gBookingsJob = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gBookingsDates = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gBookingsStart = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gBookingsFinish = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gBookingsName = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gBookingsRooms = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gBookingsCompany = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gBookingsPhone = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gBookingsEmail = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gBookingsRoomLayout = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.pBookingsGrid = new DevComponents.DotNetBar.PanelEx();
+            this.rgBookings = new unvell.ReoGrid.ReoGridControl();
+            this.mBookingsGrid = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mBookingsGridAdd = new System.Windows.Forms.ToolStripMenuItem();
+            this.mBookingsGridRemove = new System.Windows.Forms.ToolStripMenuItem();
+            this.mBookingsGridS1 = new System.Windows.Forms.ToolStripSeparator();
+            this.mBookingsGridComplete = new System.Windows.Forms.ToolStripMenuItem();
+            this.pBookingsGridTools = new DevComponents.DotNetBar.PanelEx();
+            this.btnGridCompanyReset = new DevComponents.DotNetBar.ButtonX();
+            this.txtGridCompany = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.lblGridBookings = new DevComponents.DotNetBar.LabelX();
+            this.lblBookingsGridCompany = new DevComponents.DotNetBar.LabelX();
+            this.nbBookingsGrid = new DevComponents.DotNetBar.NavigationBar();
+            this.biBookingsGridDay = new DevComponents.DotNetBar.ButtonItem();
+            this.biBookingsGridWeek = new DevComponents.DotNetBar.ButtonItem();
+            this.biBookingsGridMonth = new DevComponents.DotNetBar.ButtonItem();
+            this.biBookingsGridYear = new DevComponents.DotNetBar.ButtonItem();
+            this.biBookingsGrid = new DevComponents.DotNetBar.ButtonItem();
+            this.biBookingsGridList = new DevComponents.DotNetBar.ButtonItem();
+            this.pBookingsCalendar = new DevComponents.DotNetBar.PanelEx();
+            this.pBookingsCalendarTools = new DevComponents.DotNetBar.PanelEx();
+            this.lblCalendarBookings = new DevComponents.DotNetBar.LabelX();
+            this.nbBookings = new DevComponents.DotNetBar.NavigationBar();
+            this.biBookingsViewDay = new DevComponents.DotNetBar.ButtonItem();
+            this.biBookingsViewWeek = new DevComponents.DotNetBar.ButtonItem();
+            this.biBookingsViewMonth = new DevComponents.DotNetBar.ButtonItem();
+            this.biBookingsViewYear = new DevComponents.DotNetBar.ButtonItem();
+            this.biBookingsViewGrid = new DevComponents.DotNetBar.ButtonItem();
+            this.biBookingsViewList = new DevComponents.DotNetBar.ButtonItem();
+            this.dnBookings = new DevComponents.DotNetBar.Schedule.DateNavigator();
+            this.cvBookings = new DevComponents.DotNetBar.Schedule.CalendarView();
             this.pEnquiries = new DevComponents.DotNetBar.Metro.MetroTabPanel();
             this.scEnquiries = new DevComponents.DotNetBar.Controls.CollapsibleSplitContainer();
             this.pEnquiriesGrid = new DevComponents.DotNetBar.PanelEx();
@@ -129,6 +155,42 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblEnquiryCourses = new DevComponents.DotNetBar.LabelX();
             this.tiEnquiryInfo = new DevComponents.DotNetBar.SuperTabItem();
+            this.pCompanies = new DevComponents.DotNetBar.Metro.MetroTabPanel();
+            this.scCompanies = new DevComponents.DotNetBar.Controls.CollapsibleSplitContainer();
+            this.gCompanies = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+            this.gCompaniesChk = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gCompaniesID = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gCompaniesName = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gCompaniesContact = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gCompaniesPhone = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gCompaniesEmail = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gCompaniesAddress = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gCompaniesReg = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gCompaniesVat = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.pCompany = new DevComponents.DotNetBar.PanelEx();
+            this.btnCompanyCancel = new DevComponents.DotNetBar.ButtonX();
+            this.btnCompanySave = new DevComponents.DotNetBar.ButtonX();
+            this.scCompany = new DevComponents.DotNetBar.SuperTabControl();
+            this.superTabControlPanel4 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.lblCompanyContact = new DevComponents.DotNetBar.LabelX();
+            this.txtCompanyContact = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtCompanyAddress = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.lblCompanyAddress = new DevComponents.DotNetBar.LabelX();
+            this.lblCompanyEmail = new DevComponents.DotNetBar.LabelX();
+            this.txtCompanyTrading = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.lblCompanyTrading = new DevComponents.DotNetBar.LabelX();
+            this.txtCompanyRegVat = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtCompanyReg = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtCompanyName = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtCompanyEmail = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.lblCompanyPhone = new DevComponents.DotNetBar.LabelX();
+            this.txtCompanyPhone = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.lblCompanyReg = new DevComponents.DotNetBar.LabelX();
+            this.lblCompanyName = new DevComponents.DotNetBar.LabelX();
+            this.tiCompanyGeneral = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabControlPanel6 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.txtCompanyNotes = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tiCompanyNotes = new DevComponents.DotNetBar.SuperTabItem();
             this.pCourses = new DevComponents.DotNetBar.Metro.MetroTabPanel();
             this.scCourses = new DevComponents.DotNetBar.Controls.CollapsibleSplitContainer();
             this.gCourses = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
@@ -213,68 +275,6 @@
             this.superTabControlPanel2 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.txtContactNotes = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tiContactNotes = new DevComponents.DotNetBar.SuperTabItem();
-            this.pBookings = new DevComponents.DotNetBar.Metro.MetroTabPanel();
-            this.pBookingsList = new DevComponents.DotNetBar.PanelEx();
-            this.pBookingsListTools = new DevComponents.DotNetBar.PanelEx();
-            this.btnListCompanyReset = new DevComponents.DotNetBar.ButtonX();
-            this.txtListCompany = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.lblListBookings = new DevComponents.DotNetBar.LabelX();
-            this.lblBookingsListCompany = new DevComponents.DotNetBar.LabelX();
-            this.nbBookingsList = new DevComponents.DotNetBar.NavigationBar();
-            this.biBookingsListDay = new DevComponents.DotNetBar.ButtonItem();
-            this.biBookingsListWeek = new DevComponents.DotNetBar.ButtonItem();
-            this.biBookingsListMonth = new DevComponents.DotNetBar.ButtonItem();
-            this.biBookingsListYear = new DevComponents.DotNetBar.ButtonItem();
-            this.biBookingsListGrid = new DevComponents.DotNetBar.ButtonItem();
-            this.biBookingsList = new DevComponents.DotNetBar.ButtonItem();
-            this.gBookings = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
-            this.mBookings = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.mBookingsAdd = new System.Windows.Forms.ToolStripMenuItem();
-            this.mBookingsRemove = new System.Windows.Forms.ToolStripMenuItem();
-            this.mBookingsS1 = new System.Windows.Forms.ToolStripSeparator();
-            this.mBookingsComplete = new System.Windows.Forms.ToolStripMenuItem();
-            this.gBookingsChk = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gBookingsJob = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gBookingsDates = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gBookingsStart = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gBookingsFinish = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gBookingsName = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gBookingsRooms = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gBookingsCompany = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gBookingsPhone = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gBookingsEmail = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gBookingsRoomLayout = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.pBookingsGrid = new DevComponents.DotNetBar.PanelEx();
-            this.rgBookings = new unvell.ReoGrid.ReoGridControl();
-            this.mBookingsGrid = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.mBookingsGridAdd = new System.Windows.Forms.ToolStripMenuItem();
-            this.mBookingsGridRemove = new System.Windows.Forms.ToolStripMenuItem();
-            this.mBookingsGridS1 = new System.Windows.Forms.ToolStripSeparator();
-            this.mBookingsGridComplete = new System.Windows.Forms.ToolStripMenuItem();
-            this.pBookingsGridTools = new DevComponents.DotNetBar.PanelEx();
-            this.btnGridCompanyReset = new DevComponents.DotNetBar.ButtonX();
-            this.txtGridCompany = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.lblGridBookings = new DevComponents.DotNetBar.LabelX();
-            this.lblBookingsGridCompany = new DevComponents.DotNetBar.LabelX();
-            this.nbBookingsGrid = new DevComponents.DotNetBar.NavigationBar();
-            this.biBookingsGridDay = new DevComponents.DotNetBar.ButtonItem();
-            this.biBookingsGridWeek = new DevComponents.DotNetBar.ButtonItem();
-            this.biBookingsGridMonth = new DevComponents.DotNetBar.ButtonItem();
-            this.biBookingsGridYear = new DevComponents.DotNetBar.ButtonItem();
-            this.biBookingsGrid = new DevComponents.DotNetBar.ButtonItem();
-            this.biBookingsGridList = new DevComponents.DotNetBar.ButtonItem();
-            this.pBookingsCalendar = new DevComponents.DotNetBar.PanelEx();
-            this.pBookingsCalendarTools = new DevComponents.DotNetBar.PanelEx();
-            this.lblCalendarBookings = new DevComponents.DotNetBar.LabelX();
-            this.nbBookings = new DevComponents.DotNetBar.NavigationBar();
-            this.biBookingsViewDay = new DevComponents.DotNetBar.ButtonItem();
-            this.biBookingsViewWeek = new DevComponents.DotNetBar.ButtonItem();
-            this.biBookingsViewMonth = new DevComponents.DotNetBar.ButtonItem();
-            this.biBookingsViewYear = new DevComponents.DotNetBar.ButtonItem();
-            this.biBookingsViewGrid = new DevComponents.DotNetBar.ButtonItem();
-            this.biBookingsViewList = new DevComponents.DotNetBar.ButtonItem();
-            this.dnBookings = new DevComponents.DotNetBar.Schedule.DateNavigator();
-            this.cvBookings = new DevComponents.DotNetBar.Schedule.CalendarView();
             this.ab = new DevComponents.DotNetBar.Metro.MetroAppButton();
             this.bsv = new DevComponents.DotNetBar.SuperTabControl();
             this.bsvTpPrint = new DevComponents.DotNetBar.SuperTabControlPanel();
@@ -316,16 +316,18 @@
             this.mCompaniesAdd = new System.Windows.Forms.ToolStripMenuItem();
             this.mCompaniesRemove = new System.Windows.Forms.ToolStripMenuItem();
             this.ms.SuspendLayout();
-            this.pCompanies.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.scCompanies)).BeginInit();
-            this.scCompanies.Panel1.SuspendLayout();
-            this.scCompanies.Panel2.SuspendLayout();
-            this.scCompanies.SuspendLayout();
-            this.pCompany.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.scCompany)).BeginInit();
-            this.scCompany.SuspendLayout();
-            this.superTabControlPanel4.SuspendLayout();
-            this.superTabControlPanel6.SuspendLayout();
+            this.pBookings.SuspendLayout();
+            this.pBookingsList.SuspendLayout();
+            this.pBookingsListTools.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nbBookingsList)).BeginInit();
+            this.mBookings.SuspendLayout();
+            this.pBookingsGrid.SuspendLayout();
+            this.mBookingsGrid.SuspendLayout();
+            this.pBookingsGridTools.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nbBookingsGrid)).BeginInit();
+            this.pBookingsCalendar.SuspendLayout();
+            this.pBookingsCalendarTools.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nbBookings)).BeginInit();
             this.pEnquiries.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scEnquiries)).BeginInit();
             this.scEnquiries.Panel1.SuspendLayout();
@@ -339,6 +341,16 @@
             this.superTabControlPanel8.SuspendLayout();
             this.superTabControlPanel10.SuspendLayout();
             this.superTabControlPanel5.SuspendLayout();
+            this.pCompanies.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.scCompanies)).BeginInit();
+            this.scCompanies.Panel1.SuspendLayout();
+            this.scCompanies.Panel2.SuspendLayout();
+            this.scCompanies.SuspendLayout();
+            this.pCompany.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.scCompany)).BeginInit();
+            this.scCompany.SuspendLayout();
+            this.superTabControlPanel4.SuspendLayout();
+            this.superTabControlPanel6.SuspendLayout();
             this.pCourses.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scCourses)).BeginInit();
             this.scCourses.Panel1.SuspendLayout();
@@ -360,18 +372,6 @@
             this.superTabControlPanel1.SuspendLayout();
             this.superTabControlPanel3.SuspendLayout();
             this.superTabControlPanel2.SuspendLayout();
-            this.pBookings.SuspendLayout();
-            this.pBookingsList.SuspendLayout();
-            this.pBookingsListTools.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nbBookingsList)).BeginInit();
-            this.mBookings.SuspendLayout();
-            this.pBookingsGrid.SuspendLayout();
-            this.mBookingsGrid.SuspendLayout();
-            this.pBookingsGridTools.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nbBookingsGrid)).BeginInit();
-            this.pBookingsCalendar.SuspendLayout();
-            this.pBookingsCalendarTools.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nbBookings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsv)).BeginInit();
             this.bsv.SuspendLayout();
             this.mTools.SuspendLayout();
@@ -395,11 +395,11 @@
             this.ms.CanCustomize = false;
             this.ms.CaptionFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ms.CaptionVisible = true;
-            this.ms.Controls.Add(this.pCompanies);
+            this.ms.Controls.Add(this.pBookings);
             this.ms.Controls.Add(this.pEnquiries);
+            this.ms.Controls.Add(this.pCompanies);
             this.ms.Controls.Add(this.pCourses);
             this.ms.Controls.Add(this.pContacts);
-            this.ms.Controls.Add(this.pBookings);
             this.ms.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ms.ForeColor = System.Drawing.Color.Black;
             this.ms.HelpButtonText = "Help";
@@ -439,554 +439,801 @@
             this.ms.TabStripFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ms.SelectedTabChanged += new System.EventHandler(this.ms_SelectedTabChanged);
             // 
-            // pCompanies
+            // pBookings
             // 
-            this.pCompanies.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.pCompanies.Controls.Add(this.scCompanies);
-            this.pCompanies.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pCompanies.Location = new System.Drawing.Point(0, 61);
-            this.pCompanies.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pCompanies.Name = "pCompanies";
-            this.pCompanies.Padding = new System.Windows.Forms.Padding(3, 0, 3, 4);
-            this.pCompanies.Size = new System.Drawing.Size(960, 535);
-            // 
-            // 
-            // 
-            this.pCompanies.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.pBookings.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.pBookings.Controls.Add(this.pBookingsList);
+            this.pBookings.Controls.Add(this.pBookingsGrid);
+            this.pBookings.Controls.Add(this.pBookingsCalendar);
+            this.pBookings.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pBookings.Location = new System.Drawing.Point(0, 61);
+            this.pBookings.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pBookings.Name = "pBookings";
+            this.pBookings.Padding = new System.Windows.Forms.Padding(3, 0, 3, 4);
+            this.pBookings.Size = new System.Drawing.Size(960, 535);
             // 
             // 
             // 
-            this.pCompanies.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.pBookings.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.pCompanies.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.pCompanies.TabIndex = 3;
+            this.pBookings.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
-            // scCompanies
             // 
-            this.scCompanies.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            // 
+            this.pBookings.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.pBookings.TabIndex = 1;
+            // 
+            // pBookingsList
+            // 
+            this.pBookingsList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.scCompanies.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.scCompanies.ButtonPosition = DevComponents.DotNetBar.Controls.eSplitterButtonPosition.Center;
-            this.scCompanies.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.scCompanies.ForeColor = System.Drawing.Color.Black;
-            this.scCompanies.IsSplitterFixed = true;
-            this.scCompanies.Location = new System.Drawing.Point(0, 0);
-            this.scCompanies.Name = "scCompanies";
-            this.scCompanies.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.pBookingsList.CanvasColor = System.Drawing.SystemColors.Control;
+            this.pBookingsList.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.pBookingsList.Controls.Add(this.pBookingsListTools);
+            this.pBookingsList.Controls.Add(this.gBookings);
+            this.pBookingsList.DisabledBackColor = System.Drawing.Color.Empty;
+            this.pBookingsList.Location = new System.Drawing.Point(37, 356);
+            this.pBookingsList.Name = "pBookingsList";
+            this.pBookingsList.Size = new System.Drawing.Size(880, 172);
+            this.pBookingsList.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.pBookingsList.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.pBookingsList.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.pBookingsList.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.pBookingsList.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.pBookingsList.Style.GradientAngle = 90;
+            this.pBookingsList.TabIndex = 11;
+            this.pBookingsList.Visible = false;
             // 
-            // scCompanies.Panel1
+            // pBookingsListTools
             // 
-            this.scCompanies.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.scCompanies.Panel1.Controls.Add(this.gCompanies);
-            this.scCompanies.Panel1.ForeColor = System.Drawing.Color.Black;
+            this.pBookingsListTools.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pBookingsListTools.CanvasColor = System.Drawing.SystemColors.Control;
+            this.pBookingsListTools.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.pBookingsListTools.Controls.Add(this.btnListCompanyReset);
+            this.pBookingsListTools.Controls.Add(this.txtListCompany);
+            this.pBookingsListTools.Controls.Add(this.lblListBookings);
+            this.pBookingsListTools.Controls.Add(this.lblBookingsListCompany);
+            this.pBookingsListTools.Controls.Add(this.nbBookingsList);
+            this.pBookingsListTools.DisabledBackColor = System.Drawing.Color.Empty;
+            this.pBookingsListTools.Location = new System.Drawing.Point(0, 0);
+            this.pBookingsListTools.Name = "pBookingsListTools";
+            this.pBookingsListTools.Size = new System.Drawing.Size(880, 35);
+            this.pBookingsListTools.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.pBookingsListTools.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.pBookingsListTools.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.pBookingsListTools.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.pBookingsListTools.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.pBookingsListTools.Style.GradientAngle = 90;
+            this.pBookingsListTools.TabIndex = 4;
             // 
-            // scCompanies.Panel2
+            // btnListCompanyReset
             // 
-            this.scCompanies.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.scCompanies.Panel2.Controls.Add(this.pCompany);
-            this.scCompanies.Panel2.ForeColor = System.Drawing.Color.Black;
-            this.scCompanies.Size = new System.Drawing.Size(960, 535);
-            this.scCompanies.SplitterDistance = 180;
-            this.scCompanies.SplitterWidth = 20;
-            this.scCompanies.TabIndex = 0;
+            this.btnListCompanyReset.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnListCompanyReset.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnListCompanyReset.Location = new System.Drawing.Point(312, 5);
+            this.btnListCompanyReset.Name = "btnListCompanyReset";
+            this.btnListCompanyReset.Size = new System.Drawing.Size(25, 25);
+            this.btnListCompanyReset.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnListCompanyReset.TabIndex = 28;
+            this.btnListCompanyReset.Click += new System.EventHandler(this.btnListCompanyReset_Click);
             // 
-            // gCompanies
+            // txtListCompany
             // 
-            this.gCompanies.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.gCompanies.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gCompanies.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.gCompanies.ForeColor = System.Drawing.Color.Black;
-            this.gCompanies.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
-            this.gCompanies.Location = new System.Drawing.Point(0, 0);
-            this.gCompanies.Name = "gCompanies";
+            this.txtListCompany.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtListCompany.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtListCompany.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
-            this.gCompanies.PrimaryGrid.AllowEdit = false;
-            this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesChk);
-            this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesID);
-            this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesName);
-            this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesContact);
-            this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesPhone);
-            this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesEmail);
-            this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesAddress);
-            this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesReg);
-            this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesVat);
-            this.gCompanies.PrimaryGrid.MultiSelect = false;
-            this.gCompanies.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
-            this.gCompanies.PrimaryGrid.ShowRowHeaders = false;
-            this.gCompanies.PrimaryGrid.UseAlternateRowStyle = true;
-            this.gCompanies.Size = new System.Drawing.Size(960, 180);
-            this.gCompanies.TabIndex = 2;
-            this.gCompanies.Text = "superGridControl1";
-            this.gCompanies.RowClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowClickEventArgs>(this.gCompanies_RowClick);
+            this.txtListCompany.Border.Class = "TextBoxBorder";
+            this.txtListCompany.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtListCompany.DisabledBackColor = System.Drawing.Color.White;
+            this.txtListCompany.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtListCompany.ForeColor = System.Drawing.Color.Black;
+            this.txtListCompany.Location = new System.Drawing.Point(64, 5);
+            this.txtListCompany.Name = "txtListCompany";
+            this.txtListCompany.PreventEnterBeep = true;
+            this.txtListCompany.Size = new System.Drawing.Size(244, 25);
+            this.txtListCompany.TabIndex = 27;
             // 
-            // gCompaniesChk
+            // lblListBookings
             // 
-            this.gCompaniesChk.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
-            this.gCompaniesChk.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            this.gCompaniesChk.MinimumWidth = 32;
-            this.gCompaniesChk.Name = "";
-            this.gCompaniesChk.Width = 32;
+            this.lblListBookings.AutoSize = true;
             // 
-            // gCompaniesID
             // 
-            this.gCompaniesID.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
-            this.gCompaniesID.HeaderText = "ID";
-            this.gCompaniesID.MinimumWidth = 60;
-            this.gCompaniesID.Name = "ID";
-            this.gCompaniesID.Width = 60;
             // 
-            // gCompaniesName
+            this.lblListBookings.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblListBookings.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblListBookings.ForeColor = System.Drawing.Color.Black;
+            this.lblListBookings.Location = new System.Drawing.Point(348, 9);
+            this.lblListBookings.Name = "lblListBookings";
+            this.lblListBookings.Size = new System.Drawing.Size(77, 17);
+            this.lblListBookings.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblListBookings.TabIndex = 26;
+            this.lblListBookings.Text = "Total bookings:";
             // 
-            this.gCompaniesName.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
-            this.gCompaniesName.HeaderText = "Name";
-            this.gCompaniesName.MinimumWidth = 200;
-            this.gCompaniesName.Name = "Name";
+            // lblBookingsListCompany
             // 
-            // gCompaniesContact
+            this.lblBookingsListCompany.AutoSize = true;
             // 
-            this.gCompaniesContact.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
-            this.gCompaniesContact.HeaderText = "Contact";
-            this.gCompaniesContact.MinimumWidth = 150;
-            this.gCompaniesContact.Name = "Contact";
-            this.gCompaniesContact.Width = 150;
             // 
-            // gCompaniesPhone
             // 
-            this.gCompaniesPhone.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
-            this.gCompaniesPhone.HeaderText = "Phone";
-            this.gCompaniesPhone.MinimumWidth = 125;
-            this.gCompaniesPhone.Name = "Phone";
-            this.gCompaniesPhone.Width = 125;
+            this.lblBookingsListCompany.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblBookingsListCompany.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBookingsListCompany.ForeColor = System.Drawing.Color.Black;
+            this.lblBookingsListCompany.Location = new System.Drawing.Point(7, 9);
+            this.lblBookingsListCompany.Name = "lblBookingsListCompany";
+            this.lblBookingsListCompany.Size = new System.Drawing.Size(51, 17);
+            this.lblBookingsListCompany.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblBookingsListCompany.TabIndex = 24;
+            this.lblBookingsListCompany.Text = "Company:";
             // 
-            // gCompaniesEmail
+            // nbBookingsList
             // 
-            this.gCompaniesEmail.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
-            this.gCompaniesEmail.HeaderText = "E-mail Address";
-            this.gCompaniesEmail.MinimumWidth = 250;
-            this.gCompaniesEmail.Name = "Email";
-            this.gCompaniesEmail.Width = 250;
+            this.nbBookingsList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nbBookingsList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.nbBookingsList.BackgroundStyle.BackColor1.Color = System.Drawing.SystemColors.Control;
+            this.nbBookingsList.BackgroundStyle.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.nbBookingsList.BackgroundStyle.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.nbBookingsList.ConfigureItemVisible = false;
+            this.nbBookingsList.ForeColor = System.Drawing.Color.Black;
+            this.nbBookingsList.ItemPaddingBottom = 2;
+            this.nbBookingsList.ItemPaddingTop = 2;
+            this.nbBookingsList.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.biBookingsListDay,
+            this.biBookingsListWeek,
+            this.biBookingsListMonth,
+            this.biBookingsListYear,
+            this.biBookingsListGrid,
+            this.biBookingsList});
+            this.nbBookingsList.Location = new System.Drawing.Point(698, 2);
+            this.nbBookingsList.Name = "nbBookingsList";
+            this.nbBookingsList.Size = new System.Drawing.Size(180, 30);
+            this.nbBookingsList.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.nbBookingsList.TabIndex = 12;
+            this.nbBookingsList.Text = "navigationBar2";
             // 
-            // gCompaniesAddress
+            // biBookingsListDay
             // 
-            this.gCompaniesAddress.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
-            this.gCompaniesAddress.HeaderText = "Address";
-            this.gCompaniesAddress.MinimumWidth = 250;
-            this.gCompaniesAddress.Name = "Address";
-            this.gCompaniesAddress.Width = 250;
+            this.biBookingsListDay.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.biBookingsListDay.Image = ((System.Drawing.Image)(resources.GetObject("biBookingsListDay.Image")));
+            this.biBookingsListDay.ImageFixedSize = new System.Drawing.Size(16, 16);
+            this.biBookingsListDay.Name = "biBookingsListDay";
+            this.biBookingsListDay.OptionGroup = "navBar";
+            this.biBookingsListDay.Text = "Day view";
+            this.biBookingsListDay.Click += new System.EventHandler(this.biBookingsViewDay_Click);
             // 
-            // gCompaniesReg
+            // biBookingsListWeek
             // 
-            this.gCompaniesReg.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
-            this.gCompaniesReg.HeaderText = "Reg. No.";
-            this.gCompaniesReg.MinimumWidth = 100;
-            this.gCompaniesReg.Name = "Reg";
+            this.biBookingsListWeek.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.biBookingsListWeek.Image = ((System.Drawing.Image)(resources.GetObject("biBookingsListWeek.Image")));
+            this.biBookingsListWeek.ImageFixedSize = new System.Drawing.Size(16, 16);
+            this.biBookingsListWeek.Name = "biBookingsListWeek";
+            this.biBookingsListWeek.OptionGroup = "navBar";
+            this.biBookingsListWeek.Text = "Week view";
+            this.biBookingsListWeek.Click += new System.EventHandler(this.biBookingsViewWeek_Click);
             // 
-            // gCompaniesVat
+            // biBookingsListMonth
             // 
-            this.gCompaniesVat.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
-            this.gCompaniesVat.HeaderText = "VAT No.";
-            this.gCompaniesVat.MinimumWidth = 100;
-            this.gCompaniesVat.Name = "VAT";
+            this.biBookingsListMonth.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.biBookingsListMonth.Image = ((System.Drawing.Image)(resources.GetObject("biBookingsListMonth.Image")));
+            this.biBookingsListMonth.ImageFixedSize = new System.Drawing.Size(16, 16);
+            this.biBookingsListMonth.Name = "biBookingsListMonth";
+            this.biBookingsListMonth.OptionGroup = "navBar";
+            this.biBookingsListMonth.Text = "Month view";
+            this.biBookingsListMonth.Click += new System.EventHandler(this.biBookingsViewMonth_Click);
             // 
-            // pCompany
+            // biBookingsListYear
             // 
-            this.pCompany.CanvasColor = System.Drawing.SystemColors.Control;
-            this.pCompany.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.pCompany.Controls.Add(this.btnCompanyCancel);
-            this.pCompany.Controls.Add(this.btnCompanySave);
-            this.pCompany.Controls.Add(this.scCompany);
-            this.pCompany.DisabledBackColor = System.Drawing.Color.Empty;
-            this.pCompany.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pCompany.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pCompany.Location = new System.Drawing.Point(0, 0);
-            this.pCompany.Name = "pCompany";
-            this.pCompany.Size = new System.Drawing.Size(960, 335);
-            this.pCompany.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.pCompany.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.pCompany.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.pCompany.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.pCompany.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.pCompany.Style.GradientAngle = 90;
-            this.pCompany.TabIndex = 8;
+            this.biBookingsListYear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.biBookingsListYear.Image = ((System.Drawing.Image)(resources.GetObject("biBookingsListYear.Image")));
+            this.biBookingsListYear.ImageFixedSize = new System.Drawing.Size(16, 16);
+            this.biBookingsListYear.Name = "biBookingsListYear";
+            this.biBookingsListYear.OptionGroup = "navBar";
+            this.biBookingsListYear.Text = "Year view";
+            this.biBookingsListYear.Click += new System.EventHandler(this.biBookingsViewYear_Click);
             // 
-            // btnCompanyCancel
+            // biBookingsListGrid
             // 
-            this.btnCompanyCancel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnCompanyCancel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnCompanyCancel.Location = new System.Drawing.Point(830, 286);
-            this.btnCompanyCancel.Name = "btnCompanyCancel";
-            this.btnCompanyCancel.Size = new System.Drawing.Size(110, 29);
-            this.btnCompanyCancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnCompanyCancel.TabIndex = 23;
-            this.btnCompanyCancel.Text = "Cancel";
-            this.btnCompanyCancel.Click += new System.EventHandler(this.btnCompanyCancel_Click);
+            this.biBookingsListGrid.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.biBookingsListGrid.Image = ((System.Drawing.Image)(resources.GetObject("biBookingsListGrid.Image")));
+            this.biBookingsListGrid.ImageFixedSize = new System.Drawing.Size(16, 16);
+            this.biBookingsListGrid.Name = "biBookingsListGrid";
+            this.biBookingsListGrid.OptionGroup = "navBar";
+            this.biBookingsListGrid.Text = "Grid view";
+            this.biBookingsListGrid.Click += new System.EventHandler(this.biBookingsViewGrid_Click);
             // 
-            // btnCompanySave
+            // biBookingsList
             // 
-            this.btnCompanySave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnCompanySave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnCompanySave.Location = new System.Drawing.Point(21, 286);
-            this.btnCompanySave.Name = "btnCompanySave";
-            this.btnCompanySave.Size = new System.Drawing.Size(110, 29);
-            this.btnCompanySave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnCompanySave.TabIndex = 22;
-            this.btnCompanySave.Text = "Save Changes";
-            this.btnCompanySave.Click += new System.EventHandler(this.btnCompanySave_Click);
+            this.biBookingsList.Checked = true;
+            this.biBookingsList.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.biBookingsList.Image = ((System.Drawing.Image)(resources.GetObject("biBookingsList.Image")));
+            this.biBookingsList.ImageFixedSize = new System.Drawing.Size(16, 16);
+            this.biBookingsList.Name = "biBookingsList";
+            this.biBookingsList.OptionGroup = "navBar";
+            this.biBookingsList.Text = "List view";
             // 
-            // scCompany
+            // gBookings
             // 
-            this.scCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.gBookings.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.scCompany.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.gBookings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.gBookings.ContextMenuStrip = this.mBookings;
+            this.gBookings.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.gBookings.ForeColor = System.Drawing.Color.Black;
+            this.gBookings.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
+            this.gBookings.Location = new System.Drawing.Point(0, 34);
+            this.gBookings.Name = "gBookings";
             // 
             // 
+            // 
+            this.gBookings.PrimaryGrid.AllowEdit = false;
+            this.gBookings.PrimaryGrid.Columns.Add(this.gBookingsChk);
+            this.gBookings.PrimaryGrid.Columns.Add(this.gBookingsJob);
+            this.gBookings.PrimaryGrid.Columns.Add(this.gBookingsDates);
+            this.gBookings.PrimaryGrid.Columns.Add(this.gBookingsStart);
+            this.gBookings.PrimaryGrid.Columns.Add(this.gBookingsFinish);
+            this.gBookings.PrimaryGrid.Columns.Add(this.gBookingsName);
+            this.gBookings.PrimaryGrid.Columns.Add(this.gBookingsRooms);
+            this.gBookings.PrimaryGrid.Columns.Add(this.gBookingsCompany);
+            this.gBookings.PrimaryGrid.Columns.Add(this.gBookingsPhone);
+            this.gBookings.PrimaryGrid.Columns.Add(this.gBookingsEmail);
+            this.gBookings.PrimaryGrid.Columns.Add(this.gBookingsRoomLayout);
+            this.gBookings.PrimaryGrid.MultiSelect = false;
+            this.gBookings.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
+            this.gBookings.PrimaryGrid.ShowRowHeaders = false;
+            this.gBookings.PrimaryGrid.UseAlternateRowStyle = true;
+            this.gBookings.Size = new System.Drawing.Size(880, 138);
+            this.gBookings.TabIndex = 0;
+            this.gBookings.Text = "superGridControl1";
+            this.gBookings.RowActivated += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowActivatedEventArgs>(this.gBookings_RowActivated);
+            this.gBookings.RowClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowClickEventArgs>(this.gBookings_RowClick);
+            this.gBookings.RowDoubleClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowDoubleClickEventArgs>(this.gBookings_RowDoubleClick);
             // 
+            // mBookings
             // 
-            // 
-            // 
-            this.scCompany.ControlBox.CloseBox.Name = "";
+            this.mBookings.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mBookingsAdd,
+            this.mBookingsRemove,
+            this.mBookingsS1,
+            this.mBookingsComplete});
+            this.mBookings.Name = "contextMenuStrip1";
+            this.mBookings.Size = new System.Drawing.Size(169, 76);
             // 
+            // mBookingsAdd
             // 
+            this.mBookingsAdd.Name = "mBookingsAdd";
+            this.mBookingsAdd.Size = new System.Drawing.Size(168, 22);
+            this.mBookingsAdd.Text = "Add booking...";
+            this.mBookingsAdd.Click += new System.EventHandler(this.mBookingsAdd_Click);
             // 
-            this.scCompany.ControlBox.MenuBox.Name = "";
-            this.scCompany.ControlBox.Name = "";
-            this.scCompany.ControlBox.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.scCompany.ControlBox.MenuBox,
-            this.scCompany.ControlBox.CloseBox});
-            this.scCompany.ControlBox.Visible = false;
-            this.scCompany.Controls.Add(this.superTabControlPanel4);
-            this.scCompany.Controls.Add(this.superTabControlPanel6);
-            this.scCompany.ForeColor = System.Drawing.Color.Black;
-            this.scCompany.Location = new System.Drawing.Point(21, 21);
-            this.scCompany.Name = "scCompany";
-            this.scCompany.ReorderTabsEnabled = true;
-            this.scCompany.SelectedTabFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.scCompany.SelectedTabIndex = 0;
-            this.scCompany.Size = new System.Drawing.Size(919, 254);
-            this.scCompany.TabFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scCompany.TabIndex = 21;
-            this.scCompany.Tabs.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.tiCompanyGeneral,
-            this.tiCompanyNotes});
-            this.scCompany.TabStyle = DevComponents.DotNetBar.eSuperTabStyle.VisualStudio2008Dock;
+            // mBookingsRemove
             // 
-            // superTabControlPanel4
+            this.mBookingsRemove.Name = "mBookingsRemove";
+            this.mBookingsRemove.Size = new System.Drawing.Size(168, 22);
+            this.mBookingsRemove.Text = "Remove booking";
+            this.mBookingsRemove.Click += new System.EventHandler(this.mBookingsRemove_Click);
             // 
-            this.superTabControlPanel4.Controls.Add(this.lblCompanyContact);
-            this.superTabControlPanel4.Controls.Add(this.txtCompanyContact);
-            this.superTabControlPanel4.Controls.Add(this.txtCompanyAddress);
-            this.superTabControlPanel4.Controls.Add(this.lblCompanyAddress);
-            this.superTabControlPanel4.Controls.Add(this.lblCompanyEmail);
-            this.superTabControlPanel4.Controls.Add(this.txtCompanyTrading);
-            this.superTabControlPanel4.Controls.Add(this.lblCompanyTrading);
-            this.superTabControlPanel4.Controls.Add(this.txtCompanyRegVat);
-            this.superTabControlPanel4.Controls.Add(this.txtCompanyReg);
-            this.superTabControlPanel4.Controls.Add(this.txtCompanyName);
-            this.superTabControlPanel4.Controls.Add(this.txtCompanyEmail);
-            this.superTabControlPanel4.Controls.Add(this.lblCompanyPhone);
-            this.superTabControlPanel4.Controls.Add(this.txtCompanyPhone);
-            this.superTabControlPanel4.Controls.Add(this.lblCompanyReg);
-            this.superTabControlPanel4.Controls.Add(this.lblCompanyName);
-            this.superTabControlPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel4.Location = new System.Drawing.Point(0, 30);
-            this.superTabControlPanel4.Name = "superTabControlPanel4";
-            this.superTabControlPanel4.Size = new System.Drawing.Size(919, 224);
-            this.superTabControlPanel4.TabIndex = 1;
-            this.superTabControlPanel4.TabItem = this.tiCompanyGeneral;
+            // mBookingsS1
             // 
-            // lblCompanyContact
+            this.mBookingsS1.Name = "mBookingsS1";
+            this.mBookingsS1.Size = new System.Drawing.Size(165, 6);
             // 
-            this.lblCompanyContact.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // mBookingsComplete
             // 
+            this.mBookingsComplete.Name = "mBookingsComplete";
+            this.mBookingsComplete.Size = new System.Drawing.Size(168, 22);
+            this.mBookingsComplete.Text = "Mark as complete";
+            this.mBookingsComplete.Click += new System.EventHandler(this.mBookingsComplete_Click);
             // 
+            // gBookingsChk
             // 
-            this.lblCompanyContact.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblCompanyContact.ForeColor = System.Drawing.Color.Black;
-            this.lblCompanyContact.Location = new System.Drawing.Point(24, 179);
-            this.lblCompanyContact.Name = "lblCompanyContact";
-            this.lblCompanyContact.Size = new System.Drawing.Size(120, 23);
-            this.lblCompanyContact.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lblCompanyContact.TabIndex = 46;
-            this.lblCompanyContact.Text = "Primary Contact:";
+            this.gBookingsChk.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
+            this.gBookingsChk.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            this.gBookingsChk.MinimumWidth = 32;
+            this.gBookingsChk.Name = "";
+            this.gBookingsChk.Width = 32;
             // 
-            // txtCompanyContact
+            // gBookingsJob
             // 
-            this.txtCompanyContact.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txtCompanyContact.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtCompanyContact.BackColor = System.Drawing.Color.White;
+            this.gBookingsJob.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
+            this.gBookingsJob.HeaderText = "BID";
+            this.gBookingsJob.MinimumWidth = 60;
+            this.gBookingsJob.Name = "Job";
+            this.gBookingsJob.Width = 60;
             // 
+            // gBookingsDates
             // 
+            this.gBookingsDates.HeaderText = "Dates";
+            this.gBookingsDates.Name = "Dates";
             // 
-            this.txtCompanyContact.Border.Class = "TextBoxBorder";
-            this.txtCompanyContact.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtCompanyContact.DisabledBackColor = System.Drawing.Color.White;
-            this.txtCompanyContact.ForeColor = System.Drawing.Color.Black;
-            this.txtCompanyContact.Location = new System.Drawing.Point(150, 179);
-            this.txtCompanyContact.Name = "txtCompanyContact";
-            this.txtCompanyContact.PreventEnterBeep = true;
-            this.txtCompanyContact.Size = new System.Drawing.Size(345, 25);
-            this.txtCompanyContact.TabIndex = 45;
+            // gBookingsStart
             // 
-            // txtCompanyAddress
+            this.gBookingsStart.HeaderText = "Start";
+            this.gBookingsStart.Name = "Start";
             // 
-            this.txtCompanyAddress.BackColor = System.Drawing.Color.White;
+            // gBookingsFinish
             // 
+            this.gBookingsFinish.HeaderText = "Finish";
+            this.gBookingsFinish.Name = "Finish";
             // 
+            // gBookingsName
             // 
-            this.txtCompanyAddress.Border.Class = "TextBoxBorder";
-            this.txtCompanyAddress.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtCompanyAddress.DisabledBackColor = System.Drawing.Color.White;
-            this.txtCompanyAddress.ForeColor = System.Drawing.Color.Black;
-            this.txtCompanyAddress.Location = new System.Drawing.Point(521, 55);
-            this.txtCompanyAddress.Multiline = true;
-            this.txtCompanyAddress.Name = "txtCompanyAddress";
-            this.txtCompanyAddress.PreventEnterBeep = true;
-            this.txtCompanyAddress.Size = new System.Drawing.Size(372, 149);
-            this.txtCompanyAddress.TabIndex = 44;
+            this.gBookingsName.HeaderText = "Event Name";
+            this.gBookingsName.Name = "Name";
             // 
-            // lblCompanyAddress
+            // gBookingsRooms
             // 
-            this.lblCompanyAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.gBookingsRooms.HeaderText = "Rooms";
+            this.gBookingsRooms.Name = "Rooms";
             // 
+            // gBookingsCompany
             // 
+            this.gBookingsCompany.HeaderText = "Company";
+            this.gBookingsCompany.Name = "Company";
             // 
-            this.lblCompanyAddress.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblCompanyAddress.ForeColor = System.Drawing.Color.Black;
-            this.lblCompanyAddress.Location = new System.Drawing.Point(521, 24);
-            this.lblCompanyAddress.Name = "lblCompanyAddress";
-            this.lblCompanyAddress.Size = new System.Drawing.Size(74, 23);
-            this.lblCompanyAddress.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lblCompanyAddress.TabIndex = 43;
-            this.lblCompanyAddress.Text = "Address:";
+            // gBookingsPhone
             // 
-            // lblCompanyEmail
+            this.gBookingsPhone.HeaderText = "Phone";
+            this.gBookingsPhone.Name = "Phone";
             // 
-            this.lblCompanyEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // gBookingsEmail
             // 
+            this.gBookingsEmail.HeaderText = "E-mail Address";
+            this.gBookingsEmail.Name = "Email";
             // 
+            // gBookingsRoomLayout
             // 
-            this.lblCompanyEmail.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblCompanyEmail.ForeColor = System.Drawing.Color.Black;
-            this.lblCompanyEmail.Location = new System.Drawing.Point(24, 148);
-            this.lblCompanyEmail.Name = "lblCompanyEmail";
-            this.lblCompanyEmail.Size = new System.Drawing.Size(120, 23);
-            this.lblCompanyEmail.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lblCompanyEmail.TabIndex = 42;
-            this.lblCompanyEmail.Text = "E-mail Address:";
+            this.gBookingsRoomLayout.HeaderText = "Room Layout";
+            this.gBookingsRoomLayout.Name = "RoomLayout";
             // 
-            // txtCompanyTrading
+            // pBookingsGrid
             // 
-            this.txtCompanyTrading.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtCompanyTrading.Border.Class = "TextBoxBorder";
-            this.txtCompanyTrading.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtCompanyTrading.DisabledBackColor = System.Drawing.Color.White;
-            this.txtCompanyTrading.ForeColor = System.Drawing.Color.Black;
-            this.txtCompanyTrading.Location = new System.Drawing.Point(150, 55);
-            this.txtCompanyTrading.Name = "txtCompanyTrading";
-            this.txtCompanyTrading.PreventEnterBeep = true;
-            this.txtCompanyTrading.Size = new System.Drawing.Size(345, 25);
-            this.txtCompanyTrading.TabIndex = 40;
-            // 
-            // lblCompanyTrading
-            // 
-            this.lblCompanyTrading.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.lblCompanyTrading.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblCompanyTrading.ForeColor = System.Drawing.Color.Black;
-            this.lblCompanyTrading.Location = new System.Drawing.Point(24, 55);
-            this.lblCompanyTrading.Name = "lblCompanyTrading";
-            this.lblCompanyTrading.Size = new System.Drawing.Size(120, 23);
-            this.lblCompanyTrading.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lblCompanyTrading.TabIndex = 39;
-            this.lblCompanyTrading.Text = "Trading As:";
-            // 
-            // txtCompanyRegVat
-            // 
-            this.txtCompanyRegVat.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtCompanyRegVat.Border.Class = "TextBoxBorder";
-            this.txtCompanyRegVat.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtCompanyRegVat.DisabledBackColor = System.Drawing.Color.White;
-            this.txtCompanyRegVat.ForeColor = System.Drawing.Color.Black;
-            this.txtCompanyRegVat.Location = new System.Drawing.Point(298, 86);
-            this.txtCompanyRegVat.Name = "txtCompanyRegVat";
-            this.txtCompanyRegVat.PreventEnterBeep = true;
-            this.txtCompanyRegVat.Size = new System.Drawing.Size(197, 25);
-            this.txtCompanyRegVat.TabIndex = 38;
-            // 
-            // txtCompanyReg
-            // 
-            this.txtCompanyReg.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtCompanyReg.Border.Class = "TextBoxBorder";
-            this.txtCompanyReg.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtCompanyReg.DisabledBackColor = System.Drawing.Color.White;
-            this.txtCompanyReg.ForeColor = System.Drawing.Color.Black;
-            this.txtCompanyReg.Location = new System.Drawing.Point(150, 86);
-            this.txtCompanyReg.Name = "txtCompanyReg";
-            this.txtCompanyReg.PreventEnterBeep = true;
-            this.txtCompanyReg.Size = new System.Drawing.Size(142, 25);
-            this.txtCompanyReg.TabIndex = 37;
-            // 
-            // txtCompanyName
-            // 
-            this.txtCompanyName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txtCompanyName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtCompanyName.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtCompanyName.Border.Class = "TextBoxBorder";
-            this.txtCompanyName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtCompanyName.DisabledBackColor = System.Drawing.Color.White;
-            this.txtCompanyName.ForeColor = System.Drawing.Color.Black;
-            this.txtCompanyName.Location = new System.Drawing.Point(150, 24);
-            this.txtCompanyName.Name = "txtCompanyName";
-            this.txtCompanyName.PreventEnterBeep = true;
-            this.txtCompanyName.Size = new System.Drawing.Size(345, 25);
-            this.txtCompanyName.TabIndex = 36;
-            // 
-            // txtCompanyEmail
-            // 
-            this.txtCompanyEmail.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txtCompanyEmail.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtCompanyEmail.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtCompanyEmail.Border.Class = "TextBoxBorder";
-            this.txtCompanyEmail.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtCompanyEmail.DisabledBackColor = System.Drawing.Color.White;
-            this.txtCompanyEmail.ForeColor = System.Drawing.Color.Black;
-            this.txtCompanyEmail.Location = new System.Drawing.Point(150, 148);
-            this.txtCompanyEmail.Name = "txtCompanyEmail";
-            this.txtCompanyEmail.PreventEnterBeep = true;
-            this.txtCompanyEmail.Size = new System.Drawing.Size(345, 25);
-            this.txtCompanyEmail.TabIndex = 35;
-            // 
-            // lblCompanyPhone
-            // 
-            this.lblCompanyPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.lblCompanyPhone.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblCompanyPhone.ForeColor = System.Drawing.Color.Black;
-            this.lblCompanyPhone.Location = new System.Drawing.Point(24, 117);
-            this.lblCompanyPhone.Name = "lblCompanyPhone";
-            this.lblCompanyPhone.Size = new System.Drawing.Size(120, 23);
-            this.lblCompanyPhone.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lblCompanyPhone.TabIndex = 34;
-            this.lblCompanyPhone.Text = "Phone Number:";
-            // 
-            // txtCompanyPhone
-            // 
-            this.txtCompanyPhone.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txtCompanyPhone.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtCompanyPhone.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtCompanyPhone.Border.Class = "TextBoxBorder";
-            this.txtCompanyPhone.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtCompanyPhone.DisabledBackColor = System.Drawing.Color.White;
-            this.txtCompanyPhone.ForeColor = System.Drawing.Color.Black;
-            this.txtCompanyPhone.Location = new System.Drawing.Point(150, 117);
-            this.txtCompanyPhone.Name = "txtCompanyPhone";
-            this.txtCompanyPhone.PreventEnterBeep = true;
-            this.txtCompanyPhone.Size = new System.Drawing.Size(142, 25);
-            this.txtCompanyPhone.TabIndex = 33;
-            // 
-            // lblCompanyReg
-            // 
-            this.lblCompanyReg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.lblCompanyReg.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblCompanyReg.ForeColor = System.Drawing.Color.Black;
-            this.lblCompanyReg.Location = new System.Drawing.Point(24, 86);
-            this.lblCompanyReg.Name = "lblCompanyReg";
-            this.lblCompanyReg.Size = new System.Drawing.Size(120, 23);
-            this.lblCompanyReg.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lblCompanyReg.TabIndex = 32;
-            this.lblCompanyReg.Text = "Reg No./VAT No.:";
-            // 
-            // lblCompanyName
-            // 
-            this.lblCompanyName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.lblCompanyName.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblCompanyName.ForeColor = System.Drawing.Color.Black;
-            this.lblCompanyName.Location = new System.Drawing.Point(24, 24);
-            this.lblCompanyName.Name = "lblCompanyName";
-            this.lblCompanyName.Size = new System.Drawing.Size(120, 23);
-            this.lblCompanyName.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lblCompanyName.TabIndex = 31;
-            this.lblCompanyName.Text = "Company Name:";
-            // 
-            // tiCompanyGeneral
-            // 
-            this.tiCompanyGeneral.AttachedControl = this.superTabControlPanel4;
-            this.tiCompanyGeneral.GlobalItem = false;
-            this.tiCompanyGeneral.Name = "tiCompanyGeneral";
-            this.tiCompanyGeneral.Text = "  General";
-            // 
-            // superTabControlPanel6
-            // 
-            this.superTabControlPanel6.Controls.Add(this.txtCompanyNotes);
-            this.superTabControlPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel6.Location = new System.Drawing.Point(0, 30);
-            this.superTabControlPanel6.Name = "superTabControlPanel6";
-            this.superTabControlPanel6.Size = new System.Drawing.Size(919, 224);
-            this.superTabControlPanel6.TabIndex = 0;
-            this.superTabControlPanel6.TabItem = this.tiCompanyNotes;
-            // 
-            // txtCompanyNotes
-            // 
-            this.txtCompanyNotes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.pBookingsGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCompanyNotes.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txtCompanyNotes.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtCompanyNotes.BackColor = System.Drawing.Color.White;
+            this.pBookingsGrid.CanvasColor = System.Drawing.SystemColors.Control;
+            this.pBookingsGrid.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.pBookingsGrid.Controls.Add(this.rgBookings);
+            this.pBookingsGrid.Controls.Add(this.pBookingsGridTools);
+            this.pBookingsGrid.DisabledBackColor = System.Drawing.Color.Empty;
+            this.pBookingsGrid.Location = new System.Drawing.Point(37, 190);
+            this.pBookingsGrid.Name = "pBookingsGrid";
+            this.pBookingsGrid.Size = new System.Drawing.Size(880, 160);
+            this.pBookingsGrid.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.pBookingsGrid.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.pBookingsGrid.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.pBookingsGrid.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.pBookingsGrid.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.pBookingsGrid.Style.GradientAngle = 90;
+            this.pBookingsGrid.TabIndex = 7;
+            this.pBookingsGrid.Visible = false;
+            // 
+            // rgBookings
+            // 
+            this.rgBookings.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rgBookings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.rgBookings.ColumnHeaderContextMenuStrip = null;
+            this.rgBookings.ContextMenuStrip = this.mBookingsGrid;
+            this.rgBookings.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rgBookings.ForeColor = System.Drawing.Color.Black;
+            this.rgBookings.LeadHeaderContextMenuStrip = null;
+            this.rgBookings.Location = new System.Drawing.Point(0, 35);
+            this.rgBookings.Name = "rgBookings";
+            this.rgBookings.RowHeaderContextMenuStrip = null;
+            this.rgBookings.Script = null;
+            this.rgBookings.SheetTabContextMenuStrip = null;
+            this.rgBookings.SheetTabNewButtonVisible = false;
+            this.rgBookings.SheetTabVisible = true;
+            this.rgBookings.SheetTabWidth = 294;
+            this.rgBookings.Size = new System.Drawing.Size(880, 126);
+            this.rgBookings.TabIndex = 13;
+            this.rgBookings.DoubleClick += new System.EventHandler(this.rgBookings_DoubleClick);
+            // 
+            // mBookingsGrid
+            // 
+            this.mBookingsGrid.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mBookingsGridAdd,
+            this.mBookingsGridRemove,
+            this.mBookingsGridS1,
+            this.mBookingsGridComplete});
+            this.mBookingsGrid.Name = "contextMenuStrip1";
+            this.mBookingsGrid.Size = new System.Drawing.Size(169, 76);
+            // 
+            // mBookingsGridAdd
+            // 
+            this.mBookingsGridAdd.Name = "mBookingsGridAdd";
+            this.mBookingsGridAdd.Size = new System.Drawing.Size(168, 22);
+            this.mBookingsGridAdd.Text = "Add booking...";
+            this.mBookingsGridAdd.Click += new System.EventHandler(this.mBookingsGridAdd_Click);
+            // 
+            // mBookingsGridRemove
+            // 
+            this.mBookingsGridRemove.Name = "mBookingsGridRemove";
+            this.mBookingsGridRemove.Size = new System.Drawing.Size(168, 22);
+            this.mBookingsGridRemove.Text = "Remove booking";
+            this.mBookingsGridRemove.Click += new System.EventHandler(this.mBookingsGridRemove_Click);
+            // 
+            // mBookingsGridS1
+            // 
+            this.mBookingsGridS1.Name = "mBookingsGridS1";
+            this.mBookingsGridS1.Size = new System.Drawing.Size(165, 6);
+            // 
+            // mBookingsGridComplete
+            // 
+            this.mBookingsGridComplete.Name = "mBookingsGridComplete";
+            this.mBookingsGridComplete.Size = new System.Drawing.Size(168, 22);
+            this.mBookingsGridComplete.Text = "Mark as complete";
+            this.mBookingsGridComplete.Click += new System.EventHandler(this.mBookingsGridComplete_Click);
+            // 
+            // pBookingsGridTools
+            // 
+            this.pBookingsGridTools.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pBookingsGridTools.CanvasColor = System.Drawing.SystemColors.Control;
+            this.pBookingsGridTools.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.pBookingsGridTools.Controls.Add(this.btnGridCompanyReset);
+            this.pBookingsGridTools.Controls.Add(this.txtGridCompany);
+            this.pBookingsGridTools.Controls.Add(this.lblGridBookings);
+            this.pBookingsGridTools.Controls.Add(this.lblBookingsGridCompany);
+            this.pBookingsGridTools.Controls.Add(this.nbBookingsGrid);
+            this.pBookingsGridTools.DisabledBackColor = System.Drawing.Color.Empty;
+            this.pBookingsGridTools.Location = new System.Drawing.Point(0, 0);
+            this.pBookingsGridTools.Name = "pBookingsGridTools";
+            this.pBookingsGridTools.Size = new System.Drawing.Size(880, 35);
+            this.pBookingsGridTools.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.pBookingsGridTools.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.pBookingsGridTools.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.pBookingsGridTools.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.pBookingsGridTools.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.pBookingsGridTools.Style.GradientAngle = 90;
+            this.pBookingsGridTools.TabIndex = 0;
+            // 
+            // btnGridCompanyReset
+            // 
+            this.btnGridCompanyReset.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnGridCompanyReset.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnGridCompanyReset.Location = new System.Drawing.Point(312, 5);
+            this.btnGridCompanyReset.Name = "btnGridCompanyReset";
+            this.btnGridCompanyReset.Size = new System.Drawing.Size(25, 25);
+            this.btnGridCompanyReset.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnGridCompanyReset.TabIndex = 25;
+            this.btnGridCompanyReset.Click += new System.EventHandler(this.btnGridCompanyReset_Click);
+            // 
+            // txtGridCompany
+            // 
+            this.txtGridCompany.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtGridCompany.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtGridCompany.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
-            this.txtCompanyNotes.Border.Class = "TextBoxBorder";
-            this.txtCompanyNotes.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtCompanyNotes.DisabledBackColor = System.Drawing.Color.White;
-            this.txtCompanyNotes.ForeColor = System.Drawing.Color.Black;
-            this.txtCompanyNotes.Location = new System.Drawing.Point(15, 15);
-            this.txtCompanyNotes.Multiline = true;
-            this.txtCompanyNotes.Name = "txtCompanyNotes";
-            this.txtCompanyNotes.PreventEnterBeep = true;
-            this.txtCompanyNotes.Size = new System.Drawing.Size(889, 194);
-            this.txtCompanyNotes.TabIndex = 37;
+            this.txtGridCompany.Border.Class = "TextBoxBorder";
+            this.txtGridCompany.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtGridCompany.DisabledBackColor = System.Drawing.Color.White;
+            this.txtGridCompany.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGridCompany.ForeColor = System.Drawing.Color.Black;
+            this.txtGridCompany.Location = new System.Drawing.Point(64, 5);
+            this.txtGridCompany.Name = "txtGridCompany";
+            this.txtGridCompany.PreventEnterBeep = true;
+            this.txtGridCompany.Size = new System.Drawing.Size(244, 25);
+            this.txtGridCompany.TabIndex = 24;
             // 
-            // tiCompanyNotes
+            // lblGridBookings
             // 
-            this.tiCompanyNotes.AttachedControl = this.superTabControlPanel6;
-            this.tiCompanyNotes.GlobalItem = false;
-            this.tiCompanyNotes.Name = "tiCompanyNotes";
-            this.tiCompanyNotes.Text = "  Notes";
+            this.lblGridBookings.AutoSize = true;
+            // 
+            // 
+            // 
+            this.lblGridBookings.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblGridBookings.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGridBookings.ForeColor = System.Drawing.Color.Black;
+            this.lblGridBookings.Location = new System.Drawing.Point(348, 9);
+            this.lblGridBookings.Name = "lblGridBookings";
+            this.lblGridBookings.Size = new System.Drawing.Size(77, 17);
+            this.lblGridBookings.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblGridBookings.TabIndex = 23;
+            this.lblGridBookings.Text = "Total bookings:";
+            // 
+            // lblBookingsGridCompany
+            // 
+            this.lblBookingsGridCompany.AutoSize = true;
+            // 
+            // 
+            // 
+            this.lblBookingsGridCompany.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblBookingsGridCompany.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBookingsGridCompany.ForeColor = System.Drawing.Color.Black;
+            this.lblBookingsGridCompany.Location = new System.Drawing.Point(7, 9);
+            this.lblBookingsGridCompany.Name = "lblBookingsGridCompany";
+            this.lblBookingsGridCompany.Size = new System.Drawing.Size(51, 17);
+            this.lblBookingsGridCompany.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblBookingsGridCompany.TabIndex = 12;
+            this.lblBookingsGridCompany.Text = "Company:";
+            // 
+            // nbBookingsGrid
+            // 
+            this.nbBookingsGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nbBookingsGrid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.nbBookingsGrid.BackgroundStyle.BackColor1.Color = System.Drawing.SystemColors.Control;
+            this.nbBookingsGrid.BackgroundStyle.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.nbBookingsGrid.BackgroundStyle.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.nbBookingsGrid.ConfigureItemVisible = false;
+            this.nbBookingsGrid.ForeColor = System.Drawing.Color.Black;
+            this.nbBookingsGrid.ItemPaddingBottom = 2;
+            this.nbBookingsGrid.ItemPaddingTop = 2;
+            this.nbBookingsGrid.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.biBookingsGridDay,
+            this.biBookingsGridWeek,
+            this.biBookingsGridMonth,
+            this.biBookingsGridYear,
+            this.biBookingsGrid,
+            this.biBookingsGridList});
+            this.nbBookingsGrid.Location = new System.Drawing.Point(698, 2);
+            this.nbBookingsGrid.Name = "nbBookingsGrid";
+            this.nbBookingsGrid.Size = new System.Drawing.Size(180, 30);
+            this.nbBookingsGrid.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.nbBookingsGrid.TabIndex = 11;
+            this.nbBookingsGrid.Text = "navigationBar1";
+            // 
+            // biBookingsGridDay
+            // 
+            this.biBookingsGridDay.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.biBookingsGridDay.Image = ((System.Drawing.Image)(resources.GetObject("biBookingsGridDay.Image")));
+            this.biBookingsGridDay.ImageFixedSize = new System.Drawing.Size(16, 16);
+            this.biBookingsGridDay.Name = "biBookingsGridDay";
+            this.biBookingsGridDay.OptionGroup = "navBar";
+            this.biBookingsGridDay.Text = "Day view";
+            this.biBookingsGridDay.Click += new System.EventHandler(this.biBookingsViewDay_Click);
+            // 
+            // biBookingsGridWeek
+            // 
+            this.biBookingsGridWeek.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.biBookingsGridWeek.Image = ((System.Drawing.Image)(resources.GetObject("biBookingsGridWeek.Image")));
+            this.biBookingsGridWeek.ImageFixedSize = new System.Drawing.Size(16, 16);
+            this.biBookingsGridWeek.Name = "biBookingsGridWeek";
+            this.biBookingsGridWeek.OptionGroup = "navBar";
+            this.biBookingsGridWeek.Text = "Week view";
+            this.biBookingsGridWeek.Click += new System.EventHandler(this.biBookingsViewWeek_Click);
+            // 
+            // biBookingsGridMonth
+            // 
+            this.biBookingsGridMonth.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.biBookingsGridMonth.Image = ((System.Drawing.Image)(resources.GetObject("biBookingsGridMonth.Image")));
+            this.biBookingsGridMonth.ImageFixedSize = new System.Drawing.Size(16, 16);
+            this.biBookingsGridMonth.Name = "biBookingsGridMonth";
+            this.biBookingsGridMonth.OptionGroup = "navBar";
+            this.biBookingsGridMonth.Text = "Month view";
+            this.biBookingsGridMonth.Click += new System.EventHandler(this.biBookingsViewMonth_Click);
+            // 
+            // biBookingsGridYear
+            // 
+            this.biBookingsGridYear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.biBookingsGridYear.Image = ((System.Drawing.Image)(resources.GetObject("biBookingsGridYear.Image")));
+            this.biBookingsGridYear.ImageFixedSize = new System.Drawing.Size(16, 16);
+            this.biBookingsGridYear.Name = "biBookingsGridYear";
+            this.biBookingsGridYear.OptionGroup = "navBar";
+            this.biBookingsGridYear.Text = "Year view";
+            this.biBookingsGridYear.Click += new System.EventHandler(this.biBookingsViewYear_Click);
+            // 
+            // biBookingsGrid
+            // 
+            this.biBookingsGrid.Checked = true;
+            this.biBookingsGrid.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.biBookingsGrid.Image = ((System.Drawing.Image)(resources.GetObject("biBookingsGrid.Image")));
+            this.biBookingsGrid.ImageFixedSize = new System.Drawing.Size(16, 16);
+            this.biBookingsGrid.Name = "biBookingsGrid";
+            this.biBookingsGrid.OptionGroup = "navBar";
+            this.biBookingsGrid.Text = "Grid view";
+            // 
+            // biBookingsGridList
+            // 
+            this.biBookingsGridList.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.biBookingsGridList.Image = ((System.Drawing.Image)(resources.GetObject("biBookingsGridList.Image")));
+            this.biBookingsGridList.ImageFixedSize = new System.Drawing.Size(16, 16);
+            this.biBookingsGridList.Name = "biBookingsGridList";
+            this.biBookingsGridList.OptionGroup = "navBar";
+            this.biBookingsGridList.Text = "List view";
+            this.biBookingsGridList.Click += new System.EventHandler(this.biBookingsViewList_Click);
+            // 
+            // pBookingsCalendar
+            // 
+            this.pBookingsCalendar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pBookingsCalendar.CanvasColor = System.Drawing.SystemColors.Control;
+            this.pBookingsCalendar.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.pBookingsCalendar.Controls.Add(this.pBookingsCalendarTools);
+            this.pBookingsCalendar.Controls.Add(this.cvBookings);
+            this.pBookingsCalendar.DisabledBackColor = System.Drawing.Color.Empty;
+            this.pBookingsCalendar.Location = new System.Drawing.Point(37, 6);
+            this.pBookingsCalendar.Name = "pBookingsCalendar";
+            this.pBookingsCalendar.Size = new System.Drawing.Size(880, 178);
+            this.pBookingsCalendar.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.pBookingsCalendar.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.pBookingsCalendar.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.pBookingsCalendar.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.pBookingsCalendar.Style.GradientAngle = 90;
+            this.pBookingsCalendar.TabIndex = 0;
+            this.pBookingsCalendar.Visible = false;
+            // 
+            // pBookingsCalendarTools
+            // 
+            this.pBookingsCalendarTools.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pBookingsCalendarTools.CanvasColor = System.Drawing.SystemColors.Control;
+            this.pBookingsCalendarTools.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.pBookingsCalendarTools.Controls.Add(this.lblCalendarBookings);
+            this.pBookingsCalendarTools.Controls.Add(this.nbBookings);
+            this.pBookingsCalendarTools.Controls.Add(this.dnBookings);
+            this.pBookingsCalendarTools.DisabledBackColor = System.Drawing.Color.Empty;
+            this.pBookingsCalendarTools.Location = new System.Drawing.Point(0, 0);
+            this.pBookingsCalendarTools.Name = "pBookingsCalendarTools";
+            this.pBookingsCalendarTools.Size = new System.Drawing.Size(880, 35);
+            this.pBookingsCalendarTools.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.pBookingsCalendarTools.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.pBookingsCalendarTools.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.pBookingsCalendarTools.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.pBookingsCalendarTools.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.pBookingsCalendarTools.Style.GradientAngle = 90;
+            this.pBookingsCalendarTools.TabIndex = 5;
+            // 
+            // lblCalendarBookings
+            // 
+            this.lblCalendarBookings.AutoSize = true;
+            // 
+            // 
+            // 
+            this.lblCalendarBookings.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblCalendarBookings.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCalendarBookings.ForeColor = System.Drawing.Color.Black;
+            this.lblCalendarBookings.Location = new System.Drawing.Point(348, 8);
+            this.lblCalendarBookings.Name = "lblCalendarBookings";
+            this.lblCalendarBookings.Size = new System.Drawing.Size(77, 17);
+            this.lblCalendarBookings.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblCalendarBookings.TabIndex = 24;
+            this.lblCalendarBookings.Text = "Total bookings:";
+            // 
+            // nbBookings
+            // 
+            this.nbBookings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nbBookings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.nbBookings.BackgroundStyle.BackColor1.Color = System.Drawing.SystemColors.Control;
+            this.nbBookings.BackgroundStyle.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.nbBookings.BackgroundStyle.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.nbBookings.ConfigureItemVisible = false;
+            this.nbBookings.ForeColor = System.Drawing.Color.Black;
+            this.nbBookings.ItemPaddingBottom = 2;
+            this.nbBookings.ItemPaddingTop = 2;
+            this.nbBookings.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.biBookingsViewDay,
+            this.biBookingsViewWeek,
+            this.biBookingsViewMonth,
+            this.biBookingsViewYear,
+            this.biBookingsViewGrid,
+            this.biBookingsViewList});
+            this.nbBookings.Location = new System.Drawing.Point(698, 2);
+            this.nbBookings.Name = "nbBookings";
+            this.nbBookings.Size = new System.Drawing.Size(180, 30);
+            this.nbBookings.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.nbBookings.TabIndex = 10;
+            this.nbBookings.Text = "navigationBar1";
+            // 
+            // biBookingsViewDay
+            // 
+            this.biBookingsViewDay.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.biBookingsViewDay.Image = ((System.Drawing.Image)(resources.GetObject("biBookingsViewDay.Image")));
+            this.biBookingsViewDay.ImageFixedSize = new System.Drawing.Size(16, 16);
+            this.biBookingsViewDay.Name = "biBookingsViewDay";
+            this.biBookingsViewDay.OptionGroup = "navBar";
+            this.biBookingsViewDay.Text = "Day view";
+            this.biBookingsViewDay.Click += new System.EventHandler(this.biBookingsViewDay_Click);
+            // 
+            // biBookingsViewWeek
+            // 
+            this.biBookingsViewWeek.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.biBookingsViewWeek.Image = ((System.Drawing.Image)(resources.GetObject("biBookingsViewWeek.Image")));
+            this.biBookingsViewWeek.ImageFixedSize = new System.Drawing.Size(16, 16);
+            this.biBookingsViewWeek.Name = "biBookingsViewWeek";
+            this.biBookingsViewWeek.OptionGroup = "navBar";
+            this.biBookingsViewWeek.Text = "Week view";
+            this.biBookingsViewWeek.Click += new System.EventHandler(this.biBookingsViewWeek_Click);
+            // 
+            // biBookingsViewMonth
+            // 
+            this.biBookingsViewMonth.Checked = true;
+            this.biBookingsViewMonth.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.biBookingsViewMonth.Image = ((System.Drawing.Image)(resources.GetObject("biBookingsViewMonth.Image")));
+            this.biBookingsViewMonth.ImageFixedSize = new System.Drawing.Size(16, 16);
+            this.biBookingsViewMonth.Name = "biBookingsViewMonth";
+            this.biBookingsViewMonth.OptionGroup = "navBar";
+            this.biBookingsViewMonth.Text = "Month view";
+            this.biBookingsViewMonth.Click += new System.EventHandler(this.biBookingsViewMonth_Click);
+            // 
+            // biBookingsViewYear
+            // 
+            this.biBookingsViewYear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.biBookingsViewYear.Image = ((System.Drawing.Image)(resources.GetObject("biBookingsViewYear.Image")));
+            this.biBookingsViewYear.ImageFixedSize = new System.Drawing.Size(16, 16);
+            this.biBookingsViewYear.Name = "biBookingsViewYear";
+            this.biBookingsViewYear.OptionGroup = "navBar";
+            this.biBookingsViewYear.Text = "Year view";
+            this.biBookingsViewYear.Click += new System.EventHandler(this.biBookingsViewYear_Click);
+            // 
+            // biBookingsViewGrid
+            // 
+            this.biBookingsViewGrid.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.biBookingsViewGrid.Image = ((System.Drawing.Image)(resources.GetObject("biBookingsViewGrid.Image")));
+            this.biBookingsViewGrid.ImageFixedSize = new System.Drawing.Size(16, 16);
+            this.biBookingsViewGrid.Name = "biBookingsViewGrid";
+            this.biBookingsViewGrid.OptionGroup = "navBar";
+            this.biBookingsViewGrid.Text = "Grid view";
+            this.biBookingsViewGrid.Click += new System.EventHandler(this.biBookingsViewGrid_Click);
+            // 
+            // biBookingsViewList
+            // 
+            this.biBookingsViewList.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.biBookingsViewList.Image = ((System.Drawing.Image)(resources.GetObject("biBookingsViewList.Image")));
+            this.biBookingsViewList.ImageFixedSize = new System.Drawing.Size(16, 16);
+            this.biBookingsViewList.Name = "biBookingsViewList";
+            this.biBookingsViewList.OptionGroup = "navBar";
+            this.biBookingsViewList.Text = "List view";
+            this.biBookingsViewList.Click += new System.EventHandler(this.biBookingsViewList_Click);
+            // 
+            // dnBookings
+            // 
+            this.dnBookings.CalendarView = this.cvBookings;
+            this.dnBookings.CanvasColor = System.Drawing.SystemColors.Control;
+            this.dnBookings.DisabledBackColor = System.Drawing.Color.Empty;
+            this.dnBookings.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dnBookings.Location = new System.Drawing.Point(0, 2);
+            this.dnBookings.Name = "dnBookings";
+            this.dnBookings.Size = new System.Drawing.Size(308, 30);
+            this.dnBookings.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dnBookings.TabIndex = 9;
+            this.dnBookings.Text = "dateNavigator1";
+            // 
+            // cvBookings
+            // 
+            this.cvBookings.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cvBookings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.cvBookings.BackgroundStyle.BackColor = System.Drawing.Color.White;
+            this.cvBookings.BackgroundStyle.BackColor2 = System.Drawing.Color.White;
+            this.cvBookings.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.cvBookings.BackgroundStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cvBookings.ContainerControlProcessDialogKey = true;
+            this.cvBookings.ContextMenuStrip = this.mBookings;
+            this.cvBookings.EnableDragCopy = false;
+            this.cvBookings.EnableDragDrop = false;
+            this.cvBookings.ForeColor = System.Drawing.Color.Black;
+            this.cvBookings.HighlightCurrentDay = true;
+            this.cvBookings.Is24HourFormat = true;
+            this.cvBookings.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
+            this.cvBookings.Location = new System.Drawing.Point(0, 34);
+            this.cvBookings.MultiUserTabHeight = 21;
+            this.cvBookings.Name = "cvBookings";
+            this.cvBookings.SelectedView = DevComponents.DotNetBar.Schedule.eCalendarView.Month;
+            this.cvBookings.Size = new System.Drawing.Size(880, 144);
+            this.cvBookings.TabIndex = 4;
+            this.cvBookings.TimeIndicator.BorderColor = System.Drawing.Color.Empty;
+            this.cvBookings.TimeIndicator.Tag = null;
+            this.cvBookings.TimeSlotDuration = 30;
+            this.cvBookings.ItemClick += new System.EventHandler(this.cvBookings_ItemClick);
+            this.cvBookings.ItemDoubleClick += new System.Windows.Forms.MouseEventHandler(this.cvBookings_ItemDoubleClick);
+            this.cvBookings.MouseEnter += new System.EventHandler(this.cvBookings_MouseEnter);
+            this.cvBookings.MouseLeave += new System.EventHandler(this.cvBookings_MouseLeave);
             // 
             // pEnquiries
             // 
@@ -1895,6 +2142,556 @@
             this.tiEnquiryInfo.GlobalItem = false;
             this.tiEnquiryInfo.Name = "tiEnquiryInfo";
             this.tiEnquiryInfo.Text = "  Courses and Info";
+            // 
+            // pCompanies
+            // 
+            this.pCompanies.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.pCompanies.Controls.Add(this.scCompanies);
+            this.pCompanies.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pCompanies.Location = new System.Drawing.Point(0, 61);
+            this.pCompanies.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pCompanies.Name = "pCompanies";
+            this.pCompanies.Padding = new System.Windows.Forms.Padding(3, 0, 3, 4);
+            this.pCompanies.Size = new System.Drawing.Size(960, 535);
+            // 
+            // 
+            // 
+            this.pCompanies.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.pCompanies.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.pCompanies.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.pCompanies.TabIndex = 3;
+            this.pCompanies.Visible = false;
+            // 
+            // scCompanies
+            // 
+            this.scCompanies.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.scCompanies.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.scCompanies.ButtonPosition = DevComponents.DotNetBar.Controls.eSplitterButtonPosition.Center;
+            this.scCompanies.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.scCompanies.ForeColor = System.Drawing.Color.Black;
+            this.scCompanies.IsSplitterFixed = true;
+            this.scCompanies.Location = new System.Drawing.Point(0, 0);
+            this.scCompanies.Name = "scCompanies";
+            this.scCompanies.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // scCompanies.Panel1
+            // 
+            this.scCompanies.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.scCompanies.Panel1.Controls.Add(this.gCompanies);
+            this.scCompanies.Panel1.ForeColor = System.Drawing.Color.Black;
+            // 
+            // scCompanies.Panel2
+            // 
+            this.scCompanies.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.scCompanies.Panel2.Controls.Add(this.pCompany);
+            this.scCompanies.Panel2.ForeColor = System.Drawing.Color.Black;
+            this.scCompanies.Size = new System.Drawing.Size(960, 535);
+            this.scCompanies.SplitterDistance = 180;
+            this.scCompanies.SplitterWidth = 20;
+            this.scCompanies.TabIndex = 0;
+            // 
+            // gCompanies
+            // 
+            this.gCompanies.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.gCompanies.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gCompanies.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.gCompanies.ForeColor = System.Drawing.Color.Black;
+            this.gCompanies.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
+            this.gCompanies.Location = new System.Drawing.Point(0, 0);
+            this.gCompanies.Name = "gCompanies";
+            // 
+            // 
+            // 
+            this.gCompanies.PrimaryGrid.AllowEdit = false;
+            this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesChk);
+            this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesID);
+            this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesName);
+            this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesContact);
+            this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesPhone);
+            this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesEmail);
+            this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesAddress);
+            this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesReg);
+            this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesVat);
+            this.gCompanies.PrimaryGrid.MultiSelect = false;
+            this.gCompanies.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
+            this.gCompanies.PrimaryGrid.ShowRowHeaders = false;
+            this.gCompanies.PrimaryGrid.UseAlternateRowStyle = true;
+            this.gCompanies.Size = new System.Drawing.Size(960, 180);
+            this.gCompanies.TabIndex = 2;
+            this.gCompanies.Text = "superGridControl1";
+            this.gCompanies.RowClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowClickEventArgs>(this.gCompanies_RowClick);
+            // 
+            // gCompaniesChk
+            // 
+            this.gCompaniesChk.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
+            this.gCompaniesChk.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            this.gCompaniesChk.MinimumWidth = 32;
+            this.gCompaniesChk.Name = "";
+            this.gCompaniesChk.Width = 32;
+            // 
+            // gCompaniesID
+            // 
+            this.gCompaniesID.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
+            this.gCompaniesID.HeaderText = "ID";
+            this.gCompaniesID.MinimumWidth = 60;
+            this.gCompaniesID.Name = "ID";
+            this.gCompaniesID.Width = 60;
+            // 
+            // gCompaniesName
+            // 
+            this.gCompaniesName.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
+            this.gCompaniesName.HeaderText = "Name";
+            this.gCompaniesName.MinimumWidth = 200;
+            this.gCompaniesName.Name = "Name";
+            // 
+            // gCompaniesContact
+            // 
+            this.gCompaniesContact.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
+            this.gCompaniesContact.HeaderText = "Contact";
+            this.gCompaniesContact.MinimumWidth = 150;
+            this.gCompaniesContact.Name = "Contact";
+            this.gCompaniesContact.Width = 150;
+            // 
+            // gCompaniesPhone
+            // 
+            this.gCompaniesPhone.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
+            this.gCompaniesPhone.HeaderText = "Phone";
+            this.gCompaniesPhone.MinimumWidth = 125;
+            this.gCompaniesPhone.Name = "Phone";
+            this.gCompaniesPhone.Width = 125;
+            // 
+            // gCompaniesEmail
+            // 
+            this.gCompaniesEmail.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
+            this.gCompaniesEmail.HeaderText = "E-mail Address";
+            this.gCompaniesEmail.MinimumWidth = 250;
+            this.gCompaniesEmail.Name = "Email";
+            this.gCompaniesEmail.Width = 250;
+            // 
+            // gCompaniesAddress
+            // 
+            this.gCompaniesAddress.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
+            this.gCompaniesAddress.HeaderText = "Address";
+            this.gCompaniesAddress.MinimumWidth = 250;
+            this.gCompaniesAddress.Name = "Address";
+            this.gCompaniesAddress.Width = 250;
+            // 
+            // gCompaniesReg
+            // 
+            this.gCompaniesReg.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
+            this.gCompaniesReg.HeaderText = "Reg. No.";
+            this.gCompaniesReg.MinimumWidth = 100;
+            this.gCompaniesReg.Name = "Reg";
+            // 
+            // gCompaniesVat
+            // 
+            this.gCompaniesVat.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
+            this.gCompaniesVat.HeaderText = "VAT No.";
+            this.gCompaniesVat.MinimumWidth = 100;
+            this.gCompaniesVat.Name = "VAT";
+            // 
+            // pCompany
+            // 
+            this.pCompany.CanvasColor = System.Drawing.SystemColors.Control;
+            this.pCompany.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.pCompany.Controls.Add(this.btnCompanyCancel);
+            this.pCompany.Controls.Add(this.btnCompanySave);
+            this.pCompany.Controls.Add(this.scCompany);
+            this.pCompany.DisabledBackColor = System.Drawing.Color.Empty;
+            this.pCompany.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pCompany.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pCompany.Location = new System.Drawing.Point(0, 0);
+            this.pCompany.Name = "pCompany";
+            this.pCompany.Size = new System.Drawing.Size(960, 335);
+            this.pCompany.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.pCompany.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.pCompany.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.pCompany.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.pCompany.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.pCompany.Style.GradientAngle = 90;
+            this.pCompany.TabIndex = 8;
+            // 
+            // btnCompanyCancel
+            // 
+            this.btnCompanyCancel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnCompanyCancel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnCompanyCancel.Location = new System.Drawing.Point(830, 286);
+            this.btnCompanyCancel.Name = "btnCompanyCancel";
+            this.btnCompanyCancel.Size = new System.Drawing.Size(110, 29);
+            this.btnCompanyCancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnCompanyCancel.TabIndex = 23;
+            this.btnCompanyCancel.Text = "Cancel";
+            this.btnCompanyCancel.Click += new System.EventHandler(this.btnCompanyCancel_Click);
+            // 
+            // btnCompanySave
+            // 
+            this.btnCompanySave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnCompanySave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnCompanySave.Location = new System.Drawing.Point(21, 286);
+            this.btnCompanySave.Name = "btnCompanySave";
+            this.btnCompanySave.Size = new System.Drawing.Size(110, 29);
+            this.btnCompanySave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnCompanySave.TabIndex = 22;
+            this.btnCompanySave.Text = "Save Changes";
+            this.btnCompanySave.Click += new System.EventHandler(this.btnCompanySave_Click);
+            // 
+            // scCompany
+            // 
+            this.scCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.scCompany.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            // 
+            // 
+            // 
+            this.scCompany.ControlBox.CloseBox.Name = "";
+            // 
+            // 
+            // 
+            this.scCompany.ControlBox.MenuBox.Name = "";
+            this.scCompany.ControlBox.Name = "";
+            this.scCompany.ControlBox.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.scCompany.ControlBox.MenuBox,
+            this.scCompany.ControlBox.CloseBox});
+            this.scCompany.ControlBox.Visible = false;
+            this.scCompany.Controls.Add(this.superTabControlPanel4);
+            this.scCompany.Controls.Add(this.superTabControlPanel6);
+            this.scCompany.ForeColor = System.Drawing.Color.Black;
+            this.scCompany.Location = new System.Drawing.Point(21, 21);
+            this.scCompany.Name = "scCompany";
+            this.scCompany.ReorderTabsEnabled = true;
+            this.scCompany.SelectedTabFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.scCompany.SelectedTabIndex = 0;
+            this.scCompany.Size = new System.Drawing.Size(919, 254);
+            this.scCompany.TabFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scCompany.TabIndex = 21;
+            this.scCompany.Tabs.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.tiCompanyGeneral,
+            this.tiCompanyNotes});
+            this.scCompany.TabStyle = DevComponents.DotNetBar.eSuperTabStyle.VisualStudio2008Dock;
+            // 
+            // superTabControlPanel4
+            // 
+            this.superTabControlPanel4.Controls.Add(this.lblCompanyContact);
+            this.superTabControlPanel4.Controls.Add(this.txtCompanyContact);
+            this.superTabControlPanel4.Controls.Add(this.txtCompanyAddress);
+            this.superTabControlPanel4.Controls.Add(this.lblCompanyAddress);
+            this.superTabControlPanel4.Controls.Add(this.lblCompanyEmail);
+            this.superTabControlPanel4.Controls.Add(this.txtCompanyTrading);
+            this.superTabControlPanel4.Controls.Add(this.lblCompanyTrading);
+            this.superTabControlPanel4.Controls.Add(this.txtCompanyRegVat);
+            this.superTabControlPanel4.Controls.Add(this.txtCompanyReg);
+            this.superTabControlPanel4.Controls.Add(this.txtCompanyName);
+            this.superTabControlPanel4.Controls.Add(this.txtCompanyEmail);
+            this.superTabControlPanel4.Controls.Add(this.lblCompanyPhone);
+            this.superTabControlPanel4.Controls.Add(this.txtCompanyPhone);
+            this.superTabControlPanel4.Controls.Add(this.lblCompanyReg);
+            this.superTabControlPanel4.Controls.Add(this.lblCompanyName);
+            this.superTabControlPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel4.Location = new System.Drawing.Point(0, 25);
+            this.superTabControlPanel4.Name = "superTabControlPanel4";
+            this.superTabControlPanel4.Size = new System.Drawing.Size(919, 229);
+            this.superTabControlPanel4.TabIndex = 1;
+            this.superTabControlPanel4.TabItem = this.tiCompanyGeneral;
+            // 
+            // lblCompanyContact
+            // 
+            this.lblCompanyContact.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.lblCompanyContact.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblCompanyContact.ForeColor = System.Drawing.Color.Black;
+            this.lblCompanyContact.Location = new System.Drawing.Point(24, 179);
+            this.lblCompanyContact.Name = "lblCompanyContact";
+            this.lblCompanyContact.Size = new System.Drawing.Size(120, 23);
+            this.lblCompanyContact.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblCompanyContact.TabIndex = 46;
+            this.lblCompanyContact.Text = "Primary Contact:";
+            // 
+            // txtCompanyContact
+            // 
+            this.txtCompanyContact.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtCompanyContact.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtCompanyContact.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtCompanyContact.Border.Class = "TextBoxBorder";
+            this.txtCompanyContact.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtCompanyContact.DisabledBackColor = System.Drawing.Color.White;
+            this.txtCompanyContact.ForeColor = System.Drawing.Color.Black;
+            this.txtCompanyContact.Location = new System.Drawing.Point(150, 179);
+            this.txtCompanyContact.Name = "txtCompanyContact";
+            this.txtCompanyContact.PreventEnterBeep = true;
+            this.txtCompanyContact.Size = new System.Drawing.Size(345, 25);
+            this.txtCompanyContact.TabIndex = 45;
+            // 
+            // txtCompanyAddress
+            // 
+            this.txtCompanyAddress.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtCompanyAddress.Border.Class = "TextBoxBorder";
+            this.txtCompanyAddress.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtCompanyAddress.DisabledBackColor = System.Drawing.Color.White;
+            this.txtCompanyAddress.ForeColor = System.Drawing.Color.Black;
+            this.txtCompanyAddress.Location = new System.Drawing.Point(521, 55);
+            this.txtCompanyAddress.Multiline = true;
+            this.txtCompanyAddress.Name = "txtCompanyAddress";
+            this.txtCompanyAddress.PreventEnterBeep = true;
+            this.txtCompanyAddress.Size = new System.Drawing.Size(372, 149);
+            this.txtCompanyAddress.TabIndex = 44;
+            // 
+            // lblCompanyAddress
+            // 
+            this.lblCompanyAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.lblCompanyAddress.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblCompanyAddress.ForeColor = System.Drawing.Color.Black;
+            this.lblCompanyAddress.Location = new System.Drawing.Point(521, 24);
+            this.lblCompanyAddress.Name = "lblCompanyAddress";
+            this.lblCompanyAddress.Size = new System.Drawing.Size(74, 23);
+            this.lblCompanyAddress.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblCompanyAddress.TabIndex = 43;
+            this.lblCompanyAddress.Text = "Address:";
+            // 
+            // lblCompanyEmail
+            // 
+            this.lblCompanyEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.lblCompanyEmail.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblCompanyEmail.ForeColor = System.Drawing.Color.Black;
+            this.lblCompanyEmail.Location = new System.Drawing.Point(24, 148);
+            this.lblCompanyEmail.Name = "lblCompanyEmail";
+            this.lblCompanyEmail.Size = new System.Drawing.Size(120, 23);
+            this.lblCompanyEmail.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblCompanyEmail.TabIndex = 42;
+            this.lblCompanyEmail.Text = "E-mail Address:";
+            // 
+            // txtCompanyTrading
+            // 
+            this.txtCompanyTrading.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtCompanyTrading.Border.Class = "TextBoxBorder";
+            this.txtCompanyTrading.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtCompanyTrading.DisabledBackColor = System.Drawing.Color.White;
+            this.txtCompanyTrading.ForeColor = System.Drawing.Color.Black;
+            this.txtCompanyTrading.Location = new System.Drawing.Point(150, 55);
+            this.txtCompanyTrading.Name = "txtCompanyTrading";
+            this.txtCompanyTrading.PreventEnterBeep = true;
+            this.txtCompanyTrading.Size = new System.Drawing.Size(345, 25);
+            this.txtCompanyTrading.TabIndex = 40;
+            // 
+            // lblCompanyTrading
+            // 
+            this.lblCompanyTrading.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.lblCompanyTrading.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblCompanyTrading.ForeColor = System.Drawing.Color.Black;
+            this.lblCompanyTrading.Location = new System.Drawing.Point(24, 55);
+            this.lblCompanyTrading.Name = "lblCompanyTrading";
+            this.lblCompanyTrading.Size = new System.Drawing.Size(120, 23);
+            this.lblCompanyTrading.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblCompanyTrading.TabIndex = 39;
+            this.lblCompanyTrading.Text = "Trading As:";
+            // 
+            // txtCompanyRegVat
+            // 
+            this.txtCompanyRegVat.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtCompanyRegVat.Border.Class = "TextBoxBorder";
+            this.txtCompanyRegVat.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtCompanyRegVat.DisabledBackColor = System.Drawing.Color.White;
+            this.txtCompanyRegVat.ForeColor = System.Drawing.Color.Black;
+            this.txtCompanyRegVat.Location = new System.Drawing.Point(298, 86);
+            this.txtCompanyRegVat.Name = "txtCompanyRegVat";
+            this.txtCompanyRegVat.PreventEnterBeep = true;
+            this.txtCompanyRegVat.Size = new System.Drawing.Size(197, 25);
+            this.txtCompanyRegVat.TabIndex = 38;
+            // 
+            // txtCompanyReg
+            // 
+            this.txtCompanyReg.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtCompanyReg.Border.Class = "TextBoxBorder";
+            this.txtCompanyReg.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtCompanyReg.DisabledBackColor = System.Drawing.Color.White;
+            this.txtCompanyReg.ForeColor = System.Drawing.Color.Black;
+            this.txtCompanyReg.Location = new System.Drawing.Point(150, 86);
+            this.txtCompanyReg.Name = "txtCompanyReg";
+            this.txtCompanyReg.PreventEnterBeep = true;
+            this.txtCompanyReg.Size = new System.Drawing.Size(142, 25);
+            this.txtCompanyReg.TabIndex = 37;
+            // 
+            // txtCompanyName
+            // 
+            this.txtCompanyName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtCompanyName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtCompanyName.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtCompanyName.Border.Class = "TextBoxBorder";
+            this.txtCompanyName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtCompanyName.DisabledBackColor = System.Drawing.Color.White;
+            this.txtCompanyName.ForeColor = System.Drawing.Color.Black;
+            this.txtCompanyName.Location = new System.Drawing.Point(150, 24);
+            this.txtCompanyName.Name = "txtCompanyName";
+            this.txtCompanyName.PreventEnterBeep = true;
+            this.txtCompanyName.Size = new System.Drawing.Size(345, 25);
+            this.txtCompanyName.TabIndex = 36;
+            // 
+            // txtCompanyEmail
+            // 
+            this.txtCompanyEmail.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtCompanyEmail.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtCompanyEmail.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtCompanyEmail.Border.Class = "TextBoxBorder";
+            this.txtCompanyEmail.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtCompanyEmail.DisabledBackColor = System.Drawing.Color.White;
+            this.txtCompanyEmail.ForeColor = System.Drawing.Color.Black;
+            this.txtCompanyEmail.Location = new System.Drawing.Point(150, 148);
+            this.txtCompanyEmail.Name = "txtCompanyEmail";
+            this.txtCompanyEmail.PreventEnterBeep = true;
+            this.txtCompanyEmail.Size = new System.Drawing.Size(345, 25);
+            this.txtCompanyEmail.TabIndex = 35;
+            // 
+            // lblCompanyPhone
+            // 
+            this.lblCompanyPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.lblCompanyPhone.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblCompanyPhone.ForeColor = System.Drawing.Color.Black;
+            this.lblCompanyPhone.Location = new System.Drawing.Point(24, 117);
+            this.lblCompanyPhone.Name = "lblCompanyPhone";
+            this.lblCompanyPhone.Size = new System.Drawing.Size(120, 23);
+            this.lblCompanyPhone.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblCompanyPhone.TabIndex = 34;
+            this.lblCompanyPhone.Text = "Phone Number:";
+            // 
+            // txtCompanyPhone
+            // 
+            this.txtCompanyPhone.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtCompanyPhone.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtCompanyPhone.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtCompanyPhone.Border.Class = "TextBoxBorder";
+            this.txtCompanyPhone.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtCompanyPhone.DisabledBackColor = System.Drawing.Color.White;
+            this.txtCompanyPhone.ForeColor = System.Drawing.Color.Black;
+            this.txtCompanyPhone.Location = new System.Drawing.Point(150, 117);
+            this.txtCompanyPhone.Name = "txtCompanyPhone";
+            this.txtCompanyPhone.PreventEnterBeep = true;
+            this.txtCompanyPhone.Size = new System.Drawing.Size(142, 25);
+            this.txtCompanyPhone.TabIndex = 33;
+            // 
+            // lblCompanyReg
+            // 
+            this.lblCompanyReg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.lblCompanyReg.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblCompanyReg.ForeColor = System.Drawing.Color.Black;
+            this.lblCompanyReg.Location = new System.Drawing.Point(24, 86);
+            this.lblCompanyReg.Name = "lblCompanyReg";
+            this.lblCompanyReg.Size = new System.Drawing.Size(120, 23);
+            this.lblCompanyReg.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblCompanyReg.TabIndex = 32;
+            this.lblCompanyReg.Text = "Reg No./VAT No.:";
+            // 
+            // lblCompanyName
+            // 
+            this.lblCompanyName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.lblCompanyName.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblCompanyName.ForeColor = System.Drawing.Color.Black;
+            this.lblCompanyName.Location = new System.Drawing.Point(24, 24);
+            this.lblCompanyName.Name = "lblCompanyName";
+            this.lblCompanyName.Size = new System.Drawing.Size(120, 23);
+            this.lblCompanyName.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblCompanyName.TabIndex = 31;
+            this.lblCompanyName.Text = "Company Name:";
+            // 
+            // tiCompanyGeneral
+            // 
+            this.tiCompanyGeneral.AttachedControl = this.superTabControlPanel4;
+            this.tiCompanyGeneral.GlobalItem = false;
+            this.tiCompanyGeneral.Name = "tiCompanyGeneral";
+            this.tiCompanyGeneral.Text = "  General";
+            // 
+            // superTabControlPanel6
+            // 
+            this.superTabControlPanel6.Controls.Add(this.txtCompanyNotes);
+            this.superTabControlPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel6.Location = new System.Drawing.Point(0, 30);
+            this.superTabControlPanel6.Name = "superTabControlPanel6";
+            this.superTabControlPanel6.Size = new System.Drawing.Size(919, 224);
+            this.superTabControlPanel6.TabIndex = 0;
+            this.superTabControlPanel6.TabItem = this.tiCompanyNotes;
+            // 
+            // txtCompanyNotes
+            // 
+            this.txtCompanyNotes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCompanyNotes.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtCompanyNotes.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtCompanyNotes.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtCompanyNotes.Border.Class = "TextBoxBorder";
+            this.txtCompanyNotes.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtCompanyNotes.DisabledBackColor = System.Drawing.Color.White;
+            this.txtCompanyNotes.ForeColor = System.Drawing.Color.Black;
+            this.txtCompanyNotes.Location = new System.Drawing.Point(15, 15);
+            this.txtCompanyNotes.Multiline = true;
+            this.txtCompanyNotes.Name = "txtCompanyNotes";
+            this.txtCompanyNotes.PreventEnterBeep = true;
+            this.txtCompanyNotes.Size = new System.Drawing.Size(889, 194);
+            this.txtCompanyNotes.TabIndex = 37;
+            // 
+            // tiCompanyNotes
+            // 
+            this.tiCompanyNotes.AttachedControl = this.superTabControlPanel6;
+            this.tiCompanyNotes.GlobalItem = false;
+            this.tiCompanyNotes.Name = "tiCompanyNotes";
+            this.tiCompanyNotes.Text = "  Notes";
             // 
             // pCourses
             // 
@@ -3105,801 +3902,6 @@
             this.tiContactNotes.Name = "tiContactNotes";
             this.tiContactNotes.Text = "  Notes";
             // 
-            // pBookings
-            // 
-            this.pBookings.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.pBookings.Controls.Add(this.pBookingsList);
-            this.pBookings.Controls.Add(this.pBookingsGrid);
-            this.pBookings.Controls.Add(this.pBookingsCalendar);
-            this.pBookings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pBookings.Location = new System.Drawing.Point(0, 61);
-            this.pBookings.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pBookings.Name = "pBookings";
-            this.pBookings.Padding = new System.Windows.Forms.Padding(3, 0, 3, 4);
-            this.pBookings.Size = new System.Drawing.Size(960, 535);
-            // 
-            // 
-            // 
-            this.pBookings.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.pBookings.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.pBookings.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.pBookings.TabIndex = 1;
-            this.pBookings.Visible = false;
-            // 
-            // pBookingsList
-            // 
-            this.pBookingsList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pBookingsList.CanvasColor = System.Drawing.SystemColors.Control;
-            this.pBookingsList.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.pBookingsList.Controls.Add(this.pBookingsListTools);
-            this.pBookingsList.Controls.Add(this.gBookings);
-            this.pBookingsList.DisabledBackColor = System.Drawing.Color.Empty;
-            this.pBookingsList.Location = new System.Drawing.Point(37, 356);
-            this.pBookingsList.Name = "pBookingsList";
-            this.pBookingsList.Size = new System.Drawing.Size(880, 172);
-            this.pBookingsList.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.pBookingsList.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.pBookingsList.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.pBookingsList.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.pBookingsList.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.pBookingsList.Style.GradientAngle = 90;
-            this.pBookingsList.TabIndex = 11;
-            this.pBookingsList.Visible = false;
-            // 
-            // pBookingsListTools
-            // 
-            this.pBookingsListTools.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pBookingsListTools.CanvasColor = System.Drawing.SystemColors.Control;
-            this.pBookingsListTools.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.pBookingsListTools.Controls.Add(this.btnListCompanyReset);
-            this.pBookingsListTools.Controls.Add(this.txtListCompany);
-            this.pBookingsListTools.Controls.Add(this.lblListBookings);
-            this.pBookingsListTools.Controls.Add(this.lblBookingsListCompany);
-            this.pBookingsListTools.Controls.Add(this.nbBookingsList);
-            this.pBookingsListTools.DisabledBackColor = System.Drawing.Color.Empty;
-            this.pBookingsListTools.Location = new System.Drawing.Point(0, 0);
-            this.pBookingsListTools.Name = "pBookingsListTools";
-            this.pBookingsListTools.Size = new System.Drawing.Size(880, 35);
-            this.pBookingsListTools.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.pBookingsListTools.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.pBookingsListTools.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.pBookingsListTools.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.pBookingsListTools.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.pBookingsListTools.Style.GradientAngle = 90;
-            this.pBookingsListTools.TabIndex = 4;
-            // 
-            // btnListCompanyReset
-            // 
-            this.btnListCompanyReset.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnListCompanyReset.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnListCompanyReset.Location = new System.Drawing.Point(312, 5);
-            this.btnListCompanyReset.Name = "btnListCompanyReset";
-            this.btnListCompanyReset.Size = new System.Drawing.Size(25, 25);
-            this.btnListCompanyReset.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnListCompanyReset.TabIndex = 28;
-            this.btnListCompanyReset.Click += new System.EventHandler(this.btnListCompanyReset_Click);
-            // 
-            // txtListCompany
-            // 
-            this.txtListCompany.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txtListCompany.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtListCompany.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtListCompany.Border.Class = "TextBoxBorder";
-            this.txtListCompany.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtListCompany.DisabledBackColor = System.Drawing.Color.White;
-            this.txtListCompany.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtListCompany.ForeColor = System.Drawing.Color.Black;
-            this.txtListCompany.Location = new System.Drawing.Point(64, 5);
-            this.txtListCompany.Name = "txtListCompany";
-            this.txtListCompany.PreventEnterBeep = true;
-            this.txtListCompany.Size = new System.Drawing.Size(244, 25);
-            this.txtListCompany.TabIndex = 27;
-            // 
-            // lblListBookings
-            // 
-            this.lblListBookings.AutoSize = true;
-            // 
-            // 
-            // 
-            this.lblListBookings.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblListBookings.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblListBookings.ForeColor = System.Drawing.Color.Black;
-            this.lblListBookings.Location = new System.Drawing.Point(348, 9);
-            this.lblListBookings.Name = "lblListBookings";
-            this.lblListBookings.Size = new System.Drawing.Size(77, 17);
-            this.lblListBookings.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lblListBookings.TabIndex = 26;
-            this.lblListBookings.Text = "Total bookings:";
-            // 
-            // lblBookingsListCompany
-            // 
-            this.lblBookingsListCompany.AutoSize = true;
-            // 
-            // 
-            // 
-            this.lblBookingsListCompany.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblBookingsListCompany.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBookingsListCompany.ForeColor = System.Drawing.Color.Black;
-            this.lblBookingsListCompany.Location = new System.Drawing.Point(7, 9);
-            this.lblBookingsListCompany.Name = "lblBookingsListCompany";
-            this.lblBookingsListCompany.Size = new System.Drawing.Size(51, 17);
-            this.lblBookingsListCompany.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lblBookingsListCompany.TabIndex = 24;
-            this.lblBookingsListCompany.Text = "Company:";
-            // 
-            // nbBookingsList
-            // 
-            this.nbBookingsList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nbBookingsList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.nbBookingsList.BackgroundStyle.BackColor1.Color = System.Drawing.SystemColors.Control;
-            this.nbBookingsList.BackgroundStyle.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.nbBookingsList.BackgroundStyle.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.nbBookingsList.ConfigureItemVisible = false;
-            this.nbBookingsList.ForeColor = System.Drawing.Color.Black;
-            this.nbBookingsList.ItemPaddingBottom = 2;
-            this.nbBookingsList.ItemPaddingTop = 2;
-            this.nbBookingsList.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.biBookingsListDay,
-            this.biBookingsListWeek,
-            this.biBookingsListMonth,
-            this.biBookingsListYear,
-            this.biBookingsListGrid,
-            this.biBookingsList});
-            this.nbBookingsList.Location = new System.Drawing.Point(698, 2);
-            this.nbBookingsList.Name = "nbBookingsList";
-            this.nbBookingsList.Size = new System.Drawing.Size(180, 30);
-            this.nbBookingsList.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.nbBookingsList.TabIndex = 12;
-            this.nbBookingsList.Text = "navigationBar2";
-            // 
-            // biBookingsListDay
-            // 
-            this.biBookingsListDay.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.biBookingsListDay.Image = ((System.Drawing.Image)(resources.GetObject("biBookingsListDay.Image")));
-            this.biBookingsListDay.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.biBookingsListDay.Name = "biBookingsListDay";
-            this.biBookingsListDay.OptionGroup = "navBar";
-            this.biBookingsListDay.Text = "Day view";
-            this.biBookingsListDay.Click += new System.EventHandler(this.biBookingsViewDay_Click);
-            // 
-            // biBookingsListWeek
-            // 
-            this.biBookingsListWeek.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.biBookingsListWeek.Image = ((System.Drawing.Image)(resources.GetObject("biBookingsListWeek.Image")));
-            this.biBookingsListWeek.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.biBookingsListWeek.Name = "biBookingsListWeek";
-            this.biBookingsListWeek.OptionGroup = "navBar";
-            this.biBookingsListWeek.Text = "Week view";
-            this.biBookingsListWeek.Click += new System.EventHandler(this.biBookingsViewWeek_Click);
-            // 
-            // biBookingsListMonth
-            // 
-            this.biBookingsListMonth.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.biBookingsListMonth.Image = ((System.Drawing.Image)(resources.GetObject("biBookingsListMonth.Image")));
-            this.biBookingsListMonth.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.biBookingsListMonth.Name = "biBookingsListMonth";
-            this.biBookingsListMonth.OptionGroup = "navBar";
-            this.biBookingsListMonth.Text = "Month view";
-            this.biBookingsListMonth.Click += new System.EventHandler(this.biBookingsViewMonth_Click);
-            // 
-            // biBookingsListYear
-            // 
-            this.biBookingsListYear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.biBookingsListYear.Image = ((System.Drawing.Image)(resources.GetObject("biBookingsListYear.Image")));
-            this.biBookingsListYear.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.biBookingsListYear.Name = "biBookingsListYear";
-            this.biBookingsListYear.OptionGroup = "navBar";
-            this.biBookingsListYear.Text = "Year view";
-            this.biBookingsListYear.Click += new System.EventHandler(this.biBookingsViewYear_Click);
-            // 
-            // biBookingsListGrid
-            // 
-            this.biBookingsListGrid.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.biBookingsListGrid.Image = ((System.Drawing.Image)(resources.GetObject("biBookingsListGrid.Image")));
-            this.biBookingsListGrid.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.biBookingsListGrid.Name = "biBookingsListGrid";
-            this.biBookingsListGrid.OptionGroup = "navBar";
-            this.biBookingsListGrid.Text = "Grid view";
-            this.biBookingsListGrid.Click += new System.EventHandler(this.biBookingsViewGrid_Click);
-            // 
-            // biBookingsList
-            // 
-            this.biBookingsList.Checked = true;
-            this.biBookingsList.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.biBookingsList.Image = ((System.Drawing.Image)(resources.GetObject("biBookingsList.Image")));
-            this.biBookingsList.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.biBookingsList.Name = "biBookingsList";
-            this.biBookingsList.OptionGroup = "navBar";
-            this.biBookingsList.Text = "List view";
-            // 
-            // gBookings
-            // 
-            this.gBookings.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gBookings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.gBookings.ContextMenuStrip = this.mBookings;
-            this.gBookings.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.gBookings.ForeColor = System.Drawing.Color.Black;
-            this.gBookings.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
-            this.gBookings.Location = new System.Drawing.Point(0, 34);
-            this.gBookings.Name = "gBookings";
-            // 
-            // 
-            // 
-            this.gBookings.PrimaryGrid.AllowEdit = false;
-            this.gBookings.PrimaryGrid.Columns.Add(this.gBookingsChk);
-            this.gBookings.PrimaryGrid.Columns.Add(this.gBookingsJob);
-            this.gBookings.PrimaryGrid.Columns.Add(this.gBookingsDates);
-            this.gBookings.PrimaryGrid.Columns.Add(this.gBookingsStart);
-            this.gBookings.PrimaryGrid.Columns.Add(this.gBookingsFinish);
-            this.gBookings.PrimaryGrid.Columns.Add(this.gBookingsName);
-            this.gBookings.PrimaryGrid.Columns.Add(this.gBookingsRooms);
-            this.gBookings.PrimaryGrid.Columns.Add(this.gBookingsCompany);
-            this.gBookings.PrimaryGrid.Columns.Add(this.gBookingsPhone);
-            this.gBookings.PrimaryGrid.Columns.Add(this.gBookingsEmail);
-            this.gBookings.PrimaryGrid.Columns.Add(this.gBookingsRoomLayout);
-            this.gBookings.PrimaryGrid.MultiSelect = false;
-            this.gBookings.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
-            this.gBookings.PrimaryGrid.ShowRowHeaders = false;
-            this.gBookings.PrimaryGrid.UseAlternateRowStyle = true;
-            this.gBookings.Size = new System.Drawing.Size(880, 138);
-            this.gBookings.TabIndex = 0;
-            this.gBookings.Text = "superGridControl1";
-            this.gBookings.RowActivated += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowActivatedEventArgs>(this.gBookings_RowActivated);
-            // 
-            // mBookings
-            // 
-            this.mBookings.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mBookingsAdd,
-            this.mBookingsRemove,
-            this.mBookingsS1,
-            this.mBookingsComplete});
-            this.mBookings.Name = "contextMenuStrip1";
-            this.mBookings.Size = new System.Drawing.Size(169, 76);
-            // 
-            // mBookingsAdd
-            // 
-            this.mBookingsAdd.Name = "mBookingsAdd";
-            this.mBookingsAdd.Size = new System.Drawing.Size(168, 22);
-            this.mBookingsAdd.Text = "Add booking...";
-            this.mBookingsAdd.Click += new System.EventHandler(this.mBookingsAdd_Click);
-            // 
-            // mBookingsRemove
-            // 
-            this.mBookingsRemove.Name = "mBookingsRemove";
-            this.mBookingsRemove.Size = new System.Drawing.Size(168, 22);
-            this.mBookingsRemove.Text = "Remove booking";
-            this.mBookingsRemove.Click += new System.EventHandler(this.mBookingsRemove_Click);
-            // 
-            // mBookingsS1
-            // 
-            this.mBookingsS1.Name = "mBookingsS1";
-            this.mBookingsS1.Size = new System.Drawing.Size(165, 6);
-            // 
-            // mBookingsComplete
-            // 
-            this.mBookingsComplete.Name = "mBookingsComplete";
-            this.mBookingsComplete.Size = new System.Drawing.Size(168, 22);
-            this.mBookingsComplete.Text = "Mark as complete";
-            this.mBookingsComplete.Click += new System.EventHandler(this.mBookingsComplete_Click);
-            // 
-            // gBookingsChk
-            // 
-            this.gBookingsChk.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
-            this.gBookingsChk.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            this.gBookingsChk.MinimumWidth = 32;
-            this.gBookingsChk.Name = "";
-            this.gBookingsChk.Width = 32;
-            // 
-            // gBookingsJob
-            // 
-            this.gBookingsJob.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
-            this.gBookingsJob.HeaderText = "BID";
-            this.gBookingsJob.MinimumWidth = 60;
-            this.gBookingsJob.Name = "Job";
-            this.gBookingsJob.Width = 60;
-            // 
-            // gBookingsDates
-            // 
-            this.gBookingsDates.HeaderText = "Dates";
-            this.gBookingsDates.Name = "Dates";
-            // 
-            // gBookingsStart
-            // 
-            this.gBookingsStart.HeaderText = "Start";
-            this.gBookingsStart.Name = "Start";
-            // 
-            // gBookingsFinish
-            // 
-            this.gBookingsFinish.HeaderText = "Finish";
-            this.gBookingsFinish.Name = "Finish";
-            // 
-            // gBookingsName
-            // 
-            this.gBookingsName.HeaderText = "Event Name";
-            this.gBookingsName.Name = "Name";
-            // 
-            // gBookingsRooms
-            // 
-            this.gBookingsRooms.HeaderText = "Rooms";
-            this.gBookingsRooms.Name = "Rooms";
-            // 
-            // gBookingsCompany
-            // 
-            this.gBookingsCompany.HeaderText = "Company";
-            this.gBookingsCompany.Name = "Company";
-            // 
-            // gBookingsPhone
-            // 
-            this.gBookingsPhone.HeaderText = "Phone";
-            this.gBookingsPhone.Name = "Phone";
-            // 
-            // gBookingsEmail
-            // 
-            this.gBookingsEmail.HeaderText = "E-mail Address";
-            this.gBookingsEmail.Name = "Email";
-            // 
-            // gBookingsRoomLayout
-            // 
-            this.gBookingsRoomLayout.HeaderText = "Room Layout";
-            this.gBookingsRoomLayout.Name = "RoomLayout";
-            // 
-            // pBookingsGrid
-            // 
-            this.pBookingsGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pBookingsGrid.CanvasColor = System.Drawing.SystemColors.Control;
-            this.pBookingsGrid.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.pBookingsGrid.Controls.Add(this.rgBookings);
-            this.pBookingsGrid.Controls.Add(this.pBookingsGridTools);
-            this.pBookingsGrid.DisabledBackColor = System.Drawing.Color.Empty;
-            this.pBookingsGrid.Location = new System.Drawing.Point(37, 190);
-            this.pBookingsGrid.Name = "pBookingsGrid";
-            this.pBookingsGrid.Size = new System.Drawing.Size(880, 160);
-            this.pBookingsGrid.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.pBookingsGrid.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.pBookingsGrid.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.pBookingsGrid.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.pBookingsGrid.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.pBookingsGrid.Style.GradientAngle = 90;
-            this.pBookingsGrid.TabIndex = 7;
-            this.pBookingsGrid.Visible = false;
-            // 
-            // rgBookings
-            // 
-            this.rgBookings.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rgBookings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.rgBookings.ColumnHeaderContextMenuStrip = null;
-            this.rgBookings.ContextMenuStrip = this.mBookingsGrid;
-            this.rgBookings.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rgBookings.ForeColor = System.Drawing.Color.Black;
-            this.rgBookings.LeadHeaderContextMenuStrip = null;
-            this.rgBookings.Location = new System.Drawing.Point(0, 35);
-            this.rgBookings.Name = "rgBookings";
-            this.rgBookings.RowHeaderContextMenuStrip = null;
-            this.rgBookings.Script = null;
-            this.rgBookings.SheetTabContextMenuStrip = null;
-            this.rgBookings.SheetTabNewButtonVisible = false;
-            this.rgBookings.SheetTabVisible = true;
-            this.rgBookings.SheetTabWidth = 294;
-            this.rgBookings.Size = new System.Drawing.Size(880, 126);
-            this.rgBookings.TabIndex = 13;
-            this.rgBookings.DoubleClick += new System.EventHandler(this.rgBookings_DoubleClick);
-            // 
-            // mBookingsGrid
-            // 
-            this.mBookingsGrid.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mBookingsGridAdd,
-            this.mBookingsGridRemove,
-            this.mBookingsGridS1,
-            this.mBookingsGridComplete});
-            this.mBookingsGrid.Name = "contextMenuStrip1";
-            this.mBookingsGrid.Size = new System.Drawing.Size(169, 76);
-            // 
-            // mBookingsGridAdd
-            // 
-            this.mBookingsGridAdd.Name = "mBookingsGridAdd";
-            this.mBookingsGridAdd.Size = new System.Drawing.Size(168, 22);
-            this.mBookingsGridAdd.Text = "Add booking...";
-            this.mBookingsGridAdd.Click += new System.EventHandler(this.mBookingsGridAdd_Click);
-            // 
-            // mBookingsGridRemove
-            // 
-            this.mBookingsGridRemove.Name = "mBookingsGridRemove";
-            this.mBookingsGridRemove.Size = new System.Drawing.Size(168, 22);
-            this.mBookingsGridRemove.Text = "Remove booking";
-            this.mBookingsGridRemove.Click += new System.EventHandler(this.mBookingsGridRemove_Click);
-            // 
-            // mBookingsGridS1
-            // 
-            this.mBookingsGridS1.Name = "mBookingsGridS1";
-            this.mBookingsGridS1.Size = new System.Drawing.Size(165, 6);
-            // 
-            // mBookingsGridComplete
-            // 
-            this.mBookingsGridComplete.Name = "mBookingsGridComplete";
-            this.mBookingsGridComplete.Size = new System.Drawing.Size(168, 22);
-            this.mBookingsGridComplete.Text = "Mark as complete";
-            this.mBookingsGridComplete.Click += new System.EventHandler(this.mBookingsGridComplete_Click);
-            // 
-            // pBookingsGridTools
-            // 
-            this.pBookingsGridTools.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pBookingsGridTools.CanvasColor = System.Drawing.SystemColors.Control;
-            this.pBookingsGridTools.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.pBookingsGridTools.Controls.Add(this.btnGridCompanyReset);
-            this.pBookingsGridTools.Controls.Add(this.txtGridCompany);
-            this.pBookingsGridTools.Controls.Add(this.lblGridBookings);
-            this.pBookingsGridTools.Controls.Add(this.lblBookingsGridCompany);
-            this.pBookingsGridTools.Controls.Add(this.nbBookingsGrid);
-            this.pBookingsGridTools.DisabledBackColor = System.Drawing.Color.Empty;
-            this.pBookingsGridTools.Location = new System.Drawing.Point(0, 0);
-            this.pBookingsGridTools.Name = "pBookingsGridTools";
-            this.pBookingsGridTools.Size = new System.Drawing.Size(880, 35);
-            this.pBookingsGridTools.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.pBookingsGridTools.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.pBookingsGridTools.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.pBookingsGridTools.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.pBookingsGridTools.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.pBookingsGridTools.Style.GradientAngle = 90;
-            this.pBookingsGridTools.TabIndex = 0;
-            // 
-            // btnGridCompanyReset
-            // 
-            this.btnGridCompanyReset.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnGridCompanyReset.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnGridCompanyReset.Location = new System.Drawing.Point(312, 5);
-            this.btnGridCompanyReset.Name = "btnGridCompanyReset";
-            this.btnGridCompanyReset.Size = new System.Drawing.Size(25, 25);
-            this.btnGridCompanyReset.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnGridCompanyReset.TabIndex = 25;
-            this.btnGridCompanyReset.Click += new System.EventHandler(this.btnGridCompanyReset_Click);
-            // 
-            // txtGridCompany
-            // 
-            this.txtGridCompany.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txtGridCompany.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtGridCompany.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtGridCompany.Border.Class = "TextBoxBorder";
-            this.txtGridCompany.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtGridCompany.DisabledBackColor = System.Drawing.Color.White;
-            this.txtGridCompany.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGridCompany.ForeColor = System.Drawing.Color.Black;
-            this.txtGridCompany.Location = new System.Drawing.Point(64, 5);
-            this.txtGridCompany.Name = "txtGridCompany";
-            this.txtGridCompany.PreventEnterBeep = true;
-            this.txtGridCompany.Size = new System.Drawing.Size(244, 25);
-            this.txtGridCompany.TabIndex = 24;
-            // 
-            // lblGridBookings
-            // 
-            this.lblGridBookings.AutoSize = true;
-            // 
-            // 
-            // 
-            this.lblGridBookings.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblGridBookings.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGridBookings.ForeColor = System.Drawing.Color.Black;
-            this.lblGridBookings.Location = new System.Drawing.Point(348, 9);
-            this.lblGridBookings.Name = "lblGridBookings";
-            this.lblGridBookings.Size = new System.Drawing.Size(77, 17);
-            this.lblGridBookings.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lblGridBookings.TabIndex = 23;
-            this.lblGridBookings.Text = "Total bookings:";
-            // 
-            // lblBookingsGridCompany
-            // 
-            this.lblBookingsGridCompany.AutoSize = true;
-            // 
-            // 
-            // 
-            this.lblBookingsGridCompany.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblBookingsGridCompany.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBookingsGridCompany.ForeColor = System.Drawing.Color.Black;
-            this.lblBookingsGridCompany.Location = new System.Drawing.Point(7, 9);
-            this.lblBookingsGridCompany.Name = "lblBookingsGridCompany";
-            this.lblBookingsGridCompany.Size = new System.Drawing.Size(51, 17);
-            this.lblBookingsGridCompany.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lblBookingsGridCompany.TabIndex = 12;
-            this.lblBookingsGridCompany.Text = "Company:";
-            // 
-            // nbBookingsGrid
-            // 
-            this.nbBookingsGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nbBookingsGrid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.nbBookingsGrid.BackgroundStyle.BackColor1.Color = System.Drawing.SystemColors.Control;
-            this.nbBookingsGrid.BackgroundStyle.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.nbBookingsGrid.BackgroundStyle.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.nbBookingsGrid.ConfigureItemVisible = false;
-            this.nbBookingsGrid.ForeColor = System.Drawing.Color.Black;
-            this.nbBookingsGrid.ItemPaddingBottom = 2;
-            this.nbBookingsGrid.ItemPaddingTop = 2;
-            this.nbBookingsGrid.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.biBookingsGridDay,
-            this.biBookingsGridWeek,
-            this.biBookingsGridMonth,
-            this.biBookingsGridYear,
-            this.biBookingsGrid,
-            this.biBookingsGridList});
-            this.nbBookingsGrid.Location = new System.Drawing.Point(698, 2);
-            this.nbBookingsGrid.Name = "nbBookingsGrid";
-            this.nbBookingsGrid.Size = new System.Drawing.Size(180, 30);
-            this.nbBookingsGrid.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.nbBookingsGrid.TabIndex = 11;
-            this.nbBookingsGrid.Text = "navigationBar1";
-            // 
-            // biBookingsGridDay
-            // 
-            this.biBookingsGridDay.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.biBookingsGridDay.Image = ((System.Drawing.Image)(resources.GetObject("biBookingsGridDay.Image")));
-            this.biBookingsGridDay.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.biBookingsGridDay.Name = "biBookingsGridDay";
-            this.biBookingsGridDay.OptionGroup = "navBar";
-            this.biBookingsGridDay.Text = "Day view";
-            this.biBookingsGridDay.Click += new System.EventHandler(this.biBookingsViewDay_Click);
-            // 
-            // biBookingsGridWeek
-            // 
-            this.biBookingsGridWeek.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.biBookingsGridWeek.Image = ((System.Drawing.Image)(resources.GetObject("biBookingsGridWeek.Image")));
-            this.biBookingsGridWeek.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.biBookingsGridWeek.Name = "biBookingsGridWeek";
-            this.biBookingsGridWeek.OptionGroup = "navBar";
-            this.biBookingsGridWeek.Text = "Week view";
-            this.biBookingsGridWeek.Click += new System.EventHandler(this.biBookingsViewWeek_Click);
-            // 
-            // biBookingsGridMonth
-            // 
-            this.biBookingsGridMonth.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.biBookingsGridMonth.Image = ((System.Drawing.Image)(resources.GetObject("biBookingsGridMonth.Image")));
-            this.biBookingsGridMonth.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.biBookingsGridMonth.Name = "biBookingsGridMonth";
-            this.biBookingsGridMonth.OptionGroup = "navBar";
-            this.biBookingsGridMonth.Text = "Month view";
-            this.biBookingsGridMonth.Click += new System.EventHandler(this.biBookingsViewMonth_Click);
-            // 
-            // biBookingsGridYear
-            // 
-            this.biBookingsGridYear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.biBookingsGridYear.Image = ((System.Drawing.Image)(resources.GetObject("biBookingsGridYear.Image")));
-            this.biBookingsGridYear.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.biBookingsGridYear.Name = "biBookingsGridYear";
-            this.biBookingsGridYear.OptionGroup = "navBar";
-            this.biBookingsGridYear.Text = "Year view";
-            this.biBookingsGridYear.Click += new System.EventHandler(this.biBookingsViewYear_Click);
-            // 
-            // biBookingsGrid
-            // 
-            this.biBookingsGrid.Checked = true;
-            this.biBookingsGrid.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.biBookingsGrid.Image = ((System.Drawing.Image)(resources.GetObject("biBookingsGrid.Image")));
-            this.biBookingsGrid.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.biBookingsGrid.Name = "biBookingsGrid";
-            this.biBookingsGrid.OptionGroup = "navBar";
-            this.biBookingsGrid.Text = "Grid view";
-            // 
-            // biBookingsGridList
-            // 
-            this.biBookingsGridList.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.biBookingsGridList.Image = ((System.Drawing.Image)(resources.GetObject("biBookingsGridList.Image")));
-            this.biBookingsGridList.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.biBookingsGridList.Name = "biBookingsGridList";
-            this.biBookingsGridList.OptionGroup = "navBar";
-            this.biBookingsGridList.Text = "List view";
-            this.biBookingsGridList.Click += new System.EventHandler(this.biBookingsViewList_Click);
-            // 
-            // pBookingsCalendar
-            // 
-            this.pBookingsCalendar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pBookingsCalendar.CanvasColor = System.Drawing.SystemColors.Control;
-            this.pBookingsCalendar.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.pBookingsCalendar.Controls.Add(this.pBookingsCalendarTools);
-            this.pBookingsCalendar.Controls.Add(this.cvBookings);
-            this.pBookingsCalendar.DisabledBackColor = System.Drawing.Color.Empty;
-            this.pBookingsCalendar.Location = new System.Drawing.Point(37, 6);
-            this.pBookingsCalendar.Name = "pBookingsCalendar";
-            this.pBookingsCalendar.Size = new System.Drawing.Size(880, 178);
-            this.pBookingsCalendar.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.pBookingsCalendar.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.pBookingsCalendar.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.pBookingsCalendar.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.pBookingsCalendar.Style.GradientAngle = 90;
-            this.pBookingsCalendar.TabIndex = 0;
-            this.pBookingsCalendar.Visible = false;
-            // 
-            // pBookingsCalendarTools
-            // 
-            this.pBookingsCalendarTools.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pBookingsCalendarTools.CanvasColor = System.Drawing.SystemColors.Control;
-            this.pBookingsCalendarTools.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.pBookingsCalendarTools.Controls.Add(this.lblCalendarBookings);
-            this.pBookingsCalendarTools.Controls.Add(this.nbBookings);
-            this.pBookingsCalendarTools.Controls.Add(this.dnBookings);
-            this.pBookingsCalendarTools.DisabledBackColor = System.Drawing.Color.Empty;
-            this.pBookingsCalendarTools.Location = new System.Drawing.Point(0, 0);
-            this.pBookingsCalendarTools.Name = "pBookingsCalendarTools";
-            this.pBookingsCalendarTools.Size = new System.Drawing.Size(880, 35);
-            this.pBookingsCalendarTools.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.pBookingsCalendarTools.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.pBookingsCalendarTools.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.pBookingsCalendarTools.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.pBookingsCalendarTools.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.pBookingsCalendarTools.Style.GradientAngle = 90;
-            this.pBookingsCalendarTools.TabIndex = 5;
-            // 
-            // lblCalendarBookings
-            // 
-            this.lblCalendarBookings.AutoSize = true;
-            // 
-            // 
-            // 
-            this.lblCalendarBookings.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblCalendarBookings.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCalendarBookings.ForeColor = System.Drawing.Color.Black;
-            this.lblCalendarBookings.Location = new System.Drawing.Point(348, 8);
-            this.lblCalendarBookings.Name = "lblCalendarBookings";
-            this.lblCalendarBookings.Size = new System.Drawing.Size(77, 17);
-            this.lblCalendarBookings.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lblCalendarBookings.TabIndex = 24;
-            this.lblCalendarBookings.Text = "Total bookings:";
-            // 
-            // nbBookings
-            // 
-            this.nbBookings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nbBookings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.nbBookings.BackgroundStyle.BackColor1.Color = System.Drawing.SystemColors.Control;
-            this.nbBookings.BackgroundStyle.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.nbBookings.BackgroundStyle.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.nbBookings.ConfigureItemVisible = false;
-            this.nbBookings.ForeColor = System.Drawing.Color.Black;
-            this.nbBookings.ItemPaddingBottom = 2;
-            this.nbBookings.ItemPaddingTop = 2;
-            this.nbBookings.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.biBookingsViewDay,
-            this.biBookingsViewWeek,
-            this.biBookingsViewMonth,
-            this.biBookingsViewYear,
-            this.biBookingsViewGrid,
-            this.biBookingsViewList});
-            this.nbBookings.Location = new System.Drawing.Point(698, 2);
-            this.nbBookings.Name = "nbBookings";
-            this.nbBookings.Size = new System.Drawing.Size(180, 30);
-            this.nbBookings.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.nbBookings.TabIndex = 10;
-            this.nbBookings.Text = "navigationBar1";
-            // 
-            // biBookingsViewDay
-            // 
-            this.biBookingsViewDay.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.biBookingsViewDay.Image = ((System.Drawing.Image)(resources.GetObject("biBookingsViewDay.Image")));
-            this.biBookingsViewDay.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.biBookingsViewDay.Name = "biBookingsViewDay";
-            this.biBookingsViewDay.OptionGroup = "navBar";
-            this.biBookingsViewDay.Text = "Day view";
-            this.biBookingsViewDay.Click += new System.EventHandler(this.biBookingsViewDay_Click);
-            // 
-            // biBookingsViewWeek
-            // 
-            this.biBookingsViewWeek.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.biBookingsViewWeek.Image = ((System.Drawing.Image)(resources.GetObject("biBookingsViewWeek.Image")));
-            this.biBookingsViewWeek.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.biBookingsViewWeek.Name = "biBookingsViewWeek";
-            this.biBookingsViewWeek.OptionGroup = "navBar";
-            this.biBookingsViewWeek.Text = "Week view";
-            this.biBookingsViewWeek.Click += new System.EventHandler(this.biBookingsViewWeek_Click);
-            // 
-            // biBookingsViewMonth
-            // 
-            this.biBookingsViewMonth.Checked = true;
-            this.biBookingsViewMonth.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.biBookingsViewMonth.Image = ((System.Drawing.Image)(resources.GetObject("biBookingsViewMonth.Image")));
-            this.biBookingsViewMonth.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.biBookingsViewMonth.Name = "biBookingsViewMonth";
-            this.biBookingsViewMonth.OptionGroup = "navBar";
-            this.biBookingsViewMonth.Text = "Month view";
-            this.biBookingsViewMonth.Click += new System.EventHandler(this.biBookingsViewMonth_Click);
-            // 
-            // biBookingsViewYear
-            // 
-            this.biBookingsViewYear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.biBookingsViewYear.Image = ((System.Drawing.Image)(resources.GetObject("biBookingsViewYear.Image")));
-            this.biBookingsViewYear.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.biBookingsViewYear.Name = "biBookingsViewYear";
-            this.biBookingsViewYear.OptionGroup = "navBar";
-            this.biBookingsViewYear.Text = "Year view";
-            this.biBookingsViewYear.Click += new System.EventHandler(this.biBookingsViewYear_Click);
-            // 
-            // biBookingsViewGrid
-            // 
-            this.biBookingsViewGrid.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.biBookingsViewGrid.Image = ((System.Drawing.Image)(resources.GetObject("biBookingsViewGrid.Image")));
-            this.biBookingsViewGrid.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.biBookingsViewGrid.Name = "biBookingsViewGrid";
-            this.biBookingsViewGrid.OptionGroup = "navBar";
-            this.biBookingsViewGrid.Text = "Grid view";
-            this.biBookingsViewGrid.Click += new System.EventHandler(this.biBookingsViewGrid_Click);
-            // 
-            // biBookingsViewList
-            // 
-            this.biBookingsViewList.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.biBookingsViewList.Image = ((System.Drawing.Image)(resources.GetObject("biBookingsViewList.Image")));
-            this.biBookingsViewList.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.biBookingsViewList.Name = "biBookingsViewList";
-            this.biBookingsViewList.OptionGroup = "navBar";
-            this.biBookingsViewList.Text = "List view";
-            this.biBookingsViewList.Click += new System.EventHandler(this.biBookingsViewList_Click);
-            // 
-            // dnBookings
-            // 
-            this.dnBookings.CalendarView = this.cvBookings;
-            this.dnBookings.CanvasColor = System.Drawing.SystemColors.Control;
-            this.dnBookings.DisabledBackColor = System.Drawing.Color.Empty;
-            this.dnBookings.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dnBookings.Location = new System.Drawing.Point(0, 2);
-            this.dnBookings.Name = "dnBookings";
-            this.dnBookings.Size = new System.Drawing.Size(308, 30);
-            this.dnBookings.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dnBookings.TabIndex = 9;
-            this.dnBookings.Text = "dateNavigator1";
-            // 
-            // cvBookings
-            // 
-            this.cvBookings.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cvBookings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.cvBookings.BackgroundStyle.BackColor = System.Drawing.Color.White;
-            this.cvBookings.BackgroundStyle.BackColor2 = System.Drawing.Color.White;
-            this.cvBookings.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.cvBookings.BackgroundStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cvBookings.ContainerControlProcessDialogKey = true;
-            this.cvBookings.ContextMenuStrip = this.mBookings;
-            this.cvBookings.EnableDragCopy = false;
-            this.cvBookings.EnableDragDrop = false;
-            this.cvBookings.ForeColor = System.Drawing.Color.Black;
-            this.cvBookings.HighlightCurrentDay = true;
-            this.cvBookings.Is24HourFormat = true;
-            this.cvBookings.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
-            this.cvBookings.Location = new System.Drawing.Point(0, 34);
-            this.cvBookings.MultiUserTabHeight = 21;
-            this.cvBookings.Name = "cvBookings";
-            this.cvBookings.SelectedView = DevComponents.DotNetBar.Schedule.eCalendarView.Month;
-            this.cvBookings.Size = new System.Drawing.Size(880, 144);
-            this.cvBookings.TabIndex = 4;
-            this.cvBookings.TimeIndicator.BorderColor = System.Drawing.Color.Empty;
-            this.cvBookings.TimeIndicator.Tag = null;
-            this.cvBookings.TimeSlotDuration = 30;
-            this.cvBookings.ItemClick += new System.EventHandler(this.cvBookings_ItemClick);
-            this.cvBookings.ItemDoubleClick += new System.Windows.Forms.MouseEventHandler(this.cvBookings_ItemDoubleClick);
-            this.cvBookings.MouseEnter += new System.EventHandler(this.cvBookings_MouseEnter);
-            this.cvBookings.MouseLeave += new System.EventHandler(this.cvBookings_MouseLeave);
-            // 
             // ab
             // 
             this.ab.AutoExpandOnClick = true;
@@ -4024,6 +4026,7 @@
             // 
             // mtBookings
             // 
+            this.mtBookings.Checked = true;
             this.mtBookings.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtBookings.Name = "mtBookings";
             this.mtBookings.Panel = this.pBookings;
@@ -4049,7 +4052,6 @@
             // 
             // mtCompanies
             // 
-            this.mtCompanies.Checked = true;
             this.mtCompanies.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtCompanies.ItemAlignment = DevComponents.DotNetBar.eItemAlignment.Far;
             this.mtCompanies.Name = "mtCompanies";
@@ -4255,7 +4257,7 @@
             this.mCompaniesAdd,
             this.mCompaniesRemove});
             this.mCompanies.Name = "mContacts";
-            this.mCompanies.Size = new System.Drawing.Size(171, 70);
+            this.mCompanies.Size = new System.Drawing.Size(171, 48);
             // 
             // mCompaniesAdd
             // 
@@ -4287,16 +4289,21 @@
             this.Shown += new System.EventHandler(this.frmMain_Shown);
             this.ms.ResumeLayout(false);
             this.ms.PerformLayout();
-            this.pCompanies.ResumeLayout(false);
-            this.scCompanies.Panel1.ResumeLayout(false);
-            this.scCompanies.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.scCompanies)).EndInit();
-            this.scCompanies.ResumeLayout(false);
-            this.pCompany.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.scCompany)).EndInit();
-            this.scCompany.ResumeLayout(false);
-            this.superTabControlPanel4.ResumeLayout(false);
-            this.superTabControlPanel6.ResumeLayout(false);
+            this.pBookings.ResumeLayout(false);
+            this.pBookingsList.ResumeLayout(false);
+            this.pBookingsListTools.ResumeLayout(false);
+            this.pBookingsListTools.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nbBookingsList)).EndInit();
+            this.mBookings.ResumeLayout(false);
+            this.pBookingsGrid.ResumeLayout(false);
+            this.mBookingsGrid.ResumeLayout(false);
+            this.pBookingsGridTools.ResumeLayout(false);
+            this.pBookingsGridTools.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nbBookingsGrid)).EndInit();
+            this.pBookingsCalendar.ResumeLayout(false);
+            this.pBookingsCalendarTools.ResumeLayout(false);
+            this.pBookingsCalendarTools.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nbBookings)).EndInit();
             this.pEnquiries.ResumeLayout(false);
             this.scEnquiries.Panel1.ResumeLayout(false);
             this.scEnquiries.Panel2.ResumeLayout(false);
@@ -4311,6 +4318,16 @@
             this.superTabControlPanel8.ResumeLayout(false);
             this.superTabControlPanel10.ResumeLayout(false);
             this.superTabControlPanel5.ResumeLayout(false);
+            this.pCompanies.ResumeLayout(false);
+            this.scCompanies.Panel1.ResumeLayout(false);
+            this.scCompanies.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.scCompanies)).EndInit();
+            this.scCompanies.ResumeLayout(false);
+            this.pCompany.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.scCompany)).EndInit();
+            this.scCompany.ResumeLayout(false);
+            this.superTabControlPanel4.ResumeLayout(false);
+            this.superTabControlPanel6.ResumeLayout(false);
             this.pCourses.ResumeLayout(false);
             this.scCourses.Panel1.ResumeLayout(false);
             this.scCourses.Panel2.ResumeLayout(false);
@@ -4332,21 +4349,6 @@
             this.superTabControlPanel1.ResumeLayout(false);
             this.superTabControlPanel3.ResumeLayout(false);
             this.superTabControlPanel2.ResumeLayout(false);
-            this.pBookings.ResumeLayout(false);
-            this.pBookingsList.ResumeLayout(false);
-            this.pBookingsListTools.ResumeLayout(false);
-            this.pBookingsListTools.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nbBookingsList)).EndInit();
-            this.mBookings.ResumeLayout(false);
-            this.pBookingsGrid.ResumeLayout(false);
-            this.mBookingsGrid.ResumeLayout(false);
-            this.pBookingsGridTools.ResumeLayout(false);
-            this.pBookingsGridTools.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nbBookingsGrid)).EndInit();
-            this.pBookingsCalendar.ResumeLayout(false);
-            this.pBookingsCalendarTools.ResumeLayout(false);
-            this.pBookingsCalendarTools.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nbBookings)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsv)).EndInit();
             this.bsv.ResumeLayout(false);
             this.mTools.ResumeLayout(false);

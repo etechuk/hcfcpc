@@ -23,7 +23,7 @@ namespace Client
         #region Members
 
         // Calendar
-        private CalendarModel cmBookings;
+        private CalendarModel cmBookings = new CalendarModel();
         // Notifications
         private Balloon b = new Balloon();
         // Data
@@ -32,6 +32,7 @@ namespace Client
 
         private int iSSItemSelected = 0;
         private string wsCurrent;
+        private ReoGridRange rSelected;
 
         GridRow rBooking;
 
@@ -78,6 +79,11 @@ namespace Client
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
+            if (rgBookings.Worksheets.Count > 0)
+            {
+                rgBookings.Worksheets.Clear();
+            }
+
             if (!Program.bSignOut)
             {
                 Application.Exit();
@@ -146,11 +152,6 @@ namespace Client
             LoadBookings();
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void cvBookings_ItemClick(object sender, EventArgs e)
         {
             if (cvBookings.SelectedView == eCalendarView.Year)
@@ -197,6 +198,7 @@ namespace Client
             if (iSSItemSelected > 0)
             {
                 SharedData.iBookingID = iSSItemSelected;
+
                 Form frmBooking = new frmBooking();
                 DialogResult dlg = frmBooking.ShowDialog();
                 if (dlg == DialogResult.OK)
@@ -204,6 +206,7 @@ namespace Client
                     wsCurrent = rgBookings.CurrentWorksheet.Name;
                     LoadBookingsGrid();
                 }
+
                 SharedData.iBookingID = 0;
             }
         }
@@ -273,10 +276,13 @@ namespace Client
                 }
 
                 string sCompany = "";
-                DataSet ds = Program.DB.SelectAll("SELECT Name FROM Companies WHERE ID=" + d.Tables[0].Rows[0]["BCompany"].ToString() + ";");
-                if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+                if (d.Tables[0].Rows[0]["BCompany"].ToString().Length > 0)
                 {
-                    sCompany = ds.Tables[0].Rows[0]["Name"].ToString();
+                    DataSet ds = Program.DB.SelectAll("SELECT Name FROM Companies WHERE ID=" + d.Tables[0].Rows[0]["BCompany"].ToString() + ";");
+                    if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+                    {
+                        sCompany = ds.Tables[0].Rows[0]["Name"].ToString();
+                    }
                 }
 
                 b.Text = "";
@@ -316,6 +322,111 @@ namespace Client
             }
         }
 
+        private void sheet_CellMouseEnter(object sender, unvell.ReoGrid.Events.CellMouseEventArgs e)
+        {
+            Worksheet sheet = e.Worksheet;
+            ReoGridPos p = sheet.HoverPos;
+            if (sheet.Cells[p].Tag != null && sheet.Cells[p].Tag.ToString().Length > 0)
+            {
+                DataSet d = Program.DB.SelectAll("SELECT BName,BCompany,BDates,BTimes,BComments FROM Jobs WHERE ID=" + sheet.Cells[p].Tag.ToString() + ";");
+                if (d.Tables.Count > 0 && d.Tables[0].Rows.Count > 0)
+                {
+                    string sDate = "", sStart = "", sFinish = "";
+                    DataRow row = d.Tables[0].Rows[0];
+
+                    if (ab == null)
+                    {
+                        ShowTooltip();
+                    }
+
+                    string[] sDates = new string[] { };
+                    if (row["BDates"] != DBNull.Value)
+                    {
+                        sDates = row["BDates"].ToString().Split('|');
+                        if (sDates.Length == 2)
+                        {
+                            sDates[0] = sDates[0].Replace(" 00:00:00", "");
+                            sDates[1] = sDates[1].Replace(" 00:00:00", "");
+                            sDate = sDates[0] + " - " + sDates[1];
+                        }
+                    }
+
+                    if (row["BTimes"] != DBNull.Value)
+                    {
+                        string[] sTimes = row["BTimes"].ToString().Split('|');
+                        if (sTimes.Length == 2 && sDates.Length == 2)
+                        {
+                            sDates[0] += " " + sTimes[0] + ":00";
+                            sDates[1] += " " + sTimes[1] + ":00";
+                            sStart = sTimes[0];
+                            sFinish = sTimes[1];
+
+                            DateTime now = DateTime.Now;
+                            int iYear = now.Year, iMonth = now.Month, iDay = now.Day;
+
+                            string[] d1 = sDates[0].Split('/');
+                            string[] t1 = sTimes[0].Split(':');
+                            iYear = Convert.ToInt32(d1[2].Substring(0, d1[2].IndexOf(' ')));
+                            iMonth = Convert.ToInt32(d1[1]);
+                            iDay = Convert.ToInt32(d1[0]);
+                            sStart = new DateTime(iYear, iMonth, iDay, Convert.ToInt32(t1[0]), Convert.ToInt32(t1[1]), 0).ToString("hh:mm");
+
+                            string[] d2 = sDates[1].Split('/');
+                            string[] t2 = sTimes[1].Split(':');
+                            iYear = Convert.ToInt32(d2[2].Substring(0, d2[2].IndexOf(' ')));
+                            iMonth = Convert.ToInt32(d2[1]);
+                            iDay = Convert.ToInt32(d2[0]);
+                            sFinish = new DateTime(iYear, iMonth, iDay, Convert.ToInt32(t2[0]), Convert.ToInt32(t2[1]), 0).ToString("hh:mm");
+                        }
+                    }
+
+                    string sCompany = "";
+                    if (d.Tables[0].Rows[0]["BCompany"].ToString().Length > 0)
+                    {
+                        DataSet ds = Program.DB.SelectAll("SELECT Name FROM Companies WHERE ID=" + d.Tables[0].Rows[0]["BCompany"].ToString() + ";");
+                        if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+                        {
+                            sCompany = ds.Tables[0].Rows[0]["Name"].ToString();
+                        }
+                    }
+
+                    b.Text = "";
+                    b.CaptionText = d.Tables[0].Rows[0]["BName"].ToString();
+                    if (sCompany.Length > 0 && !sCompany.Any(char.IsDigit))
+                    {
+                        b.Text = sCompany;
+                    }
+                    if (sDate.Length > 0)
+                    {
+                        b.Text += b.Text.Length > 0 ? Environment.NewLine : "";
+                        b.Text += sDate;
+                    }
+                    if (sStart.Length > 0 && sFinish.Length > 0)
+                    {
+                        b.Text += b.Text.Length > 0 ? Environment.NewLine : "";
+                        b.Text += sStart + " - " + sFinish;
+                    }
+                    b.AutoResize();
+                    b.Show(rgBookings, false);
+                }
+            }
+        }
+
+        private void sheet_CellMouseLeave(object sender, unvell.ReoGrid.Events.CellMouseEventArgs e)
+        {
+            Worksheet sheet = e.Worksheet;
+            ReoGridPos p = sheet.HoverPos;
+            if (sheet.Cells[p].Tag != null)
+            {
+                return;
+            }
+
+            if (b != null && b.Visible)
+            {
+                b.Hide();
+            }
+        }
+
         private void sheet_CurrentWorksheetChanged()
         {
             txtGridCompany.Text = "";
@@ -327,6 +438,20 @@ namespace Client
             }
         }
 
+        private void sheet_SelectionRangeChanged(object sender, unvell.ReoGrid.Events.RangeEventArgs e)
+        {
+            Worksheet sheet = rgBookings.CurrentWorksheet;
+            ReoGridRange r = sheet.SelectionRange;
+            SharedData.dtSelectedStart = Convert.ToDateTime(sheet[1, r.StartPos.Col].ToString());
+            SharedData.dtSelectedFinish = Convert.ToDateTime(sheet[1, r.EndPos.Col].ToString());
+            string sRooms = "";
+            for (int i = r.StartPos.Row; i <= r.EndPos.Row; i++)
+            {
+                sRooms += (sRooms.Length > 0 ? "|" : "") + sheet.Cells[i, 0].Tag.ToString();
+            }
+            SharedData.sBookingRooms = sRooms;
+        }
+
         #endregion
 
         #region Methods
@@ -336,6 +461,7 @@ namespace Client
             switch (Properties.Settings.Default.DefaultView)
             {
                 case 0: // Bookings tab, day view
+                    LoadBookings();
                     cvBookings.SelectedView = eCalendarView.Day;
                     pBookingsGrid.Visible = false;
                     pBookingsList.Visible = false;
@@ -344,6 +470,7 @@ namespace Client
                     ms.SelectedTab = mtBookings;
                     break;
                 case 1: // Bookings tab, week view
+                    LoadBookings();
                     cvBookings.SelectedView = eCalendarView.Week;
                     pBookingsGrid.Visible = false;
                     pBookingsList.Visible = false;
@@ -352,6 +479,7 @@ namespace Client
                     ms.SelectedTab = mtBookings;
                     break;
                 case 3: // Bookings tab, year view
+                    LoadBookings();
                     cvBookings.SelectedView = eCalendarView.Year;
                     pBookingsGrid.Visible = false;
                     pBookingsList.Visible = false;
@@ -360,6 +488,7 @@ namespace Client
                     ms.SelectedTab = mtBookings;
                     break;
                 case 4: // Bookings tab, grid view
+                    LoadBookingsGrid();
                     pBookingsGrid.Visible = true;
                     pBookingsList.Visible = false;
                     pBookingsCalendar.Visible = false;
@@ -367,6 +496,7 @@ namespace Client
                     ms.SelectedTab = mtBookings;
                     break;
                 case 5: // Bookings tab, list view
+                    LoadBookings();
                     pBookingsGrid.Visible = false;
                     pBookingsList.Visible = true;
                     pBookingsCalendar.Visible = false;
@@ -378,15 +508,19 @@ namespace Client
                     ms.SelectedTab = mtEnquiries;
                     break;
                 case 7: // Courses tab
+                    LoadCourses();
                     ms.SelectedTab = mtCourses;
                     break;
                 case 8: // Companies tab
+                    LoadCompanies();
                     ms.SelectedTab = mtCompanies;
                     break;
                 case 9: // Contacts tab
+                    LoadContacts();
                     ms.SelectedTab = mtContacts;
                     break;
                 default: // Bookings tab, month view
+                    LoadBookings();
                     cvBookings.SelectedView = eCalendarView.Month;
                     pBookingsGrid.Visible = false;
                     pBookingsList.Visible = false;
@@ -399,7 +533,10 @@ namespace Client
 
         private void LoadBookings()
         {
-            cmBookings = new CalendarModel();
+            if (cmBookings.Appointments.Count > 0)
+            {
+                cmBookings.Appointments.Clear();
+            }
             gBookings.PrimaryGrid.Rows.Clear();
 
             DataSet d, ds = Program.DB.SelectAll("SELECT ID,Job,BName,BCompany,BRoom,BRoomLayout,BDates,BTimes,BPhone,BEmail FROM Jobs WHERE BName IS NOT NULL AND BUser IS NOT NULL ORDER BY Job DESC");
@@ -509,7 +646,7 @@ namespace Client
                     {
                         foreach (KeyValuePair<int, string> company in companies)
                         {
-                            if (company.Key > -1 && company.Key == Convert.ToInt32(row["BCompany"]))
+                            if (company.Key > -1 && row["BCompany"] != DBNull.Value && company.Key == Convert.ToInt32(row["BCompany"]))
                             {
                                 sCompany = company.Value;
                                 break;
@@ -518,11 +655,13 @@ namespace Client
                     }
 
                     string sRoom = "";
-                    if (rooms.Count > 0)
+                    if (rooms.Count > 0 && row["BRoom"] != DBNull.Value)
                     {
+                        string[] sRooms = row["BRoom"].ToString().Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
+
                         foreach (KeyValuePair<int, string> room in rooms)
                         {
-                            if (row["BRoom"] != DBNull.Value && room.Key > -1 && room.Key == Convert.ToInt32(row["BRoom"]))
+                            if (room.Key > -1 && sRooms.Contains(room.Key.ToString()))
                             {
                                 sRoom = room.Value;
                                 break;
@@ -541,8 +680,8 @@ namespace Client
                         false, row["Job"].ToString(), sDate, sStart, sFinish, row["BName"].ToString(), sRoom, sCompany, row["BPhone"].ToString(),
                         row["BEmail"].ToString(), row["BRoomLayout"].ToString()
                     });
+                    r.Tag = row["ID"];
                     gBookings.PrimaryGrid.Rows.Add(r);
-                    gBookings.PrimaryGrid.Rows[gBookings.PrimaryGrid.Rows.Count - 1].Tag = row["ID"];
                 }
             }
 
@@ -601,7 +740,7 @@ namespace Client
 
             if (wsCurrent != "" && rgBookings.Worksheets[wsCurrent] != null)
             {
-                rgBookings.CurrentWorksheetChanged += (s, e) => sheet_CurrentWorksheetChanged();
+                //rgBookings.CurrentWorksheetChanged += (s, e) => sheet_CurrentWorksheetChanged();
                 rgBookings.CurrentWorksheet = rgBookings.Worksheets[wsCurrent];
             }
         }
@@ -814,6 +953,9 @@ namespace Client
             sheet.BeforeCellEdit += (s, e) => e.IsCancelled = true;
             // Set up cell selection
             sheet.CellMouseDown += sheet_CellMouseDown;
+            sheet.CellMouseEnter += sheet_CellMouseEnter;
+            sheet.CellMouseLeave += sheet_CellMouseLeave;
+            sheet.SelectionRangeChanged += sheet_SelectionRangeChanged;
 
             // Set column headers
             int count = 0;
@@ -916,6 +1058,7 @@ namespace Client
 
                 sheet[count, 0] = entry.Value;
                 sheet.SetRowsHeight(count, 1, 23);
+                sheet.Cells[count, 0].Tag = entry.Key.Replace("z", "").Replace("r", "");
                 sheet.Cells[count, 0].Style.VAlign = ReoGridVerAlign.Middle;
                 sheet.Cells[count, 0].Style.HAlign = ReoGridHorAlign.Left;
                 sheet.Cells[count, 0].Style.FontName = "Arial";
@@ -933,13 +1076,19 @@ namespace Client
 
                 if (sDates.Length > 0)
                 {
-                    int iColumn = 1;
-                    DataSet d = Program.DB.SelectAll("SELECT ID,BName,BDates,BTimes,BRoom,BComments,Confirmed,Completed FROM Jobs WHERE " + sDates + (iFilterCompany > 0 ? " AND BCompany>" + iFilterCompany : "") + ";");
+                    DataSet d = Program.DB.SelectAll("SELECT ID,BName,BDates,BTimes,BRoom,BComments,Confirmed,Completed FROM Jobs WHERE " + sDates + (iFilterCompany > 0 ? " AND BCompany=" + iFilterCompany : "") + ";");
                     if (d.Tables.Count > 0 && d.Tables[0].Rows.Count > 0)
                     {
                         foreach (DataRow dr in d.Tables[0].Rows)
                         {
-                            if (dr["BRoom"] != DBNull.Value && dr["BRoom"].ToString().Contains(entry.Key.Replace("r", "").Replace("z", "")))
+                            int iColumn = 1;
+                            string[] sRooms = new string[] { };
+                            if (dr["BRoom"] != DBNull.Value && dr["BRoom"].ToString().Length > 0)
+                            {
+                                sRooms = dr["BRoom"].ToString().Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
+                            }
+
+                            if (dr["BRoom"] != DBNull.Value && sRooms.Contains(entry.Key.Replace("r", "").Replace("z", "")))
                             {
                                 foreach (DateTime date in dates)
                                 {
@@ -950,21 +1099,26 @@ namespace Client
                                     }
                                     if (sD[0] == date.ToString("dd/MM/yyyy"))
                                     {
-                                        ReoGridRange rgr;
-
+                                        ReoGridRange rgr = new ReoGridRange(count, iColumn, 1, 1);
                                         DateTime dtF = Convert.ToDateTime(sD[1]);
+
                                         double iDays = (dtF - date).TotalDays;
                                         if (iDays > 0)
                                         {
-                                            rgr = new ReoGridRange(count, iColumn, 1, Convert.ToInt32(iDays) + 1);
-                                            sheet.MergeRange(rgr);
+                                            rgr.Cols = Convert.ToInt32(iDays) + 1;
                                         }
-                                        else
+                                        if (sRooms.Length > 1)
                                         {
-                                            rgr = new ReoGridRange(count, iColumn, 1, 1);
+                                            rgr.Rows = sRooms.Length;
                                         }
 
-                                        sheet[rgr] = dr["BName"].ToString();
+                                        bool rs = sheet.HasIntersectedMergingRange(rgr);
+                                        if (!rs && (rgr.Rows > 1 || rgr.Cols > 1))
+                                        {
+                                            sheet.MergeRange(rgr);
+                                        }
+
+                                        sheet[count, iColumn] = dr["BName"].ToString();
                                         sheet.Cells[count, iColumn].Tag = Convert.ToInt32(dr["ID"]);
                                         sheet.Cells[count, iColumn].Style.HAlign = ReoGridHorAlign.Center;
                                         sheet.Cells[count, iColumn].Style.VAlign = ReoGridVerAlign.Middle;
@@ -972,12 +1126,12 @@ namespace Client
                                         if (dr["Completed"] != DBNull.Value && dr["Completed"].ToString() == "Y")
                                         {
                                             sheet.Cells[count, iColumn].Style.BackColor = Color.MediumVioletRed;
-                                            sheet.SetRangeBorders(rgr, BorderPositions.Outside, new RangeBorderStyle { Color = Color.IndianRed, Style = BorderLineStyle.Solid });
+                                            //sheet.SetRangeBorders(rgr, BorderPositions.Outside, new RangeBorderStyle { Color = Color.IndianRed, Style = BorderLineStyle.Solid });
                                         }
                                         else
                                         {
                                             sheet.Cells[count, iColumn].Style.BackColor = Color.PaleVioletRed;
-                                            sheet.SetRangeBorders(rgr, BorderPositions.Outside, new RangeBorderStyle { Color = Color.MediumVioletRed, Style = BorderLineStyle.Solid });
+                                            //sheet.SetRangeBorders(rgr, BorderPositions.Outside, new RangeBorderStyle { Color = Color.MediumVioletRed, Style = BorderLineStyle.Solid });
                                         }
 
                                         if (dr["BComments"].ToString().Length > 0)
@@ -987,6 +1141,7 @@ namespace Client
 
                                         break;
                                     }
+
                                     iColumn++;
                                 }
                             }
@@ -1042,6 +1197,11 @@ namespace Client
         #endregion
 
         #region Button Clicked
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
 
         private void btnOptions_Click(object sender, EventArgs e)
         {
@@ -1163,6 +1323,12 @@ namespace Client
         private void mBookingsRemove_Click(object sender, EventArgs e)
         {
             ReadOnlyCollection<AppointmentView> appointments = cvBookings.SelectedAppointments;
+            if (appointments.Count == 0)
+            {
+                MessageBox.Show("To remove the appointment, please\nselect it and try again.", "Nothing selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             foreach (AppointmentView ap in appointments)
             {
                 Program.DB.AddParameter("@id", ap.Appointment.Tag);
@@ -1464,6 +1630,39 @@ namespace Client
                         txtEnquiryInfoWanted.Text = c.Tables[0].Rows[0]["EInfoWanted"].ToString();
                     }
                 }
+            }
+        }
+
+        private void gBookings_RowClick(object sender, GridRowClickEventArgs e)
+        {
+            if (e.MouseEventArgs.Button == MouseButtons.Right)
+            {
+                Point pos = gBookings.PointToClient(Cursor.Position);
+                mBookingsList.Show(gBookings, pos);
+            }
+            else if (e.MouseEventArgs.Button == MouseButtons.Left)
+            {
+                if (e.GridRow.RowIndex > -1 && e.MouseEventArgs.Button == MouseButtons.Left)
+                {
+                    SharedData.iBookingID = Convert.ToInt32(gBookings.PrimaryGrid.Rows[e.GridRow.RowIndex].Tag);
+                }
+            }
+        }
+
+        private void gBookings_RowDoubleClick(object sender, GridRowDoubleClickEventArgs e)
+        {
+            if (e.GridRow.RowIndex > -1 && e.MouseEventArgs.Button == MouseButtons.Left && gBookings.PrimaryGrid.Rows[e.GridRow.RowIndex].Tag != null)
+            {
+                SharedData.iBookingID = Convert.ToInt32(gBookings.PrimaryGrid.Rows[e.GridRow.RowIndex].Tag);
+
+                Form frmBooking = new frmBooking();
+                DialogResult dlg = frmBooking.ShowDialog();
+                if (dlg == DialogResult.OK && SharedData.iBookingID > 0 && SharedData.dSchedule.Count > 0)
+                {
+                    LoadBookings();
+                }
+
+                SharedData.iBookingID = 0;
             }
         }
 

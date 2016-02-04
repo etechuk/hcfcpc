@@ -128,17 +128,26 @@ namespace Client
 
                         if (row["BRoom"] != DBNull.Value && row["BRoom"].ToString() != "")
                         {
-                            string[] sRooms = row["BRoom"].ToString().Split('|');
-                            foreach (TreeNode item in tvRooms.Nodes)
+                            string[] sRooms = row["BRoom"].ToString().Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
+                            foreach (TreeNode n in tvRooms.Nodes)
                             {
-                                foreach (string sRoom in sRooms)
+                                if (n.Nodes.Count > 0)
                                 {
-                                    if (item.Name == sRoom)
+                                    foreach (TreeNode nc in n.Nodes)
                                     {
-                                        item.Checked = true;
+                                        if (sRooms.Contains(nc.Tag.ToString()))
+                                        {
+                                            nc.Checked = true;
+                                        }
                                     }
                                 }
+                                if (sRooms.Contains(n.Tag.ToString()))
+                                {
+                                    n.Checked = true;
+                                }
                             }
+                            tvRooms.ExpandAll();
+                            tvRooms.TopNode = tvRooms.Nodes[0];
                         }
 
                         txtLayout.Text = row["BRoomLayout"].ToString();
@@ -173,12 +182,22 @@ namespace Client
                             dtTimeFrom.Text = sTimes[0];
                             dtTimeTo.Text = sTimes[1];
                         }
+                        else
+                        {
+                            dtTimeFrom.Text = "";
+                            dtTimeTo.Text = "";
+                        }
 
                         sTimes = row["BTimesAccess"].ToString().Split('|');
                         if (sTimes.Length == 2)
                         {
                             dtTimeAccessFrom.Text = sTimes[0];
                             dtTimeAccessTo.Text = sTimes[1];
+                        }
+                        else
+                        {
+                            dtTimeAccessFrom.Text = "";
+                            dtTimeAccessTo.Text = "";
                         }
 
                         cbxDelegates.SelectedIndex = cbxDelegates.FindStringExact(row["BDelegates"].ToString());
@@ -210,7 +229,14 @@ namespace Client
                         txtComments.Text = row["BComments"].ToString();
 
                         txtInvoiceAddress.Text = row["BInvoiceAddress"].ToString();
-                        cbxPaymentMethod.SelectedItem = cbxPaymentMethod.FindStringExact(row["BInvoicePayment"].ToString());
+                        foreach (DevComponents.Editors.ComboItem ci in cbxPaymentMethod.Items)
+                        {
+                            if (ci.Text == row["BInvoicePayment"].ToString())
+                            {
+                                cbxPaymentMethod.SelectedItem = ci;
+                                break;
+                            }
+                        }
                         txtPurchaseOrder.Text = row["BInvoiceOrder"].ToString();
 
                         if (row["BUser"] != DBNull.Value && row["BUser"].ToString().All(char.IsDigit))
@@ -279,8 +305,36 @@ namespace Client
                 {
                     txtPhone.Text = SharedData.sBookingEmail;
                 }
+                if (SharedData.sBookingRooms != "")
+                {
+                    string[] sRooms = SharedData.sBookingRooms.Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
+                    foreach (TreeNode n in tvRooms.Nodes)
+                    {
+                        if (n.Nodes.Count > 0)
+                        {
+                            foreach (TreeNode nc in n.Nodes)
+                            {
+                                if (sRooms.Contains(nc.Tag.ToString()))
+                                {
+                                    nc.Checked = true;
+                                }
+                            }
+                        }
+                        if (sRooms.Contains(n.Tag.ToString()))
+                        {
+                            n.Checked = true;
+                        }
+                    }
+                    tvRooms.ExpandAll();
+                    tvRooms.TopNode = tvRooms.Nodes[0];
+                }
 
-                ds = Program.DB.SelectAll("SELECT MAX(Job) AS NextID FROM Jobs");
+                dtTimeFrom.Text = "08:30";
+                dtTimeTo.Text = "16:30";
+                dtTimeAccessFrom.Text = "08:00";
+                dtTimeAccessTo.Text = "17:00";
+
+                ds = Program.DB.SelectAll("SELECT MAX(Job) AS NextID FROM Jobs;");
                 if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0 && ds.Tables[0].Rows[0]["NextID"] != DBNull.Value)
                 {
                     iNextID = Convert.ToInt32(ds.Tables[0].Rows[0]["NextID"].ToString()) + 1;
@@ -434,6 +488,10 @@ namespace Client
 
             int iCompany = 0, iContact = 0;
 
+            sUpdateVals += "BName=@name";
+            sInsertCols += "BName";
+            sInsertVals += "@name";
+
             if (txtCompany.Text.Trim() != "")
             {
                 sUpdateVals += ",BCompany=@company";
@@ -462,6 +520,8 @@ namespace Client
                 }
             }
 
+            Program.DB.AddParameter("@name", txtName.Text.Trim());
+
             if (iCompany > 0)
             {
                 Program.DB.AddParameter("@company", iCompany);
@@ -478,10 +538,11 @@ namespace Client
                 return;
             }
 
-            sUpdateVals += "BName=@name";
-            sInsertCols += "BName";
-            sInsertVals += "@name";
-            Program.DB.AddParameter("@name", txtName.Text.Trim());
+            if (iRooms.Count < 1)
+            {
+                MessageBox.Show("Please choose at least one room to continue.", "Rooms", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
 
             if (txtPhone.Text.Trim() != "")
             {

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 
 using Common;
+using unvell.ReoGrid;
 
 namespace Client
 {
@@ -64,6 +65,7 @@ namespace Client
         public static string sBookingCompany = "";
         public static string sBookingPhone = "";
         public static string sBookingEmail = "";
+        public static string sBookingRooms = "";
     }
 
     public class ComboItem

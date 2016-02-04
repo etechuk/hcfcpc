@@ -167,10 +167,10 @@
             this.tc.ControlBox.MenuBox,
             this.tc.ControlBox.CloseBox});
             this.tc.ControlBox.Visible = false;
+            this.tc.Controls.Add(this.superTabControlPanel2);
             this.tc.Controls.Add(this.superTabControlPanel1);
             this.tc.Controls.Add(this.superTabControlPanel6);
             this.tc.Controls.Add(this.superTabControlPanel4);
-            this.tc.Controls.Add(this.superTabControlPanel2);
             this.tc.Controls.Add(this.superTabControlPanel3);
             this.tc.Controls.Add(this.superTabControlPanel5);
             this.tc.ForeColor = System.Drawing.Color.Black;
@@ -751,9 +751,9 @@
             this.superTabControlPanel2.Controls.Add(this.dtDateFrom);
             this.superTabControlPanel2.Controls.Add(this.lblDatesTimes);
             this.superTabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel2.Location = new System.Drawing.Point(0, 27);
+            this.superTabControlPanel2.Location = new System.Drawing.Point(0, 30);
             this.superTabControlPanel2.Name = "superTabControlPanel2";
-            this.superTabControlPanel2.Size = new System.Drawing.Size(616, 321);
+            this.superTabControlPanel2.Size = new System.Drawing.Size(616, 322);
             this.superTabControlPanel2.TabIndex = 0;
             this.superTabControlPanel2.TabItem = this.superTabItem2;
             // 
