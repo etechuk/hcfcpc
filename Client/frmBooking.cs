@@ -260,8 +260,25 @@ namespace Client
             }
             else
             {
-                dtDateFrom.Value = DateTime.Today;
-                dtDateTo.Value = DateTime.Today;
+                dtDateFrom.Value = SharedData.dtSelectedStart != DateTime.Today ? SharedData.dtSelectedStart : DateTime.Today;
+                dtDateTo.Value = SharedData.dtSelectedFinish != DateTime.Today ? SharedData.dtSelectedFinish : DateTime.Today;
+
+                if (SharedData.sBookingCompany != "")
+                {
+                    txtCompany.Text = SharedData.sBookingCompany;
+                }
+                if (SharedData.sBookingContact != "")
+                {
+                    txtContact.Text = SharedData.sBookingContact;
+                }
+                if (SharedData.sBookingEmail != "")
+                {
+                    txtEmail.Text = SharedData.sBookingEmail;
+                }
+                if (SharedData.sBookingPhone != "")
+                {
+                    txtPhone.Text = SharedData.sBookingEmail;
+                }
 
                 ds = Program.DB.SelectAll("SELECT MAX(Job) AS NextID FROM Jobs");
                 if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0 && ds.Tables[0].Rows[0]["NextID"] != DBNull.Value)

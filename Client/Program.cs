@@ -59,6 +59,11 @@ namespace Client
         public static Dictionary<string, string> dSchedule = new Dictionary<string, string>();
         public static DateTime dtSelectedStart = DateTime.Today;
         public static DateTime dtSelectedFinish = DateTime.Today;
+
+        public static string sBookingContact = "";
+        public static string sBookingCompany = "";
+        public static string sBookingPhone = "";
+        public static string sBookingEmail = "";
     }
 
     public class ComboItem

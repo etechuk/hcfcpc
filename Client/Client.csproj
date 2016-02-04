@@ -53,8 +53,8 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="unvell.ReoGrid, Version=0.9.3.0, Culture=neutral, PublicKeyToken=0a947d9ccc179105, processorArchitecture=MSIL">
-      <HintPath>..\packages\unvell.ReoGrid.dll.0.9.3.0\lib\20\unvell.ReoGrid.dll</HintPath>
+    <Reference Include="unvell.ReoGrid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0a947d9ccc179105, processorArchitecture=MSIL">
+      <HintPath>..\packages\unvell.ReoGrid.dll.1.0.0.0\lib\20\unvell.ReoGrid.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
