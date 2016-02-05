@@ -17,7 +17,7 @@ namespace Client
         {
             InitializeComponent();
 
-            DataSet ds = Program.DB.SelectAll("SELECT ID,NameFirst,NameLast FROM Companies;");
+            DataSet ds = Program.DB.SelectAll("SELECT ID,Name FROM Companies;");
             if (ds.Tables.Count > 0)
             {
                 AutoCompleteStringCollection asCompanies = new AutoCompleteStringCollection();

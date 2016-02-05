@@ -35,6 +35,10 @@ namespace Client
         private ReoGridRange rSelected;
 
         GridRow rBooking;
+        GridRow rEnquiry;
+        GridRow rCourse;
+        GridRow rCompany;
+        GridRow rContact;
 
         #endregion
 
@@ -186,11 +190,6 @@ namespace Client
                 }
                 SharedData.iBookingID = 0;
             }
-        }
-
-        private void gBookings_RowActivated(object sender, GridRowActivatedEventArgs e)
-        {
-            rBooking = e.NewActiveRow as GridRow;
         }
 
         private void rgBookings_DoubleClick(object sender, EventArgs e)
@@ -1213,6 +1212,9 @@ namespace Client
         private void btnContactCancel_Click(object sender, EventArgs e)
         {
             mContactsAdd.PerformClick();
+            btnContactCancel.Enabled = false;
+            btnContactSave.Enabled = false;
+            btnContactDocumentAdd.Enabled = false;
         }
 
         private void btnContactSave_Click(object sender, EventArgs e)
@@ -1223,6 +1225,8 @@ namespace Client
         private void btnCompanyCancel_Click(object sender, EventArgs e)
         {
             mCompaniesAdd.PerformClick();
+            btnCompanyCancel.Enabled = false;
+            btnCompanySave.Enabled = false;
         }
 
         private void btnCompanySave_Click(object sender, EventArgs e)
@@ -1233,6 +1237,8 @@ namespace Client
         private void btnCourseCancel_Click(object sender, EventArgs e)
         {
             mCoursesAdd.PerformClick();
+            btnCourseCancel.Enabled = false;
+            btnCourseSave.Enabled = false;
         }
 
         private void btnCourseSave_Click(object sender, EventArgs e)
@@ -1243,6 +1249,9 @@ namespace Client
         private void btnEnquiryCancel_Click(object sender, EventArgs e)
         {
             mEnquiriesAdd.PerformClick();
+            btnEnquiryCancel.Enabled = false;
+            btnEnquiryDocs.Enabled = false;
+            btnEnquirySave.Enabled = false;
         }
 
         private void btnEnquirySave_Click(object sender, EventArgs e)
@@ -1323,9 +1332,9 @@ namespace Client
         private void mBookingsRemove_Click(object sender, EventArgs e)
         {
             ReadOnlyCollection<AppointmentView> appointments = cvBookings.SelectedAppointments;
-            if (appointments.Count == 0)
+            if (appointments.Count < 1)
             {
-                MessageBox.Show("To remove the appointment, please\nselect it and try again.", "Nothing selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("To remove a booking, please\nselect it and try again.", "Nothing selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -1348,7 +1357,27 @@ namespace Client
 
         private void mBookingsComplete_Click(object sender, EventArgs e)
         {
+            ReadOnlyCollection<AppointmentView> appointments = cvBookings.SelectedAppointments;
+            if (appointments.Count < 1)
+            {
+                MessageBox.Show("To complete a booking, please\nselect it and try again.", "Nothing selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
+            foreach (AppointmentView ap in appointments)
+            {
+                Program.DB.AddParameter("@id", ap.Appointment.Tag);
+                int i = Program.DB.Update("UPDATE Jobs SET Completed='Y' WHERE ID=@id;");
+                if (i > 0)
+                {
+                    LoadBookings();
+                    LoadBookingsGrid();
+                    return;
+                }
+
+                MessageBox.Show("The selected booking couldn't be completed.\nPlease try again.", "Failed to remove", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                break;
+            }
         }
 
         private void mBookingsGridAdd_Click(object sender, EventArgs e)
@@ -1374,11 +1403,32 @@ namespace Client
 
                 MessageBox.Show("The selected booking couldn't be removed.\nPlease try again.", "Failed to remove", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else
+            {
+                MessageBox.Show("To remove a booking, please\nselect it and try again.", "Nothing selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void mBookingsGridComplete_Click(object sender, EventArgs e)
         {
+            if (iSSItemSelected > 0)
+            {
+                Program.DB.AddParameter("@id", iSSItemSelected);
+                int i = Program.DB.Update("UPDATE Jobs SET Completed='Y' WHERE ID=@id;");
+                if (i > 0)
+                {
+                    wsCurrent = rgBookings.CurrentWorksheet.Name;
+                    LoadBookingsGrid();
+                    LoadBookings();
+                    return;
+                }
 
+                MessageBox.Show("The selected booking couldn't be completed.\nPlease try again.", "Failed to remove", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show("To complete a booking, please\nselect it and try again.", "Nothing selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void mBookingsListAdd_Click(object sender, EventArgs e)
@@ -1388,35 +1438,50 @@ namespace Client
 
         private void mBookingsListRemove_Click(object sender, EventArgs e)
         {
-            /*
-            int iKey = 0;
-            if (Convert.ToInt32(gBookings.SelectedRows[0].Value) > 0)
+            if (rBooking != null)
             {
-                iKey = Convert.ToInt32(gBookings.SelectedRows[0].Cells[0].Value);
-            }
-
-            if (iKey > 0)
-            {
-                int iID = Program.DB.Delete("DELETE FROM Jobs WHERE Job=" + iKey + ";");
-                if (iID < 1)
+                Program.DB.AddParameter("@id", rBooking.Tag);
+                int i = Program.DB.Update("UPDATE Jobs SET BDates=@dates,BTimes=@times WHERE ID=@id;");
+                if (i > 0)
                 {
-                    MessageBox.Show("The removal failed. Please try again.", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    LoadBookingsGrid();
+                    LoadBookings();
                     return;
                 }
 
-                MessageBox.Show("The removal was successful.", "Removed", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadBookings();
+                MessageBox.Show("The selected booking couldn't be removed.\nPlease try again.", "Failed to remove", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            */
+            else
+            {
+                MessageBox.Show("To remove a booking, please\nselect it and try again.", "Nothing selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void mBookingsListComplete_Click(object sender, EventArgs e)
         {
+            if (rBooking != null)
+            {
+                Program.DB.AddParameter("@id", iSSItemSelected);
+                int i = Program.DB.Update("UPDATE Jobs SET Completed='Y' WHERE ID=@id;");
+                if (i > 0)
+                {
+                    LoadBookingsGrid();
+                    LoadBookings();
+                    return;
+                }
 
+                MessageBox.Show("The selected booking couldn't be completed.\nPlease try again.", "Failed to remove", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show("To complete a booking, please\nselect it and try again.", "Nothing selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void mEnquiriesAdd_Click(object sender, EventArgs e)
         {
+            SharedData.iEnquiryID = 0;
+            rEnquiry = null;
             txtEnquiryCompany.Text = "";
             txtEnquiryEmail.Text = "";
             txtEnquiryInfo.Text = "";
@@ -1425,11 +1490,29 @@ namespace Client
             txtEnquiryPhone.Text = "";
             txtEnquiryReferrer.Text = "";
             cbxEnquiryType.SelectedIndex = -1;
+            btnEnquiryCancel.Enabled = true;
+            btnEnquirySave.Enabled = true;
+            btnEnquiryDocs.Enabled = true;
         }
 
         private void mEnquiriesRemove_Click(object sender, EventArgs e)
         {
+            if (rEnquiry != null)
+            {
+                Program.DB.AddParameter("@id", rEnquiry.Tag);
+                int i = Program.DB.Update("DELETE FROM Jobs WHERE ID=@id;");
+                if (i > 0)
+                {
+                    LoadEnquiries();
+                    return;
+                }
 
+                MessageBox.Show("The selected enquiry couldn't be removed.\nPlease try again.", "Failed to remove", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show("To remove an enquiry, please\nselect it and try again.", "Nothing selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void mEnquiriesBooking_Click(object sender, EventArgs e)
@@ -1449,20 +1532,41 @@ namespace Client
 
         private void mCoursesAdd_Click(object sender, EventArgs e)
         {
+            SharedData.iCourseID = 0;
+            rCourse = null;
             txtCourseCert.Text = "";
             txtCourseDetails.Text = "";
             txtCourseDuration.Text = "";
             txtCourseName.Text = "";
             txtCoursePricing.Text = "";
+            btnCourseCancel.Enabled = true;
+            btnCourseSave.Enabled = true;
         }
 
         private void mCoursesRemove_Click(object sender, EventArgs e)
         {
+            if (rCourse != null)
+            {
+                Program.DB.AddParameter("@id", rCourse.Tag);
+                int i = Program.DB.Update("DELETE FROM Courses WHERE ID=@id;");
+                if (i > 0)
+                {
+                    LoadCourses();
+                    return;
+                }
 
+                MessageBox.Show("The selected course couldn't be removed.\nPlease try again.", "Failed to remove", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show("To remove a course, please\nselect it and try again.", "Nothing selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void mCompaniesAdd_Click(object sender, EventArgs e)
         {
+            SharedData.iCompanyID = 0;
+            rCompany = null;
             txtCompanyAddress.Text = "";
             txtCompanyContact.Text = "";
             txtCompanyEmail.Text = "";
@@ -1472,15 +1576,34 @@ namespace Client
             txtCompanyReg.Text = "";
             txtCompanyRegVat.Text = "";
             txtCompanyTrading.Text = "";
+            btnCompanyCancel.Enabled = true;
+            btnCompanySave.Enabled = true;
         }
 
         private void mCompaniesRemove_Click(object sender, EventArgs e)
         {
+            if (rCompany != null)
+            {
+                Program.DB.AddParameter("@id", rCompany.Tag);
+                int i = Program.DB.Update("DELETE FROM Companies WHERE ID=@id;");
+                if (i > 0)
+                {
+                    LoadCompanies();
+                    return;
+                }
 
+                MessageBox.Show("The selected company couldn't be removed.\nPlease try again.", "Failed to remove", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show("To remove a company, please\nselect it and try again.", "Nothing selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void mContactsAdd_Click(object sender, EventArgs e)
         {
+            SharedData.iContactID = 0;
+            rContact = null;
             txtContactAddress.Text = "";
             txtContactCompany.Text = "";
             txtContactEmail.Text = "";
@@ -1500,44 +1623,146 @@ namespace Client
             lblContactFileNameVal.Text = "";
             lblContactFileSize.Text = "";
             lblContactFileSizeVal.Text = "";
+            btnContactCancel.Enabled = true;
+            btnContactSave.Enabled = true;
+            btnContactDocumentAdd.Enabled = true;
         }
 
         private void mContactsRemove_Click(object sender, EventArgs e)
         {
+            if (rContact != null)
+            {
+                Program.DB.AddParameter("@id", rContact.Tag);
+                int i = Program.DB.Update("DELETE FROM Contacts WHERE ID=@id;");
+                if (i > 0)
+                {
+                    LoadContacts();
+                    return;
+                }
 
+                MessageBox.Show("The selected contact couldn't be removed.\nPlease try again.", "Failed to remove", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show("To remove a contact, please\nselect it and try again.", "Nothing selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         #endregion
 
         #region List Clicked
 
-        private void gContacts_RowClick(object sender, GridRowClickEventArgs e)
+        private void gBookings_RowActivated(object sender, GridRowActivatedEventArgs e)
+        {
+            rBooking = e.NewActiveRow as GridRow;
+        }
+
+        private void gBookings_RowClick(object sender, GridRowClickEventArgs e)
         {
             if (e.MouseEventArgs.Button == MouseButtons.Right)
             {
-                Point pos = gContacts.PointToClient(Cursor.Position);
-                mContacts.Show(gContacts, pos);
+                Point pos = gBookings.PointToClient(Cursor.Position);
+                mBookingsList.Show(gBookings, pos);
             }
             else if (e.MouseEventArgs.Button == MouseButtons.Left)
             {
                 if (e.GridRow.RowIndex > -1 && e.MouseEventArgs.Button == MouseButtons.Left)
                 {
-                    GridElement row = gContacts.PrimaryGrid.Rows[e.GridRow.RowIndex];
+                    SharedData.iBookingID = Convert.ToInt32(gBookings.PrimaryGrid.Rows[e.GridRow.RowIndex].Tag);
+                }
+            }
+        }
+
+        private void gBookings_RowDoubleClick(object sender, GridRowDoubleClickEventArgs e)
+        {
+            if (e.GridRow.RowIndex > -1 && e.MouseEventArgs.Button == MouseButtons.Left && gBookings.PrimaryGrid.Rows[e.GridRow.RowIndex].Tag != null)
+            {
+                SharedData.iBookingID = Convert.ToInt32(gBookings.PrimaryGrid.Rows[e.GridRow.RowIndex].Tag);
+
+                Form frmBooking = new frmBooking();
+                DialogResult dlg = frmBooking.ShowDialog();
+                if (dlg == DialogResult.OK && SharedData.iBookingID > 0 && SharedData.dSchedule.Count > 0)
+                {
+                    LoadBookings();
+                }
+
+                SharedData.iBookingID = 0;
+            }
+        }
+
+        private void gEnquiries_RowActivated(object sender, GridRowActivatedEventArgs e)
+        {
+            rEnquiry = e.NewActiveRow as GridRow;
+        }
+
+        private void gEnquiries_RowClick(object sender, GridRowClickEventArgs e)
+        {
+            if (e.MouseEventArgs.Button == MouseButtons.Right)
+            {
+                Point pos = gEnquiries.PointToClient(Cursor.Position);
+                mEnquiries.Show(gEnquiries, pos);
+            }
+            else if (e.MouseEventArgs.Button == MouseButtons.Left)
+            {
+                if (e.GridRow.RowIndex > -1 && e.MouseEventArgs.Button == MouseButtons.Left)
+                {
+                    GridElement row = gEnquiries.PrimaryGrid.Rows[e.GridRow.RowIndex];
 
                     Program.DB.AddParameter("ID", row.Tag);
-                    DataSet c = Program.DB.SelectAll("SELECT * FROM Contacts WHERE ID=@ID;");
+                    DataSet c = Program.DB.SelectAll("SELECT * FROM Jobs WHERE ID=@ID;");
                     if (c.Tables.Count > 0 && c.Tables[0].Rows.Count > 0)
                     {
                         SharedData.iCommentID = Convert.ToInt32(c.Tables[0].Rows[0]["ID"]);
 
-                        txtContactNameTitle.Text = c.Tables[0].Rows[0]["NameTitle"].ToString();
-                        txtContactNameFirst.Text = c.Tables[0].Rows[0]["NameFirst"].ToString();
-                        txtContactNameLast.Text = c.Tables[0].Rows[0]["NameLast"].ToString();
-                        txtContactPhone.Text = c.Tables[0].Rows[0]["Phones"].ToString();
-                        txtContactEmail.Text = c.Tables[0].Rows[0]["Emails"].ToString();
+                        txtEnquiryName.Text = c.Tables[0].Rows[0]["EName"].ToString();
+                        txtEnquiryCompany.Text = c.Tables[0].Rows[0]["ECompany"].ToString();
+                        txtEnquiryPhone.Text = c.Tables[0].Rows[0]["EPhone"].ToString();
+                        txtEnquiryEmail.Text = c.Tables[0].Rows[0]["EEmail"].ToString();
+                        txtEnquiryInfo.Text = c.Tables[0].Rows[0]["EInfo"].ToString();
+                        txtEnquiryReferrer.Text = c.Tables[0].Rows[0]["EReferer"].ToString();
+                        txtEnquiryInfoWanted.Text = c.Tables[0].Rows[0]["EInfoWanted"].ToString();
                     }
                 }
             }
+        }
+
+        private void gCourses_RowActivated(object sender, GridRowActivatedEventArgs e)
+        {
+            rCourse = e.NewActiveRow as GridRow;
+        }
+
+        private void gCourses_RowClick(object sender, GridRowClickEventArgs e)
+        {
+            if (e.MouseEventArgs.Button == MouseButtons.Right)
+            {
+                Point pos = gCourses.PointToClient(Cursor.Position);
+                mCourses.Show(gCourses, pos);
+            }
+            else if (e.MouseEventArgs.Button == MouseButtons.Left)
+            {
+                if (e.GridRow.RowIndex > -1 && e.MouseEventArgs.Button == MouseButtons.Left)
+                {
+                    GridElement row = gCourses.PrimaryGrid.Rows[e.GridRow.RowIndex];
+
+                    Program.DB.AddParameter("ID", row.Tag);
+                    DataSet c = Program.DB.SelectAll("SELECT * FROM Courses WHERE ID=@ID;");
+                    if (c.Tables.Count > 0 && c.Tables[0].Rows.Count > 0)
+                    {
+                        SharedData.iCommentID = Convert.ToInt32(c.Tables[0].Rows[0]["ID"]);
+
+                        txtCourseName.Text = c.Tables[0].Rows[0]["Name"].ToString();
+                        txtCourseCert.Text = c.Tables[0].Rows[0]["Certification"].ToString();
+                        txtCourseDuration.Text = c.Tables[0].Rows[0]["Duration"].ToString();
+                        txtCoursePricing.Text = c.Tables[0].Rows[0]["Pricing"].ToString();
+                        txtCourseDetails.Text = c.Tables[0].Rows[0]["Details"].ToString();
+                    }
+                }
+            }
+        }
+
+        private void gCompanies_RowActivated(object sender, GridRowActivatedEventArgs e)
+        {
+            rCompany = e.NewActiveRow as GridRow;
         }
 
         private void gCompanies_RowClick(object sender, GridRowClickEventArgs e)
@@ -1573,96 +1798,37 @@ namespace Client
             }
         }
 
-        private void gCourses_RowClick(object sender, GridRowClickEventArgs e)
+        private void gContacts_RowActivated(object sender, GridRowActivatedEventArgs e)
+        {
+            rContact = e.NewActiveRow as GridRow;
+        }
+
+        private void gContacts_RowClick(object sender, GridRowClickEventArgs e)
         {
             if (e.MouseEventArgs.Button == MouseButtons.Right)
             {
-                Point pos = gCourses.PointToClient(Cursor.Position);
-                mCourses.Show(gCourses, pos);
+                Point pos = gContacts.PointToClient(Cursor.Position);
+                mContacts.Show(gContacts, pos);
             }
             else if (e.MouseEventArgs.Button == MouseButtons.Left)
             {
                 if (e.GridRow.RowIndex > -1 && e.MouseEventArgs.Button == MouseButtons.Left)
                 {
-                    GridElement row = gCourses.PrimaryGrid.Rows[e.GridRow.RowIndex];
+                    GridElement row = gContacts.PrimaryGrid.Rows[e.GridRow.RowIndex];
 
                     Program.DB.AddParameter("ID", row.Tag);
-                    DataSet c = Program.DB.SelectAll("SELECT * FROM Courses WHERE ID=@ID;");
+                    DataSet c = Program.DB.SelectAll("SELECT * FROM Contacts WHERE ID=@ID;");
                     if (c.Tables.Count > 0 && c.Tables[0].Rows.Count > 0)
                     {
                         SharedData.iCommentID = Convert.ToInt32(c.Tables[0].Rows[0]["ID"]);
 
-                        txtCourseName.Text = c.Tables[0].Rows[0]["Name"].ToString();
-                        txtCourseCert.Text = c.Tables[0].Rows[0]["Certification"].ToString();
-                        txtCourseDuration.Text = c.Tables[0].Rows[0]["Duration"].ToString();
-                        txtCoursePricing.Text = c.Tables[0].Rows[0]["Pricing"].ToString();
-                        txtCourseDetails.Text = c.Tables[0].Rows[0]["Details"].ToString();
+                        txtContactNameTitle.Text = c.Tables[0].Rows[0]["NameTitle"].ToString();
+                        txtContactNameFirst.Text = c.Tables[0].Rows[0]["NameFirst"].ToString();
+                        txtContactNameLast.Text = c.Tables[0].Rows[0]["NameLast"].ToString();
+                        txtContactPhone.Text = c.Tables[0].Rows[0]["Phones"].ToString();
+                        txtContactEmail.Text = c.Tables[0].Rows[0]["Emails"].ToString();
                     }
                 }
-            }
-        }
-
-        private void gEnquiries_RowClick(object sender, GridRowClickEventArgs e)
-        {
-            if (e.MouseEventArgs.Button == MouseButtons.Right)
-            {
-                Point pos = gEnquiries.PointToClient(Cursor.Position);
-                mEnquiries.Show(gEnquiries, pos);
-            }
-            else if (e.MouseEventArgs.Button == MouseButtons.Left)
-            {
-                if (e.GridRow.RowIndex > -1 && e.MouseEventArgs.Button == MouseButtons.Left)
-                {
-                    GridElement row = gEnquiries.PrimaryGrid.Rows[e.GridRow.RowIndex];
-
-                    Program.DB.AddParameter("ID", row.Tag);
-                    DataSet c = Program.DB.SelectAll("SELECT * FROM Jobs WHERE ID=@ID;");
-                    if (c.Tables.Count > 0 && c.Tables[0].Rows.Count > 0)
-                    {
-                        SharedData.iCommentID = Convert.ToInt32(c.Tables[0].Rows[0]["ID"]);
-
-                        txtEnquiryName.Text = c.Tables[0].Rows[0]["EName"].ToString();
-                        txtEnquiryCompany.Text = c.Tables[0].Rows[0]["ECompany"].ToString();
-                        txtEnquiryPhone.Text = c.Tables[0].Rows[0]["EPhone"].ToString();
-                        txtEnquiryEmail.Text = c.Tables[0].Rows[0]["EEmail"].ToString();
-                        txtEnquiryInfo.Text = c.Tables[0].Rows[0]["EInfo"].ToString();
-                        txtEnquiryReferrer.Text = c.Tables[0].Rows[0]["EReferer"].ToString();
-                        txtEnquiryInfoWanted.Text = c.Tables[0].Rows[0]["EInfoWanted"].ToString();
-                    }
-                }
-            }
-        }
-
-        private void gBookings_RowClick(object sender, GridRowClickEventArgs e)
-        {
-            if (e.MouseEventArgs.Button == MouseButtons.Right)
-            {
-                Point pos = gBookings.PointToClient(Cursor.Position);
-                mBookingsList.Show(gBookings, pos);
-            }
-            else if (e.MouseEventArgs.Button == MouseButtons.Left)
-            {
-                if (e.GridRow.RowIndex > -1 && e.MouseEventArgs.Button == MouseButtons.Left)
-                {
-                    SharedData.iBookingID = Convert.ToInt32(gBookings.PrimaryGrid.Rows[e.GridRow.RowIndex].Tag);
-                }
-            }
-        }
-
-        private void gBookings_RowDoubleClick(object sender, GridRowDoubleClickEventArgs e)
-        {
-            if (e.GridRow.RowIndex > -1 && e.MouseEventArgs.Button == MouseButtons.Left && gBookings.PrimaryGrid.Rows[e.GridRow.RowIndex].Tag != null)
-            {
-                SharedData.iBookingID = Convert.ToInt32(gBookings.PrimaryGrid.Rows[e.GridRow.RowIndex].Tag);
-
-                Form frmBooking = new frmBooking();
-                DialogResult dlg = frmBooking.ShowDialog();
-                if (dlg == DialogResult.OK && SharedData.iBookingID > 0 && SharedData.dSchedule.Count > 0)
-                {
-                    LoadBookings();
-                }
-
-                SharedData.iBookingID = 0;
             }
         }
 

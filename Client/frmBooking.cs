@@ -23,6 +23,8 @@ namespace Client
         List<string> sDocuments = new List<string>();
         List<int> iRooms = new List<int>();
 
+        GridRow rComment;
+
         #endregion
 
         #region Form
@@ -919,6 +921,20 @@ namespace Client
                     MessageBox.Show("Comment saved successfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnSaveComment.Visible = false;
                 }
+            }
+        }
+
+        private void gComments_RowActivated(object sender, GridRowActivatedEventArgs e)
+        {
+            rComment = e.NewActiveRow as GridRow;
+        }
+
+        private void gComments_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                Point pos = gComments.PointToClient(Cursor.Position);
+                mComments.Show(gComments, pos);
             }
         }
     }

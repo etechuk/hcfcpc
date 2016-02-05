@@ -51,6 +51,7 @@ namespace Client
     {
         public static int iEnquiryID = 0;
         public static int iBookingID = 0;
+        public static int iCourseID = 0;
         public static int iCompanyID = 0;
         public static int iContactID = 0;
         public static int iAddressID = 0;

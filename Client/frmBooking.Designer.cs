@@ -31,6 +31,14 @@
             this.components = new System.ComponentModel.Container();
             this.sm = new DevComponents.DotNetBar.StyleManager(this.components);
             this.tc = new DevComponents.DotNetBar.SuperTabControl();
+            this.superTabControlPanel4 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.btnSaveComment = new DevComponents.DotNetBar.ButtonX();
+            this.gComments = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+            this.gCommentsAdded = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gCommentsBy = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gCommentsComment = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.txtComments = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.superTabItem4 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.tvRooms = new System.Windows.Forms.TreeView();
             this.txtContact = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -46,29 +54,6 @@
             this.lblContact = new DevComponents.DotNetBar.LabelX();
             this.lblCompany = new DevComponents.DotNetBar.LabelX();
             this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabControlPanel6 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.lblFileAccessedVal = new DevComponents.DotNetBar.LabelX();
-            this.lblFileAccessed = new DevComponents.DotNetBar.LabelX();
-            this.lblFileModifiedVal = new DevComponents.DotNetBar.LabelX();
-            this.lblFileModified = new DevComponents.DotNetBar.LabelX();
-            this.lblFileSizeVal = new DevComponents.DotNetBar.LabelX();
-            this.lblFileSize = new DevComponents.DotNetBar.LabelX();
-            this.lblFileLocationVal = new DevComponents.DotNetBar.LabelX();
-            this.lblFileLocation = new DevComponents.DotNetBar.LabelX();
-            this.lblFileNameVal = new DevComponents.DotNetBar.LabelX();
-            this.lblFileName = new DevComponents.DotNetBar.LabelX();
-            this.lvDocuments = new System.Windows.Forms.ListView();
-            this.chFilename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnDocumentAdd = new DevComponents.DotNetBar.ButtonX();
-            this.superTabItem6 = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabControlPanel4 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.btnSaveComment = new DevComponents.DotNetBar.ButtonX();
-            this.gComments = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
-            this.gCommentsAdded = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gCommentsBy = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gCommentsComment = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.txtComments = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.superTabItem4 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel2 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.cbxDelegates = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -86,6 +71,21 @@
             this.dtDateFrom = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.lblDatesTimes = new DevComponents.DotNetBar.LabelX();
             this.superTabItem2 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabControlPanel6 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.lblFileAccessedVal = new DevComponents.DotNetBar.LabelX();
+            this.lblFileAccessed = new DevComponents.DotNetBar.LabelX();
+            this.lblFileModifiedVal = new DevComponents.DotNetBar.LabelX();
+            this.lblFileModified = new DevComponents.DotNetBar.LabelX();
+            this.lblFileSizeVal = new DevComponents.DotNetBar.LabelX();
+            this.lblFileSize = new DevComponents.DotNetBar.LabelX();
+            this.lblFileLocationVal = new DevComponents.DotNetBar.LabelX();
+            this.lblFileLocation = new DevComponents.DotNetBar.LabelX();
+            this.lblFileNameVal = new DevComponents.DotNetBar.LabelX();
+            this.lblFileName = new DevComponents.DotNetBar.LabelX();
+            this.lvDocuments = new System.Windows.Forms.ListView();
+            this.chFilename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnDocumentAdd = new DevComponents.DotNetBar.ButtonX();
+            this.superTabItem6 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel3 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.txtLunchDiet = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.lblLunchDiet = new DevComponents.DotNetBar.LabelX();
@@ -124,9 +124,8 @@
             this.mCommentsAdd = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.tc)).BeginInit();
             this.tc.SuspendLayout();
-            this.superTabControlPanel1.SuspendLayout();
-            this.superTabControlPanel6.SuspendLayout();
             this.superTabControlPanel4.SuspendLayout();
+            this.superTabControlPanel1.SuspendLayout();
             this.superTabControlPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtTimeAccessTo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtTimeAccessFrom)).BeginInit();
@@ -134,6 +133,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtTimeFrom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtDateTo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtDateFrom)).BeginInit();
+            this.superTabControlPanel6.SuspendLayout();
             this.superTabControlPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtLunchTime)).BeginInit();
             this.superTabControlPanel5.SuspendLayout();
@@ -167,10 +167,10 @@
             this.tc.ControlBox.MenuBox,
             this.tc.ControlBox.CloseBox});
             this.tc.ControlBox.Visible = false;
-            this.tc.Controls.Add(this.superTabControlPanel2);
-            this.tc.Controls.Add(this.superTabControlPanel1);
-            this.tc.Controls.Add(this.superTabControlPanel6);
             this.tc.Controls.Add(this.superTabControlPanel4);
+            this.tc.Controls.Add(this.superTabControlPanel1);
+            this.tc.Controls.Add(this.superTabControlPanel2);
+            this.tc.Controls.Add(this.superTabControlPanel6);
             this.tc.Controls.Add(this.superTabControlPanel3);
             this.tc.Controls.Add(this.superTabControlPanel5);
             this.tc.ForeColor = System.Drawing.Color.Black;
@@ -191,6 +191,106 @@
             this.superTabItem6});
             this.tc.TabStop = false;
             this.tc.TabStyle = DevComponents.DotNetBar.eSuperTabStyle.VisualStudio2008Dock;
+            // 
+            // superTabControlPanel4
+            // 
+            this.superTabControlPanel4.Controls.Add(this.btnSaveComment);
+            this.superTabControlPanel4.Controls.Add(this.gComments);
+            this.superTabControlPanel4.Controls.Add(this.txtComments);
+            this.superTabControlPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel4.Location = new System.Drawing.Point(0, 30);
+            this.superTabControlPanel4.Name = "superTabControlPanel4";
+            this.superTabControlPanel4.Size = new System.Drawing.Size(616, 322);
+            this.superTabControlPanel4.TabIndex = 0;
+            this.superTabControlPanel4.TabItem = this.superTabItem4;
+            // 
+            // btnSaveComment
+            // 
+            this.btnSaveComment.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnSaveComment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSaveComment.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnSaveComment.Enabled = false;
+            this.btnSaveComment.Location = new System.Drawing.Point(489, 148);
+            this.btnSaveComment.Name = "btnSaveComment";
+            this.btnSaveComment.Size = new System.Drawing.Size(111, 34);
+            this.btnSaveComment.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnSaveComment.TabIndex = 29;
+            this.btnSaveComment.Text = "Save Comment";
+            this.btnSaveComment.Visible = false;
+            this.btnSaveComment.Click += new System.EventHandler(this.btnSaveComment_Click);
+            // 
+            // gComments
+            // 
+            this.gComments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.gComments.ContextMenuStrip = this.mComments;
+            this.gComments.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.gComments.ForeColor = System.Drawing.Color.Black;
+            this.gComments.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
+            this.gComments.Location = new System.Drawing.Point(16, 18);
+            this.gComments.Name = "gComments";
+            // 
+            // 
+            // 
+            this.gComments.PrimaryGrid.AllowEdit = false;
+            this.gComments.PrimaryGrid.Columns.Add(this.gCommentsAdded);
+            this.gComments.PrimaryGrid.Columns.Add(this.gCommentsBy);
+            this.gComments.PrimaryGrid.Columns.Add(this.gCommentsComment);
+            this.gComments.PrimaryGrid.MultiSelect = false;
+            this.gComments.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
+            this.gComments.PrimaryGrid.ShowRowHeaders = false;
+            this.gComments.PrimaryGrid.UseAlternateRowStyle = true;
+            this.gComments.Size = new System.Drawing.Size(584, 164);
+            this.gComments.TabIndex = 28;
+            this.gComments.Text = "superGridControl1";
+            this.gComments.RowActivated += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowActivatedEventArgs>(this.gComments_RowActivated);
+            this.gComments.RowClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowClickEventArgs>(this.gComments_RowClick);
+            this.gComments.MouseClick += new System.Windows.Forms.MouseEventHandler(this.gComments_MouseClick);
+            // 
+            // gCommentsAdded
+            // 
+            this.gCommentsAdded.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
+            this.gCommentsAdded.HeaderText = "Added";
+            this.gCommentsAdded.MinimumWidth = 125;
+            this.gCommentsAdded.Name = "Added";
+            this.gCommentsAdded.Width = 125;
+            // 
+            // gCommentsBy
+            // 
+            this.gCommentsBy.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
+            this.gCommentsBy.HeaderText = "By";
+            this.gCommentsBy.MinimumWidth = 125;
+            this.gCommentsBy.Name = "By";
+            this.gCommentsBy.Width = 125;
+            // 
+            // gCommentsComment
+            // 
+            this.gCommentsComment.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
+            this.gCommentsComment.HeaderText = "Comment";
+            this.gCommentsComment.Name = "Comment";
+            // 
+            // txtComments
+            // 
+            this.txtComments.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtComments.Border.Class = "TextBoxBorder";
+            this.txtComments.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtComments.DisabledBackColor = System.Drawing.Color.White;
+            this.txtComments.ForeColor = System.Drawing.Color.Black;
+            this.txtComments.Location = new System.Drawing.Point(16, 188);
+            this.txtComments.Multiline = true;
+            this.txtComments.Name = "txtComments";
+            this.txtComments.PreventEnterBeep = true;
+            this.txtComments.Size = new System.Drawing.Size(584, 116);
+            this.txtComments.TabIndex = 27;
+            // 
+            // superTabItem4
+            // 
+            this.superTabItem4.AttachedControl = this.superTabControlPanel4;
+            this.superTabItem4.GlobalItem = false;
+            this.superTabItem4.Name = "superTabItem4";
+            this.superTabItem4.Text = "  Comments";
             // 
             // superTabControlPanel1
             // 
@@ -418,320 +518,6 @@
             this.superTabItem1.GlobalItem = false;
             this.superTabItem1.Name = "superTabItem1";
             this.superTabItem1.Text = "  Contact/Room";
-            // 
-            // superTabControlPanel6
-            // 
-            this.superTabControlPanel6.Controls.Add(this.lblFileAccessedVal);
-            this.superTabControlPanel6.Controls.Add(this.lblFileAccessed);
-            this.superTabControlPanel6.Controls.Add(this.lblFileModifiedVal);
-            this.superTabControlPanel6.Controls.Add(this.lblFileModified);
-            this.superTabControlPanel6.Controls.Add(this.lblFileSizeVal);
-            this.superTabControlPanel6.Controls.Add(this.lblFileSize);
-            this.superTabControlPanel6.Controls.Add(this.lblFileLocationVal);
-            this.superTabControlPanel6.Controls.Add(this.lblFileLocation);
-            this.superTabControlPanel6.Controls.Add(this.lblFileNameVal);
-            this.superTabControlPanel6.Controls.Add(this.lblFileName);
-            this.superTabControlPanel6.Controls.Add(this.lvDocuments);
-            this.superTabControlPanel6.Controls.Add(this.btnDocumentAdd);
-            this.superTabControlPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel6.Location = new System.Drawing.Point(0, 30);
-            this.superTabControlPanel6.Name = "superTabControlPanel6";
-            this.superTabControlPanel6.Size = new System.Drawing.Size(616, 322);
-            this.superTabControlPanel6.TabIndex = 0;
-            this.superTabControlPanel6.TabItem = this.superTabItem6;
-            // 
-            // lblFileAccessedVal
-            // 
-            this.lblFileAccessedVal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.lblFileAccessedVal.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblFileAccessedVal.ForeColor = System.Drawing.Color.Black;
-            this.lblFileAccessedVal.Location = new System.Drawing.Point(303, 243);
-            this.lblFileAccessedVal.Name = "lblFileAccessedVal";
-            this.lblFileAccessedVal.Size = new System.Drawing.Size(279, 23);
-            this.lblFileAccessedVal.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lblFileAccessedVal.TabIndex = 17;
-            this.lblFileAccessedVal.Text = "...";
-            // 
-            // lblFileAccessed
-            // 
-            this.lblFileAccessed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.lblFileAccessed.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblFileAccessed.ForeColor = System.Drawing.Color.Black;
-            this.lblFileAccessed.Location = new System.Drawing.Point(303, 218);
-            this.lblFileAccessed.Name = "lblFileAccessed";
-            this.lblFileAccessed.Size = new System.Drawing.Size(279, 23);
-            this.lblFileAccessed.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lblFileAccessed.TabIndex = 16;
-            this.lblFileAccessed.Text = "Last accessed:";
-            // 
-            // lblFileModifiedVal
-            // 
-            this.lblFileModifiedVal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.lblFileModifiedVal.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblFileModifiedVal.ForeColor = System.Drawing.Color.Black;
-            this.lblFileModifiedVal.Location = new System.Drawing.Point(303, 193);
-            this.lblFileModifiedVal.Name = "lblFileModifiedVal";
-            this.lblFileModifiedVal.Size = new System.Drawing.Size(279, 23);
-            this.lblFileModifiedVal.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lblFileModifiedVal.TabIndex = 15;
-            this.lblFileModifiedVal.Text = "...";
-            // 
-            // lblFileModified
-            // 
-            this.lblFileModified.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.lblFileModified.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblFileModified.ForeColor = System.Drawing.Color.Black;
-            this.lblFileModified.Location = new System.Drawing.Point(303, 168);
-            this.lblFileModified.Name = "lblFileModified";
-            this.lblFileModified.Size = new System.Drawing.Size(279, 23);
-            this.lblFileModified.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lblFileModified.TabIndex = 14;
-            this.lblFileModified.Text = "Last modified:";
-            // 
-            // lblFileSizeVal
-            // 
-            this.lblFileSizeVal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.lblFileSizeVal.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblFileSizeVal.ForeColor = System.Drawing.Color.Black;
-            this.lblFileSizeVal.Location = new System.Drawing.Point(303, 143);
-            this.lblFileSizeVal.Name = "lblFileSizeVal";
-            this.lblFileSizeVal.Size = new System.Drawing.Size(279, 23);
-            this.lblFileSizeVal.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lblFileSizeVal.TabIndex = 13;
-            this.lblFileSizeVal.Text = "...";
-            // 
-            // lblFileSize
-            // 
-            this.lblFileSize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.lblFileSize.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblFileSize.ForeColor = System.Drawing.Color.Black;
-            this.lblFileSize.Location = new System.Drawing.Point(303, 118);
-            this.lblFileSize.Name = "lblFileSize";
-            this.lblFileSize.Size = new System.Drawing.Size(279, 23);
-            this.lblFileSize.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lblFileSize.TabIndex = 12;
-            this.lblFileSize.Text = "File size:";
-            // 
-            // lblFileLocationVal
-            // 
-            this.lblFileLocationVal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.lblFileLocationVal.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblFileLocationVal.ForeColor = System.Drawing.Color.Black;
-            this.lblFileLocationVal.Location = new System.Drawing.Point(303, 93);
-            this.lblFileLocationVal.Name = "lblFileLocationVal";
-            this.lblFileLocationVal.Size = new System.Drawing.Size(279, 23);
-            this.lblFileLocationVal.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lblFileLocationVal.TabIndex = 11;
-            this.lblFileLocationVal.Text = "...";
-            // 
-            // lblFileLocation
-            // 
-            this.lblFileLocation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.lblFileLocation.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblFileLocation.ForeColor = System.Drawing.Color.Black;
-            this.lblFileLocation.Location = new System.Drawing.Point(303, 68);
-            this.lblFileLocation.Name = "lblFileLocation";
-            this.lblFileLocation.Size = new System.Drawing.Size(279, 23);
-            this.lblFileLocation.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lblFileLocation.TabIndex = 10;
-            this.lblFileLocation.Text = "Location:";
-            // 
-            // lblFileNameVal
-            // 
-            this.lblFileNameVal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.lblFileNameVal.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblFileNameVal.ForeColor = System.Drawing.Color.Black;
-            this.lblFileNameVal.Location = new System.Drawing.Point(303, 43);
-            this.lblFileNameVal.Name = "lblFileNameVal";
-            this.lblFileNameVal.Size = new System.Drawing.Size(279, 23);
-            this.lblFileNameVal.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lblFileNameVal.TabIndex = 9;
-            this.lblFileNameVal.Text = "...";
-            // 
-            // lblFileName
-            // 
-            this.lblFileName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.lblFileName.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblFileName.ForeColor = System.Drawing.Color.Black;
-            this.lblFileName.Location = new System.Drawing.Point(303, 18);
-            this.lblFileName.Name = "lblFileName";
-            this.lblFileName.Size = new System.Drawing.Size(279, 23);
-            this.lblFileName.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lblFileName.TabIndex = 8;
-            this.lblFileName.Text = "Filename:";
-            // 
-            // lvDocuments
-            // 
-            this.lvDocuments.Activation = System.Windows.Forms.ItemActivation.OneClick;
-            this.lvDocuments.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lvDocuments.BackColor = System.Drawing.Color.White;
-            this.lvDocuments.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lvDocuments.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chFilename});
-            this.lvDocuments.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvDocuments.ForeColor = System.Drawing.Color.Black;
-            this.lvDocuments.FullRowSelect = true;
-            this.lvDocuments.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.lvDocuments.HideSelection = false;
-            this.lvDocuments.Location = new System.Drawing.Point(16, 18);
-            this.lvDocuments.MultiSelect = false;
-            this.lvDocuments.Name = "lvDocuments";
-            this.lvDocuments.Size = new System.Drawing.Size(272, 253);
-            this.lvDocuments.TabIndex = 7;
-            this.lvDocuments.UseCompatibleStateImageBehavior = false;
-            this.lvDocuments.View = System.Windows.Forms.View.Details;
-            // 
-            // chFilename
-            // 
-            this.chFilename.Text = "Filename";
-            this.chFilename.Width = 224;
-            // 
-            // btnDocumentAdd
-            // 
-            this.btnDocumentAdd.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnDocumentAdd.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnDocumentAdd.Location = new System.Drawing.Point(95, 275);
-            this.btnDocumentAdd.Name = "btnDocumentAdd";
-            this.btnDocumentAdd.Size = new System.Drawing.Size(110, 29);
-            this.btnDocumentAdd.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnDocumentAdd.TabIndex = 6;
-            this.btnDocumentAdd.Text = "Add document";
-            this.btnDocumentAdd.Click += new System.EventHandler(this.btnDocumentAdd_Click);
-            // 
-            // superTabItem6
-            // 
-            this.superTabItem6.AttachedControl = this.superTabControlPanel6;
-            this.superTabItem6.GlobalItem = false;
-            this.superTabItem6.Name = "superTabItem6";
-            this.superTabItem6.Text = "  Documents";
-            // 
-            // superTabControlPanel4
-            // 
-            this.superTabControlPanel4.Controls.Add(this.btnSaveComment);
-            this.superTabControlPanel4.Controls.Add(this.gComments);
-            this.superTabControlPanel4.Controls.Add(this.txtComments);
-            this.superTabControlPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel4.Location = new System.Drawing.Point(0, 27);
-            this.superTabControlPanel4.Name = "superTabControlPanel4";
-            this.superTabControlPanel4.Size = new System.Drawing.Size(616, 321);
-            this.superTabControlPanel4.TabIndex = 0;
-            this.superTabControlPanel4.TabItem = this.superTabItem4;
-            // 
-            // btnSaveComment
-            // 
-            this.btnSaveComment.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnSaveComment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSaveComment.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSaveComment.Location = new System.Drawing.Point(489, 148);
-            this.btnSaveComment.Name = "btnSaveComment";
-            this.btnSaveComment.Size = new System.Drawing.Size(111, 34);
-            this.btnSaveComment.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnSaveComment.TabIndex = 29;
-            this.btnSaveComment.Text = "Save Comment";
-            this.btnSaveComment.Visible = false;
-            this.btnSaveComment.Click += new System.EventHandler(this.btnSaveComment_Click);
-            // 
-            // gComments
-            // 
-            this.gComments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.gComments.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.gComments.ForeColor = System.Drawing.Color.Black;
-            this.gComments.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
-            this.gComments.Location = new System.Drawing.Point(16, 18);
-            this.gComments.Name = "gComments";
-            // 
-            // 
-            // 
-            this.gComments.PrimaryGrid.AllowEdit = false;
-            this.gComments.PrimaryGrid.Columns.Add(this.gCommentsAdded);
-            this.gComments.PrimaryGrid.Columns.Add(this.gCommentsBy);
-            this.gComments.PrimaryGrid.Columns.Add(this.gCommentsComment);
-            this.gComments.PrimaryGrid.MultiSelect = false;
-            this.gComments.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
-            this.gComments.PrimaryGrid.ShowRowHeaders = false;
-            this.gComments.PrimaryGrid.UseAlternateRowStyle = true;
-            this.gComments.Size = new System.Drawing.Size(584, 164);
-            this.gComments.TabIndex = 28;
-            this.gComments.Text = "superGridControl1";
-            this.gComments.RowClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowClickEventArgs>(this.gComments_RowClick);
-            // 
-            // gCommentsAdded
-            // 
-            this.gCommentsAdded.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
-            this.gCommentsAdded.HeaderText = "Added";
-            this.gCommentsAdded.MinimumWidth = 125;
-            this.gCommentsAdded.Name = "Added";
-            this.gCommentsAdded.Width = 125;
-            // 
-            // gCommentsBy
-            // 
-            this.gCommentsBy.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
-            this.gCommentsBy.HeaderText = "By";
-            this.gCommentsBy.MinimumWidth = 125;
-            this.gCommentsBy.Name = "By";
-            this.gCommentsBy.Width = 125;
-            // 
-            // gCommentsComment
-            // 
-            this.gCommentsComment.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
-            this.gCommentsComment.HeaderText = "Comment";
-            this.gCommentsComment.Name = "Comment";
-            // 
-            // txtComments
-            // 
-            this.txtComments.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtComments.Border.Class = "TextBoxBorder";
-            this.txtComments.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtComments.DisabledBackColor = System.Drawing.Color.White;
-            this.txtComments.ForeColor = System.Drawing.Color.Black;
-            this.txtComments.Location = new System.Drawing.Point(16, 188);
-            this.txtComments.Multiline = true;
-            this.txtComments.Name = "txtComments";
-            this.txtComments.PreventEnterBeep = true;
-            this.txtComments.Size = new System.Drawing.Size(584, 116);
-            this.txtComments.TabIndex = 27;
-            // 
-            // superTabItem4
-            // 
-            this.superTabItem4.AttachedControl = this.superTabControlPanel4;
-            this.superTabItem4.GlobalItem = false;
-            this.superTabItem4.Name = "superTabItem4";
-            this.superTabItem4.Text = "  Comments";
             // 
             // superTabControlPanel2
             // 
@@ -1237,6 +1023,224 @@
             this.superTabItem2.GlobalItem = false;
             this.superTabItem2.Name = "superTabItem2";
             this.superTabItem2.Text = "  Event";
+            // 
+            // superTabControlPanel6
+            // 
+            this.superTabControlPanel6.Controls.Add(this.lblFileAccessedVal);
+            this.superTabControlPanel6.Controls.Add(this.lblFileAccessed);
+            this.superTabControlPanel6.Controls.Add(this.lblFileModifiedVal);
+            this.superTabControlPanel6.Controls.Add(this.lblFileModified);
+            this.superTabControlPanel6.Controls.Add(this.lblFileSizeVal);
+            this.superTabControlPanel6.Controls.Add(this.lblFileSize);
+            this.superTabControlPanel6.Controls.Add(this.lblFileLocationVal);
+            this.superTabControlPanel6.Controls.Add(this.lblFileLocation);
+            this.superTabControlPanel6.Controls.Add(this.lblFileNameVal);
+            this.superTabControlPanel6.Controls.Add(this.lblFileName);
+            this.superTabControlPanel6.Controls.Add(this.lvDocuments);
+            this.superTabControlPanel6.Controls.Add(this.btnDocumentAdd);
+            this.superTabControlPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel6.Location = new System.Drawing.Point(0, 30);
+            this.superTabControlPanel6.Name = "superTabControlPanel6";
+            this.superTabControlPanel6.Size = new System.Drawing.Size(616, 322);
+            this.superTabControlPanel6.TabIndex = 0;
+            this.superTabControlPanel6.TabItem = this.superTabItem6;
+            // 
+            // lblFileAccessedVal
+            // 
+            this.lblFileAccessedVal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.lblFileAccessedVal.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblFileAccessedVal.ForeColor = System.Drawing.Color.Black;
+            this.lblFileAccessedVal.Location = new System.Drawing.Point(303, 243);
+            this.lblFileAccessedVal.Name = "lblFileAccessedVal";
+            this.lblFileAccessedVal.Size = new System.Drawing.Size(279, 23);
+            this.lblFileAccessedVal.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblFileAccessedVal.TabIndex = 17;
+            this.lblFileAccessedVal.Text = "...";
+            // 
+            // lblFileAccessed
+            // 
+            this.lblFileAccessed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.lblFileAccessed.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblFileAccessed.ForeColor = System.Drawing.Color.Black;
+            this.lblFileAccessed.Location = new System.Drawing.Point(303, 218);
+            this.lblFileAccessed.Name = "lblFileAccessed";
+            this.lblFileAccessed.Size = new System.Drawing.Size(279, 23);
+            this.lblFileAccessed.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblFileAccessed.TabIndex = 16;
+            this.lblFileAccessed.Text = "Last accessed:";
+            // 
+            // lblFileModifiedVal
+            // 
+            this.lblFileModifiedVal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.lblFileModifiedVal.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblFileModifiedVal.ForeColor = System.Drawing.Color.Black;
+            this.lblFileModifiedVal.Location = new System.Drawing.Point(303, 193);
+            this.lblFileModifiedVal.Name = "lblFileModifiedVal";
+            this.lblFileModifiedVal.Size = new System.Drawing.Size(279, 23);
+            this.lblFileModifiedVal.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblFileModifiedVal.TabIndex = 15;
+            this.lblFileModifiedVal.Text = "...";
+            // 
+            // lblFileModified
+            // 
+            this.lblFileModified.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.lblFileModified.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblFileModified.ForeColor = System.Drawing.Color.Black;
+            this.lblFileModified.Location = new System.Drawing.Point(303, 168);
+            this.lblFileModified.Name = "lblFileModified";
+            this.lblFileModified.Size = new System.Drawing.Size(279, 23);
+            this.lblFileModified.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblFileModified.TabIndex = 14;
+            this.lblFileModified.Text = "Last modified:";
+            // 
+            // lblFileSizeVal
+            // 
+            this.lblFileSizeVal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.lblFileSizeVal.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblFileSizeVal.ForeColor = System.Drawing.Color.Black;
+            this.lblFileSizeVal.Location = new System.Drawing.Point(303, 143);
+            this.lblFileSizeVal.Name = "lblFileSizeVal";
+            this.lblFileSizeVal.Size = new System.Drawing.Size(279, 23);
+            this.lblFileSizeVal.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblFileSizeVal.TabIndex = 13;
+            this.lblFileSizeVal.Text = "...";
+            // 
+            // lblFileSize
+            // 
+            this.lblFileSize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.lblFileSize.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblFileSize.ForeColor = System.Drawing.Color.Black;
+            this.lblFileSize.Location = new System.Drawing.Point(303, 118);
+            this.lblFileSize.Name = "lblFileSize";
+            this.lblFileSize.Size = new System.Drawing.Size(279, 23);
+            this.lblFileSize.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblFileSize.TabIndex = 12;
+            this.lblFileSize.Text = "File size:";
+            // 
+            // lblFileLocationVal
+            // 
+            this.lblFileLocationVal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.lblFileLocationVal.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblFileLocationVal.ForeColor = System.Drawing.Color.Black;
+            this.lblFileLocationVal.Location = new System.Drawing.Point(303, 93);
+            this.lblFileLocationVal.Name = "lblFileLocationVal";
+            this.lblFileLocationVal.Size = new System.Drawing.Size(279, 23);
+            this.lblFileLocationVal.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblFileLocationVal.TabIndex = 11;
+            this.lblFileLocationVal.Text = "...";
+            // 
+            // lblFileLocation
+            // 
+            this.lblFileLocation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.lblFileLocation.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblFileLocation.ForeColor = System.Drawing.Color.Black;
+            this.lblFileLocation.Location = new System.Drawing.Point(303, 68);
+            this.lblFileLocation.Name = "lblFileLocation";
+            this.lblFileLocation.Size = new System.Drawing.Size(279, 23);
+            this.lblFileLocation.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblFileLocation.TabIndex = 10;
+            this.lblFileLocation.Text = "Location:";
+            // 
+            // lblFileNameVal
+            // 
+            this.lblFileNameVal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.lblFileNameVal.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblFileNameVal.ForeColor = System.Drawing.Color.Black;
+            this.lblFileNameVal.Location = new System.Drawing.Point(303, 43);
+            this.lblFileNameVal.Name = "lblFileNameVal";
+            this.lblFileNameVal.Size = new System.Drawing.Size(279, 23);
+            this.lblFileNameVal.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblFileNameVal.TabIndex = 9;
+            this.lblFileNameVal.Text = "...";
+            // 
+            // lblFileName
+            // 
+            this.lblFileName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.lblFileName.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblFileName.ForeColor = System.Drawing.Color.Black;
+            this.lblFileName.Location = new System.Drawing.Point(303, 18);
+            this.lblFileName.Name = "lblFileName";
+            this.lblFileName.Size = new System.Drawing.Size(279, 23);
+            this.lblFileName.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblFileName.TabIndex = 8;
+            this.lblFileName.Text = "Filename:";
+            // 
+            // lvDocuments
+            // 
+            this.lvDocuments.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            this.lvDocuments.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lvDocuments.BackColor = System.Drawing.Color.White;
+            this.lvDocuments.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lvDocuments.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chFilename});
+            this.lvDocuments.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvDocuments.ForeColor = System.Drawing.Color.Black;
+            this.lvDocuments.FullRowSelect = true;
+            this.lvDocuments.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.lvDocuments.HideSelection = false;
+            this.lvDocuments.Location = new System.Drawing.Point(16, 18);
+            this.lvDocuments.MultiSelect = false;
+            this.lvDocuments.Name = "lvDocuments";
+            this.lvDocuments.Size = new System.Drawing.Size(272, 253);
+            this.lvDocuments.TabIndex = 7;
+            this.lvDocuments.UseCompatibleStateImageBehavior = false;
+            this.lvDocuments.View = System.Windows.Forms.View.Details;
+            // 
+            // chFilename
+            // 
+            this.chFilename.Text = "Filename";
+            this.chFilename.Width = 224;
+            // 
+            // btnDocumentAdd
+            // 
+            this.btnDocumentAdd.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnDocumentAdd.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnDocumentAdd.Location = new System.Drawing.Point(95, 275);
+            this.btnDocumentAdd.Name = "btnDocumentAdd";
+            this.btnDocumentAdd.Size = new System.Drawing.Size(110, 29);
+            this.btnDocumentAdd.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnDocumentAdd.TabIndex = 6;
+            this.btnDocumentAdd.Text = "Add document";
+            this.btnDocumentAdd.Click += new System.EventHandler(this.btnDocumentAdd_Click);
+            // 
+            // superTabItem6
+            // 
+            this.superTabItem6.AttachedControl = this.superTabControlPanel6;
+            this.superTabItem6.GlobalItem = false;
+            this.superTabItem6.Name = "superTabItem6";
+            this.superTabItem6.Text = "  Documents";
             // 
             // superTabControlPanel3
             // 
@@ -1784,9 +1788,8 @@
             this.Text = "Add Booking";
             ((System.ComponentModel.ISupportInitialize)(this.tc)).EndInit();
             this.tc.ResumeLayout(false);
-            this.superTabControlPanel1.ResumeLayout(false);
-            this.superTabControlPanel6.ResumeLayout(false);
             this.superTabControlPanel4.ResumeLayout(false);
+            this.superTabControlPanel1.ResumeLayout(false);
             this.superTabControlPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtTimeAccessTo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtTimeAccessFrom)).EndInit();
@@ -1794,6 +1797,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtTimeFrom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtDateTo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtDateFrom)).EndInit();
+            this.superTabControlPanel6.ResumeLayout(false);
             this.superTabControlPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtLunchTime)).EndInit();
             this.superTabControlPanel5.ResumeLayout(false);
