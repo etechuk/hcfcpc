@@ -108,16 +108,17 @@ namespace Client
                         if (txtCompany.Text.Trim() != "" && row["BContact"] != DBNull.Value && row["BContact"].ToString().All(char.IsDigit))
                         {
                             AutoCompleteStringCollection asContacts = new AutoCompleteStringCollection();
-                            DataSet d = Program.DB.SelectAll("SELECT ID,NameTitle,NameFirst,NameLast FROM Contacts WHERE Company='" + row["BCompany"].ToString() + "'");
+                            Program.DB.AddParameter("Company", row["BCompany"].ToString());
+                            DataSet d = Program.DB.SelectAll("SELECT ID,NameTitle,NameFirst,NameLast FROM Contacts WHERE Company=@Company;");
                             if (d.Tables.Count > 0 && d.Tables[0].Rows.Count > 0)
                             {
                                 string sSelected = "";
                                 foreach (DataRow r in d.Tables[0].Rows)
                                 {
-                                    asContacts.Add(r["NameLast"].ToString() + ", " + r["NameFirst"].ToString());
+                                    asContacts.Add(r["NameFirst"].ToString() + " " + r["NameLast"].ToString());
                                     if (r["ID"] == row["BContact"])
                                     {
-                                        sSelected = r["NameLast"].ToString() + ", " + r["NameFirst"].ToString();
+                                        sSelected = r["NameFirst"].ToString() + " " + r["NameLast"].ToString();
                                     }
                                 }
                                 txtContact.AutoCompleteCustomSource = asContacts;
@@ -226,7 +227,7 @@ namespace Client
                         txtLunchMenu.Text = row["BLunchMenu"].ToString();
 
                         cbxLunchAttendees.SelectedIndex = cbxLunchAttendees.FindStringExact(row["BLunchNumber"].ToString());
-                        dtLunchTime.Text = row["BLunchTime"].ToString();
+                        dtLunchTime.Text = row["BLunchTime"].ToString().Length > 0 ? row["BLunchTime"].ToString() : "";
                         txtLunchDiet.Text = row["BLunchDiet"].ToString();
                         txtComments.Text = row["BComments"].ToString();
 
@@ -935,6 +936,29 @@ namespace Client
             {
                 Point pos = gComments.PointToClient(Cursor.Position);
                 mComments.Show(gComments, pos);
+            }
+        }
+
+        private void txtCompany_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Program.DB.AddParameter("Name", txtCompany.Text);
+                DataSet ds = Program.DB.SelectAll("SELECT ID FROM Companies WHERE Name=@Name;");
+                if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+                {
+                    Program.DB.AddParameter("ID", ds.Tables[0].Rows[0]["ID"]);
+                    ds = Program.DB.SelectAll("SELECT ID,NameFirst,NameLast FROM Contacts WHERE Company=@ID;");
+                    if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+                    {
+                        AutoCompleteStringCollection asContacts = new AutoCompleteStringCollection();
+                        foreach (DataRow r in ds.Tables[0].Rows)
+                        {
+                            asContacts.Add(r["NameFirst"].ToString() + " " + r["NameLast"].ToString());
+                        }
+                        txtContact.AutoCompleteCustomSource = asContacts;
+                    }
+                }
             }
         }
     }

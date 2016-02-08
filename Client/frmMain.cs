@@ -86,6 +86,7 @@ namespace Client
             if (rgBookings.Worksheets.Count > 0)
             {
                 rgBookings.Worksheets.Clear();
+                rgBookings.Dispose();
             }
 
             if (!Program.bSignOut)
@@ -676,7 +677,7 @@ namespace Client
                     cmBookings.Appointments.Add(appointment);
 
                     GridRow r = new GridRow(new object[] {
-                        false, row["Job"].ToString(), sDate, sStart, sFinish, row["BName"].ToString(), sRoom, sCompany, row["BPhone"].ToString(),
+                        row["Job"].ToString(), sDate, sStart, sFinish, row["BName"].ToString(), sRoom, sCompany, row["BPhone"].ToString(),
                         row["BEmail"].ToString(), row["BRoomLayout"].ToString()
                     });
                     r.Tag = row["ID"];
@@ -748,18 +749,29 @@ namespace Client
         {
             gEnquiries.PrimaryGrid.Rows.Clear();
 
-            DataSet d, ds = Program.DB.SelectAll("SELECT ID,Job,EName,ECompany,EPhone,EEmail,EType,EReferer,EUser,EEntered FROM Jobs WHERE EName IS NOT NULL AND EUser IS NOT NULL ORDER BY Job DESC");
-
+            DataSet ds = Program.DB.SelectAll("SELECT ID,Job,EName,ECompany,EPhone,EEmail,EType,EReferer,EUser,EEntered FROM Jobs WHERE EName IS NOT NULL AND EUser IS NOT NULL ORDER BY Job DESC;");
             if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
             {
                 foreach (DataRow row in ds.Tables[0].Rows)
                 {
                     GridRow r = new GridRow(new object[] {
-                        false, row["Job"].ToString(), row["EEntered"].ToString(), row["EType"].ToString(), row["EName"].ToString(), row["ECompany"].ToString(),
+                        row["Job"].ToString(), row["EEntered"].ToString(), row["EType"].ToString(), row["EName"].ToString(), row["ECompany"].ToString(),
                         row["EPhone"].ToString(), row["EEmail"].ToString(), row["EReferer"].ToString()
                     });
+                    r.Tag = row["ID"];
                     gEnquiries.PrimaryGrid.Rows.Add(r);
-                    gEnquiries.PrimaryGrid.Rows[gEnquiries.PrimaryGrid.Rows.Count - 1].Tag = row["ID"];
+                }
+            }
+
+            ds = Program.DB.SelectAll("SELECT ID,Name FROM Courses ORDER BY Name;");
+            if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    ListViewItem i = new ListViewItem();
+                    i.Tag = row["ID"];
+                    i.Text = row["Name"].ToString();
+                    lvEnquiryCourses.Items.Add(i);
                 }
             }
         }
@@ -776,7 +788,7 @@ namespace Client
                 foreach (DataRow row in ds.Tables[0].Rows)
                 {
                     GridRow r = new GridRow(new object[] {
-                        false, row["ID"].ToString(), row["Name"].ToString(), row["Certification"].ToString(),
+                        row["ID"].ToString(), row["Name"].ToString(), row["Certification"].ToString(),
                         row["Duration"].ToString().Replace(Environment.NewLine, "; "), row["Pricing"].ToString().Replace(Environment.NewLine, "; ")
                     });
                     r.Tag = row["ID"];
@@ -796,6 +808,7 @@ namespace Client
 
                 foreach (DataRow row in ds.Tables[0].Rows)
                 {
+                    /*
                     string sContacts = "";
                     if (row["Contacts"].ToString().Length > 0)
                     {
@@ -849,9 +862,13 @@ namespace Client
                             }
                         }
                     }
+                    */
+
+                    string sContacts = row["Contacts"].ToString(), sPhones = row["Phones"].ToString(), sEmails = row["Emails"].ToString(), sAddresses = row["Addresses"].ToString();
 
                     GridRow r = new GridRow(new object[] {
-                        false, row["ID"].ToString(), row["Name"].ToString(), sContacts, sPhones, sEmails, sAddresses, row["RegNumber"].ToString(), row["RegNumberVat"].ToString()
+                        row["ID"].ToString(), row["Name"].ToString(), sContacts, sPhones, sEmails, sAddresses, row["RegNumber"].ToString(),
+                        row["RegNumberVat"].ToString()
                     });
                     r.Tag = row["ID"];
                     gCompanies.PrimaryGrid.Rows.Add(r);
@@ -873,6 +890,7 @@ namespace Client
                 {
                     string sCompany = row["Company"].ToString();
 
+                    /*
                     Program.DB.AddParameter("ID", row["Company"]);
                     d = Program.DB.SelectAll("SELECT Name FROM Companies WHERE ID=@ID;");
                     if (d.Tables.Count > 0 && d.Tables[0].Rows.Count > 0)
@@ -919,9 +937,13 @@ namespace Client
                             }
                         }
                     }
+                    */
+
+                    string sPhones = row["Phones"].ToString(), sEmails = row["Emails"].ToString(), sAddresses = row["Addresses"].ToString();
 
                     GridRow r = new GridRow(new object[] {
-                        false, row["ID"].ToString(), row["NameTitle"].ToString(), row["NameFirst"].ToString(), row["NameLast"].ToString(), sCompany, sPhones, sEmails, sAddresses
+                        row["ID"].ToString(), row["NameTitle"].ToString(), row["NameFirst"].ToString(), row["NameLast"].ToString(), sCompany, sPhones, sEmails,
+                        sAddresses
                     });
                     r.Tag = row["ID"];
                     gContacts.PrimaryGrid.Rows.Add(r);
@@ -941,8 +963,9 @@ namespace Client
                 }
                 txtGridCompany.AutoCompleteCustomSource = asCompanies;
                 txtListCompany.AutoCompleteCustomSource = asCompanies;
-                txtContactCompany.AutoCompleteCustomSource = asCompanies;
                 txtEnquiriesListCompany.AutoCompleteCustomSource = asCompanies;
+                txtContactCompany.AutoCompleteCustomSource = asCompanies;
+                txtEnquiryCompany.AutoCompleteCustomSource = asCompanies;
             }
         }
 
@@ -1152,6 +1175,199 @@ namespace Client
             }
         }
 
+        private void EnableEnquiry(bool enable = true)
+        {
+            if (!enable)
+            {
+                SharedData.iEnquiryID = 0;
+                rEnquiry = null;
+                txtEnquiryCompany.Text = "";
+                txtEnquiryEmail.Text = "";
+                txtEnquiryInfo.Text = "";
+                txtEnquiryInfoWanted.Text = "";
+                txtEnquiryName.Text = "";
+                txtEnquiryPhone.Text = "";
+                txtEnquiryReferrer.Text = "";
+                cbxEnquiryType.SelectedIndex = -1;
+                lvEnquiryDocs.Clear();
+                lblEnquiryFileAccessVal.Text = "";
+                lblEnquiryFileLocVal.Text = "";
+                lblEnquiryFileModVal.Text = "";
+                lblEnquiryFileNameVal.Text = "";
+                lblEnquiryFileSizeVal.Text = "";
+                txtEnquiryCompany.Enabled = false;
+                txtEnquiryEmail.Enabled = false;
+                txtEnquiryInfo.Enabled = false;
+                txtEnquiryInfoWanted.Enabled = false;
+                txtEnquiryName.Enabled = false;
+                txtEnquiryPhone.Enabled = false;
+                txtEnquiryReferrer.Enabled = false;
+                cbxEnquiryType.Enabled = false;
+                lvEnquiryCourses.Enabled = false;
+                lvEnquiryDocs.Enabled = false;
+                btnEnquiryCancel.Enabled = false;
+                btnEnquirySave.Enabled = false;
+                btnEnquiryDocs.Enabled = false;
+                foreach (ListViewItem i in lvEnquiryCourses.Items)
+                {
+                    i.Checked = false;
+                }
+            }
+            else
+            {
+                txtEnquiryCompany.Enabled = true;
+                txtEnquiryEmail.Enabled = true;
+                txtEnquiryInfo.Enabled = true;
+                txtEnquiryInfoWanted.Enabled = true;
+                txtEnquiryName.Enabled = true;
+                txtEnquiryPhone.Enabled = true;
+                txtEnquiryReferrer.Enabled = true;
+                cbxEnquiryType.Enabled = true;
+                lvEnquiryCourses.Enabled = true;
+                lvEnquiryDocs.Enabled = true;
+                btnEnquiryCancel.Enabled = true;
+                btnEnquirySave.Enabled = true;
+                btnEnquiryDocs.Enabled = true;
+            }
+        }
+
+        private void EnableCourse(bool enable = true)
+        {
+            if (!enable)
+            {
+                SharedData.iCourseID = 0;
+                rCourse = null;
+                txtCourseCert.Text = "";
+                txtCourseDetails.Text = "";
+                txtCourseDuration.Text = "";
+                txtCourseName.Text = "";
+                txtCoursePricing.Text = "";
+                txtCourseCert.Enabled = false;
+                txtCourseDetails.Enabled = false;
+                txtCourseDuration.Enabled = false;
+                txtCourseName.Enabled = false;
+                txtCoursePricing.Enabled = false;
+                btnCourseCancel.Enabled = false;
+                btnCourseSave.Enabled = false;
+            }
+            else
+            {
+                txtCourseCert.Enabled = true;
+                txtCourseDetails.Enabled = true;
+                txtCourseDuration.Enabled = true;
+                txtCourseName.Enabled = true;
+                txtCoursePricing.Enabled = true;
+                btnCourseCancel.Enabled = true;
+                btnCourseSave.Enabled = true;
+            }
+        }
+
+        private void EnableCompany(bool enable = true)
+        {
+            if (!enable)
+            {
+                SharedData.iCompanyID = 0;
+                rCompany = null;
+                txtCompanyAddress.Text = "";
+                txtCompanyContact.Text = "";
+                txtCompanyEmail.Text = "";
+                txtCompanyName.Text = "";
+                txtCompanyNotes.Text = "";
+                txtCompanyPhone.Text = "";
+                txtCompanyReg.Text = "";
+                txtCompanyRegVat.Text = "";
+                txtCompanyTrading.Text = "";
+                txtCompanyAddress.Enabled = false;
+                txtCompanyContact.Enabled = false;
+                txtCompanyEmail.Enabled = false;
+                txtCompanyName.Enabled = false;
+                txtCompanyNotes.Enabled = false;
+                txtCompanyPhone.Enabled = false;
+                txtCompanyReg.Enabled = false;
+                txtCompanyRegVat.Enabled = false;
+                txtCompanyTrading.Enabled = false;
+                btnCompanyCancel.Enabled = false;
+                btnCompanySave.Enabled = false;
+            }
+            else
+            {
+                txtCompanyAddress.Enabled = true;
+                txtCompanyContact.Enabled = true;
+                txtCompanyEmail.Enabled = true;
+                txtCompanyName.Enabled = true;
+                txtCompanyNotes.Enabled = true;
+                txtCompanyPhone.Enabled = true;
+                txtCompanyReg.Enabled = true;
+                txtCompanyRegVat.Enabled = true;
+                txtCompanyTrading.Enabled = true;
+                btnCompanyCancel.Enabled = true;
+                btnCompanySave.Enabled = true;
+            }
+        }
+
+        private void EnableContact(bool enable = true)
+        {
+            if (!enable)
+            {
+                SharedData.iContactID = 0;
+                rContact = null;
+                txtContactAddress.Text = "";
+                txtContactCompany.Text = "";
+                txtContactEmail.Text = "";
+                txtContactNameFirst.Text = "";
+                txtContactNameLast.Text = "";
+                txtContactNameTitle.Text = "";
+                txtContactNotes.Text = "";
+                txtContactPhone.Text = "";
+                cbxContactNameTitle.SelectedIndex = -1;
+                lvContactDocuments.Clear();
+                lblContactFileAccessVal.Text = "";
+                lblContactFileLocVal.Text = "";
+                lblContactFileModVal.Text = "";
+                lblContactFileNameVal.Text = "";
+                lblContactFileSizeVal.Text = "";
+                txtContactAddress.Enabled = false;
+                txtContactCompany.Enabled = false;
+                txtContactEmail.Enabled = false;
+                txtContactNameFirst.Enabled = false;
+                txtContactNameLast.Enabled = false;
+                txtContactNameTitle.Enabled = false;
+                txtContactNotes.Enabled = false;
+                txtContactPhone.Enabled = false;
+                cbxContactNameTitle.Enabled = false;
+                lvContactDocuments.Enabled = false;
+                lblContactFileAccessVal.Enabled = false;
+                lblContactFileLocVal.Enabled = false;
+                lblContactFileModVal.Enabled = false;
+                lblContactFileNameVal.Enabled = false;
+                lblContactFileSizeVal.Enabled = false;
+                btnContactCancel.Enabled = false;
+                btnContactSave.Enabled = false;
+                btnContactDocumentAdd.Enabled = false;
+            }
+            else
+            {
+                txtContactAddress.Enabled = true;
+                txtContactCompany.Enabled = true;
+                txtContactEmail.Enabled = true;
+                txtContactNameFirst.Enabled = true;
+                txtContactNameLast.Enabled = true;
+                txtContactNameTitle.Enabled = true;
+                txtContactNotes.Enabled = true;
+                txtContactPhone.Enabled = true;
+                cbxContactNameTitle.Enabled = true;
+                lvContactDocuments.Enabled = true;
+                lblContactFileAccessVal.Enabled = true;
+                lblContactFileLocVal.Enabled = true;
+                lblContactFileModVal.Enabled = true;
+                lblContactFileNameVal.Enabled = true;
+                lblContactFileSizeVal.Enabled = true;
+                btnContactCancel.Enabled = true;
+                btnContactSave.Enabled = true;
+                btnContactDocumentAdd.Enabled = true;
+            }
+        }
+
         #endregion
 
         #region Functions
@@ -1211,52 +1427,244 @@ namespace Client
 
         private void btnContactCancel_Click(object sender, EventArgs e)
         {
-            mContactsAdd.PerformClick();
-            btnContactCancel.Enabled = false;
-            btnContactSave.Enabled = false;
-            btnContactDocumentAdd.Enabled = false;
+            EnableContact(false);
         }
 
         private void btnContactSave_Click(object sender, EventArgs e)
         {
+            if (txtContactNameFirst.Text.Length == 0)
+            {
+                MessageBox.Show("Please enter a first name to continue.", "First name", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
 
+            if (txtContactNameLast.Text.Length == 0)
+            {
+                MessageBox.Show("Please enter a last name to continue.", "Last name", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
+
+            Program.DB.AddParameter("Address", txtContactAddress.Text);
+            Program.DB.AddParameter("Company", txtContactCompany.Text);
+            Program.DB.AddParameter("Email", txtContactEmail.Text);
+            Program.DB.AddParameter("NameFirst", txtContactNameFirst.Text);
+            Program.DB.AddParameter("NameLast", txtContactNameLast.Text);
+            Program.DB.AddParameter("NameTitle", txtContactNameTitle.Text);
+            Program.DB.AddParameter("Notes", txtContactNotes.Text);
+            Program.DB.AddParameter("Phone", txtContactPhone.Text);
+            Program.DB.AddParameter("Ent", DateTime.Now);
+            Program.DB.AddParameter("Mod", DateTime.Now);
+
+            if (lvContactDocuments.Items.Count > 0)
+            {
+                // Upload docs
+            }
+
+            if (SharedData.iContactID > 0)
+            {
+                int iRes = Program.DB.Update("UPDATE Contacts SET Addresses=@Address,Company=@Company,Emails=@Email,NameFirst=@NameFirst,NameLast=@NameLast,NameTitle=@NameTitle,Notes=@Notes,Phones=@Phone,Modified=@Mod WHERE ID=" + SharedData.iContactID + ";");
+                if (iRes < 1)
+                {
+                    MessageBox.Show("The update failed. Please try again.", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("The update was successful.", "Updated", (MessageBoxButtons.OK), (MessageBoxIcon.Information));
+                }
+            }
+            else
+            {
+                int iRes = Program.DB.Insert("INSERT INTO Contacts (Addresses,Company,Emails,NameFirst,NameLast,NameTitle,Notes,Phones,Entered,Modified) VALUES (@Address,@Company,@Email,@NameFirst,@NameLast,@NameTitle,@Notes,@Phone,@Ent,@Mod)");
+                if (iRes < 1)
+                {
+                    MessageBox.Show("The addition failed. Please try again.", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("The addition was successful.", "Updated", (MessageBoxButtons.OK), (MessageBoxIcon.Information));
+                }
+            }
+
+            SharedData.iContactID = 0;
+            LoadContacts();
+            scContact.SelectedTab = tiContactGeneral;
         }
 
         private void btnCompanyCancel_Click(object sender, EventArgs e)
         {
-            mCompaniesAdd.PerformClick();
-            btnCompanyCancel.Enabled = false;
-            btnCompanySave.Enabled = false;
+            EnableCompany(false);
         }
 
         private void btnCompanySave_Click(object sender, EventArgs e)
         {
+            Program.DB.AddParameter("Address", txtCompanyAddress.Text);
+            Program.DB.AddParameter("Contact", txtCompanyContact.Text);
+            Program.DB.AddParameter("Email", txtCompanyEmail.Text);
+            Program.DB.AddParameter("Name", txtCompanyName.Text);
+            Program.DB.AddParameter("Notes", txtCompanyNotes.Text);
+            Program.DB.AddParameter("Phone", txtCompanyPhone.Text);
+            Program.DB.AddParameter("Reg", txtCompanyReg.Text);
+            Program.DB.AddParameter("Vat", txtCompanyRegVat.Text);
+            Program.DB.AddParameter("Trading", txtCompanyTrading.Text);
+            Program.DB.AddParameter("Ent", DateTime.Now);
+            Program.DB.AddParameter("Mod", DateTime.Now);
 
+            if (SharedData.iCompanyID > 0)
+            {
+                int iRes = Program.DB.Update("UPDATE Companies SET Addresses=@Address,Contacts=@Contact,Emails=@Email,Name=@Name,Notes=@Notes,Phones=@Phone,RegNumber=@Reg,RegNumberVat=@Vat,TradingAs=@Trading,Modified=@Mod WHERE ID=" + SharedData.iCompanyID + ";");
+                if (iRes < 1)
+                {
+                    MessageBox.Show("The update failed. Please try again.", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("The update was successful.", "Updated", (MessageBoxButtons.OK), (MessageBoxIcon.Information));
+                }
+            }
+            else
+            {
+                int iRes = Program.DB.Insert("INSERT INTO Companies (Addresses,Contacts,Emails,Name,Notes,Phones,RegNumber,RegNumberVat,TradingAs,Entered,Modified) VALUES (@Address,@Contact,@Email,@Name,@Notes,@Phone,@Reg,@Vat,@Trading,@Ent,@Mod)");
+                if (iRes < 1)
+                {
+                    MessageBox.Show("The addition failed. Please try again.", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("The addition was successful.", "Updated", (MessageBoxButtons.OK), (MessageBoxIcon.Information));
+                }
+            }
+
+            SharedData.iCompanyID = 0;
+            LoadCompanies();
+            scCompany.SelectedTab = tiCompanyGeneral;
         }
 
         private void btnCourseCancel_Click(object sender, EventArgs e)
         {
-            mCoursesAdd.PerformClick();
-            btnCourseCancel.Enabled = false;
-            btnCourseSave.Enabled = false;
+            EnableCourse(false);
         }
 
         private void btnCourseSave_Click(object sender, EventArgs e)
         {
+            Program.DB.AddParameter("Cert", txtCourseCert.Text);
+            Program.DB.AddParameter("Details", txtCourseDetails.Text);
+            Program.DB.AddParameter("Duration", txtCourseDuration.Text);
+            Program.DB.AddParameter("Name", txtCourseName.Text);
+            Program.DB.AddParameter("Pricing", txtCoursePricing.Text);
+            Program.DB.AddParameter("Ent", DateTime.Now);
+            Program.DB.AddParameter("Mod", DateTime.Now);
 
+            if (SharedData.iCourseID > 0)
+            {
+                int iRes = Program.DB.Update("UPDATE Courses SET Certification=@Cert,Details=@Details,Duration=@Duration,Name=@Name,Pricing=@Pricing,Modified=@Mod WHERE ID=" + SharedData.iCourseID + ";");
+                if (iRes < 1)
+                {
+                    MessageBox.Show("The update failed. Please try again.", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("The update was successful.", "Updated", (MessageBoxButtons.OK), (MessageBoxIcon.Information));
+                }
+            }
+            else
+            {
+                int iRes = Program.DB.Insert("INSERT INTO Courses (Certification,Details,Duration,Name,Pricing,Entered,Modified) VALUES (@Cert,@Details,@Duration,@Name,@Pricing,@Ent,@Mod)");
+                if (iRes < 1)
+                {
+                    MessageBox.Show("The addition failed. Please try again.", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("The addition was successful.", "Updated", (MessageBoxButtons.OK), (MessageBoxIcon.Information));
+                }
+            }
+
+            SharedData.iCourseID = 0;
+            LoadCourses();
+            scCourse.SelectedTab = tiCourseGeneral;
         }
 
         private void btnEnquiryCancel_Click(object sender, EventArgs e)
         {
-            mEnquiriesAdd.PerformClick();
-            btnEnquiryCancel.Enabled = false;
-            btnEnquiryDocs.Enabled = false;
-            btnEnquirySave.Enabled = false;
+            EnableEnquiry(false);
         }
 
         private void btnEnquirySave_Click(object sender, EventArgs e)
         {
+            if (txtEnquiryName.Text.Length == 0)
+            {
+                MessageBox.Show("Please enter a name to continue.", "Missing name", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
 
+            if (txtEnquiryInfo.Text.Length == 0)
+            {
+                MessageBox.Show("Please enter the enquiry details to continue.", "Missing details", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
+
+            int iID = 0;
+            DataSet d = Program.DB.SelectAll("SELECT MAX(Job) AS JobNum FROM Jobs;");
+            if (d.Tables.Count > 0 && d.Tables[0].Rows.Count > 0)
+            {
+                iID = Convert.ToInt32(d.Tables[0].Rows[0]["JobNum"]) + 1;
+            }
+
+            Program.DB.AddParameter("Company", txtEnquiryCompany.Text);
+            Program.DB.AddParameter("Email", txtEnquiryEmail.Text);
+            Program.DB.AddParameter("Info", txtEnquiryInfo.Text);
+            Program.DB.AddParameter("InfoWanted", txtEnquiryInfoWanted.Text);
+            Program.DB.AddParameter("Name", txtEnquiryName.Text);
+            Program.DB.AddParameter("Phone", txtEnquiryPhone.Text);
+            Program.DB.AddParameter("Referer", txtEnquiryReferrer.Text);
+            ComboItem ci = (ComboItem)cbxEnquiryType.SelectedItem;
+            Program.DB.AddParameter("Type", ci != null ? ci.Text : "");
+            Program.DB.AddParameter("User", Program.Global.UserID);
+            Program.DB.AddParameter("Ent", DateTime.Now);
+            Program.DB.AddParameter("Mod", DateTime.Now);
+
+            if (lvEnquiryDocs.Items.Count > 0)
+            {
+                // Upload docs
+            }
+
+            if (SharedData.iEnquiryID > 0)
+            {
+                int iRes = Program.DB.Update("UPDATE Jobs SET ECompany=@Company,EEmail=@Email,EInfo=@Info,EInfoWanted=@InfoWanted,EName=@Name,EPhone=@Phone,EReferer=@Referer,EType=@Type,EUserMod=@User,EModified=@Mod,Confirmed='N' WHERE ID=" + SharedData.iEnquiryID + ";");
+                if (iRes < 1)
+                {
+                    MessageBox.Show("The update failed. Please try again.", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("The update was successful.", "Updated", (MessageBoxButtons.OK), (MessageBoxIcon.Information));
+                }
+            }
+            else
+            {
+                Program.DB.AddParameter("Job", iID);
+                int iRes = Program.DB.Insert("INSERT INTO Jobs (Job,ECompany,EEmail,EInfo,EInfoWanted,EName,EPhone,EReferer,EType,EUser,EEntered,EModified,Confirmed) VALUES (@Job,@Company,@Email,@Info,@InfoWanted,@Name,@Phone,@Referer,@Type,@User,@Ent,@Mod,'N')");
+                if (iRes < 1)
+                {
+                    MessageBox.Show("The addition failed. Please try again.", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("The addition was successful.", "Updated", (MessageBoxButtons.OK), (MessageBoxIcon.Information));
+                }
+            }
+
+            SharedData.iEnquiryID = 0;
+            LoadEnquiries();
+            scEnquiry.SelectedTab = tiEnquiryGeneral;
         }
 
         private void btnGridCompanyReset_Click(object sender, EventArgs e)
@@ -1441,7 +1849,7 @@ namespace Client
             if (rBooking != null)
             {
                 Program.DB.AddParameter("@id", rBooking.Tag);
-                int i = Program.DB.Update("UPDATE Jobs SET BDates=@dates,BTimes=@times WHERE ID=@id;");
+                int i = Program.DB.Update("DELETE FROM Jobs WHERE ID=@id;");
                 if (i > 0)
                 {
                     LoadBookingsGrid();
@@ -1480,19 +1888,7 @@ namespace Client
 
         private void mEnquiriesAdd_Click(object sender, EventArgs e)
         {
-            SharedData.iEnquiryID = 0;
-            rEnquiry = null;
-            txtEnquiryCompany.Text = "";
-            txtEnquiryEmail.Text = "";
-            txtEnquiryInfo.Text = "";
-            txtEnquiryInfoWanted.Text = "";
-            txtEnquiryName.Text = "";
-            txtEnquiryPhone.Text = "";
-            txtEnquiryReferrer.Text = "";
-            cbxEnquiryType.SelectedIndex = -1;
-            btnEnquiryCancel.Enabled = true;
-            btnEnquirySave.Enabled = true;
-            btnEnquiryDocs.Enabled = true;
+            EnableEnquiry();
         }
 
         private void mEnquiriesRemove_Click(object sender, EventArgs e)
@@ -1517,30 +1913,29 @@ namespace Client
 
         private void mEnquiriesBooking_Click(object sender, EventArgs e)
         {
-            SharedData.sBookingCompany = txtEnquiryCompany.Text;
-            SharedData.sBookingContact = txtEnquiryName.Text;
-            SharedData.sBookingEmail = txtEnquiryEmail.Text;
-            SharedData.sBookingPhone = txtEnquiryPhone.Text;
+            if (rBooking != null)
+            {
+                SharedData.sBookingCompany = txtEnquiryCompany.Text;
+                SharedData.sBookingContact = txtEnquiryName.Text;
+                SharedData.sBookingEmail = txtEnquiryEmail.Text;
+                SharedData.sBookingPhone = txtEnquiryPhone.Text;
+            }
 
             Form frmBooking = new frmBooking();
             DialogResult dlg = frmBooking.ShowDialog();
             if (dlg == DialogResult.OK)
             {
                 ms.SelectedTab = mtBookings;
+                SharedData.sBookingCompany = "";
+                SharedData.sBookingContact = "";
+                SharedData.sBookingEmail = "";
+                SharedData.sBookingPhone = "";
             }
         }
 
         private void mCoursesAdd_Click(object sender, EventArgs e)
         {
-            SharedData.iCourseID = 0;
-            rCourse = null;
-            txtCourseCert.Text = "";
-            txtCourseDetails.Text = "";
-            txtCourseDuration.Text = "";
-            txtCourseName.Text = "";
-            txtCoursePricing.Text = "";
-            btnCourseCancel.Enabled = true;
-            btnCourseSave.Enabled = true;
+            EnableCourse();
         }
 
         private void mCoursesRemove_Click(object sender, EventArgs e)
@@ -1565,19 +1960,7 @@ namespace Client
 
         private void mCompaniesAdd_Click(object sender, EventArgs e)
         {
-            SharedData.iCompanyID = 0;
-            rCompany = null;
-            txtCompanyAddress.Text = "";
-            txtCompanyContact.Text = "";
-            txtCompanyEmail.Text = "";
-            txtCompanyName.Text = "";
-            txtCompanyNotes.Text = "";
-            txtCompanyPhone.Text = "";
-            txtCompanyReg.Text = "";
-            txtCompanyRegVat.Text = "";
-            txtCompanyTrading.Text = "";
-            btnCompanyCancel.Enabled = true;
-            btnCompanySave.Enabled = true;
+            EnableCompany();
         }
 
         private void mCompaniesRemove_Click(object sender, EventArgs e)
@@ -1602,30 +1985,7 @@ namespace Client
 
         private void mContactsAdd_Click(object sender, EventArgs e)
         {
-            SharedData.iContactID = 0;
-            rContact = null;
-            txtContactAddress.Text = "";
-            txtContactCompany.Text = "";
-            txtContactEmail.Text = "";
-            txtContactNameFirst.Text = "";
-            txtContactNameLast.Text = "";
-            txtContactNameTitle.Text = "";
-            txtContactNotes.Text = "";
-            txtContactPhone.Text = "";
-            lvContactDocuments.Clear();
-            lblContactFileAccessed.Text = "";
-            lblContactFileAccessedVal.Text = "";
-            lblContactFileLocation.Text = "";
-            lblContactFileLocationVal.Text = "";
-            lblContactFileModified.Text = "";
-            lblContactFileModifiedVal.Text = "";
-            lblContactFileName.Text = "";
-            lblContactFileNameVal.Text = "";
-            lblContactFileSize.Text = "";
-            lblContactFileSizeVal.Text = "";
-            btnContactCancel.Enabled = true;
-            btnContactSave.Enabled = true;
-            btnContactDocumentAdd.Enabled = true;
+            EnableContact();
         }
 
         private void mContactsRemove_Click(object sender, EventArgs e)
@@ -1712,7 +2072,8 @@ namespace Client
                     DataSet c = Program.DB.SelectAll("SELECT * FROM Jobs WHERE ID=@ID;");
                     if (c.Tables.Count > 0 && c.Tables[0].Rows.Count > 0)
                     {
-                        SharedData.iCommentID = Convert.ToInt32(c.Tables[0].Rows[0]["ID"]);
+                        SharedData.iEnquiryID = Convert.ToInt32(c.Tables[0].Rows[0]["ID"]);
+                        lblEnquiryNumberVal.Text = SharedData.iEnquiryID.ToString("D6");
 
                         txtEnquiryName.Text = c.Tables[0].Rows[0]["EName"].ToString();
                         txtEnquiryCompany.Text = c.Tables[0].Rows[0]["ECompany"].ToString();
@@ -1721,9 +2082,42 @@ namespace Client
                         txtEnquiryInfo.Text = c.Tables[0].Rows[0]["EInfo"].ToString();
                         txtEnquiryReferrer.Text = c.Tables[0].Rows[0]["EReferer"].ToString();
                         txtEnquiryInfoWanted.Text = c.Tables[0].Rows[0]["EInfoWanted"].ToString();
+                        
+                        foreach (ComboItem ci in cbxEnquiryType.Items)
+                        {
+                            if (ci.Text.Equals(c.Tables[0].Rows[0]["EType"]))
+                            {
+                                cbxEnquiryType.SelectedItem = ci;
+                            }
+                        }
+
+                        foreach (ListViewItem i in lvEnquiryCourses.Items)
+                        {
+                            i.Checked = false;
+                        }
+
+                        if (lvEnquiryDocs.Items.Count > 0)
+                        {
+                            lvEnquiryDocs.Clear();
+                        }
+
+                        string sPath = Properties.Settings.Default.PathToData + @"\" + SharedData.iEnquiryID.ToString("D6") + @"\Enquiry";
+                        if (System.IO.Directory.Exists(sPath))
+                        {
+                            string[] sFiles = System.IO.Directory.GetFiles(sPath);
+                            foreach (string sFile in sFiles)
+                            {
+                                lvEnquiryDocs.Items.Add(System.IO.Path.GetFileNameWithoutExtension(sFile));
+                            }
+                        }
                     }
                 }
             }
+        }
+
+        private void gEnquiries_RowDoubleClick(object sender, GridRowDoubleClickEventArgs e)
+        {
+            EnableEnquiry();
         }
 
         private void gCourses_RowActivated(object sender, GridRowActivatedEventArgs e)
@@ -1748,7 +2142,7 @@ namespace Client
                     DataSet c = Program.DB.SelectAll("SELECT * FROM Courses WHERE ID=@ID;");
                     if (c.Tables.Count > 0 && c.Tables[0].Rows.Count > 0)
                     {
-                        SharedData.iCommentID = Convert.ToInt32(c.Tables[0].Rows[0]["ID"]);
+                        SharedData.iCourseID = Convert.ToInt32(c.Tables[0].Rows[0]["ID"]);
 
                         txtCourseName.Text = c.Tables[0].Rows[0]["Name"].ToString();
                         txtCourseCert.Text = c.Tables[0].Rows[0]["Certification"].ToString();
@@ -1758,6 +2152,11 @@ namespace Client
                     }
                 }
             }
+        }
+
+        private void gCourses_RowDoubleClick(object sender, GridRowDoubleClickEventArgs e)
+        {
+            EnableCourse();
         }
 
         private void gCompanies_RowActivated(object sender, GridRowActivatedEventArgs e)
@@ -1782,7 +2181,7 @@ namespace Client
                     DataSet c = Program.DB.SelectAll("SELECT * FROM Companies WHERE ID=@ID;");
                     if (c.Tables.Count > 0 && c.Tables[0].Rows.Count > 0)
                     {
-                        SharedData.iCommentID = Convert.ToInt32(c.Tables[0].Rows[0]["ID"]);
+                        SharedData.iCompanyID = Convert.ToInt32(c.Tables[0].Rows[0]["ID"]);
 
                         txtCompanyName.Text = c.Tables[0].Rows[0]["Name"].ToString();
                         txtCompanyTrading.Text = c.Tables[0].Rows[0]["TradingAs"].ToString();
@@ -1796,6 +2195,11 @@ namespace Client
                     }
                 }
             }
+        }
+
+        private void gCompanies_RowDoubleClick(object sender, GridRowDoubleClickEventArgs e)
+        {
+            EnableCompany();
         }
 
         private void gContacts_RowActivated(object sender, GridRowActivatedEventArgs e)
@@ -1820,7 +2224,7 @@ namespace Client
                     DataSet c = Program.DB.SelectAll("SELECT * FROM Contacts WHERE ID=@ID;");
                     if (c.Tables.Count > 0 && c.Tables[0].Rows.Count > 0)
                     {
-                        SharedData.iCommentID = Convert.ToInt32(c.Tables[0].Rows[0]["ID"]);
+                        SharedData.iContactID = Convert.ToInt32(c.Tables[0].Rows[0]["ID"]);
 
                         txtContactNameTitle.Text = c.Tables[0].Rows[0]["NameTitle"].ToString();
                         txtContactNameFirst.Text = c.Tables[0].Rows[0]["NameFirst"].ToString();
@@ -1830,6 +2234,11 @@ namespace Client
                     }
                 }
             }
+        }
+
+        private void gContacts_RowDoubleClick(object sender, GridRowDoubleClickEventArgs e)
+        {
+            EnableContact();
         }
 
         #endregion
