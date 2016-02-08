@@ -31,6 +31,46 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.ms = new DevComponents.DotNetBar.Metro.MetroShell();
+            this.pCompanies = new DevComponents.DotNetBar.Metro.MetroTabPanel();
+            this.scCompanies = new DevComponents.DotNetBar.Controls.CollapsibleSplitContainer();
+            this.gCompanies = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+            this.mCompanies = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mCompaniesAdd = new System.Windows.Forms.ToolStripMenuItem();
+            this.mCompaniesRemove = new System.Windows.Forms.ToolStripMenuItem();
+            this.gCompaniesID = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gCompaniesName = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gCompaniesContact = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gCompaniesPhone = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gCompaniesEmail = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gCompaniesAddress = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gCompaniesReg = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gCompaniesVat = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.pCompany = new DevComponents.DotNetBar.PanelEx();
+            this.btnCompanyCancel = new DevComponents.DotNetBar.ButtonX();
+            this.btnCompanySave = new DevComponents.DotNetBar.ButtonX();
+            this.scCompany = new DevComponents.DotNetBar.SuperTabControl();
+            this.superTabControlPanel4 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.lblCompanyContact = new DevComponents.DotNetBar.LabelX();
+            this.txtCompanyContact = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtCompanyAddress = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.lblCompanyAddress = new DevComponents.DotNetBar.LabelX();
+            this.lblCompanyEmail = new DevComponents.DotNetBar.LabelX();
+            this.txtCompanyTrading = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.lblCompanyTrading = new DevComponents.DotNetBar.LabelX();
+            this.txtCompanyRegVat = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtCompanyReg = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtCompanyName = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtCompanyEmail = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.lblCompanyPhone = new DevComponents.DotNetBar.LabelX();
+            this.txtCompanyPhone = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.lblCompanyReg = new DevComponents.DotNetBar.LabelX();
+            this.lblCompanyName = new DevComponents.DotNetBar.LabelX();
+            this.tiCompanyGeneral = new DevComponents.DotNetBar.SuperTabItem();
+            this.tpCompanyContacts = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.tiCompanyContacts = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabControlPanel6 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.txtCompanyNotes = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tiCompanyNotes = new DevComponents.DotNetBar.SuperTabItem();
             this.pBookings = new DevComponents.DotNetBar.Metro.MetroTabPanel();
             this.pBookingsList = new DevComponents.DotNetBar.PanelEx();
             this.pBookingsListTools = new DevComponents.DotNetBar.PanelEx();
@@ -152,46 +192,6 @@
             this.superTabControlPanel2 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.txtContactNotes = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tiContactNotes = new DevComponents.DotNetBar.SuperTabItem();
-            this.pCompanies = new DevComponents.DotNetBar.Metro.MetroTabPanel();
-            this.scCompanies = new DevComponents.DotNetBar.Controls.CollapsibleSplitContainer();
-            this.gCompanies = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
-            this.mCompanies = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.mCompaniesAdd = new System.Windows.Forms.ToolStripMenuItem();
-            this.mCompaniesRemove = new System.Windows.Forms.ToolStripMenuItem();
-            this.gCompaniesID = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gCompaniesName = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gCompaniesContact = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gCompaniesPhone = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gCompaniesEmail = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gCompaniesAddress = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gCompaniesReg = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gCompaniesVat = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.pCompany = new DevComponents.DotNetBar.PanelEx();
-            this.btnCompanyCancel = new DevComponents.DotNetBar.ButtonX();
-            this.btnCompanySave = new DevComponents.DotNetBar.ButtonX();
-            this.scCompany = new DevComponents.DotNetBar.SuperTabControl();
-            this.superTabControlPanel4 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.lblCompanyContact = new DevComponents.DotNetBar.LabelX();
-            this.txtCompanyContact = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtCompanyAddress = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.lblCompanyAddress = new DevComponents.DotNetBar.LabelX();
-            this.lblCompanyEmail = new DevComponents.DotNetBar.LabelX();
-            this.txtCompanyTrading = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.lblCompanyTrading = new DevComponents.DotNetBar.LabelX();
-            this.txtCompanyRegVat = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtCompanyReg = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtCompanyName = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtCompanyEmail = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.lblCompanyPhone = new DevComponents.DotNetBar.LabelX();
-            this.txtCompanyPhone = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.lblCompanyReg = new DevComponents.DotNetBar.LabelX();
-            this.lblCompanyName = new DevComponents.DotNetBar.LabelX();
-            this.tiCompanyGeneral = new DevComponents.DotNetBar.SuperTabItem();
-            this.tpCompanyContacts = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.tiCompanyContacts = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabControlPanel6 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.txtCompanyNotes = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.tiCompanyNotes = new DevComponents.DotNetBar.SuperTabItem();
             this.pCourses = new DevComponents.DotNetBar.Metro.MetroTabPanel();
             this.scCourses = new DevComponents.DotNetBar.Controls.CollapsibleSplitContainer();
             this.gCourses = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
@@ -315,6 +315,17 @@
             this.mBookingsListS1 = new System.Windows.Forms.ToolStripSeparator();
             this.mBookingsListComplete = new System.Windows.Forms.ToolStripMenuItem();
             this.ms.SuspendLayout();
+            this.pCompanies.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.scCompanies)).BeginInit();
+            this.scCompanies.Panel1.SuspendLayout();
+            this.scCompanies.Panel2.SuspendLayout();
+            this.scCompanies.SuspendLayout();
+            this.mCompanies.SuspendLayout();
+            this.pCompany.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.scCompany)).BeginInit();
+            this.scCompany.SuspendLayout();
+            this.superTabControlPanel4.SuspendLayout();
+            this.superTabControlPanel6.SuspendLayout();
             this.pBookings.SuspendLayout();
             this.pBookingsList.SuspendLayout();
             this.pBookingsListTools.SuspendLayout();
@@ -339,17 +350,6 @@
             this.superTabControlPanel1.SuspendLayout();
             this.superTabControlPanel3.SuspendLayout();
             this.superTabControlPanel2.SuspendLayout();
-            this.pCompanies.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.scCompanies)).BeginInit();
-            this.scCompanies.Panel1.SuspendLayout();
-            this.scCompanies.Panel2.SuspendLayout();
-            this.scCompanies.SuspendLayout();
-            this.mCompanies.SuspendLayout();
-            this.pCompany.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.scCompany)).BeginInit();
-            this.scCompany.SuspendLayout();
-            this.superTabControlPanel4.SuspendLayout();
-            this.superTabControlPanel6.SuspendLayout();
             this.pCourses.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scCourses)).BeginInit();
             this.scCourses.Panel1.SuspendLayout();
@@ -394,11 +394,11 @@
             this.ms.CanCustomize = false;
             this.ms.CaptionFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ms.CaptionVisible = true;
-            this.ms.Controls.Add(this.pCompanies);
             this.ms.Controls.Add(this.pBookings);
-            this.ms.Controls.Add(this.pContacts);
-            this.ms.Controls.Add(this.pCourses);
             this.ms.Controls.Add(this.pEnquiries);
+            this.ms.Controls.Add(this.pCourses);
+            this.ms.Controls.Add(this.pCompanies);
+            this.ms.Controls.Add(this.pContacts);
             this.ms.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ms.ForeColor = System.Drawing.Color.Black;
             this.ms.HelpButtonText = "Help";
@@ -438,6 +438,602 @@
             this.ms.TabStripFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ms.SelectedTabChanged += new System.EventHandler(this.ms_SelectedTabChanged);
             // 
+            // pCompanies
+            // 
+            this.pCompanies.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.pCompanies.Controls.Add(this.scCompanies);
+            this.pCompanies.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pCompanies.Location = new System.Drawing.Point(0, 61);
+            this.pCompanies.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pCompanies.Name = "pCompanies";
+            this.pCompanies.Padding = new System.Windows.Forms.Padding(3, 0, 3, 4);
+            this.pCompanies.Size = new System.Drawing.Size(960, 535);
+            // 
+            // 
+            // 
+            this.pCompanies.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.pCompanies.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.pCompanies.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.pCompanies.TabIndex = 3;
+            this.pCompanies.Visible = false;
+            // 
+            // scCompanies
+            // 
+            this.scCompanies.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.scCompanies.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.scCompanies.ButtonPosition = DevComponents.DotNetBar.Controls.eSplitterButtonPosition.Center;
+            this.scCompanies.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.scCompanies.ForeColor = System.Drawing.Color.Black;
+            this.scCompanies.IsSplitterFixed = true;
+            this.scCompanies.Location = new System.Drawing.Point(0, 0);
+            this.scCompanies.Name = "scCompanies";
+            this.scCompanies.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // scCompanies.Panel1
+            // 
+            this.scCompanies.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.scCompanies.Panel1.Controls.Add(this.gCompanies);
+            this.scCompanies.Panel1.ForeColor = System.Drawing.Color.Black;
+            // 
+            // scCompanies.Panel2
+            // 
+            this.scCompanies.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.scCompanies.Panel2.Controls.Add(this.pCompany);
+            this.scCompanies.Panel2.ForeColor = System.Drawing.Color.Black;
+            this.scCompanies.Size = new System.Drawing.Size(960, 535);
+            this.scCompanies.SplitterDistance = 180;
+            this.scCompanies.SplitterWidth = 20;
+            this.scCompanies.TabIndex = 0;
+            // 
+            // gCompanies
+            // 
+            this.gCompanies.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.gCompanies.ContextMenuStrip = this.mCompanies;
+            this.gCompanies.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gCompanies.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.gCompanies.ForeColor = System.Drawing.Color.Black;
+            this.gCompanies.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
+            this.gCompanies.Location = new System.Drawing.Point(0, 0);
+            this.gCompanies.Name = "gCompanies";
+            // 
+            // 
+            // 
+            this.gCompanies.PrimaryGrid.AllowEdit = false;
+            this.gCompanies.PrimaryGrid.CheckBoxes = true;
+            this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesID);
+            this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesName);
+            this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesContact);
+            this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesPhone);
+            this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesEmail);
+            this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesAddress);
+            this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesReg);
+            this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesVat);
+            this.gCompanies.PrimaryGrid.MultiSelect = false;
+            this.gCompanies.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
+            this.gCompanies.PrimaryGrid.ShowRowHeaders = false;
+            this.gCompanies.PrimaryGrid.UseAlternateRowStyle = true;
+            this.gCompanies.Size = new System.Drawing.Size(960, 180);
+            this.gCompanies.TabIndex = 2;
+            this.gCompanies.TabStop = false;
+            this.gCompanies.RowActivated += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowActivatedEventArgs>(this.gCompanies_RowActivated);
+            this.gCompanies.RowClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowClickEventArgs>(this.gCompanies_RowClick);
+            this.gCompanies.RowDoubleClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowDoubleClickEventArgs>(this.gCompanies_RowDoubleClick);
+            // 
+            // mCompanies
+            // 
+            this.mCompanies.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mCompaniesAdd,
+            this.mCompaniesRemove});
+            this.mCompanies.Name = "mContacts";
+            this.mCompanies.Size = new System.Drawing.Size(171, 48);
+            // 
+            // mCompaniesAdd
+            // 
+            this.mCompaniesAdd.Name = "mCompaniesAdd";
+            this.mCompaniesAdd.Size = new System.Drawing.Size(170, 22);
+            this.mCompaniesAdd.Text = "Add company";
+            this.mCompaniesAdd.Click += new System.EventHandler(this.mCompaniesAdd_Click);
+            // 
+            // mCompaniesRemove
+            // 
+            this.mCompaniesRemove.Name = "mCompaniesRemove";
+            this.mCompaniesRemove.Size = new System.Drawing.Size(170, 22);
+            this.mCompaniesRemove.Text = "Remove company";
+            this.mCompaniesRemove.Click += new System.EventHandler(this.mCompaniesRemove_Click);
+            // 
+            // gCompaniesID
+            // 
+            this.gCompaniesID.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
+            this.gCompaniesID.HeaderText = "ID";
+            this.gCompaniesID.MinimumWidth = 60;
+            this.gCompaniesID.Name = "ID";
+            this.gCompaniesID.Width = 60;
+            // 
+            // gCompaniesName
+            // 
+            this.gCompaniesName.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
+            this.gCompaniesName.HeaderText = "Name";
+            this.gCompaniesName.MinimumWidth = 200;
+            this.gCompaniesName.Name = "Name";
+            // 
+            // gCompaniesContact
+            // 
+            this.gCompaniesContact.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
+            this.gCompaniesContact.HeaderText = "Contact";
+            this.gCompaniesContact.MinimumWidth = 150;
+            this.gCompaniesContact.Name = "Contact";
+            this.gCompaniesContact.Width = 150;
+            // 
+            // gCompaniesPhone
+            // 
+            this.gCompaniesPhone.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
+            this.gCompaniesPhone.HeaderText = "Phone";
+            this.gCompaniesPhone.MinimumWidth = 125;
+            this.gCompaniesPhone.Name = "Phone";
+            this.gCompaniesPhone.Width = 125;
+            // 
+            // gCompaniesEmail
+            // 
+            this.gCompaniesEmail.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
+            this.gCompaniesEmail.HeaderText = "E-mail Address";
+            this.gCompaniesEmail.MinimumWidth = 250;
+            this.gCompaniesEmail.Name = "Email";
+            this.gCompaniesEmail.Width = 250;
+            // 
+            // gCompaniesAddress
+            // 
+            this.gCompaniesAddress.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
+            this.gCompaniesAddress.HeaderText = "Address";
+            this.gCompaniesAddress.MinimumWidth = 250;
+            this.gCompaniesAddress.Name = "Address";
+            this.gCompaniesAddress.Width = 250;
+            // 
+            // gCompaniesReg
+            // 
+            this.gCompaniesReg.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
+            this.gCompaniesReg.HeaderText = "Reg. No.";
+            this.gCompaniesReg.MinimumWidth = 100;
+            this.gCompaniesReg.Name = "Reg";
+            // 
+            // gCompaniesVat
+            // 
+            this.gCompaniesVat.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
+            this.gCompaniesVat.HeaderText = "VAT No.";
+            this.gCompaniesVat.MinimumWidth = 100;
+            this.gCompaniesVat.Name = "VAT";
+            // 
+            // pCompany
+            // 
+            this.pCompany.CanvasColor = System.Drawing.SystemColors.Control;
+            this.pCompany.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.pCompany.Controls.Add(this.btnCompanyCancel);
+            this.pCompany.Controls.Add(this.btnCompanySave);
+            this.pCompany.Controls.Add(this.scCompany);
+            this.pCompany.DisabledBackColor = System.Drawing.Color.Empty;
+            this.pCompany.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pCompany.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pCompany.Location = new System.Drawing.Point(0, 0);
+            this.pCompany.Name = "pCompany";
+            this.pCompany.Size = new System.Drawing.Size(960, 335);
+            this.pCompany.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.pCompany.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.pCompany.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.pCompany.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.pCompany.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.pCompany.Style.GradientAngle = 90;
+            this.pCompany.TabIndex = 8;
+            // 
+            // btnCompanyCancel
+            // 
+            this.btnCompanyCancel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnCompanyCancel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnCompanyCancel.Enabled = false;
+            this.btnCompanyCancel.Location = new System.Drawing.Point(21, 21);
+            this.btnCompanyCancel.Name = "btnCompanyCancel";
+            this.btnCompanyCancel.Size = new System.Drawing.Size(74, 29);
+            this.btnCompanyCancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnCompanyCancel.TabIndex = 311;
+            this.btnCompanyCancel.Text = "Cancel";
+            this.btnCompanyCancel.Click += new System.EventHandler(this.btnCompanyCancel_Click);
+            // 
+            // btnCompanySave
+            // 
+            this.btnCompanySave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnCompanySave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnCompanySave.Enabled = false;
+            this.btnCompanySave.Location = new System.Drawing.Point(21, 56);
+            this.btnCompanySave.Name = "btnCompanySave";
+            this.btnCompanySave.Size = new System.Drawing.Size(74, 29);
+            this.btnCompanySave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnCompanySave.TabIndex = 310;
+            this.btnCompanySave.Text = "Save";
+            this.btnCompanySave.Click += new System.EventHandler(this.btnCompanySave_Click);
+            // 
+            // scCompany
+            // 
+            this.scCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.scCompany.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            // 
+            // 
+            // 
+            this.scCompany.ControlBox.CloseBox.Name = "";
+            // 
+            // 
+            // 
+            this.scCompany.ControlBox.MenuBox.Name = "";
+            this.scCompany.ControlBox.Name = "";
+            this.scCompany.ControlBox.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.scCompany.ControlBox.MenuBox,
+            this.scCompany.ControlBox.CloseBox});
+            this.scCompany.ControlBox.Visible = false;
+            this.scCompany.Controls.Add(this.superTabControlPanel4);
+            this.scCompany.Controls.Add(this.tpCompanyContacts);
+            this.scCompany.Controls.Add(this.superTabControlPanel6);
+            this.scCompany.ForeColor = System.Drawing.Color.Black;
+            this.scCompany.Location = new System.Drawing.Point(114, 21);
+            this.scCompany.Name = "scCompany";
+            this.scCompany.ReorderTabsEnabled = true;
+            this.scCompany.SelectedTabFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.scCompany.SelectedTabIndex = 0;
+            this.scCompany.Size = new System.Drawing.Size(826, 294);
+            this.scCompany.TabFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scCompany.TabIndex = 21;
+            this.scCompany.Tabs.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.tiCompanyGeneral,
+            this.tiCompanyNotes,
+            this.tiCompanyContacts});
+            this.scCompany.TabStyle = DevComponents.DotNetBar.eSuperTabStyle.VisualStudio2008Dock;
+            // 
+            // superTabControlPanel4
+            // 
+            this.superTabControlPanel4.Controls.Add(this.lblCompanyContact);
+            this.superTabControlPanel4.Controls.Add(this.txtCompanyContact);
+            this.superTabControlPanel4.Controls.Add(this.txtCompanyAddress);
+            this.superTabControlPanel4.Controls.Add(this.lblCompanyAddress);
+            this.superTabControlPanel4.Controls.Add(this.lblCompanyEmail);
+            this.superTabControlPanel4.Controls.Add(this.txtCompanyTrading);
+            this.superTabControlPanel4.Controls.Add(this.lblCompanyTrading);
+            this.superTabControlPanel4.Controls.Add(this.txtCompanyRegVat);
+            this.superTabControlPanel4.Controls.Add(this.txtCompanyReg);
+            this.superTabControlPanel4.Controls.Add(this.txtCompanyName);
+            this.superTabControlPanel4.Controls.Add(this.txtCompanyEmail);
+            this.superTabControlPanel4.Controls.Add(this.lblCompanyPhone);
+            this.superTabControlPanel4.Controls.Add(this.txtCompanyPhone);
+            this.superTabControlPanel4.Controls.Add(this.lblCompanyReg);
+            this.superTabControlPanel4.Controls.Add(this.lblCompanyName);
+            this.superTabControlPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel4.Location = new System.Drawing.Point(0, 30);
+            this.superTabControlPanel4.Name = "superTabControlPanel4";
+            this.superTabControlPanel4.Size = new System.Drawing.Size(826, 264);
+            this.superTabControlPanel4.TabIndex = 1;
+            this.superTabControlPanel4.TabItem = this.tiCompanyGeneral;
+            // 
+            // lblCompanyContact
+            // 
+            this.lblCompanyContact.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.lblCompanyContact.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblCompanyContact.ForeColor = System.Drawing.Color.Black;
+            this.lblCompanyContact.Location = new System.Drawing.Point(24, 179);
+            this.lblCompanyContact.Name = "lblCompanyContact";
+            this.lblCompanyContact.Size = new System.Drawing.Size(120, 23);
+            this.lblCompanyContact.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblCompanyContact.TabIndex = 46;
+            this.lblCompanyContact.Text = "Primary Contact:";
+            // 
+            // txtCompanyContact
+            // 
+            this.txtCompanyContact.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtCompanyContact.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtCompanyContact.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtCompanyContact.Border.Class = "TextBoxBorder";
+            this.txtCompanyContact.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtCompanyContact.DisabledBackColor = System.Drawing.Color.White;
+            this.txtCompanyContact.Enabled = false;
+            this.txtCompanyContact.ForeColor = System.Drawing.Color.Black;
+            this.txtCompanyContact.Location = new System.Drawing.Point(150, 179);
+            this.txtCompanyContact.Name = "txtCompanyContact";
+            this.txtCompanyContact.PreventEnterBeep = true;
+            this.txtCompanyContact.Size = new System.Drawing.Size(345, 25);
+            this.txtCompanyContact.TabIndex = 307;
+            // 
+            // txtCompanyAddress
+            // 
+            this.txtCompanyAddress.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtCompanyAddress.Border.Class = "TextBoxBorder";
+            this.txtCompanyAddress.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtCompanyAddress.DisabledBackColor = System.Drawing.Color.White;
+            this.txtCompanyAddress.Enabled = false;
+            this.txtCompanyAddress.ForeColor = System.Drawing.Color.Black;
+            this.txtCompanyAddress.Location = new System.Drawing.Point(521, 55);
+            this.txtCompanyAddress.Multiline = true;
+            this.txtCompanyAddress.Name = "txtCompanyAddress";
+            this.txtCompanyAddress.PreventEnterBeep = true;
+            this.txtCompanyAddress.Size = new System.Drawing.Size(282, 149);
+            this.txtCompanyAddress.TabIndex = 308;
+            // 
+            // lblCompanyAddress
+            // 
+            this.lblCompanyAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.lblCompanyAddress.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblCompanyAddress.ForeColor = System.Drawing.Color.Black;
+            this.lblCompanyAddress.Location = new System.Drawing.Point(521, 24);
+            this.lblCompanyAddress.Name = "lblCompanyAddress";
+            this.lblCompanyAddress.Size = new System.Drawing.Size(74, 23);
+            this.lblCompanyAddress.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblCompanyAddress.TabIndex = 43;
+            this.lblCompanyAddress.Text = "Address:";
+            // 
+            // lblCompanyEmail
+            // 
+            this.lblCompanyEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.lblCompanyEmail.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblCompanyEmail.ForeColor = System.Drawing.Color.Black;
+            this.lblCompanyEmail.Location = new System.Drawing.Point(24, 148);
+            this.lblCompanyEmail.Name = "lblCompanyEmail";
+            this.lblCompanyEmail.Size = new System.Drawing.Size(120, 23);
+            this.lblCompanyEmail.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblCompanyEmail.TabIndex = 42;
+            this.lblCompanyEmail.Text = "E-mail Address:";
+            // 
+            // txtCompanyTrading
+            // 
+            this.txtCompanyTrading.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtCompanyTrading.Border.Class = "TextBoxBorder";
+            this.txtCompanyTrading.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtCompanyTrading.DisabledBackColor = System.Drawing.Color.White;
+            this.txtCompanyTrading.Enabled = false;
+            this.txtCompanyTrading.ForeColor = System.Drawing.Color.Black;
+            this.txtCompanyTrading.Location = new System.Drawing.Point(150, 55);
+            this.txtCompanyTrading.Name = "txtCompanyTrading";
+            this.txtCompanyTrading.PreventEnterBeep = true;
+            this.txtCompanyTrading.Size = new System.Drawing.Size(345, 25);
+            this.txtCompanyTrading.TabIndex = 302;
+            // 
+            // lblCompanyTrading
+            // 
+            this.lblCompanyTrading.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.lblCompanyTrading.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblCompanyTrading.ForeColor = System.Drawing.Color.Black;
+            this.lblCompanyTrading.Location = new System.Drawing.Point(24, 55);
+            this.lblCompanyTrading.Name = "lblCompanyTrading";
+            this.lblCompanyTrading.Size = new System.Drawing.Size(120, 23);
+            this.lblCompanyTrading.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblCompanyTrading.TabIndex = 39;
+            this.lblCompanyTrading.Text = "Trading As:";
+            // 
+            // txtCompanyRegVat
+            // 
+            this.txtCompanyRegVat.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtCompanyRegVat.Border.Class = "TextBoxBorder";
+            this.txtCompanyRegVat.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtCompanyRegVat.DisabledBackColor = System.Drawing.Color.White;
+            this.txtCompanyRegVat.Enabled = false;
+            this.txtCompanyRegVat.ForeColor = System.Drawing.Color.Black;
+            this.txtCompanyRegVat.Location = new System.Drawing.Point(298, 86);
+            this.txtCompanyRegVat.Name = "txtCompanyRegVat";
+            this.txtCompanyRegVat.PreventEnterBeep = true;
+            this.txtCompanyRegVat.Size = new System.Drawing.Size(197, 25);
+            this.txtCompanyRegVat.TabIndex = 304;
+            // 
+            // txtCompanyReg
+            // 
+            this.txtCompanyReg.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtCompanyReg.Border.Class = "TextBoxBorder";
+            this.txtCompanyReg.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtCompanyReg.DisabledBackColor = System.Drawing.Color.White;
+            this.txtCompanyReg.Enabled = false;
+            this.txtCompanyReg.ForeColor = System.Drawing.Color.Black;
+            this.txtCompanyReg.Location = new System.Drawing.Point(150, 86);
+            this.txtCompanyReg.Name = "txtCompanyReg";
+            this.txtCompanyReg.PreventEnterBeep = true;
+            this.txtCompanyReg.Size = new System.Drawing.Size(142, 25);
+            this.txtCompanyReg.TabIndex = 303;
+            // 
+            // txtCompanyName
+            // 
+            this.txtCompanyName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtCompanyName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtCompanyName.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtCompanyName.Border.Class = "TextBoxBorder";
+            this.txtCompanyName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtCompanyName.DisabledBackColor = System.Drawing.Color.White;
+            this.txtCompanyName.Enabled = false;
+            this.txtCompanyName.ForeColor = System.Drawing.Color.Black;
+            this.txtCompanyName.Location = new System.Drawing.Point(150, 24);
+            this.txtCompanyName.Name = "txtCompanyName";
+            this.txtCompanyName.PreventEnterBeep = true;
+            this.txtCompanyName.Size = new System.Drawing.Size(345, 25);
+            this.txtCompanyName.TabIndex = 301;
+            // 
+            // txtCompanyEmail
+            // 
+            this.txtCompanyEmail.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtCompanyEmail.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtCompanyEmail.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtCompanyEmail.Border.Class = "TextBoxBorder";
+            this.txtCompanyEmail.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtCompanyEmail.DisabledBackColor = System.Drawing.Color.White;
+            this.txtCompanyEmail.Enabled = false;
+            this.txtCompanyEmail.ForeColor = System.Drawing.Color.Black;
+            this.txtCompanyEmail.Location = new System.Drawing.Point(150, 148);
+            this.txtCompanyEmail.Name = "txtCompanyEmail";
+            this.txtCompanyEmail.PreventEnterBeep = true;
+            this.txtCompanyEmail.Size = new System.Drawing.Size(345, 25);
+            this.txtCompanyEmail.TabIndex = 306;
+            // 
+            // lblCompanyPhone
+            // 
+            this.lblCompanyPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.lblCompanyPhone.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblCompanyPhone.ForeColor = System.Drawing.Color.Black;
+            this.lblCompanyPhone.Location = new System.Drawing.Point(24, 117);
+            this.lblCompanyPhone.Name = "lblCompanyPhone";
+            this.lblCompanyPhone.Size = new System.Drawing.Size(120, 23);
+            this.lblCompanyPhone.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblCompanyPhone.TabIndex = 34;
+            this.lblCompanyPhone.Text = "Phone Number:";
+            // 
+            // txtCompanyPhone
+            // 
+            this.txtCompanyPhone.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtCompanyPhone.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtCompanyPhone.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtCompanyPhone.Border.Class = "TextBoxBorder";
+            this.txtCompanyPhone.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtCompanyPhone.DisabledBackColor = System.Drawing.Color.White;
+            this.txtCompanyPhone.Enabled = false;
+            this.txtCompanyPhone.ForeColor = System.Drawing.Color.Black;
+            this.txtCompanyPhone.Location = new System.Drawing.Point(150, 117);
+            this.txtCompanyPhone.Name = "txtCompanyPhone";
+            this.txtCompanyPhone.PreventEnterBeep = true;
+            this.txtCompanyPhone.Size = new System.Drawing.Size(142, 25);
+            this.txtCompanyPhone.TabIndex = 305;
+            // 
+            // lblCompanyReg
+            // 
+            this.lblCompanyReg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.lblCompanyReg.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblCompanyReg.ForeColor = System.Drawing.Color.Black;
+            this.lblCompanyReg.Location = new System.Drawing.Point(24, 86);
+            this.lblCompanyReg.Name = "lblCompanyReg";
+            this.lblCompanyReg.Size = new System.Drawing.Size(120, 23);
+            this.lblCompanyReg.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblCompanyReg.TabIndex = 32;
+            this.lblCompanyReg.Text = "Reg No./VAT No.:";
+            // 
+            // lblCompanyName
+            // 
+            this.lblCompanyName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.lblCompanyName.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblCompanyName.ForeColor = System.Drawing.Color.Black;
+            this.lblCompanyName.Location = new System.Drawing.Point(24, 24);
+            this.lblCompanyName.Name = "lblCompanyName";
+            this.lblCompanyName.Size = new System.Drawing.Size(120, 23);
+            this.lblCompanyName.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.lblCompanyName.TabIndex = 31;
+            this.lblCompanyName.Text = "Company Name:";
+            // 
+            // tiCompanyGeneral
+            // 
+            this.tiCompanyGeneral.AttachedControl = this.superTabControlPanel4;
+            this.tiCompanyGeneral.GlobalItem = false;
+            this.tiCompanyGeneral.Name = "tiCompanyGeneral";
+            this.tiCompanyGeneral.Text = "  General";
+            // 
+            // tpCompanyContacts
+            // 
+            this.tpCompanyContacts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tpCompanyContacts.Location = new System.Drawing.Point(0, 30);
+            this.tpCompanyContacts.Name = "tpCompanyContacts";
+            this.tpCompanyContacts.Size = new System.Drawing.Size(826, 264);
+            this.tpCompanyContacts.TabIndex = 0;
+            this.tpCompanyContacts.TabItem = this.tiCompanyContacts;
+            // 
+            // tiCompanyContacts
+            // 
+            this.tiCompanyContacts.AttachedControl = this.tpCompanyContacts;
+            this.tiCompanyContacts.GlobalItem = false;
+            this.tiCompanyContacts.Name = "tiCompanyContacts";
+            this.tiCompanyContacts.Text = "  Contacts";
+            // 
+            // superTabControlPanel6
+            // 
+            this.superTabControlPanel6.Controls.Add(this.txtCompanyNotes);
+            this.superTabControlPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel6.Location = new System.Drawing.Point(0, 30);
+            this.superTabControlPanel6.Name = "superTabControlPanel6";
+            this.superTabControlPanel6.Size = new System.Drawing.Size(826, 264);
+            this.superTabControlPanel6.TabIndex = 0;
+            this.superTabControlPanel6.TabItem = this.tiCompanyNotes;
+            // 
+            // txtCompanyNotes
+            // 
+            this.txtCompanyNotes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCompanyNotes.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtCompanyNotes.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtCompanyNotes.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtCompanyNotes.Border.Class = "TextBoxBorder";
+            this.txtCompanyNotes.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtCompanyNotes.DisabledBackColor = System.Drawing.Color.White;
+            this.txtCompanyNotes.Enabled = false;
+            this.txtCompanyNotes.ForeColor = System.Drawing.Color.Black;
+            this.txtCompanyNotes.Location = new System.Drawing.Point(15, 15);
+            this.txtCompanyNotes.Multiline = true;
+            this.txtCompanyNotes.Name = "txtCompanyNotes";
+            this.txtCompanyNotes.PreventEnterBeep = true;
+            this.txtCompanyNotes.Size = new System.Drawing.Size(796, 234);
+            this.txtCompanyNotes.TabIndex = 309;
+            // 
+            // tiCompanyNotes
+            // 
+            this.tiCompanyNotes.AttachedControl = this.superTabControlPanel6;
+            this.tiCompanyNotes.GlobalItem = false;
+            this.tiCompanyNotes.Name = "tiCompanyNotes";
+            this.tiCompanyNotes.Text = "  Notes";
+            // 
             // pBookings
             // 
             this.pBookings.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -463,7 +1059,6 @@
             // 
             this.pBookings.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.pBookings.TabIndex = 1;
-            this.pBookings.Visible = false;
             // 
             // pBookingsList
             // 
@@ -519,6 +1114,7 @@
             this.btnListCompanyReset.Size = new System.Drawing.Size(25, 25);
             this.btnListCompanyReset.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnListCompanyReset.TabIndex = 28;
+            this.btnListCompanyReset.TabStop = false;
             this.btnListCompanyReset.Click += new System.EventHandler(this.btnListCompanyReset_Click);
             // 
             // txtListCompany
@@ -539,6 +1135,7 @@
             this.txtListCompany.PreventEnterBeep = true;
             this.txtListCompany.Size = new System.Drawing.Size(244, 25);
             this.txtListCompany.TabIndex = 27;
+            this.txtListCompany.TabStop = false;
             // 
             // lblListBookings
             // 
@@ -595,6 +1192,7 @@
             this.nbBookingsList.Size = new System.Drawing.Size(180, 30);
             this.nbBookingsList.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.nbBookingsList.TabIndex = 12;
+            this.nbBookingsList.TabStop = false;
             this.nbBookingsList.Text = "navigationBar2";
             // 
             // biBookingsListDay
@@ -690,7 +1288,7 @@
             this.gBookings.PrimaryGrid.UseAlternateRowStyle = true;
             this.gBookings.Size = new System.Drawing.Size(880, 138);
             this.gBookings.TabIndex = 0;
-            this.gBookings.Text = "superGridControl1";
+            this.gBookings.TabStop = false;
             this.gBookings.RowActivated += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowActivatedEventArgs>(this.gBookings_RowActivated);
             this.gBookings.RowClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowClickEventArgs>(this.gBookings_RowClick);
             this.gBookings.RowDoubleClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowDoubleClickEventArgs>(this.gBookings_RowDoubleClick);
@@ -853,6 +1451,7 @@
             this.rgBookings.SheetTabWidth = 294;
             this.rgBookings.Size = new System.Drawing.Size(880, 126);
             this.rgBookings.TabIndex = 13;
+            this.rgBookings.TabStop = false;
             this.rgBookings.DoubleClick += new System.EventHandler(this.rgBookings_DoubleClick);
             // 
             // mBookingsGrid
@@ -923,6 +1522,7 @@
             this.btnGridCompanyReset.Size = new System.Drawing.Size(25, 25);
             this.btnGridCompanyReset.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnGridCompanyReset.TabIndex = 25;
+            this.btnGridCompanyReset.TabStop = false;
             this.btnGridCompanyReset.Click += new System.EventHandler(this.btnGridCompanyReset_Click);
             // 
             // txtGridCompany
@@ -943,6 +1543,7 @@
             this.txtGridCompany.PreventEnterBeep = true;
             this.txtGridCompany.Size = new System.Drawing.Size(244, 25);
             this.txtGridCompany.TabIndex = 24;
+            this.txtGridCompany.TabStop = false;
             // 
             // lblGridBookings
             // 
@@ -999,6 +1600,7 @@
             this.nbBookingsGrid.Size = new System.Drawing.Size(180, 30);
             this.nbBookingsGrid.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.nbBookingsGrid.TabIndex = 11;
+            this.nbBookingsGrid.TabStop = false;
             this.nbBookingsGrid.Text = "navigationBar1";
             // 
             // biBookingsGridDay
@@ -1142,6 +1744,7 @@
             this.nbBookings.Size = new System.Drawing.Size(180, 30);
             this.nbBookings.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.nbBookings.TabIndex = 10;
+            this.nbBookings.TabStop = false;
             this.nbBookings.Text = "navigationBar1";
             // 
             // biBookingsViewDay
@@ -1245,6 +1848,7 @@
             this.cvBookings.SelectedView = DevComponents.DotNetBar.Schedule.eCalendarView.Month;
             this.cvBookings.Size = new System.Drawing.Size(880, 144);
             this.cvBookings.TabIndex = 4;
+            this.cvBookings.TabStop = false;
             this.cvBookings.TimeIndicator.BorderColor = System.Drawing.Color.Empty;
             this.cvBookings.TimeIndicator.Tag = null;
             this.cvBookings.TimeSlotDuration = 30;
@@ -1337,6 +1941,7 @@
             this.gContacts.PrimaryGrid.UseAlternateRowStyle = true;
             this.gContacts.Size = new System.Drawing.Size(960, 180);
             this.gContacts.TabIndex = 2;
+            this.gContacts.TabStop = false;
             this.gContacts.RowActivated += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowActivatedEventArgs>(this.gContacts_RowActivated);
             this.gContacts.RowClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowClickEventArgs>(this.gContacts_RowClick);
             this.gContacts.RowDoubleClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowDoubleClickEventArgs>(this.gContacts_RowDoubleClick);
@@ -1456,7 +2061,7 @@
             this.btnContactCancel.Name = "btnContactCancel";
             this.btnContactCancel.Size = new System.Drawing.Size(74, 29);
             this.btnContactCancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnContactCancel.TabIndex = 20;
+            this.btnContactCancel.TabIndex = 413;
             this.btnContactCancel.Text = "Cancel";
             this.btnContactCancel.Click += new System.EventHandler(this.btnContactCancel_Click);
             // 
@@ -1469,7 +2074,7 @@
             this.btnContactSave.Name = "btnContactSave";
             this.btnContactSave.Size = new System.Drawing.Size(74, 29);
             this.btnContactSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnContactSave.TabIndex = 19;
+            this.btnContactSave.TabIndex = 412;
             this.btnContactSave.Text = "Save";
             this.btnContactSave.Click += new System.EventHandler(this.btnContactSave_Click);
             // 
@@ -1530,9 +2135,9 @@
             this.superTabControlPanel1.Controls.Add(this.lblContactName);
             this.superTabControlPanel1.Controls.Add(this.lblContactCompany);
             this.superTabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel1.Location = new System.Drawing.Point(0, 25);
+            this.superTabControlPanel1.Location = new System.Drawing.Point(0, 30);
             this.superTabControlPanel1.Name = "superTabControlPanel1";
-            this.superTabControlPanel1.Size = new System.Drawing.Size(826, 269);
+            this.superTabControlPanel1.Size = new System.Drawing.Size(826, 264);
             this.superTabControlPanel1.TabIndex = 1;
             this.superTabControlPanel1.TabItem = this.tiContactGeneral;
             // 
@@ -1552,7 +2157,7 @@
             this.txtContactAddress.Name = "txtContactAddress";
             this.txtContactAddress.PreventEnterBeep = true;
             this.txtContactAddress.Size = new System.Drawing.Size(282, 118);
-            this.txtContactAddress.TabIndex = 45;
+            this.txtContactAddress.TabIndex = 408;
             // 
             // lblContactAddress
             // 
@@ -1605,7 +2210,7 @@
             this.cbxContactNameTitle.Name = "cbxContactNameTitle";
             this.cbxContactNameTitle.Size = new System.Drawing.Size(197, 25);
             this.cbxContactNameTitle.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cbxContactNameTitle.TabIndex = 41;
+            this.cbxContactNameTitle.TabIndex = 403;
             // 
             // cbxiContactTitleMr
             // 
@@ -1662,7 +2267,7 @@
             this.txtContactNameTitle.Name = "txtContactNameTitle";
             this.txtContactNameTitle.PreventEnterBeep = true;
             this.txtContactNameTitle.Size = new System.Drawing.Size(142, 25);
-            this.txtContactNameTitle.TabIndex = 40;
+            this.txtContactNameTitle.TabIndex = 402;
             // 
             // labelX1
             // 
@@ -1694,7 +2299,7 @@
             this.txtContactNameLast.Name = "txtContactNameLast";
             this.txtContactNameLast.PreventEnterBeep = true;
             this.txtContactNameLast.Size = new System.Drawing.Size(197, 25);
-            this.txtContactNameLast.TabIndex = 38;
+            this.txtContactNameLast.TabIndex = 405;
             // 
             // txtContactNameFirst
             // 
@@ -1711,7 +2316,7 @@
             this.txtContactNameFirst.Name = "txtContactNameFirst";
             this.txtContactNameFirst.PreventEnterBeep = true;
             this.txtContactNameFirst.Size = new System.Drawing.Size(142, 25);
-            this.txtContactNameFirst.TabIndex = 37;
+            this.txtContactNameFirst.TabIndex = 404;
             // 
             // txtContactCompany
             // 
@@ -1730,7 +2335,7 @@
             this.txtContactCompany.Name = "txtContactCompany";
             this.txtContactCompany.PreventEnterBeep = true;
             this.txtContactCompany.Size = new System.Drawing.Size(345, 25);
-            this.txtContactCompany.TabIndex = 36;
+            this.txtContactCompany.TabIndex = 401;
             // 
             // txtContactEmail
             // 
@@ -1749,7 +2354,7 @@
             this.txtContactEmail.Name = "txtContactEmail";
             this.txtContactEmail.PreventEnterBeep = true;
             this.txtContactEmail.Size = new System.Drawing.Size(345, 25);
-            this.txtContactEmail.TabIndex = 35;
+            this.txtContactEmail.TabIndex = 407;
             // 
             // lblContactPhone
             // 
@@ -1783,7 +2388,7 @@
             this.txtContactPhone.Name = "txtContactPhone";
             this.txtContactPhone.PreventEnterBeep = true;
             this.txtContactPhone.Size = new System.Drawing.Size(142, 25);
-            this.txtContactPhone.TabIndex = 33;
+            this.txtContactPhone.TabIndex = 406;
             // 
             // lblContactName
             // 
@@ -2012,7 +2617,7 @@
             this.lvContactDocuments.MultiSelect = false;
             this.lvContactDocuments.Name = "lvContactDocuments";
             this.lvContactDocuments.Size = new System.Drawing.Size(272, 209);
-            this.lvContactDocuments.TabIndex = 19;
+            this.lvContactDocuments.TabIndex = 410;
             this.lvContactDocuments.UseCompatibleStateImageBehavior = false;
             this.lvContactDocuments.View = System.Windows.Forms.View.Details;
             // 
@@ -2030,7 +2635,7 @@
             this.btnContactDocumentAdd.Name = "btnContactDocumentAdd";
             this.btnContactDocumentAdd.Size = new System.Drawing.Size(110, 29);
             this.btnContactDocumentAdd.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnContactDocumentAdd.TabIndex = 18;
+            this.btnContactDocumentAdd.TabIndex = 411;
             this.btnContactDocumentAdd.Text = "Add document";
             // 
             // tiContactDocs
@@ -2071,7 +2676,7 @@
             this.txtContactNotes.Name = "txtContactNotes";
             this.txtContactNotes.PreventEnterBeep = true;
             this.txtContactNotes.Size = new System.Drawing.Size(796, 234);
-            this.txtContactNotes.TabIndex = 37;
+            this.txtContactNotes.TabIndex = 409;
             // 
             // tiContactNotes
             // 
@@ -2079,601 +2684,6 @@
             this.tiContactNotes.GlobalItem = false;
             this.tiContactNotes.Name = "tiContactNotes";
             this.tiContactNotes.Text = "  Notes";
-            // 
-            // pCompanies
-            // 
-            this.pCompanies.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.pCompanies.Controls.Add(this.scCompanies);
-            this.pCompanies.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pCompanies.Location = new System.Drawing.Point(0, 61);
-            this.pCompanies.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pCompanies.Name = "pCompanies";
-            this.pCompanies.Padding = new System.Windows.Forms.Padding(3, 0, 3, 4);
-            this.pCompanies.Size = new System.Drawing.Size(960, 535);
-            // 
-            // 
-            // 
-            this.pCompanies.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.pCompanies.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.pCompanies.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.pCompanies.TabIndex = 3;
-            // 
-            // scCompanies
-            // 
-            this.scCompanies.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.scCompanies.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.scCompanies.ButtonPosition = DevComponents.DotNetBar.Controls.eSplitterButtonPosition.Center;
-            this.scCompanies.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.scCompanies.ForeColor = System.Drawing.Color.Black;
-            this.scCompanies.IsSplitterFixed = true;
-            this.scCompanies.Location = new System.Drawing.Point(0, 0);
-            this.scCompanies.Name = "scCompanies";
-            this.scCompanies.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // scCompanies.Panel1
-            // 
-            this.scCompanies.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.scCompanies.Panel1.Controls.Add(this.gCompanies);
-            this.scCompanies.Panel1.ForeColor = System.Drawing.Color.Black;
-            // 
-            // scCompanies.Panel2
-            // 
-            this.scCompanies.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.scCompanies.Panel2.Controls.Add(this.pCompany);
-            this.scCompanies.Panel2.ForeColor = System.Drawing.Color.Black;
-            this.scCompanies.Size = new System.Drawing.Size(960, 535);
-            this.scCompanies.SplitterDistance = 180;
-            this.scCompanies.SplitterWidth = 20;
-            this.scCompanies.TabIndex = 0;
-            // 
-            // gCompanies
-            // 
-            this.gCompanies.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.gCompanies.ContextMenuStrip = this.mCompanies;
-            this.gCompanies.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gCompanies.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.gCompanies.ForeColor = System.Drawing.Color.Black;
-            this.gCompanies.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
-            this.gCompanies.Location = new System.Drawing.Point(0, 0);
-            this.gCompanies.Name = "gCompanies";
-            // 
-            // 
-            // 
-            this.gCompanies.PrimaryGrid.AllowEdit = false;
-            this.gCompanies.PrimaryGrid.CheckBoxes = true;
-            this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesID);
-            this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesName);
-            this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesContact);
-            this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesPhone);
-            this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesEmail);
-            this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesAddress);
-            this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesReg);
-            this.gCompanies.PrimaryGrid.Columns.Add(this.gCompaniesVat);
-            this.gCompanies.PrimaryGrid.MultiSelect = false;
-            this.gCompanies.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
-            this.gCompanies.PrimaryGrid.ShowRowHeaders = false;
-            this.gCompanies.PrimaryGrid.UseAlternateRowStyle = true;
-            this.gCompanies.Size = new System.Drawing.Size(960, 180);
-            this.gCompanies.TabIndex = 2;
-            this.gCompanies.Text = "superGridControl1";
-            this.gCompanies.RowActivated += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowActivatedEventArgs>(this.gCompanies_RowActivated);
-            this.gCompanies.RowClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowClickEventArgs>(this.gCompanies_RowClick);
-            this.gCompanies.RowDoubleClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowDoubleClickEventArgs>(this.gCompanies_RowDoubleClick);
-            // 
-            // mCompanies
-            // 
-            this.mCompanies.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mCompaniesAdd,
-            this.mCompaniesRemove});
-            this.mCompanies.Name = "mContacts";
-            this.mCompanies.Size = new System.Drawing.Size(171, 48);
-            // 
-            // mCompaniesAdd
-            // 
-            this.mCompaniesAdd.Name = "mCompaniesAdd";
-            this.mCompaniesAdd.Size = new System.Drawing.Size(170, 22);
-            this.mCompaniesAdd.Text = "Add company";
-            this.mCompaniesAdd.Click += new System.EventHandler(this.mCompaniesAdd_Click);
-            // 
-            // mCompaniesRemove
-            // 
-            this.mCompaniesRemove.Name = "mCompaniesRemove";
-            this.mCompaniesRemove.Size = new System.Drawing.Size(170, 22);
-            this.mCompaniesRemove.Text = "Remove company";
-            this.mCompaniesRemove.Click += new System.EventHandler(this.mCompaniesRemove_Click);
-            // 
-            // gCompaniesID
-            // 
-            this.gCompaniesID.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
-            this.gCompaniesID.HeaderText = "ID";
-            this.gCompaniesID.MinimumWidth = 60;
-            this.gCompaniesID.Name = "ID";
-            this.gCompaniesID.Width = 60;
-            // 
-            // gCompaniesName
-            // 
-            this.gCompaniesName.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
-            this.gCompaniesName.HeaderText = "Name";
-            this.gCompaniesName.MinimumWidth = 200;
-            this.gCompaniesName.Name = "Name";
-            // 
-            // gCompaniesContact
-            // 
-            this.gCompaniesContact.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
-            this.gCompaniesContact.HeaderText = "Contact";
-            this.gCompaniesContact.MinimumWidth = 150;
-            this.gCompaniesContact.Name = "Contact";
-            this.gCompaniesContact.Width = 150;
-            // 
-            // gCompaniesPhone
-            // 
-            this.gCompaniesPhone.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
-            this.gCompaniesPhone.HeaderText = "Phone";
-            this.gCompaniesPhone.MinimumWidth = 125;
-            this.gCompaniesPhone.Name = "Phone";
-            this.gCompaniesPhone.Width = 125;
-            // 
-            // gCompaniesEmail
-            // 
-            this.gCompaniesEmail.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
-            this.gCompaniesEmail.HeaderText = "E-mail Address";
-            this.gCompaniesEmail.MinimumWidth = 250;
-            this.gCompaniesEmail.Name = "Email";
-            this.gCompaniesEmail.Width = 250;
-            // 
-            // gCompaniesAddress
-            // 
-            this.gCompaniesAddress.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
-            this.gCompaniesAddress.HeaderText = "Address";
-            this.gCompaniesAddress.MinimumWidth = 250;
-            this.gCompaniesAddress.Name = "Address";
-            this.gCompaniesAddress.Width = 250;
-            // 
-            // gCompaniesReg
-            // 
-            this.gCompaniesReg.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
-            this.gCompaniesReg.HeaderText = "Reg. No.";
-            this.gCompaniesReg.MinimumWidth = 100;
-            this.gCompaniesReg.Name = "Reg";
-            // 
-            // gCompaniesVat
-            // 
-            this.gCompaniesVat.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.None;
-            this.gCompaniesVat.HeaderText = "VAT No.";
-            this.gCompaniesVat.MinimumWidth = 100;
-            this.gCompaniesVat.Name = "VAT";
-            // 
-            // pCompany
-            // 
-            this.pCompany.CanvasColor = System.Drawing.SystemColors.Control;
-            this.pCompany.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.pCompany.Controls.Add(this.btnCompanyCancel);
-            this.pCompany.Controls.Add(this.btnCompanySave);
-            this.pCompany.Controls.Add(this.scCompany);
-            this.pCompany.DisabledBackColor = System.Drawing.Color.Empty;
-            this.pCompany.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pCompany.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pCompany.Location = new System.Drawing.Point(0, 0);
-            this.pCompany.Name = "pCompany";
-            this.pCompany.Size = new System.Drawing.Size(960, 335);
-            this.pCompany.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.pCompany.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.pCompany.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.pCompany.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.pCompany.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.pCompany.Style.GradientAngle = 90;
-            this.pCompany.TabIndex = 8;
-            // 
-            // btnCompanyCancel
-            // 
-            this.btnCompanyCancel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnCompanyCancel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnCompanyCancel.Enabled = false;
-            this.btnCompanyCancel.Location = new System.Drawing.Point(21, 21);
-            this.btnCompanyCancel.Name = "btnCompanyCancel";
-            this.btnCompanyCancel.Size = new System.Drawing.Size(74, 29);
-            this.btnCompanyCancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnCompanyCancel.TabIndex = 23;
-            this.btnCompanyCancel.Text = "Cancel";
-            this.btnCompanyCancel.Click += new System.EventHandler(this.btnCompanyCancel_Click);
-            // 
-            // btnCompanySave
-            // 
-            this.btnCompanySave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnCompanySave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnCompanySave.Enabled = false;
-            this.btnCompanySave.Location = new System.Drawing.Point(21, 56);
-            this.btnCompanySave.Name = "btnCompanySave";
-            this.btnCompanySave.Size = new System.Drawing.Size(74, 29);
-            this.btnCompanySave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnCompanySave.TabIndex = 22;
-            this.btnCompanySave.Text = "Save";
-            this.btnCompanySave.Click += new System.EventHandler(this.btnCompanySave_Click);
-            // 
-            // scCompany
-            // 
-            this.scCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.scCompany.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            // 
-            // 
-            // 
-            this.scCompany.ControlBox.CloseBox.Name = "";
-            // 
-            // 
-            // 
-            this.scCompany.ControlBox.MenuBox.Name = "";
-            this.scCompany.ControlBox.Name = "";
-            this.scCompany.ControlBox.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.scCompany.ControlBox.MenuBox,
-            this.scCompany.ControlBox.CloseBox});
-            this.scCompany.ControlBox.Visible = false;
-            this.scCompany.Controls.Add(this.superTabControlPanel4);
-            this.scCompany.Controls.Add(this.tpCompanyContacts);
-            this.scCompany.Controls.Add(this.superTabControlPanel6);
-            this.scCompany.ForeColor = System.Drawing.Color.Black;
-            this.scCompany.Location = new System.Drawing.Point(114, 21);
-            this.scCompany.Name = "scCompany";
-            this.scCompany.ReorderTabsEnabled = true;
-            this.scCompany.SelectedTabFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.scCompany.SelectedTabIndex = 0;
-            this.scCompany.Size = new System.Drawing.Size(826, 294);
-            this.scCompany.TabFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scCompany.TabIndex = 21;
-            this.scCompany.Tabs.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.tiCompanyGeneral,
-            this.tiCompanyNotes,
-            this.tiCompanyContacts});
-            this.scCompany.TabStyle = DevComponents.DotNetBar.eSuperTabStyle.VisualStudio2008Dock;
-            // 
-            // superTabControlPanel4
-            // 
-            this.superTabControlPanel4.Controls.Add(this.lblCompanyContact);
-            this.superTabControlPanel4.Controls.Add(this.txtCompanyContact);
-            this.superTabControlPanel4.Controls.Add(this.txtCompanyAddress);
-            this.superTabControlPanel4.Controls.Add(this.lblCompanyAddress);
-            this.superTabControlPanel4.Controls.Add(this.lblCompanyEmail);
-            this.superTabControlPanel4.Controls.Add(this.txtCompanyTrading);
-            this.superTabControlPanel4.Controls.Add(this.lblCompanyTrading);
-            this.superTabControlPanel4.Controls.Add(this.txtCompanyRegVat);
-            this.superTabControlPanel4.Controls.Add(this.txtCompanyReg);
-            this.superTabControlPanel4.Controls.Add(this.txtCompanyName);
-            this.superTabControlPanel4.Controls.Add(this.txtCompanyEmail);
-            this.superTabControlPanel4.Controls.Add(this.lblCompanyPhone);
-            this.superTabControlPanel4.Controls.Add(this.txtCompanyPhone);
-            this.superTabControlPanel4.Controls.Add(this.lblCompanyReg);
-            this.superTabControlPanel4.Controls.Add(this.lblCompanyName);
-            this.superTabControlPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel4.Location = new System.Drawing.Point(0, 30);
-            this.superTabControlPanel4.Name = "superTabControlPanel4";
-            this.superTabControlPanel4.Size = new System.Drawing.Size(826, 264);
-            this.superTabControlPanel4.TabIndex = 1;
-            this.superTabControlPanel4.TabItem = this.tiCompanyGeneral;
-            // 
-            // lblCompanyContact
-            // 
-            this.lblCompanyContact.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.lblCompanyContact.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblCompanyContact.ForeColor = System.Drawing.Color.Black;
-            this.lblCompanyContact.Location = new System.Drawing.Point(24, 179);
-            this.lblCompanyContact.Name = "lblCompanyContact";
-            this.lblCompanyContact.Size = new System.Drawing.Size(120, 23);
-            this.lblCompanyContact.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lblCompanyContact.TabIndex = 46;
-            this.lblCompanyContact.Text = "Primary Contact:";
-            // 
-            // txtCompanyContact
-            // 
-            this.txtCompanyContact.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txtCompanyContact.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtCompanyContact.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtCompanyContact.Border.Class = "TextBoxBorder";
-            this.txtCompanyContact.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtCompanyContact.DisabledBackColor = System.Drawing.Color.White;
-            this.txtCompanyContact.Enabled = false;
-            this.txtCompanyContact.ForeColor = System.Drawing.Color.Black;
-            this.txtCompanyContact.Location = new System.Drawing.Point(150, 179);
-            this.txtCompanyContact.Name = "txtCompanyContact";
-            this.txtCompanyContact.PreventEnterBeep = true;
-            this.txtCompanyContact.Size = new System.Drawing.Size(345, 25);
-            this.txtCompanyContact.TabIndex = 45;
-            // 
-            // txtCompanyAddress
-            // 
-            this.txtCompanyAddress.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtCompanyAddress.Border.Class = "TextBoxBorder";
-            this.txtCompanyAddress.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtCompanyAddress.DisabledBackColor = System.Drawing.Color.White;
-            this.txtCompanyAddress.Enabled = false;
-            this.txtCompanyAddress.ForeColor = System.Drawing.Color.Black;
-            this.txtCompanyAddress.Location = new System.Drawing.Point(521, 55);
-            this.txtCompanyAddress.Multiline = true;
-            this.txtCompanyAddress.Name = "txtCompanyAddress";
-            this.txtCompanyAddress.PreventEnterBeep = true;
-            this.txtCompanyAddress.Size = new System.Drawing.Size(282, 149);
-            this.txtCompanyAddress.TabIndex = 44;
-            // 
-            // lblCompanyAddress
-            // 
-            this.lblCompanyAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.lblCompanyAddress.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblCompanyAddress.ForeColor = System.Drawing.Color.Black;
-            this.lblCompanyAddress.Location = new System.Drawing.Point(521, 24);
-            this.lblCompanyAddress.Name = "lblCompanyAddress";
-            this.lblCompanyAddress.Size = new System.Drawing.Size(74, 23);
-            this.lblCompanyAddress.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lblCompanyAddress.TabIndex = 43;
-            this.lblCompanyAddress.Text = "Address:";
-            // 
-            // lblCompanyEmail
-            // 
-            this.lblCompanyEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.lblCompanyEmail.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblCompanyEmail.ForeColor = System.Drawing.Color.Black;
-            this.lblCompanyEmail.Location = new System.Drawing.Point(24, 148);
-            this.lblCompanyEmail.Name = "lblCompanyEmail";
-            this.lblCompanyEmail.Size = new System.Drawing.Size(120, 23);
-            this.lblCompanyEmail.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lblCompanyEmail.TabIndex = 42;
-            this.lblCompanyEmail.Text = "E-mail Address:";
-            // 
-            // txtCompanyTrading
-            // 
-            this.txtCompanyTrading.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtCompanyTrading.Border.Class = "TextBoxBorder";
-            this.txtCompanyTrading.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtCompanyTrading.DisabledBackColor = System.Drawing.Color.White;
-            this.txtCompanyTrading.Enabled = false;
-            this.txtCompanyTrading.ForeColor = System.Drawing.Color.Black;
-            this.txtCompanyTrading.Location = new System.Drawing.Point(150, 55);
-            this.txtCompanyTrading.Name = "txtCompanyTrading";
-            this.txtCompanyTrading.PreventEnterBeep = true;
-            this.txtCompanyTrading.Size = new System.Drawing.Size(345, 25);
-            this.txtCompanyTrading.TabIndex = 40;
-            // 
-            // lblCompanyTrading
-            // 
-            this.lblCompanyTrading.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.lblCompanyTrading.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblCompanyTrading.ForeColor = System.Drawing.Color.Black;
-            this.lblCompanyTrading.Location = new System.Drawing.Point(24, 55);
-            this.lblCompanyTrading.Name = "lblCompanyTrading";
-            this.lblCompanyTrading.Size = new System.Drawing.Size(120, 23);
-            this.lblCompanyTrading.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lblCompanyTrading.TabIndex = 39;
-            this.lblCompanyTrading.Text = "Trading As:";
-            // 
-            // txtCompanyRegVat
-            // 
-            this.txtCompanyRegVat.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtCompanyRegVat.Border.Class = "TextBoxBorder";
-            this.txtCompanyRegVat.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtCompanyRegVat.DisabledBackColor = System.Drawing.Color.White;
-            this.txtCompanyRegVat.Enabled = false;
-            this.txtCompanyRegVat.ForeColor = System.Drawing.Color.Black;
-            this.txtCompanyRegVat.Location = new System.Drawing.Point(298, 86);
-            this.txtCompanyRegVat.Name = "txtCompanyRegVat";
-            this.txtCompanyRegVat.PreventEnterBeep = true;
-            this.txtCompanyRegVat.Size = new System.Drawing.Size(197, 25);
-            this.txtCompanyRegVat.TabIndex = 38;
-            // 
-            // txtCompanyReg
-            // 
-            this.txtCompanyReg.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtCompanyReg.Border.Class = "TextBoxBorder";
-            this.txtCompanyReg.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtCompanyReg.DisabledBackColor = System.Drawing.Color.White;
-            this.txtCompanyReg.Enabled = false;
-            this.txtCompanyReg.ForeColor = System.Drawing.Color.Black;
-            this.txtCompanyReg.Location = new System.Drawing.Point(150, 86);
-            this.txtCompanyReg.Name = "txtCompanyReg";
-            this.txtCompanyReg.PreventEnterBeep = true;
-            this.txtCompanyReg.Size = new System.Drawing.Size(142, 25);
-            this.txtCompanyReg.TabIndex = 37;
-            // 
-            // txtCompanyName
-            // 
-            this.txtCompanyName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txtCompanyName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtCompanyName.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtCompanyName.Border.Class = "TextBoxBorder";
-            this.txtCompanyName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtCompanyName.DisabledBackColor = System.Drawing.Color.White;
-            this.txtCompanyName.Enabled = false;
-            this.txtCompanyName.ForeColor = System.Drawing.Color.Black;
-            this.txtCompanyName.Location = new System.Drawing.Point(150, 24);
-            this.txtCompanyName.Name = "txtCompanyName";
-            this.txtCompanyName.PreventEnterBeep = true;
-            this.txtCompanyName.Size = new System.Drawing.Size(345, 25);
-            this.txtCompanyName.TabIndex = 36;
-            // 
-            // txtCompanyEmail
-            // 
-            this.txtCompanyEmail.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txtCompanyEmail.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtCompanyEmail.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtCompanyEmail.Border.Class = "TextBoxBorder";
-            this.txtCompanyEmail.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtCompanyEmail.DisabledBackColor = System.Drawing.Color.White;
-            this.txtCompanyEmail.Enabled = false;
-            this.txtCompanyEmail.ForeColor = System.Drawing.Color.Black;
-            this.txtCompanyEmail.Location = new System.Drawing.Point(150, 148);
-            this.txtCompanyEmail.Name = "txtCompanyEmail";
-            this.txtCompanyEmail.PreventEnterBeep = true;
-            this.txtCompanyEmail.Size = new System.Drawing.Size(345, 25);
-            this.txtCompanyEmail.TabIndex = 35;
-            // 
-            // lblCompanyPhone
-            // 
-            this.lblCompanyPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.lblCompanyPhone.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblCompanyPhone.ForeColor = System.Drawing.Color.Black;
-            this.lblCompanyPhone.Location = new System.Drawing.Point(24, 117);
-            this.lblCompanyPhone.Name = "lblCompanyPhone";
-            this.lblCompanyPhone.Size = new System.Drawing.Size(120, 23);
-            this.lblCompanyPhone.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lblCompanyPhone.TabIndex = 34;
-            this.lblCompanyPhone.Text = "Phone Number:";
-            // 
-            // txtCompanyPhone
-            // 
-            this.txtCompanyPhone.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txtCompanyPhone.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtCompanyPhone.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtCompanyPhone.Border.Class = "TextBoxBorder";
-            this.txtCompanyPhone.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtCompanyPhone.DisabledBackColor = System.Drawing.Color.White;
-            this.txtCompanyPhone.Enabled = false;
-            this.txtCompanyPhone.ForeColor = System.Drawing.Color.Black;
-            this.txtCompanyPhone.Location = new System.Drawing.Point(150, 117);
-            this.txtCompanyPhone.Name = "txtCompanyPhone";
-            this.txtCompanyPhone.PreventEnterBeep = true;
-            this.txtCompanyPhone.Size = new System.Drawing.Size(142, 25);
-            this.txtCompanyPhone.TabIndex = 33;
-            // 
-            // lblCompanyReg
-            // 
-            this.lblCompanyReg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.lblCompanyReg.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblCompanyReg.ForeColor = System.Drawing.Color.Black;
-            this.lblCompanyReg.Location = new System.Drawing.Point(24, 86);
-            this.lblCompanyReg.Name = "lblCompanyReg";
-            this.lblCompanyReg.Size = new System.Drawing.Size(120, 23);
-            this.lblCompanyReg.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lblCompanyReg.TabIndex = 32;
-            this.lblCompanyReg.Text = "Reg No./VAT No.:";
-            // 
-            // lblCompanyName
-            // 
-            this.lblCompanyName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.lblCompanyName.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblCompanyName.ForeColor = System.Drawing.Color.Black;
-            this.lblCompanyName.Location = new System.Drawing.Point(24, 24);
-            this.lblCompanyName.Name = "lblCompanyName";
-            this.lblCompanyName.Size = new System.Drawing.Size(120, 23);
-            this.lblCompanyName.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.lblCompanyName.TabIndex = 31;
-            this.lblCompanyName.Text = "Company Name:";
-            // 
-            // tiCompanyGeneral
-            // 
-            this.tiCompanyGeneral.AttachedControl = this.superTabControlPanel4;
-            this.tiCompanyGeneral.GlobalItem = false;
-            this.tiCompanyGeneral.Name = "tiCompanyGeneral";
-            this.tiCompanyGeneral.Text = "  General";
-            // 
-            // tpCompanyContacts
-            // 
-            this.tpCompanyContacts.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tpCompanyContacts.Location = new System.Drawing.Point(0, 30);
-            this.tpCompanyContacts.Name = "tpCompanyContacts";
-            this.tpCompanyContacts.Size = new System.Drawing.Size(826, 264);
-            this.tpCompanyContacts.TabIndex = 0;
-            this.tpCompanyContacts.TabItem = this.tiCompanyContacts;
-            // 
-            // tiCompanyContacts
-            // 
-            this.tiCompanyContacts.AttachedControl = this.tpCompanyContacts;
-            this.tiCompanyContacts.GlobalItem = false;
-            this.tiCompanyContacts.Name = "tiCompanyContacts";
-            this.tiCompanyContacts.Text = "  Contacts";
-            // 
-            // superTabControlPanel6
-            // 
-            this.superTabControlPanel6.Controls.Add(this.txtCompanyNotes);
-            this.superTabControlPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel6.Location = new System.Drawing.Point(0, 30);
-            this.superTabControlPanel6.Name = "superTabControlPanel6";
-            this.superTabControlPanel6.Size = new System.Drawing.Size(826, 264);
-            this.superTabControlPanel6.TabIndex = 0;
-            this.superTabControlPanel6.TabItem = this.tiCompanyNotes;
-            // 
-            // txtCompanyNotes
-            // 
-            this.txtCompanyNotes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCompanyNotes.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txtCompanyNotes.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtCompanyNotes.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtCompanyNotes.Border.Class = "TextBoxBorder";
-            this.txtCompanyNotes.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtCompanyNotes.DisabledBackColor = System.Drawing.Color.White;
-            this.txtCompanyNotes.Enabled = false;
-            this.txtCompanyNotes.ForeColor = System.Drawing.Color.Black;
-            this.txtCompanyNotes.Location = new System.Drawing.Point(15, 15);
-            this.txtCompanyNotes.Multiline = true;
-            this.txtCompanyNotes.Name = "txtCompanyNotes";
-            this.txtCompanyNotes.PreventEnterBeep = true;
-            this.txtCompanyNotes.Size = new System.Drawing.Size(796, 234);
-            this.txtCompanyNotes.TabIndex = 37;
-            // 
-            // tiCompanyNotes
-            // 
-            this.tiCompanyNotes.AttachedControl = this.superTabControlPanel6;
-            this.tiCompanyNotes.GlobalItem = false;
-            this.tiCompanyNotes.Name = "tiCompanyNotes";
-            this.tiCompanyNotes.Text = "  Notes";
             // 
             // pCourses
             // 
@@ -2756,7 +2766,7 @@
             this.gCourses.PrimaryGrid.UseAlternateRowStyle = true;
             this.gCourses.Size = new System.Drawing.Size(960, 180);
             this.gCourses.TabIndex = 2;
-            this.gCourses.Text = "superGridControl1";
+            this.gCourses.TabStop = false;
             this.gCourses.RowActivated += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowActivatedEventArgs>(this.gCourses_RowActivated);
             this.gCourses.RowClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowClickEventArgs>(this.gCourses_RowClick);
             this.gCourses.RowDoubleClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowDoubleClickEventArgs>(this.gCourses_RowDoubleClick);
@@ -2853,7 +2863,7 @@
             this.btnCourseCancel.Name = "btnCourseCancel";
             this.btnCourseCancel.Size = new System.Drawing.Size(74, 29);
             this.btnCourseCancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnCourseCancel.TabIndex = 26;
+            this.btnCourseCancel.TabIndex = 207;
             this.btnCourseCancel.Text = "Cancel";
             this.btnCourseCancel.Click += new System.EventHandler(this.btnCourseCancel_Click);
             // 
@@ -2866,6 +2876,7 @@
             this.btnCourseSave.Name = "btnCourseSave";
             this.btnCourseSave.Size = new System.Drawing.Size(74, 29);
             this.btnCourseSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnCourseSave.SymbolSize = 206F;
             this.btnCourseSave.TabIndex = 25;
             this.btnCourseSave.Text = "Save";
             this.btnCourseSave.Click += new System.EventHandler(this.btnCourseSave_Click);
@@ -2919,9 +2930,9 @@
             this.superTabControlPanel7.Controls.Add(this.txtCourseName);
             this.superTabControlPanel7.Controls.Add(this.lblCourseName);
             this.superTabControlPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel7.Location = new System.Drawing.Point(0, 25);
+            this.superTabControlPanel7.Location = new System.Drawing.Point(0, 30);
             this.superTabControlPanel7.Name = "superTabControlPanel7";
-            this.superTabControlPanel7.Size = new System.Drawing.Size(826, 269);
+            this.superTabControlPanel7.Size = new System.Drawing.Size(826, 264);
             this.superTabControlPanel7.TabIndex = 1;
             this.superTabControlPanel7.TabItem = this.tiCourseGeneral;
             // 
@@ -2943,7 +2954,7 @@
             this.txtCoursePricing.Name = "txtCoursePricing";
             this.txtCoursePricing.PreventEnterBeep = true;
             this.txtCoursePricing.Size = new System.Drawing.Size(322, 157);
-            this.txtCoursePricing.TabIndex = 44;
+            this.txtCoursePricing.TabIndex = 204;
             // 
             // lblCoursePrice
             // 
@@ -2978,7 +2989,7 @@
             this.txtCourseDuration.Name = "txtCourseDuration";
             this.txtCourseDuration.PreventEnterBeep = true;
             this.txtCourseDuration.Size = new System.Drawing.Size(433, 157);
-            this.txtCourseDuration.TabIndex = 42;
+            this.txtCourseDuration.TabIndex = 203;
             // 
             // lblCourseDuration
             // 
@@ -3012,7 +3023,7 @@
             this.txtCourseCert.Name = "txtCourseCert";
             this.txtCourseCert.PreventEnterBeep = true;
             this.txtCourseCert.Size = new System.Drawing.Size(218, 25);
-            this.txtCourseCert.TabIndex = 40;
+            this.txtCourseCert.TabIndex = 202;
             // 
             // lblCourseCert
             // 
@@ -3046,7 +3057,7 @@
             this.txtCourseName.Name = "txtCourseName";
             this.txtCourseName.PreventEnterBeep = true;
             this.txtCourseName.Size = new System.Drawing.Size(320, 25);
-            this.txtCourseName.TabIndex = 38;
+            this.txtCourseName.TabIndex = 201;
             // 
             // lblCourseName
             // 
@@ -3101,7 +3112,7 @@
             this.txtCourseDetails.Name = "txtCourseDetails";
             this.txtCourseDetails.PreventEnterBeep = true;
             this.txtCourseDetails.Size = new System.Drawing.Size(796, 234);
-            this.txtCourseDetails.TabIndex = 37;
+            this.txtCourseDetails.TabIndex = 205;
             // 
             // tiCourseDetails
             // 
@@ -3214,6 +3225,7 @@
             this.btnEnquiriesListCompany.Size = new System.Drawing.Size(25, 25);
             this.btnEnquiriesListCompany.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnEnquiriesListCompany.TabIndex = 28;
+            this.btnEnquiriesListCompany.TabStop = false;
             // 
             // txtEnquiriesListCompany
             // 
@@ -3233,6 +3245,7 @@
             this.txtEnquiriesListCompany.PreventEnterBeep = true;
             this.txtEnquiriesListCompany.Size = new System.Drawing.Size(244, 25);
             this.txtEnquiriesListCompany.TabIndex = 27;
+            this.txtEnquiriesListCompany.TabStop = false;
             // 
             // lblGridEnquiries
             // 
@@ -3299,7 +3312,7 @@
             this.gEnquiries.PrimaryGrid.UseAlternateRowStyle = true;
             this.gEnquiries.Size = new System.Drawing.Size(960, 146);
             this.gEnquiries.TabIndex = 0;
-            this.gEnquiries.Text = "superGridControl1";
+            this.gEnquiries.TabStop = false;
             this.gEnquiries.RowActivated += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowActivatedEventArgs>(this.gEnquiries_RowActivated);
             this.gEnquiries.RowClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowClickEventArgs>(this.gEnquiries_RowClick);
             this.gEnquiries.RowDoubleClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowDoubleClickEventArgs>(this.gEnquiries_RowDoubleClick);
@@ -3423,7 +3436,7 @@
             this.btnEnquiryCancel.Name = "btnEnquiryCancel";
             this.btnEnquiryCancel.Size = new System.Drawing.Size(74, 29);
             this.btnEnquiryCancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnEnquiryCancel.TabIndex = 26;
+            this.btnEnquiryCancel.TabIndex = 113;
             this.btnEnquiryCancel.Text = "Cancel";
             this.btnEnquiryCancel.Click += new System.EventHandler(this.btnEnquiryCancel_Click);
             // 
@@ -3436,7 +3449,7 @@
             this.btnEnquirySave.Name = "btnEnquirySave";
             this.btnEnquirySave.Size = new System.Drawing.Size(74, 29);
             this.btnEnquirySave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnEnquirySave.TabIndex = 25;
+            this.btnEnquirySave.TabIndex = 112;
             this.btnEnquirySave.Text = "Save";
             this.btnEnquirySave.Click += new System.EventHandler(this.btnEnquirySave_Click);
             // 
@@ -3499,9 +3512,9 @@
             this.superTabControlPanel8.Controls.Add(this.txtEnquiryName);
             this.superTabControlPanel8.Controls.Add(this.lblEnquiryName);
             this.superTabControlPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel8.Location = new System.Drawing.Point(0, 25);
+            this.superTabControlPanel8.Location = new System.Drawing.Point(0, 30);
             this.superTabControlPanel8.Name = "superTabControlPanel8";
-            this.superTabControlPanel8.Size = new System.Drawing.Size(826, 269);
+            this.superTabControlPanel8.Size = new System.Drawing.Size(826, 264);
             this.superTabControlPanel8.TabIndex = 1;
             this.superTabControlPanel8.TabItem = this.tiEnquiryGeneral;
             // 
@@ -3567,7 +3580,7 @@
             this.txtEnquiryInfo.Name = "txtEnquiryInfo";
             this.txtEnquiryInfo.PreventEnterBeep = true;
             this.txtEnquiryInfo.Size = new System.Drawing.Size(281, 150);
-            this.txtEnquiryInfo.TabIndex = 52;
+            this.txtEnquiryInfo.TabIndex = 107;
             // 
             // lblEnquiryReferrer
             // 
@@ -3601,7 +3614,7 @@
             this.txtEnquiryReferrer.Name = "txtEnquiryReferrer";
             this.txtEnquiryReferrer.PreventEnterBeep = true;
             this.txtEnquiryReferrer.Size = new System.Drawing.Size(345, 25);
-            this.txtEnquiryReferrer.TabIndex = 50;
+            this.txtEnquiryReferrer.TabIndex = 106;
             // 
             // cbxEnquiryType
             // 
@@ -3615,7 +3628,7 @@
             this.cbxEnquiryType.Name = "cbxEnquiryType";
             this.cbxEnquiryType.Size = new System.Drawing.Size(345, 25);
             this.cbxEnquiryType.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cbxEnquiryType.TabIndex = 49;
+            this.cbxEnquiryType.TabIndex = 105;
             // 
             // lblEnquiryType
             // 
@@ -3664,7 +3677,7 @@
             this.txtEnquiryEmail.Name = "txtEnquiryEmail";
             this.txtEnquiryEmail.PreventEnterBeep = true;
             this.txtEnquiryEmail.Size = new System.Drawing.Size(345, 25);
-            this.txtEnquiryEmail.TabIndex = 45;
+            this.txtEnquiryEmail.TabIndex = 104;
             // 
             // lblEnquiryPhone
             // 
@@ -3698,7 +3711,7 @@
             this.txtEnquiryPhone.Name = "txtEnquiryPhone";
             this.txtEnquiryPhone.PreventEnterBeep = true;
             this.txtEnquiryPhone.Size = new System.Drawing.Size(142, 25);
-            this.txtEnquiryPhone.TabIndex = 43;
+            this.txtEnquiryPhone.TabIndex = 103;
             // 
             // txtEnquiryCompany
             // 
@@ -3717,7 +3730,7 @@
             this.txtEnquiryCompany.Name = "txtEnquiryCompany";
             this.txtEnquiryCompany.PreventEnterBeep = true;
             this.txtEnquiryCompany.Size = new System.Drawing.Size(345, 25);
-            this.txtEnquiryCompany.TabIndex = 42;
+            this.txtEnquiryCompany.TabIndex = 102;
             // 
             // lblEnquiryCompany
             // 
@@ -3751,7 +3764,7 @@
             this.txtEnquiryName.Name = "txtEnquiryName";
             this.txtEnquiryName.PreventEnterBeep = true;
             this.txtEnquiryName.Size = new System.Drawing.Size(345, 25);
-            this.txtEnquiryName.TabIndex = 40;
+            this.txtEnquiryName.TabIndex = 101;
             // 
             // lblEnquiryName
             // 
@@ -3965,7 +3978,7 @@
             this.lvEnquiryDocs.MultiSelect = false;
             this.lvEnquiryDocs.Name = "lvEnquiryDocs";
             this.lvEnquiryDocs.Size = new System.Drawing.Size(272, 209);
-            this.lvEnquiryDocs.TabIndex = 19;
+            this.lvEnquiryDocs.TabIndex = 110;
             this.lvEnquiryDocs.UseCompatibleStateImageBehavior = false;
             this.lvEnquiryDocs.View = System.Windows.Forms.View.Details;
             // 
@@ -3983,7 +3996,7 @@
             this.btnEnquiryDocs.Name = "btnEnquiryDocs";
             this.btnEnquiryDocs.Size = new System.Drawing.Size(110, 29);
             this.btnEnquiryDocs.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnEnquiryDocs.TabIndex = 18;
+            this.btnEnquiryDocs.TabIndex = 111;
             this.btnEnquiryDocs.Text = "Add document";
             // 
             // tiEnquiryDocs
@@ -4039,7 +4052,7 @@
             this.txtEnquiryInfoWanted.Name = "txtEnquiryInfoWanted";
             this.txtEnquiryInfoWanted.PreventEnterBeep = true;
             this.txtEnquiryInfoWanted.Size = new System.Drawing.Size(425, 201);
-            this.txtEnquiryInfoWanted.TabIndex = 54;
+            this.txtEnquiryInfoWanted.TabIndex = 109;
             // 
             // lvEnquiryCourses
             // 
@@ -4061,7 +4074,7 @@
             this.lvEnquiryCourses.MultiSelect = false;
             this.lvEnquiryCourses.Name = "lvEnquiryCourses";
             this.lvEnquiryCourses.Size = new System.Drawing.Size(336, 201);
-            this.lvEnquiryCourses.TabIndex = 41;
+            this.lvEnquiryCourses.TabIndex = 108;
             this.lvEnquiryCourses.UseCompatibleStateImageBehavior = false;
             this.lvEnquiryCourses.View = System.Windows.Forms.View.Details;
             // 
@@ -4155,9 +4168,9 @@
             // bsvTpPrint
             // 
             this.bsvTpPrint.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bsvTpPrint.Location = new System.Drawing.Point(236, 0);
+            this.bsvTpPrint.Location = new System.Drawing.Point(97, 0);
             this.bsvTpPrint.Name = "bsvTpPrint";
-            this.bsvTpPrint.Size = new System.Drawing.Size(722, 560);
+            this.bsvTpPrint.Size = new System.Drawing.Size(861, 560);
             this.bsvTpPrint.TabIndex = 3;
             this.bsvTpPrint.TabItem = this.bsvTiPrint;
             // 
@@ -4216,6 +4229,7 @@
             // 
             // mtBookings
             // 
+            this.mtBookings.Checked = true;
             this.mtBookings.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtBookings.Name = "mtBookings";
             this.mtBookings.Panel = this.pBookings;
@@ -4241,7 +4255,6 @@
             // 
             // mtCompanies
             // 
-            this.mtCompanies.Checked = true;
             this.mtCompanies.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtCompanies.ItemAlignment = DevComponents.DotNetBar.eItemAlignment.Far;
             this.mtCompanies.Name = "mtCompanies";
@@ -4378,6 +4391,17 @@
             this.Shown += new System.EventHandler(this.frmMain_Shown);
             this.ms.ResumeLayout(false);
             this.ms.PerformLayout();
+            this.pCompanies.ResumeLayout(false);
+            this.scCompanies.Panel1.ResumeLayout(false);
+            this.scCompanies.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.scCompanies)).EndInit();
+            this.scCompanies.ResumeLayout(false);
+            this.mCompanies.ResumeLayout(false);
+            this.pCompany.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.scCompany)).EndInit();
+            this.scCompany.ResumeLayout(false);
+            this.superTabControlPanel4.ResumeLayout(false);
+            this.superTabControlPanel6.ResumeLayout(false);
             this.pBookings.ResumeLayout(false);
             this.pBookingsList.ResumeLayout(false);
             this.pBookingsListTools.ResumeLayout(false);
@@ -4405,17 +4429,6 @@
             this.superTabControlPanel1.ResumeLayout(false);
             this.superTabControlPanel3.ResumeLayout(false);
             this.superTabControlPanel2.ResumeLayout(false);
-            this.pCompanies.ResumeLayout(false);
-            this.scCompanies.Panel1.ResumeLayout(false);
-            this.scCompanies.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.scCompanies)).EndInit();
-            this.scCompanies.ResumeLayout(false);
-            this.mCompanies.ResumeLayout(false);
-            this.pCompany.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.scCompany)).EndInit();
-            this.scCompany.ResumeLayout(false);
-            this.superTabControlPanel4.ResumeLayout(false);
-            this.superTabControlPanel6.ResumeLayout(false);
             this.pCourses.ResumeLayout(false);
             this.scCourses.Panel1.ResumeLayout(false);
             this.scCourses.Panel2.ResumeLayout(false);
