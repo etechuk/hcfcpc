@@ -33,6 +33,8 @@ namespace Client
         {
             InitializeComponent();
 
+            Icon = Properties.Resources.logo;
+
             for (int i = 1; i < 201; i++)
             {
                 cbxDelegates.Items.Add(i.ToString());

@@ -77,6 +77,12 @@
     <Compile Include="frmContacts.Designer.cs">
       <DependentUpon>frmContacts.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmGridViews.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGridViews.Designer.cs">
+      <DependentUpon>frmGridViews.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,12 @@
     <Compile Include="frmSignIn.Designer.cs">
       <DependentUpon>frmSignIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUsers.Designer.cs">
+      <DependentUpon>frmUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmBooking.resx">
@@ -106,6 +118,9 @@
     <EmbeddedResource Include="frmContacts.resx">
       <DependentUpon>frmContacts.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmGridViews.resx">
+      <DependentUpon>frmGridViews.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSignIn.resx">
       <DependentUpon>frmSignIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUsers.resx">
+      <DependentUpon>frmUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -149,6 +167,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo.ico" />
+    <None Include="Resources\tools-16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

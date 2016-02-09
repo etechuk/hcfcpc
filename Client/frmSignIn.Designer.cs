@@ -88,7 +88,7 @@
             this.pSign.ForeColor = System.Drawing.Color.Black;
             this.pSign.Location = new System.Drawing.Point(12, 12);
             this.pSign.Name = "pSign";
-            this.pSign.Size = new System.Drawing.Size(310, 419);
+            this.pSign.Size = new System.Drawing.Size(310, 417);
             this.pSign.TabIndex = 5;
             // 
             // cbxRemember
@@ -115,7 +115,7 @@
             // 
             // 
             this.cpMain.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.cpMain.Location = new System.Drawing.Point(118, 366);
+            this.cpMain.Location = new System.Drawing.Point(118, 364);
             this.cpMain.Name = "cpMain";
             this.cpMain.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(159)))));
             this.cpMain.Size = new System.Drawing.Size(75, 49);
@@ -130,7 +130,7 @@
             this.btnExit.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnExit.Location = new System.Drawing.Point(232, 385);
+            this.btnExit.Location = new System.Drawing.Point(232, 383);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 31);
             this.btnExit.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -145,7 +145,7 @@
             this.btnSettings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSettings.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnSettings.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSettings.Location = new System.Drawing.Point(3, 385);
+            this.btnSettings.Location = new System.Drawing.Point(3, 383);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(75, 31);
             this.btnSettings.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -196,7 +196,7 @@
             // 
             this.lblPass.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lblPass.ForeColor = System.Drawing.Color.Black;
-            this.lblPass.Location = new System.Drawing.Point(38, 239);
+            this.lblPass.Location = new System.Drawing.Point(36, 239);
             this.lblPass.Name = "lblPass";
             this.lblPass.Size = new System.Drawing.Size(74, 23);
             this.lblPass.Style = DevComponents.DotNetBar.eDotNetBarStyle.Windows7;
@@ -230,7 +230,7 @@
             // 
             this.lblUser.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lblUser.ForeColor = System.Drawing.Color.Black;
-            this.lblUser.Location = new System.Drawing.Point(38, 208);
+            this.lblUser.Location = new System.Drawing.Point(36, 208);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(74, 23);
             this.lblUser.Style = DevComponents.DotNetBar.eDotNetBarStyle.Windows7;
@@ -292,7 +292,7 @@
             this.pSettings.DisabledBackColor = System.Drawing.Color.Empty;
             this.pSettings.Location = new System.Drawing.Point(12, 12);
             this.pSettings.Name = "pSettings";
-            this.pSettings.Size = new System.Drawing.Size(310, 419);
+            this.pSettings.Size = new System.Drawing.Size(310, 417);
             this.pSettings.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.pSettings.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.pSettings.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
@@ -307,7 +307,7 @@
             this.btnSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Location = new System.Drawing.Point(222, 319);
+            this.btnSave.Location = new System.Drawing.Point(221, 319);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 31);
             this.btnSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -344,7 +344,7 @@
             this.txtDataName.Location = new System.Drawing.Point(104, 268);
             this.txtDataName.Name = "txtDataName";
             this.txtDataName.PreventEnterBeep = true;
-            this.txtDataName.Size = new System.Drawing.Size(193, 25);
+            this.txtDataName.Size = new System.Drawing.Size(192, 25);
             this.txtDataName.TabIndex = 8;
             // 
             // lblDataName
@@ -375,7 +375,7 @@
             this.txtDataPass.Location = new System.Drawing.Point(104, 237);
             this.txtDataPass.Name = "txtDataPass";
             this.txtDataPass.PreventEnterBeep = true;
-            this.txtDataPass.Size = new System.Drawing.Size(193, 25);
+            this.txtDataPass.Size = new System.Drawing.Size(192, 25);
             this.txtDataPass.TabIndex = 7;
             // 
             // lblDataPass
@@ -406,7 +406,7 @@
             this.txtDataUser.Location = new System.Drawing.Point(104, 206);
             this.txtDataUser.Name = "txtDataUser";
             this.txtDataUser.PreventEnterBeep = true;
-            this.txtDataUser.Size = new System.Drawing.Size(193, 25);
+            this.txtDataUser.Size = new System.Drawing.Size(192, 25);
             this.txtDataUser.TabIndex = 6;
             // 
             // lblDataUser
@@ -437,7 +437,7 @@
             this.txtDataPort.Location = new System.Drawing.Point(104, 175);
             this.txtDataPort.Name = "txtDataPort";
             this.txtDataPort.PreventEnterBeep = true;
-            this.txtDataPort.Size = new System.Drawing.Size(193, 25);
+            this.txtDataPort.Size = new System.Drawing.Size(192, 25);
             this.txtDataPort.TabIndex = 5;
             // 
             // lblDataPort
@@ -468,7 +468,7 @@
             this.txtDataHost.Location = new System.Drawing.Point(104, 144);
             this.txtDataHost.Name = "txtDataHost";
             this.txtDataHost.PreventEnterBeep = true;
-            this.txtDataHost.Size = new System.Drawing.Size(193, 25);
+            this.txtDataHost.Size = new System.Drawing.Size(192, 25);
             this.txtDataHost.TabIndex = 4;
             // 
             // lblDataHost
@@ -523,24 +523,26 @@
             // 
             // frmSignIn
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.CaptionFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClientSize = new System.Drawing.Size(334, 443);
+            this.ClientSize = new System.Drawing.Size(334, 441);
+            this.ControlBox = false;
             this.Controls.Add(this.pSign);
             this.Controls.Add(this.pSettings);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.Black;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(350, 480);
             this.Name = "frmSignIn";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HCF Client";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmSignIn_FormClosing);
+            this.Load += new System.EventHandler(this.frmSignIn_Load);
             this.Shown += new System.EventHandler(this.frmSignIn_Shown);
             this.pSign.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).EndInit();

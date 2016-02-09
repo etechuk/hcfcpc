@@ -1488,6 +1488,7 @@ namespace Client
             }
 
             SharedData.iContactID = 0;
+            EnableContact(false);
             LoadContacts();
             scContact.SelectedTab = tiContactGeneral;
         }
@@ -1539,6 +1540,7 @@ namespace Client
             }
 
             SharedData.iCompanyID = 0;
+            EnableCompany(false);
             LoadCompanies();
             scCompany.SelectedTab = tiCompanyGeneral;
         }
@@ -1586,6 +1588,7 @@ namespace Client
             }
 
             SharedData.iCourseID = 0;
+            EnableCourse(false);
             LoadCourses();
             scCourse.SelectedTab = tiCourseGeneral;
         }
@@ -1663,6 +1666,7 @@ namespace Client
             }
 
             SharedData.iEnquiryID = 0;
+            EnableEnquiry(false);
             LoadEnquiries();
             scEnquiry.SelectedTab = tiEnquiryGeneral;
         }
@@ -2243,6 +2247,8 @@ namespace Client
 
         #endregion
 
+        #region Changed
+
         private void ms_SelectedTabChanged(object sender, EventArgs e)
         {
             switch (ms.SelectedTab.Text)
@@ -2269,6 +2275,29 @@ namespace Client
         private void cbxContactNameTitle_SelectionChangeCommitted(object sender, EventArgs e)
         {
             txtContactNameTitle.Text = cbxContactNameTitle.SelectedText;
+        }
+
+        #endregion
+
+        private void biToolsGridViews_Click(object sender, EventArgs e)
+        {
+            Form frmGridViews = new frmGridViews();
+            DialogResult dlg = frmGridViews.ShowDialog();
+            if (dlg == DialogResult.OK)
+            {
+                LoadBookingsGrid();
+            }
+        }
+
+        private void biToolsTemplate_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Not yet implemented.", "Unavailable", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void biToolsUser_Click(object sender, EventArgs e)
+        {
+            Form frmUsers = new frmUsers();
+            frmUsers.ShowDialog();
         }
     }
 }

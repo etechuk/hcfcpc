@@ -17,6 +17,8 @@ namespace Client
         {
             InitializeComponent();
 
+            Icon = Properties.Resources.logo;
+
             DataSet ds = Program.DB.SelectAll("SELECT ID,Name FROM Companies;");
             if (ds.Tables.Count > 0)
             {

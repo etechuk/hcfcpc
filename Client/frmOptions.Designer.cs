@@ -220,10 +220,12 @@
             // 
             // chkMaximised
             // 
+            this.chkMaximised.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             // 
             // 
             // 
             this.chkMaximised.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.chkMaximised.ForeColor = System.Drawing.Color.Black;
             this.chkMaximised.Location = new System.Drawing.Point(147, 88);
             this.chkMaximised.Name = "chkMaximised";
             this.chkMaximised.Size = new System.Drawing.Size(19, 23);
@@ -232,11 +234,10 @@
             // 
             // frmOptions
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.CaptionFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClientSize = new System.Drawing.Size(528, 172);
-            this.ControlBox = false;
             this.Controls.Add(this.chkMaximised);
             this.Controls.Add(this.labelX1);
             this.Controls.Add(this.lblDefaultView);
@@ -248,11 +249,11 @@
             this.Controls.Add(this.btnSave);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmOptions";
-            this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Options and Settings";

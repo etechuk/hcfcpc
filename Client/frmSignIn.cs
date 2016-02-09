@@ -283,5 +283,10 @@ namespace Client
                 }
             }
         }
+
+        private void frmSignIn_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

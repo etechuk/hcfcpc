@@ -17,6 +17,8 @@ namespace Client
         {
             InitializeComponent();
 
+            Icon = Properties.Resources.logo;
+
             cbxDefaultView.SelectedIndex = 2;
 
             if (Properties.Settings.Default.PathToData != "")
