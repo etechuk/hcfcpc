@@ -1642,6 +1642,7 @@ namespace Client
 
             SharedData.iBookingID = 0;
             LoadBookings();
+            LoadBookingsGrid();
         }
 
         private void mBookingsRemove_Click(object sender, EventArgs e)
@@ -1662,7 +1663,9 @@ namespace Client
                 if (i > 0)
                 {
                     SharedData.iBookingID = 0;
-                    cvBookings.CalendarModel.Appointments.Remove(ap.Appointment);
+                    //cvBookings.CalendarModel.Appointments.Remove(ap.Appointment);
+                    LoadBookings();
+                    LoadBookingsGrid();
                     return;
                 }
 

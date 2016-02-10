@@ -67,6 +67,11 @@
             this.lblCompanyName = new DevComponents.DotNetBar.LabelX();
             this.tiCompanyGeneral = new DevComponents.DotNetBar.SuperTabItem();
             this.tpCompanyContacts = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.superGridControl1 = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+            this.gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.tiCompanyContacts = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel6 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.txtCompanyNotes = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -317,11 +322,6 @@
             this.mBookingsListRemove = new System.Windows.Forms.ToolStripMenuItem();
             this.mBookingsListS1 = new System.Windows.Forms.ToolStripSeparator();
             this.mBookingsListComplete = new System.Windows.Forms.ToolStripMenuItem();
-            this.superGridControl1 = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
-            this.gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.ms.SuspendLayout();
             this.pCompanies.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scCompanies)).BeginInit();
@@ -403,9 +403,9 @@
             this.ms.CanCustomize = false;
             this.ms.CaptionFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ms.CaptionVisible = true;
+            this.ms.Controls.Add(this.pBookings);
             this.ms.Controls.Add(this.pCompanies);
             this.ms.Controls.Add(this.pContacts);
-            this.ms.Controls.Add(this.pBookings);
             this.ms.Controls.Add(this.pEnquiries);
             this.ms.Controls.Add(this.pCourses);
             this.ms.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -470,6 +470,7 @@
             // 
             this.pCompanies.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.pCompanies.TabIndex = 3;
+            this.pCompanies.Visible = false;
             // 
             // scCompanies
             // 
@@ -995,6 +996,46 @@
             this.tpCompanyContacts.Size = new System.Drawing.Size(826, 264);
             this.tpCompanyContacts.TabIndex = 0;
             this.tpCompanyContacts.TabItem = this.tiCompanyContacts;
+            // 
+            // superGridControl1
+            // 
+            this.superGridControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.superGridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superGridControl1.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.superGridControl1.ForeColor = System.Drawing.Color.Black;
+            this.superGridControl1.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
+            this.superGridControl1.Location = new System.Drawing.Point(0, 0);
+            this.superGridControl1.Name = "superGridControl1";
+            // 
+            // 
+            // 
+            this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn1);
+            this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn2);
+            this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn3);
+            this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn4);
+            this.superGridControl1.PrimaryGrid.MultiSelect = false;
+            this.superGridControl1.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
+            this.superGridControl1.PrimaryGrid.ShowRowHeaders = false;
+            this.superGridControl1.PrimaryGrid.UseAlternateRowStyle = true;
+            this.superGridControl1.Size = new System.Drawing.Size(826, 264);
+            this.superGridControl1.TabIndex = 0;
+            this.superGridControl1.Text = "superGridControl1";
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Name = "gridColumn1";
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Name = "gridColumn2";
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Name = "gridColumn3";
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Name = "gridColumn4";
             // 
             // tiCompanyContacts
             // 
@@ -1898,7 +1939,6 @@
             // 
             this.pBookings.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.pBookings.TabIndex = 1;
-            this.pBookings.Visible = false;
             // 
             // pBookingsList
             // 
@@ -2302,7 +2342,7 @@
             this.mBookingsGridS1,
             this.mBookingsGridComplete});
             this.mBookingsGrid.Name = "contextMenuStrip1";
-            this.mBookingsGrid.Size = new System.Drawing.Size(169, 76);
+            this.mBookingsGrid.Size = new System.Drawing.Size(169, 98);
             // 
             // mBookingsGridAdd
             // 
@@ -4242,6 +4282,7 @@
             // 
             // mtBookings
             // 
+            this.mtBookings.Checked = true;
             this.mtBookings.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtBookings.Name = "mtBookings";
             this.mtBookings.Panel = this.pBookings;
@@ -4267,7 +4308,6 @@
             // 
             // mtCompanies
             // 
-            this.mtCompanies.Checked = true;
             this.mtCompanies.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtCompanies.ItemAlignment = DevComponents.DotNetBar.eItemAlignment.Far;
             this.mtCompanies.Name = "mtCompanies";
@@ -4412,46 +4452,6 @@
             this.mBookingsListComplete.Size = new System.Drawing.Size(168, 22);
             this.mBookingsListComplete.Text = "Mark as complete";
             this.mBookingsListComplete.Click += new System.EventHandler(this.mBookingsListComplete_Click);
-            // 
-            // superGridControl1
-            // 
-            this.superGridControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.superGridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superGridControl1.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.superGridControl1.ForeColor = System.Drawing.Color.Black;
-            this.superGridControl1.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
-            this.superGridControl1.Location = new System.Drawing.Point(0, 0);
-            this.superGridControl1.Name = "superGridControl1";
-            // 
-            // 
-            // 
-            this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn1);
-            this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn2);
-            this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn3);
-            this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn4);
-            this.superGridControl1.PrimaryGrid.MultiSelect = false;
-            this.superGridControl1.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
-            this.superGridControl1.PrimaryGrid.ShowRowHeaders = false;
-            this.superGridControl1.PrimaryGrid.UseAlternateRowStyle = true;
-            this.superGridControl1.Size = new System.Drawing.Size(826, 264);
-            this.superGridControl1.TabIndex = 0;
-            this.superGridControl1.Text = "superGridControl1";
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Name = "gridColumn1";
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Name = "gridColumn2";
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Name = "gridColumn3";
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Name = "gridColumn4";
             // 
             // frmMain
             // 
