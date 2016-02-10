@@ -362,6 +362,24 @@ namespace Client
 
         #region Changed
 
+        private void txtCompany_KeyDown(object sender, KeyEventArgs e)
+        {
+            if ((e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab) && txtCompany.Text.ToString().Length > 0)
+            {
+                Program.DB.AddParameter("Name", txtCompany.Text);
+                DataSet ds = Program.DB.SelectAll("SELECT ID,NameFirst,NameLast FROM Contacts WHERE Company=@Name;");
+                if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+                {
+                    AutoCompleteStringCollection asContacts = new AutoCompleteStringCollection();
+                    foreach (DataRow r in ds.Tables[0].Rows)
+                    {
+                        asContacts.Add(r["NameFirst"].ToString() + " " + r["NameLast"].ToString());
+                    }
+                    txtContact.AutoCompleteCustomSource = asContacts;
+                }
+            }
+        }
+
         private void dtDateFrom_ValueChanged(object sender, EventArgs e)
         {
             dtDateTo.Value = dtDateFrom.Value;
@@ -397,10 +415,6 @@ namespace Client
             }
         }
 
-        private void cbxCompanies_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-        }
-
         private void tvRooms_AfterCheck(object sender, TreeViewEventArgs e)
         {
             int iID = e.Node.Tag != null ? Convert.ToInt32(e.Node.Tag) : -1;
@@ -430,12 +444,19 @@ namespace Client
                 DataSet ds = Program.DB.SelectAll("SELECT ID,Name FROM Companies;");
                 if (ds.Tables.Count > 0)
                 {
-                    List<ComboItem> items = new List<ComboItem>();
+                    AutoCompleteStringCollection asCompanies = new AutoCompleteStringCollection();
                     foreach (DataRow dr in ds.Tables[0].Rows)
                     {
-                        items.Add(new ComboItem() { Text = dr["Name"].ToString().Trim(), Value = Convert.ToInt32(dr["ID"]) });
+                        asCompanies.Add(dr["Name"].ToString().Trim());
+                        if (Convert.ToInt32(dr["ID"]) == SharedData.iCompanyID)
+                        {
+                            txtCompany.Text = dr["Name"].ToString();
+                        }
                     }
+                    txtCompany.AutoCompleteCustomSource = asCompanies;
                 }
+
+                SharedData.iCompanyID = 0;
             }
         }
 
@@ -445,19 +466,23 @@ namespace Client
             DialogResult dlg = frmContacts.ShowDialog();
             if (dlg == DialogResult.OK && txtCompany.Text.Trim() != "")
             {
-                DataSet ds = Program.DB.SelectAll("SELECT ID FROM Companies WHERE Name='" + txtCompany.Text.Trim() + "';");
+                Program.DB.AddParameter("Company", txtCompany.Text.Trim());
+                DataSet ds = Program.DB.SelectAll("SELECT ID,NameFirst,NameLast FROM Contacts WHERE Company=@Company;");
                 if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
                 {
-                    ds = Program.DB.SelectAll("SELECT ID,NameTitle,NameFirst,NameLast FROM Contacts WHERE Company='" + ds.Tables[0].Rows[0]["ID"].ToString() + "'");
-                    if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+                    AutoCompleteStringCollection asContacts = new AutoCompleteStringCollection();
+                    foreach (DataRow dr in ds.Tables[0].Rows)
                     {
-                        List<ComboItem> items = new List<ComboItem>();
-                        foreach (DataRow dr in ds.Tables[0].Rows)
+                        asContacts.Add(dr["NameFirst"].ToString() + " " + dr["NameLast"].ToString());
+                        if (Convert.ToInt32(dr["ID"]) == SharedData.iContactID)
                         {
-                            items.Add(new ComboItem() { Text = (dr["NameLast"].ToString() + ", " + dr["NameFirst"].ToString()).Trim(), Value = Convert.ToInt32(dr["ID"]) });
+                            txtContact.Text = dr["NameFirst"].ToString() + " " + dr["NameLast"].ToString();
                         }
                     }
+                    txtContact.AutoCompleteCustomSource = asContacts;
                 }
+
+                SharedData.iContactID = 0;
             }
         }
 
@@ -467,7 +492,7 @@ namespace Client
             DataSet ds = Program.DB.SelectAll("SELECT MAX(Job) AS NextID FROM Jobs;");
             if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0 && ds.Tables[0].Rows[0]["NextID"] != DBNull.Value)
             {
-                iNid = Convert.ToInt32(ds.Tables[0].Rows[0]["NextID"]);
+                iNid = Convert.ToInt32(ds.Tables[0].Rows[0]["NextID"]) + 1;
             }
 
             if (SharedData.iBookingID < 1 && iNextID != iNid)
@@ -867,6 +892,11 @@ namespace Client
 
         #endregion
 
+        private void gComments_RowActivated(object sender, GridRowActivatedEventArgs e)
+        {
+            rComment = e.NewActiveRow as GridRow;
+        }
+
         private void gComments_RowClick(object sender, GridRowClickEventArgs e)
         {
             if (e.MouseEventArgs.Button == MouseButtons.Right)
@@ -888,6 +918,15 @@ namespace Client
                         txtComments.Text = c.Tables[0].Rows[0]["Comment"].ToString();
                     }
                 }
+            }
+        }
+
+        private void gComments_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                Point pos = gComments.PointToClient(Cursor.Position);
+                mComments.Show(gComments, pos);
             }
         }
 
@@ -923,43 +962,6 @@ namespace Client
                 {
                     MessageBox.Show("Comment saved successfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnSaveComment.Visible = false;
-                }
-            }
-        }
-
-        private void gComments_RowActivated(object sender, GridRowActivatedEventArgs e)
-        {
-            rComment = e.NewActiveRow as GridRow;
-        }
-
-        private void gComments_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Right)
-            {
-                Point pos = gComments.PointToClient(Cursor.Position);
-                mComments.Show(gComments, pos);
-            }
-        }
-
-        private void txtCompany_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                Program.DB.AddParameter("Name", txtCompany.Text);
-                DataSet ds = Program.DB.SelectAll("SELECT ID FROM Companies WHERE Name=@Name;");
-                if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
-                {
-                    Program.DB.AddParameter("ID", ds.Tables[0].Rows[0]["ID"]);
-                    ds = Program.DB.SelectAll("SELECT ID,NameFirst,NameLast FROM Contacts WHERE Company=@ID;");
-                    if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
-                    {
-                        AutoCompleteStringCollection asContacts = new AutoCompleteStringCollection();
-                        foreach (DataRow r in ds.Tables[0].Rows)
-                        {
-                            asContacts.Add(r["NameFirst"].ToString() + " " + r["NameLast"].ToString());
-                        }
-                        txtContact.AutoCompleteCustomSource = asContacts;
-                    }
                 }
             }
         }

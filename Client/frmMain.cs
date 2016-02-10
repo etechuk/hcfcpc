@@ -32,13 +32,14 @@ namespace Client
 
         private int iSSItemSelected = 0;
         private string wsCurrent;
-        private ReoGridRange rSelected;
 
         GridRow rBooking;
         GridRow rEnquiry;
         GridRow rCourse;
         GridRow rCompany;
         GridRow rContact;
+
+        int iSelectedBookingsView = 2;
 
         #endregion
 
@@ -68,7 +69,8 @@ namespace Client
             pEnquiriesGrid.Height = pBookings.Height;
 
             CompanyListInit();
-            Set_DefaultView();
+            iSelectedBookingsView = Properties.Settings.Default.DefaultView < 6 ? Properties.Settings.Default.DefaultView : 2;
+            Set_View();
 
             if (Properties.Settings.Default.StartMaximised)
             {
@@ -101,6 +103,7 @@ namespace Client
 
         private void biBookingsViewDay_Click(object sender, EventArgs e)
         {
+            iSelectedBookingsView = 0;
             cvBookings.SelectedView = eCalendarView.Day;
             pBookingsGrid.Visible = false;
             pBookingsList.Visible = false;
@@ -111,6 +114,7 @@ namespace Client
 
         private void biBookingsViewWeek_Click(object sender, EventArgs e)
         {
+            iSelectedBookingsView = 1;
             cvBookings.SelectedView = eCalendarView.Week;
             pBookingsGrid.Visible = false;
             pBookingsList.Visible = false;
@@ -121,6 +125,7 @@ namespace Client
 
         private void biBookingsViewMonth_Click(object sender, EventArgs e)
         {
+            iSelectedBookingsView = 2;
             cvBookings.SelectedView = eCalendarView.Month;
             pBookingsGrid.Visible = false;
             pBookingsList.Visible = false;
@@ -131,6 +136,7 @@ namespace Client
 
         private void biBookingsViewYear_Click(object sender, EventArgs e)
         {
+            iSelectedBookingsView = 3;
             cvBookings.SelectedView = eCalendarView.Year;
             pBookingsGrid.Visible = false;
             pBookingsList.Visible = false;
@@ -141,6 +147,7 @@ namespace Client
 
         private void biBookingsViewGrid_Click(object sender, EventArgs e)
         {
+            iSelectedBookingsView = 4;
             pBookingsGrid.Visible = true;
             pBookingsList.Visible = false;
             pBookingsCalendar.Visible = false;
@@ -150,6 +157,7 @@ namespace Client
 
         private void biBookingsViewList_Click(object sender, EventArgs e)
         {
+            iSelectedBookingsView = 5;
             pBookingsGrid.Visible = false;
             pBookingsList.Visible = true;
             pBookingsCalendar.Visible = false;
@@ -456,9 +464,9 @@ namespace Client
 
         #region Methods
 
-        private void Set_DefaultView()
+        private void Set_View()
         {
-            switch (Properties.Settings.Default.DefaultView)
+            switch (iSelectedBookingsView > -1 ? iSelectedBookingsView : Properties.Settings.Default.DefaultView)
             {
                 case 0: // Bookings tab, day view
                     LoadBookings();
@@ -484,7 +492,6 @@ namespace Client
                     pBookingsGrid.Visible = false;
                     pBookingsList.Visible = false;
                     pBookingsCalendar.Visible = true;
-                    biBookingsViewYear.Checked = true;
                     ms.SelectedTab = mtBookings;
                     break;
                 case 4: // Bookings tab, grid view
@@ -686,6 +693,11 @@ namespace Client
             }
 
             cvBookings.CalendarModel = cmBookings;
+
+            string sCount = "Total bookings: " + gBookings.PrimaryGrid.Rows.Count();
+            lblCountBookingsCalendar.Text = sCount;
+            lblCountBookingsGrid.Text = sCount;
+            lblCountBookingsList.Text = sCount;
         }
 
         private void LoadBookingsGrid()
@@ -774,6 +786,8 @@ namespace Client
                     lvEnquiryCourses.Items.Add(i);
                 }
             }
+
+            lblCountEnquiries.Text = "Total enquiries: " + gEnquiries.PrimaryGrid.Rows.Count();
         }
 
         private void LoadCourses()
@@ -783,8 +797,6 @@ namespace Client
             DataSet ds = Program.DB.SelectAll("SELECT * FROM Courses;");
             if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
             {
-                DataSet d;
-
                 foreach (DataRow row in ds.Tables[0].Rows)
                 {
                     GridRow r = new GridRow(new object[] {
@@ -804,67 +816,9 @@ namespace Client
             DataSet ds = Program.DB.SelectAll("SELECT * FROM Companies;");
             if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
             {
-                DataSet d;
-
                 foreach (DataRow row in ds.Tables[0].Rows)
                 {
-                    /*
-                    string sContacts = "";
-                    if (row["Contacts"].ToString().Length > 0)
-                    {
-                        d = Program.DB.SelectAll("SELECT NameFirst,NameLast FROM Contacts WHERE ID IN (" + row["Contacts"].ToString() + ");");
-                        if (d.Tables.Count > 0 && d.Tables[0].Rows.Count > 0)
-                        {
-                            foreach (DataRow pr in d.Tables[0].Rows)
-                            {
-                                string sName = pr["NameFirst"].ToString() + " " + pr["NameFirst"].ToString();
-                                sContacts = sContacts.Length > 0 ? ", " + sName: sName;
-                            }
-                        }
-                    }
-
-                    string sPhones = "";
-                    if (row["Phones"].ToString().Length > 0)
-                    {
-                        d = Program.DB.SelectAll("SELECT Number FROM Phones WHERE ID IN (" + row["Phones"].ToString() + ");");
-                        if (d.Tables.Count > 0 && d.Tables[0].Rows.Count > 0)
-                        {
-                            foreach (DataRow pr in d.Tables[0].Rows)
-                            {
-                                sPhones = sPhones.Length > 0 ? ", " + pr["Number"].ToString() : pr["Number"].ToString();
-                            }
-                        }
-                    }
-
-                    string sEmails = "";
-                    if (row["Emails"].ToString().Length > 0)
-                    {
-                        d = Program.DB.SelectAll("SELECT Address FROM Emails WHERE ID IN (" + row["Emails"].ToString() + ");");
-                        if (d.Tables.Count > 0 && d.Tables[0].Rows.Count > 0)
-                        {
-                            foreach (DataRow pr in d.Tables[0].Rows)
-                            {
-                                sEmails = sEmails.Length > 0 ? ", " + pr["Address"].ToString() : pr["Address"].ToString();
-                            }
-                        }
-                    }
-
-                    string sAddresses = "";
-                    if (row["Emails"].ToString().Length > 0)
-                    {
-                        d = Program.DB.SelectAll("SELECT * FROM Addresses WHERE ID IN (" + row["Addresses"].ToString() + ");");
-                        if (d.Tables.Count > 0 && d.Tables[0].Rows.Count > 0)
-                        {
-                            foreach (DataRow pr in d.Tables[0].Rows)
-                            {
-                                string sAddress = pr["Line1"].ToString() + ", " + pr["Postcode"].ToString();
-                                sAddresses = sAddresses.Length > 0 ? "; " + sAddress : sAddress;
-                            }
-                        }
-                    }
-                    */
-
-                    string sContacts = row["Contacts"].ToString(), sPhones = row["Phones"].ToString(), sEmails = row["Emails"].ToString(), sAddresses = row["Addresses"].ToString();
+                    string sContacts = row["Contacts"].ToString(), sPhones = row["Phones"].ToString(), sEmails = row["Emails"].ToString(), sAddresses = row["Addresses"].ToString().Replace(Environment.NewLine, ", ");
 
                     GridRow r = new GridRow(new object[] {
                         row["ID"].ToString(), row["Name"].ToString(), sContacts, sPhones, sEmails, sAddresses, row["RegNumber"].ToString(),
@@ -884,62 +838,10 @@ namespace Client
             DataSet ds = Program.DB.SelectAll("SELECT * FROM Contacts;");
             if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
             {
-                DataSet d;
-
                 foreach (DataRow row in ds.Tables[0].Rows)
                 {
-                    string sCompany = row["Company"].ToString();
-
-                    /*
-                    Program.DB.AddParameter("ID", row["Company"]);
-                    d = Program.DB.SelectAll("SELECT Name FROM Companies WHERE ID=@ID;");
-                    if (d.Tables.Count > 0 && d.Tables[0].Rows.Count > 0)
-                    {
-                        sCompany = d.Tables[0].Rows[0]["Name"].ToString();
-                    }
-
-                    string sPhones = "";
-                    if (row["Phones"].ToString().Length > 0)
-                    {
-                        d = Program.DB.SelectAll("SELECT Number FROM Phones WHERE ID IN (" + row["Phones"].ToString() + ");");
-                        if (d.Tables.Count > 0 && d.Tables[0].Rows.Count > 0)
-                        {
-                            foreach (DataRow pr in d.Tables[0].Rows)
-                            {
-                                sPhones = sPhones.Length > 0 ? ", " + pr["Number"].ToString() : pr["Number"].ToString();
-                            }
-                        }
-                    }
-
-                    string sEmails = "";
-                    if (row["Emails"].ToString().Length > 0)
-                    {
-                        d = Program.DB.SelectAll("SELECT Address FROM Emails WHERE ID IN (" + row["Emails"].ToString() + ");");
-                        if (d.Tables.Count > 0 && d.Tables[0].Rows.Count > 0)
-                        {
-                            foreach (DataRow pr in d.Tables[0].Rows)
-                            {
-                                sEmails = sEmails.Length > 0 ? ", " + pr["Address"].ToString() : pr["Address"].ToString();
-                            }
-                        }
-                    }
-
-                    string sAddresses = "";
-                    if (row["Emails"].ToString().Length > 0)
-                    {
-                        d = Program.DB.SelectAll("SELECT * FROM Addresses WHERE ID IN (" + row["Addresses"].ToString() + ");");
-                        if (d.Tables.Count > 0 && d.Tables[0].Rows.Count > 0)
-                        {
-                            foreach (DataRow pr in d.Tables[0].Rows)
-                            {
-                                string sAddress = pr["Line1"].ToString() + ", " + pr["Postcode"].ToString();
-                                sAddresses = sAddresses.Length > 0 ? "; " + sAddress : sAddress;
-                            }
-                        }
-                    }
-                    */
-
-                    string sPhones = row["Phones"].ToString(), sEmails = row["Emails"].ToString(), sAddresses = row["Addresses"].ToString();
+                    string sCompany = row["Company"].ToString(), sPhones = row["Phones"].ToString();
+                    string sEmails = row["Emails"].ToString(), sAddresses = row["Addresses"].ToString().Replace(Environment.NewLine, ", ");
 
                     GridRow r = new GridRow(new object[] {
                         row["ID"].ToString(), row["NameTitle"].ToString(), row["NameFirst"].ToString(), row["NameLast"].ToString(), sCompany, sPhones, sEmails,
@@ -1543,6 +1445,7 @@ namespace Client
             EnableCompany(false);
             LoadCompanies();
             scCompany.SelectedTab = tiCompanyGeneral;
+            CompanyListInit();
         }
 
         private void btnCourseCancel_Click(object sender, EventArgs e)
@@ -1758,6 +1661,7 @@ namespace Client
                 int i = Program.DB.Update("UPDATE Jobs SET BDates=@dates,BTimes=@times WHERE ID=@id;");
                 if (i > 0)
                 {
+                    SharedData.iBookingID = 0;
                     cvBookings.CalendarModel.Appointments.Remove(ap.Appointment);
                     return;
                 }
@@ -1807,6 +1711,7 @@ namespace Client
                 int i = Program.DB.Update("UPDATE Jobs SET BDates=@dates,BTimes=@times WHERE ID=@id;");
                 if (i > 0)
                 {
+                    SharedData.iBookingID = 0;
                     wsCurrent = rgBookings.CurrentWorksheet.Name;
                     LoadBookingsGrid();
                     LoadBookings();
@@ -1856,6 +1761,8 @@ namespace Client
                 int i = Program.DB.Update("DELETE FROM Jobs WHERE ID=@id;");
                 if (i > 0)
                 {
+                    SharedData.iBookingID = 0;
+                    rBooking = null;
                     LoadBookingsGrid();
                     LoadBookings();
                     return;
@@ -1903,6 +1810,8 @@ namespace Client
                 int i = Program.DB.Update("DELETE FROM Jobs WHERE ID=@id;");
                 if (i > 0)
                 {
+                    SharedData.iEnquiryID = 0;
+                    rEnquiry = null;
                     LoadEnquiries();
                     return;
                 }
@@ -1950,6 +1859,8 @@ namespace Client
                 int i = Program.DB.Update("DELETE FROM Courses WHERE ID=@id;");
                 if (i > 0)
                 {
+                    SharedData.iCourseID = 0;
+                    rCourse = null;
                     LoadCourses();
                     return;
                 }
@@ -1975,7 +1886,10 @@ namespace Client
                 int i = Program.DB.Update("DELETE FROM Companies WHERE ID=@id;");
                 if (i > 0)
                 {
+                    SharedData.iCompanyID = 0;
+                    rCompany = null;
                     LoadCompanies();
+                    CompanyListInit();
                     return;
                 }
 
@@ -2000,6 +1914,8 @@ namespace Client
                 int i = Program.DB.Update("DELETE FROM Contacts WHERE ID=@id;");
                 if (i > 0)
                 {
+                    SharedData.iContactID = 0;
+                    rContact = null;
                     LoadContacts();
                     return;
                 }
@@ -2194,8 +2110,21 @@ namespace Client
                         txtCompanyPhone.Text = c.Tables[0].Rows[0]["Phones"].ToString();
                         txtCompanyEmail.Text = c.Tables[0].Rows[0]["Emails"].ToString();
                         txtCompanyAddress.Text = c.Tables[0].Rows[0]["Addresses"].ToString();
-                        txtCompanyContact.Text = c.Tables[0].Rows[0]["Contacts"].ToString();
                         txtCompanyNotes.Text = c.Tables[0].Rows[0]["Notes"].ToString();
+
+                        if (c.Tables[0].Rows[0]["Contacts"].ToString().Trim().Length > 0)
+                        {
+                            AutoCompleteStringCollection asContacts = new AutoCompleteStringCollection();
+                            DataSet t = Program.DB.SelectAll("SELECT NameFirst,NameLast FROM Contacts WHERE ID IN (" + c.Tables[0].Rows[0]["Contacts"].ToString() + ");");
+                            if (t.Tables.Count > 0 && t.Tables[0].Rows.Count > 0)
+                            {
+                                foreach (DataRow r in t.Tables[0].Rows)
+                                {
+                                    asContacts.Add(r["NameFirst"].ToString() + " " + r["NameLast"].ToString());
+                                }
+                            }
+                            txtCompanyContact.AutoCompleteCustomSource = asContacts;
+                        }
                     }
                 }
             }
@@ -2235,6 +2164,8 @@ namespace Client
                         txtContactNameLast.Text = c.Tables[0].Rows[0]["NameLast"].ToString();
                         txtContactPhone.Text = c.Tables[0].Rows[0]["Phones"].ToString();
                         txtContactEmail.Text = c.Tables[0].Rows[0]["Emails"].ToString();
+                        txtContactAddress.Text = c.Tables[0].Rows[0]["Addresses"].ToString();
+                        txtContactNotes.Text = c.Tables[0].Rows[0]["Notes"].ToString();
                     }
                 }
             }
@@ -2256,6 +2187,27 @@ namespace Client
                 case "Bookings":
                     LoadBookings();
                     LoadBookingsGrid();
+                    switch (iSelectedBookingsView)
+                    {
+                        case 0:
+                        case 1:
+                        case 2:
+                        case 3:
+                            pBookingsGrid.Visible = false;
+                            pBookingsList.Visible = false;
+                            pBookingsCalendar.Visible = true;
+                            break;
+                        case 4:
+                            pBookingsGrid.Visible = true;
+                            pBookingsList.Visible = false;
+                            pBookingsCalendar.Visible = false;
+                            break;
+                        case 5:
+                            pBookingsGrid.Visible = false;
+                            pBookingsList.Visible = true;
+                            pBookingsCalendar.Visible = false;
+                            break;
+                    }
                     break;
                 case "Enquiries":
                     LoadEnquiries();
@@ -2298,6 +2250,12 @@ namespace Client
         {
             Form frmUsers = new frmUsers();
             frmUsers.ShowDialog();
+        }
+
+        private void cbxContactNameTitle_SelectionChangeCommitted_1(object sender, EventArgs e)
+        {
+            DevComponents.Editors.ComboItem i = (DevComponents.Editors.ComboItem)cbxContactNameTitle.SelectedItem;
+            txtContactNameTitle.Text = i.Value.ToString();
         }
     }
 }

@@ -22,21 +22,14 @@ namespace Client
             DataSet ds = Program.DB.SelectAll("SELECT ID,Name FROM Companies;");
             if (ds.Tables.Count > 0)
             {
-                AutoCompleteStringCollection asCompanies = new AutoCompleteStringCollection();
                 foreach (DataRow r in ds.Tables[0].Rows)
                 {
-                    asCompanies.Add(r["Name"].ToString());
+                    DevComponents.Editors.ComboItem i = new DevComponents.Editors.ComboItem();
+                    i.Tag = r["ID"];
+                    i.Text = r["Name"].ToString();
+                    cbxCompany.Items.Add(i);
                 }
-                txtCompany.AutoCompleteCustomSource = asCompanies;
             }
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            txtCompany.Text = "";
-            txtCompany.Text = "";
-            ActiveControl = txtCompany;
-            txtCompany.Focus();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -47,31 +40,25 @@ namespace Client
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtCompany.Text.Trim() == "")
+            if (cbxCompany.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Please enter a name to continue.", "Name", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 return;
             }
 
-            int iID = 0;
-            if (txtCompany.Text.Trim().Length == 0)
+            if (cbxCompany.SelectedIndex > -1)
+            {
+                DevComponents.Editors.ComboItem i = (DevComponents.Editors.ComboItem)cbxCompany.SelectedItem;
+                SharedData.iCompanyID = Convert.ToInt32(i.Tag);
+            }
+            else
             {
                 string sDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-                string sInsertCols = "", sInsertVals = "";
+                Program.DB.AddParameter("Name", cbxCompany.Text.Trim());
+                Program.DB.AddParameter("Entered", sDate);
+                Program.DB.AddParameter("Modified", sDate);
 
-                sInsertCols += sInsertCols != "" ? ",Name" : "Name";
-                sInsertVals += sInsertVals != "" ? ",@name" : "@name";
-                Program.DB.AddParameter("@name", txtCompany.Text.Trim());
-
-                sInsertCols += sInsertCols != "" ? ",Modified" : "Modified";
-                sInsertVals += sInsertVals != "" ? ",@mod" : "@mod";
-                Program.DB.AddParameter("@mod", sDate);
-
-                sInsertCols += sInsertCols != "" ? ",Entered" : "Entered";
-                sInsertVals += sInsertVals != "" ? ",@ent" : "@ent";
-                Program.DB.AddParameter("@ent", sDate);
-
-                iID = Program.DB.Insert("INSERT INTO Companies (" + sInsertCols + ") VALUES (" + sInsertVals + ")");
+                int iID = Program.DB.Insert("INSERT INTO Companies (Name,Entered,Modified) VALUES (@Name,@Entered,@Modified)");
                 if (iID < 1)
                 {
                     MessageBox.Show("The addition failed. Please try again.", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -81,15 +68,6 @@ namespace Client
                 {
                     MessageBox.Show("The addition was successful.", "Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     SharedData.iCompanyID = iID;
-                }
-            }
-            else
-            {
-                Program.DB.AddParameter("Name", txtCompany.Text.Trim());
-                DataSet ds = Program.DB.SelectAll("SELECT ID,NameFirst,NameLast FROM Companies WHERE Name=@Name;");
-                if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
-                {
-                    SharedData.iCompanyID = Convert.ToInt32(ds.Tables[0].Rows[0]["ID"]);
                 }
             }
 

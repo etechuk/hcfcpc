@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.lblName = new DevComponents.DotNetBar.LabelX();
-            this.txtCompany = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.btnCancel = new DevComponents.DotNetBar.ButtonX();
             this.btnSave = new DevComponents.DotNetBar.ButtonX();
+            this.cbxCompany = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.SuspendLayout();
             // 
             // lblName
@@ -49,26 +49,6 @@
             this.lblName.TabIndex = 18;
             this.lblName.Text = "Company Name:";
             // 
-            // txtCompany
-            // 
-            this.txtCompany.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCompany.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txtCompany.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtCompany.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtCompany.Border.Class = "TextBoxBorder";
-            this.txtCompany.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtCompany.DisabledBackColor = System.Drawing.Color.White;
-            this.txtCompany.ForeColor = System.Drawing.Color.Black;
-            this.txtCompany.Location = new System.Drawing.Point(126, 23);
-            this.txtCompany.Name = "txtCompany";
-            this.txtCompany.PreventEnterBeep = true;
-            this.txtCompany.Size = new System.Drawing.Size(336, 25);
-            this.txtCompany.TabIndex = 17;
-            // 
             // btnCancel
             // 
             this.btnCancel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -78,7 +58,7 @@
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(68, 34);
             this.btnCancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnCancel.TabIndex = 20;
+            this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -91,9 +71,24 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(115, 34);
             this.btnSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnSave.TabIndex = 19;
+            this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Save / Choose";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // cbxCompany
+            // 
+            this.cbxCompany.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbxCompany.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.cbxCompany.DisplayMember = "Text";
+            this.cbxCompany.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxCompany.ForeColor = System.Drawing.Color.Black;
+            this.cbxCompany.FormattingEnabled = true;
+            this.cbxCompany.ItemHeight = 19;
+            this.cbxCompany.Location = new System.Drawing.Point(127, 23);
+            this.cbxCompany.Name = "cbxCompany";
+            this.cbxCompany.Size = new System.Drawing.Size(335, 25);
+            this.cbxCompany.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cbxCompany.TabIndex = 1;
             // 
             // frmCompanies
             // 
@@ -101,10 +96,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.CaptionFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClientSize = new System.Drawing.Size(474, 117);
+            this.Controls.Add(this.cbxCompany);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblName);
-            this.Controls.Add(this.txtCompany);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -120,9 +115,9 @@
         }
 
         #endregion
-        private DevComponents.DotNetBar.Controls.TextBoxX txtCompany;
         private DevComponents.DotNetBar.LabelX lblName;
         private DevComponents.DotNetBar.ButtonX btnCancel;
         private DevComponents.DotNetBar.ButtonX btnSave;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx cbxCompany;
     }
 }

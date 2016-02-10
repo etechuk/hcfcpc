@@ -32,11 +32,11 @@
             this.btnCancel = new DevComponents.DotNetBar.ButtonX();
             this.btnSave = new DevComponents.DotNetBar.ButtonX();
             this.lblCompany = new DevComponents.DotNetBar.LabelX();
-            this.txtContacts = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtCompanies = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtNameFirst = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.txtNameLast = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.cbxContact = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.SuspendLayout();
             // 
             // lblContacts
@@ -96,26 +96,6 @@
             this.lblCompany.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.lblCompany.TabIndex = 14;
             this.lblCompany.Text = "Company:";
-            // 
-            // txtContacts
-            // 
-            this.txtContacts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtContacts.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txtContacts.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtContacts.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtContacts.Border.Class = "TextBoxBorder";
-            this.txtContacts.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtContacts.DisabledBackColor = System.Drawing.Color.White;
-            this.txtContacts.ForeColor = System.Drawing.Color.Black;
-            this.txtContacts.Location = new System.Drawing.Point(123, 23);
-            this.txtContacts.Name = "txtContacts";
-            this.txtContacts.PreventEnterBeep = true;
-            this.txtContacts.Size = new System.Drawing.Size(315, 25);
-            this.txtContacts.TabIndex = 17;
             // 
             // txtCompanies
             // 
@@ -191,17 +171,32 @@
             this.txtNameLast.TabIndex = 21;
             this.txtNameLast.TextChanged += new System.EventHandler(this.txtNameLast_TextChanged);
             // 
+            // cbxContact
+            // 
+            this.cbxContact.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbxContact.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.cbxContact.DisplayMember = "Text";
+            this.cbxContact.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxContact.ForeColor = System.Drawing.Color.Black;
+            this.cbxContact.FormattingEnabled = true;
+            this.cbxContact.ItemHeight = 19;
+            this.cbxContact.Location = new System.Drawing.Point(123, 23);
+            this.cbxContact.Name = "cbxContact";
+            this.cbxContact.Size = new System.Drawing.Size(315, 25);
+            this.cbxContact.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cbxContact.TabIndex = 22;
+            // 
             // frmContacts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CaptionFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClientSize = new System.Drawing.Size(450, 179);
+            this.Controls.Add(this.cbxContact);
             this.Controls.Add(this.txtNameLast);
             this.Controls.Add(this.txtNameFirst);
             this.Controls.Add(this.labelX1);
             this.Controls.Add(this.txtCompanies);
-            this.Controls.Add(this.txtContacts);
             this.Controls.Add(this.lblCompany);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
@@ -225,10 +220,10 @@
         private DevComponents.DotNetBar.ButtonX btnCancel;
         private DevComponents.DotNetBar.ButtonX btnSave;
         private DevComponents.DotNetBar.LabelX lblCompany;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtContacts;
         private DevComponents.DotNetBar.Controls.TextBoxX txtCompanies;
         private DevComponents.DotNetBar.Controls.TextBoxX txtNameFirst;
         private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.DotNetBar.Controls.TextBoxX txtNameLast;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx cbxContact;
     }
 }

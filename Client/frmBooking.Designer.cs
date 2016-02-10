@@ -167,10 +167,10 @@
             this.tc.ControlBox.MenuBox,
             this.tc.ControlBox.CloseBox});
             this.tc.ControlBox.Visible = false;
+            this.tc.Controls.Add(this.superTabControlPanel4);
             this.tc.Controls.Add(this.superTabControlPanel1);
             this.tc.Controls.Add(this.superTabControlPanel6);
             this.tc.Controls.Add(this.superTabControlPanel5);
-            this.tc.Controls.Add(this.superTabControlPanel4);
             this.tc.Controls.Add(this.superTabControlPanel3);
             this.tc.Controls.Add(this.superTabControlPanel2);
             this.tc.ForeColor = System.Drawing.Color.Black;
@@ -790,7 +790,6 @@
             this.btnSaveComment.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSaveComment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSaveComment.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSaveComment.Enabled = false;
             this.btnSaveComment.Location = new System.Drawing.Point(489, 148);
             this.btnSaveComment.Name = "btnSaveComment";
             this.btnSaveComment.Size = new System.Drawing.Size(111, 34);

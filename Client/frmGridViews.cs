@@ -173,9 +173,9 @@ namespace Client
                                 {
                                     foreach (TreeNode nc in n.Nodes)
                                     {
-                                        if (nc.Checked)
+                                        if (sRooms.Contains(nc.Tag.ToString()))
                                         {
-                                            n.Checked = true;
+                                            nc.Checked = true;
                                         }
                                     }
                                 }
@@ -187,7 +187,7 @@ namespace Client
                                 {
                                     foreach (TreeNode nc in n.Nodes)
                                     {
-                                        n.Checked = false;
+                                        nc.Checked = false;
                                     }
                                 }
                             }
