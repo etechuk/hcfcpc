@@ -35,6 +35,15 @@
             this.mUserRemove = new System.Windows.Forms.ToolStripMenuItem();
             this.sc = new DevComponents.DotNetBar.SuperTabControl();
             this.tpG = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.cbxStatus = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.cbxiStatusEn = new DevComponents.Editors.ComboItem();
+            this.cbxiStatusDi = new DevComponents.Editors.ComboItem();
+            this.cbxiStatusBa = new DevComponents.Editors.ComboItem();
+            this.cbxGroup = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.cbxiGroupUser = new DevComponents.Editors.ComboItem();
+            this.cbxiGroupAdmin = new DevComponents.Editors.ComboItem();
+            this.cbxiGroupSuper = new DevComponents.Editors.ComboItem();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.btnPass = new DevComponents.DotNetBar.ButtonX();
             this.txtPass = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtUser = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -65,15 +74,6 @@
             this.tiN = new DevComponents.DotNetBar.SuperTabItem();
             this.btnSave = new DevComponents.DotNetBar.ButtonX();
             this.btnCancel = new DevComponents.DotNetBar.ButtonX();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.cbxGroup = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.cbxStatus = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.cbxiGroupUser = new DevComponents.Editors.ComboItem();
-            this.cbxiGroupAdmin = new DevComponents.Editors.ComboItem();
-            this.cbxiGroupSuper = new DevComponents.Editors.ComboItem();
-            this.cbxiStatusEn = new DevComponents.Editors.ComboItem();
-            this.cbxiStatusDi = new DevComponents.Editors.ComboItem();
-            this.cbxiStatusBa = new DevComponents.Editors.ComboItem();
             this.m.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sc)).BeginInit();
             this.sc.SuspendLayout();
@@ -103,6 +103,7 @@
             // 
             // m
             // 
+            this.m.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.m.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mUserAdd,
             this.mUserRemove});
@@ -185,6 +186,87 @@
             this.tpG.Size = new System.Drawing.Size(505, 321);
             this.tpG.TabIndex = 1;
             this.tpG.TabItem = this.tiG;
+            // 
+            // cbxStatus
+            // 
+            this.cbxStatus.DisplayMember = "Text";
+            this.cbxStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxStatus.Enabled = false;
+            this.cbxStatus.ForeColor = System.Drawing.Color.Black;
+            this.cbxStatus.FormattingEnabled = true;
+            this.cbxStatus.ItemHeight = 19;
+            this.cbxStatus.Items.AddRange(new object[] {
+            this.cbxiStatusEn,
+            this.cbxiStatusDi,
+            this.cbxiStatusBa});
+            this.cbxStatus.Location = new System.Drawing.Point(299, 51);
+            this.cbxStatus.Name = "cbxStatus";
+            this.cbxStatus.Size = new System.Drawing.Size(191, 25);
+            this.cbxStatus.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cbxStatus.TabIndex = 4;
+            // 
+            // cbxiStatusEn
+            // 
+            this.cbxiStatusEn.Text = "Enabled";
+            this.cbxiStatusEn.Value = "1";
+            // 
+            // cbxiStatusDi
+            // 
+            this.cbxiStatusDi.Text = "Disabled";
+            this.cbxiStatusDi.Value = "2";
+            // 
+            // cbxiStatusBa
+            // 
+            this.cbxiStatusBa.Text = "Banned";
+            this.cbxiStatusBa.Value = "3";
+            // 
+            // cbxGroup
+            // 
+            this.cbxGroup.DisplayMember = "Text";
+            this.cbxGroup.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxGroup.Enabled = false;
+            this.cbxGroup.ForeColor = System.Drawing.Color.Black;
+            this.cbxGroup.FormattingEnabled = true;
+            this.cbxGroup.ItemHeight = 19;
+            this.cbxGroup.Items.AddRange(new object[] {
+            this.cbxiGroupUser,
+            this.cbxiGroupAdmin,
+            this.cbxiGroupSuper});
+            this.cbxGroup.Location = new System.Drawing.Point(151, 51);
+            this.cbxGroup.Name = "cbxGroup";
+            this.cbxGroup.Size = new System.Drawing.Size(142, 25);
+            this.cbxGroup.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cbxGroup.TabIndex = 3;
+            // 
+            // cbxiGroupUser
+            // 
+            this.cbxiGroupUser.Text = "General User";
+            this.cbxiGroupUser.Value = "1";
+            // 
+            // cbxiGroupAdmin
+            // 
+            this.cbxiGroupAdmin.Text = "Administrator";
+            this.cbxiGroupAdmin.Value = "2";
+            // 
+            // cbxiGroupSuper
+            // 
+            this.cbxiGroupSuper.Text = "Super-Admin";
+            this.cbxiGroupSuper.Value = "3";
+            // 
+            // labelX1
+            // 
+            this.labelX1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // 
+            // 
+            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX1.ForeColor = System.Drawing.Color.Black;
+            this.labelX1.Location = new System.Drawing.Point(14, 51);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(131, 23);
+            this.labelX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.labelX1.TabIndex = 423;
+            this.labelX1.Text = "User Group/Status:";
             // 
             // btnPass
             // 
@@ -572,99 +654,17 @@
             this.btnCancel.Text = "Cancel";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // labelX1
-            // 
-            this.labelX1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            // 
-            // 
-            // 
-            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.ForeColor = System.Drawing.Color.Black;
-            this.labelX1.Location = new System.Drawing.Point(14, 51);
-            this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(131, 23);
-            this.labelX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.labelX1.TabIndex = 423;
-            this.labelX1.Text = "User Group/Status:";
-            // 
-            // cbxGroup
-            // 
-            this.cbxGroup.DisplayMember = "Text";
-            this.cbxGroup.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbxGroup.Enabled = false;
-            this.cbxGroup.ForeColor = System.Drawing.Color.Black;
-            this.cbxGroup.FormattingEnabled = true;
-            this.cbxGroup.ItemHeight = 19;
-            this.cbxGroup.Items.AddRange(new object[] {
-            this.cbxiGroupUser,
-            this.cbxiGroupAdmin,
-            this.cbxiGroupSuper});
-            this.cbxGroup.Location = new System.Drawing.Point(151, 51);
-            this.cbxGroup.Name = "cbxGroup";
-            this.cbxGroup.Size = new System.Drawing.Size(142, 25);
-            this.cbxGroup.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cbxGroup.TabIndex = 3;
-            // 
-            // cbxStatus
-            // 
-            this.cbxStatus.DisplayMember = "Text";
-            this.cbxStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbxStatus.Enabled = false;
-            this.cbxStatus.ForeColor = System.Drawing.Color.Black;
-            this.cbxStatus.FormattingEnabled = true;
-            this.cbxStatus.ItemHeight = 19;
-            this.cbxStatus.Items.AddRange(new object[] {
-            this.cbxiStatusEn,
-            this.cbxiStatusDi,
-            this.cbxiStatusBa});
-            this.cbxStatus.Location = new System.Drawing.Point(299, 51);
-            this.cbxStatus.Name = "cbxStatus";
-            this.cbxStatus.Size = new System.Drawing.Size(191, 25);
-            this.cbxStatus.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cbxStatus.TabIndex = 4;
-            // 
-            // cbxiGroupUser
-            // 
-            this.cbxiGroupUser.Text = "General User";
-            this.cbxiGroupUser.Value = "1";
-            // 
-            // cbxiGroupAdmin
-            // 
-            this.cbxiGroupAdmin.Text = "Administrator";
-            this.cbxiGroupAdmin.Value = "2";
-            // 
-            // cbxiGroupSuper
-            // 
-            this.cbxiGroupSuper.Text = "Super-Admin";
-            this.cbxiGroupSuper.Value = "3";
-            // 
-            // cbxiStatusEn
-            // 
-            this.cbxiStatusEn.Text = "Enabled";
-            this.cbxiStatusEn.Value = "1";
-            // 
-            // cbxiStatusDi
-            // 
-            this.cbxiStatusDi.Text = "Disabled";
-            this.cbxiStatusDi.Value = "2";
-            // 
-            // cbxiStatusBa
-            // 
-            this.cbxiStatusBa.Text = "Banned";
-            this.cbxiStatusBa.Value = "3";
-            // 
             // frmUsers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.CaptionFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.CaptionFont = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ClientSize = new System.Drawing.Size(795, 421);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.sc);
             this.Controls.Add(this.tv);
             this.DoubleBuffered = true;
-            this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

@@ -82,6 +82,7 @@
             // 
             // m
             // 
+            this.m.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.m.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mAdd,
             this.mRemove});
@@ -331,6 +332,8 @@
             this.tv.CheckBoxes = true;
             this.tv.Enabled = false;
             this.tv.ForeColor = System.Drawing.Color.Black;
+            this.tv.FullRowSelect = true;
+            this.tv.HideSelection = false;
             this.tv.Location = new System.Drawing.Point(482, 138);
             this.tv.Name = "tv";
             this.tv.Size = new System.Drawing.Size(290, 291);
@@ -353,9 +356,8 @@
             // 
             // frmGridViews
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.CaptionFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.CaptionFont = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ClientSize = new System.Drawing.Size(784, 481);
             this.Controls.Add(this.lblRooms);
             this.Controls.Add(this.tv);
@@ -369,7 +371,7 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.g);
             this.DoubleBuffered = true;
-            this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;

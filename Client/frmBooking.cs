@@ -98,9 +98,12 @@ namespace Client
                     DataRow row = ds.Tables[0].Rows[0];
                     if (row.ItemArray.Length > 0)
                     {
+                        iNextID = Convert.ToInt32(row["Job"]);
+
+                        DataSet d;
                         if (row["BCompany"] != DBNull.Value && row["BCompany"].ToString().All(char.IsDigit))
                         {
-                            DataSet d = Program.DB.SelectAll("SELECT Name FROM Companies WHERE ID=" + row["BCompany"].ToString() + ";");
+                            d = Program.DB.SelectAll("SELECT Name FROM Companies WHERE ID=" + row["BCompany"].ToString() + ";");
                             if (d.Tables.Count > 0 && d.Tables[0].Rows.Count > 0)
                             {
                                 txtCompany.Text = d.Tables[0].Rows[0]["Name"].ToString();
@@ -111,7 +114,7 @@ namespace Client
                         {
                             AutoCompleteStringCollection asContacts = new AutoCompleteStringCollection();
                             Program.DB.AddParameter("Company", row["BCompany"].ToString());
-                            DataSet d = Program.DB.SelectAll("SELECT ID,NameTitle,NameFirst,NameLast FROM Contacts WHERE Company=@Company;");
+                            d = Program.DB.SelectAll("SELECT ID,NameTitle,NameFirst,NameLast FROM Contacts WHERE Company=@Company;");
                             if (d.Tables.Count > 0 && d.Tables[0].Rows.Count > 0)
                             {
                                 string sSelected = "";
@@ -231,7 +234,27 @@ namespace Client
                         cbxLunchAttendees.SelectedIndex = cbxLunchAttendees.FindStringExact(row["BLunchNumber"].ToString());
                         dtLunchTime.Text = row["BLunchTime"].ToString().Length > 0 ? row["BLunchTime"].ToString() : "";
                         txtLunchDiet.Text = row["BLunchDiet"].ToString();
-                        txtComments.Text = row["BComments"].ToString();
+
+                        d = Program.DB.SelectAll("SELECT ID,Entered,UserID,Comment FROM Comments WHERE Job=" + iNextID + ";");
+                        if (d.Tables.Count > 0 && d.Tables[0].Rows.Count > 0)
+                        {
+                            foreach (DataRow r in d.Tables[0].Rows)
+                            {
+                                string sUser = "";
+                                if (r["UserID"] != DBNull.Value && r["UserID"].ToString() != "")
+                                {
+                                    DataSet du = Program.DB.SelectAll("SELECT NameFirst,NameLast FROM Users WHERE ID=" + r["UserID"].ToString() + ";");
+                                    if (du.Tables.Count > 0 && du.Tables[0].Rows.Count > 0)
+                                    {
+                                        sUser = du.Tables[0].Rows[0]["NameFirst"].ToString() + " " + du.Tables[0].Rows[0]["NameFirst"].ToString();
+                                    }
+                                }
+
+                                GridRow gr = new GridRow(new object[] { r["Entered"].ToString(), sUser, r["Comment"].ToString() });
+                                gr.Tag = r["ID"];
+                                gComments.PrimaryGrid.Rows.Add(gr);
+                            }
+                        }
 
                         txtInvoiceAddress.Text = row["BInvoiceAddress"].ToString();
                         foreach (DevComponents.Editors.ComboItem ci in cbxPaymentMethod.Items)
@@ -246,7 +269,7 @@ namespace Client
 
                         if (row["BUser"] != DBNull.Value && row["BUser"].ToString().All(char.IsDigit))
                         {
-                            DataSet d = Program.DB.SelectAll("SELECT NameFirst,NameLast FROM Users WHERE ID=" + row["BUser"].ToString() + ";");
+                            d = Program.DB.SelectAll("SELECT NameFirst,NameLast FROM Users WHERE ID=" + row["BUser"].ToString() + ";");
                             if (d.Tables.Count > 0 && d.Tables[0].Rows.Count == 1)
                             {
                                 lblUsers.Text = "Added by: " + d.Tables[0].Rows[0]["NameFirst"].ToString() + " " + d.Tables[0].Rows[0]["NameLast"].ToString();
@@ -256,7 +279,7 @@ namespace Client
 
                         if (row["BUserMod"] != DBNull.Value && row["BUserMod"].ToString().All(char.IsDigit))
                         {
-                            DataSet d = Program.DB.SelectAll("SELECT NameFirst,NameLast FROM Users WHERE ID=" + row["BUserMod"].ToString() + ";");
+                            d = Program.DB.SelectAll("SELECT NameFirst,NameLast FROM Users WHERE ID=" + row["BUserMod"].ToString() + ";");
                             if (d.Tables.Count > 0 && d.Tables[0].Rows.Count == 1)
                             {
                                 lblUsers.Text += Environment.NewLine + "Last modified by: " + d.Tables[0].Rows[0]["NameFirst"].ToString() + " " + d.Tables[0].Rows[0]["NameLast"].ToString();
@@ -285,6 +308,23 @@ namespace Client
                                 });
                                 cr.Tag = r["ID"];
                             }
+                        }
+                    }
+                }
+
+                string sPath = Properties.Settings.Default.PathToData + @"\Bookings\" + SharedData.iBookingID.ToString(sNextIDFormat);
+                if (Directory.Exists(sPath))
+                {
+                    string[] sFiles = Directory.GetFiles(sPath);
+                    foreach (string sFile in sFiles)
+                    {
+                        if (File.Exists(sFile))
+                        {
+                            FileInfo inf = new FileInfo(sFile);
+                            ListViewItem i = new ListViewItem();
+                            i.Tag = sFile;
+                            i.Text = inf.Name;
+                            lvDocuments.Items.Add(i);
                         }
                     }
                 }
@@ -693,14 +733,6 @@ namespace Client
                 Program.DB.AddParameter("@lunchdiet", txtLunchDiet.Text.Trim());
             }
 
-            if (txtComments.Text.Trim() != "")
-            {
-                sUpdateVals += ",BComments=@comments";
-                sInsertCols += ",BComments";
-                sInsertVals += ",@comments";
-                Program.DB.AddParameter("@comments", txtComments.Text.Trim());
-            }
-
             if (txtInvoiceAddress.Text.Trim() != "")
             {
                 sUpdateVals += ",BInvoiceAddress=@invoiceaddress";
@@ -736,6 +768,8 @@ namespace Client
             sInsertVals += ",@mod";
             Program.DB.AddParameter("@mod", sDate);
 
+            bool bFilesExist = false;
+
             if (SharedData.iBookingID < 1)
             {
                 sInsertCols += ",Job";
@@ -758,11 +792,10 @@ namespace Client
                 }
 
                 SharedData.iBookingID = iID;
-                bool bFilesExist = false;
 
                 if (sDocuments.Count > 0)
                 {
-                    string sPath = Properties.Settings.Default.PathToData + "Bookings\\" + iNextID.ToString(sNextIDFormat);
+                    string sPath = Properties.Settings.Default.PathToData + @"\Bookings\" + iID.ToString(sNextIDFormat);
                     if (!Directory.Exists(sPath))
                     {
                         Directory.CreateDirectory(sPath);
@@ -777,7 +810,7 @@ namespace Client
                         {
                             bFilesExist = false;
                             FileInfo inf = new FileInfo(sFile);
-                            if (File.Exists(sPath + inf.Name))
+                            if (File.Exists(sPath + @"\" + inf.Name))
                             {
                                 DialogResult msg = MessageBox.Show("'" + inf.Name + "' already exists.\n\nWould you like to overwrite?", "File exists", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                                 if (msg == DialogResult.Yes)
@@ -787,11 +820,11 @@ namespace Client
                             }
                             if (bFilesExist)
                             {
-                                File.Copy(sFile, sPath + "\\" + inf.Name, true);
+                                File.Copy(sFile, sPath + @"\" + inf.Name, true);
                             }
                             else
                             {
-                                File.Copy(sFile, sPath + "\\" + inf.Name, false);
+                                File.Copy(sFile, sPath + @"\" + inf.Name, false);
                             }
                         }
                     }
@@ -802,51 +835,75 @@ namespace Client
             else
             {
                 int iID = Program.DB.Update("UPDATE Jobs SET " + sUpdateVals + " WHERE ID=" + SharedData.iBookingID);
-
                 if (iID < 1)
                 {
                     MessageBox.Show("The update failed. Please try again.", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                else
-                {
-                    if (sDocuments.Count > 0)
-                    {
-                        bool bFilesExist = false;
 
-                        string sPath = Properties.Settings.Default.PathToData + "Bookings\\" + iNextID.ToString(sNextIDFormat);
+                if (sDocuments.Count > 0)
+                {
+                    string sPath = Properties.Settings.Default.PathToData + @"\Bookings\" + iID.ToString(sNextIDFormat);
+                    if (!Directory.Exists(sPath))
+                    {
+                        Directory.CreateDirectory(sPath);
                         if (!Directory.Exists(sPath))
                         {
-                            Directory.CreateDirectory(sPath);
-                            if (!Directory.Exists(sPath))
-                            {
-                                MessageBox.Show("The default location for linked documents\ncould't be created. Please make sure the folder\nis writable, or change the location in the\nsettings, and try again.", "Permissions", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            }
+                            MessageBox.Show("The default location for linked documents\ncould't be created. Please make sure the folder\nis writable, or change the location in the\nsettings, and try again.", "Permissions", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         }
-                        else
+                    }
+                    else
+                    {
+                        foreach (string sFile in sDocuments)
                         {
-                            foreach (string sFile in sDocuments)
+                            bFilesExist = false;
+                            FileInfo inf = new FileInfo(sFile);
+                            if (File.Exists(sPath + @"\" + inf.Name))
                             {
-                                bFilesExist = false;
-                                FileInfo inf = new FileInfo(sFile);
-                                if (!File.Exists(sPath + "\\" + inf.Name))
-                                {
-                                    File.Copy(sFile, sPath + "\\" + inf.Name);
-                                }
-                                else
+                                DialogResult msg = MessageBox.Show("'" + inf.Name + "' already exists.\n\nWould you like to overwrite?", "File exists", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                if (msg == DialogResult.Yes)
                                 {
                                     bFilesExist = true;
                                 }
                             }
-
                             if (bFilesExist)
                             {
-                                MessageBox.Show("Some files already exists in the data folder.\n\nTo replace the files, find the related\ndata folder and overwrite them manually.", "File exists", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                                File.Copy(sFile, sPath + @"\" + inf.Name, true);
+                            }
+                            else
+                            {
+                                File.Copy(sFile, sPath + @"\" + inf.Name, false);
                             }
                         }
                     }
+                }
 
-                    MessageBox.Show("The update was successful.", "Updated", (MessageBoxButtons.OK), (MessageBoxIcon.Information));
+                MessageBox.Show("The update was successful.", "Updated", (MessageBoxButtons.OK), (MessageBoxIcon.Information));
+            }
+
+            if (gComments.PrimaryGrid.Rows.Count > 0)
+            {
+                foreach (GridRow r in gComments.PrimaryGrid.Rows)
+                {
+                    if (r.Tag != null && r.Tag.ToString() != "")
+                    {
+                        DataSet d = Program.DB.SelectAll("SELECT ID FROM Comments WHERE ID=" + r.Tag.ToString() + ";");
+                        if (d.Tables.Count > 0 && d.Tables[0].Rows.Count > 0)
+                        {
+                            Program.DB.AddParameter("Comment", r.Cells[2].Value.ToString());
+                            Program.DB.AddParameter("Modified", DateTime.Now);
+                            int iCID = Program.DB.Update("UPDATE Comments SET Comment=@Comment,Modified=@Modified WHERE ID=" + r.Tag.ToString() + ";");
+                        }
+                    }
+                    else
+                    {
+                        Program.DB.AddParameter("Job", iNextID);
+                        Program.DB.AddParameter("UserID", Program.Global.UserID);
+                        Program.DB.AddParameter("Comment", r.Cells[2].Value.ToString());
+                        Program.DB.AddParameter("Entered", DateTime.Now);
+                        Program.DB.AddParameter("Modified", DateTime.Now);
+                        int iCID = Program.DB.Update("INSERT INTO Comments (Job,UserID,Comment,Entered,Modified) VALUES (@Job,@UserID,@Comment,@Entered,@Modified)");
+                    }
                 }
             }
 
@@ -886,11 +943,25 @@ namespace Client
                     return;
                 }
                 lvDocuments.Items.Add(inf.Name);
-                sDocuments.Add(inf.FullName);
+                sDocuments.Add(ofd.FileName);
             }
         }
 
         #endregion
+
+        private void lvDocuments_ItemActivate(object sender, EventArgs e)
+        {
+            string sRegdApp, sFile = lvDocuments.SelectedItems[0].Tag.ToString();
+            if (sFile.Length > 0)
+            {
+                FileInfo inf = new FileInfo(sFile);
+                bool bAppExists = Program.Utils.TryRegisteredApplication(inf.Extension, out sRegdApp);
+                if (bAppExists)
+                {
+                    System.Diagnostics.Process.Start(sFile);
+                }
+            }
+        }
 
         private void gComments_RowActivated(object sender, GridRowActivatedEventArgs e)
         {
@@ -906,17 +977,9 @@ namespace Client
             }
             else if (e.MouseEventArgs.Button == MouseButtons.Left)
             {
-                if (e.GridRow.RowIndex > -1 && e.MouseEventArgs.Button == MouseButtons.Left)
+                if (rComment != null && e.MouseEventArgs.Button == MouseButtons.Left)
                 {
-                    GridElement row = gComments.PrimaryGrid.Rows[e.GridRow.RowIndex];
-
-                    Program.DB.AddParameter("ID", row.Tag);
-                    DataSet c = Program.DB.SelectAll("SELECT ID,Comment FROM Comments WHERE ID=@ID");
-                    if (c.Tables.Count > 0 && c.Tables[0].Rows.Count > 0)
-                    {
-                        SharedData.iCommentID = Convert.ToInt32(c.Tables[0].Rows[0]["ID"]);
-                        txtComments.Text = c.Tables[0].Rows[0]["Comment"].ToString();
-                    }
+                    txtComment.Text = rComment.Cells[2].Value.ToString();
                 }
             }
         }
@@ -932,38 +995,48 @@ namespace Client
 
         private void mCommentsAdd_Click(object sender, EventArgs e)
         {
-            btnSaveComment.Visible = true;
+            rComment = null;
+            txtComment.Text = "";
+            txtComment.Enabled = true;
+            gComments.Enabled = false;
+            btnCommentSave.Enabled = true;
+            btnCommentCancel.Enabled = true;
         }
 
-        private void btnSaveComment_Click(object sender, EventArgs e)
+        private void btnCommentSave_Click(object sender, EventArgs e)
         {
-            if (txtComments.Text.Trim().Length > 0)
+            if (txtComment.Text.Trim().Length > 0)
             {
-                int iRes = 0;
-                Program.DB.AddParameter("Comment", txtComments.Text.Trim());
-                if (SharedData.iCommentID > 0)
+                if (rComment != null && rComment.Tag.ToString() != "")
                 {
-                    Program.DB.AddParameter("ID", SharedData.iCommentID);
-                    Program.DB.AddParameter("Modified", DateTime.Now);
-                    iRes = Program.DB.Update("UPDATE Comments SET Comment=@Comment,Modified=@Modified WHERE ID=@ID");
+                    rComment.Cells[2].Value = txtComment.Text.Trim();
+                    gComments.PrimaryGrid.Rows[rComment.Index] = rComment;
                 }
                 else
                 {
-                    Program.DB.AddParameter("UserID", Program.Global.UserID);
-                    Program.DB.AddParameter("Entered", DateTime.Now);
-                    iRes = Program.DB.Update("INSERT INTO Comments (Comment,UserID,Entered) VALUES (@Comment,@UserID,@Entered)");
-                }
-
-                if (iRes < 1)
-                {
-                    MessageBox.Show("Couldn't save the comment. Please try again.", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    MessageBox.Show("Comment saved successfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    btnSaveComment.Visible = false;
+                    GridRow r = new GridRow(new object[] {
+                        DateTime.Now.ToString(), Program.Global.UserFirstName + " " + Program.Global.UserLastName, txtComment.Text.Trim()
+                    });
+                    gComments.PrimaryGrid.Rows.Add(r);
                 }
             }
+
+            rComment = null;
+            txtComment.Text = "";
+            txtComment.Enabled = false;
+            btnCommentSave.Enabled = false;
+            btnCommentCancel.Enabled = false;
+            gComments.Enabled = true;
+        }
+
+        private void btnCommentCancel_Click(object sender, EventArgs e)
+        {
+            rComment = null;
+            txtComment.Text = "";
+            txtComment.Enabled = false;
+            btnCommentSave.Enabled = false;
+            btnCommentCancel.Enabled = false;
+            gComments.Enabled = true;
         }
     }
 }

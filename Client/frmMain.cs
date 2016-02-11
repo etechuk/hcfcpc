@@ -176,7 +176,7 @@ namespace Client
             {
                 SharedData.iBookingID = 0;
                 SharedData.dtSelectedStart = Convert.ToDateTime(cvBookings.DateSelectionStart);
-                SharedData.dtSelectedFinish = Convert.ToDateTime(cvBookings.DateSelectionEnd);
+                SharedData.dtSelectedFinish = Convert.ToDateTime(cvBookings.DateSelectionStart);
             }
         }
 
@@ -914,12 +914,12 @@ namespace Client
                 sheet.Cells[0, count].Style.HAlign = ReoGridHorAlign.Center;
                 sheet.Cells[0, count].Style.VAlign = ReoGridVerAlign.Middle;
                 sheet.Cells[0, count].Style.FontName = "Arial";
-                sheet.Cells[0, count].Style.FontSize = 10;
+                sheet.Cells[0, count].Style.FontSize = 8;
                 sheet.Cells[0, count].Style.Bold = true;
                 sheet.Cells[1, count].Style.HAlign = ReoGridHorAlign.Center;
                 sheet.Cells[1, count].Style.VAlign = ReoGridVerAlign.Middle;
                 sheet.Cells[1, count].Style.FontName = "Arial";
-                sheet.Cells[1, count].Style.FontSize = 10;
+                sheet.Cells[1, count].Style.FontSize = 8;
                 sheet.Cells[1, count].Style.Bold = true;
                 count++;
             }
@@ -930,14 +930,14 @@ namespace Client
             sheet[0, 0] = "RAW Zone Planner";
             sheet.Cells[0, 0].Style.VAlign = ReoGridVerAlign.Middle;
             sheet.Cells[0, 0].Style.FontName = "Arial";
-            sheet.Cells[0, 0].Style.FontSize = 10;
+            sheet.Cells[0, 0].Style.FontSize = 8;
             sheet.Cells[0, 0].Style.Bold = true;
 
             sheet.RowHeaders[1].Height = 30;
             sheet[1, 0] = r["Name"].ToString();
             sheet.Cells[1, 0].Style.VAlign = ReoGridVerAlign.Middle;
             sheet.Cells[1, 0].Style.FontName = "Arial";
-            sheet.Cells[1, 0].Style.FontSize = 10;
+            sheet.Cells[1, 0].Style.FontSize = 8;
             sheet.Cells[1, 0].Style.Bold = true;
 
             // Set row headers
@@ -986,7 +986,7 @@ namespace Client
                 sheet.Cells[count, 0].Style.VAlign = ReoGridVerAlign.Middle;
                 sheet.Cells[count, 0].Style.HAlign = ReoGridHorAlign.Left;
                 sheet.Cells[count, 0].Style.FontName = "Arial";
-                sheet.Cells[count, 0].Style.FontSize = 10;
+                sheet.Cells[count, 0].Style.FontSize = 8;
 
                 string sDates = "";
                 foreach (DateTime date in dates)
@@ -2253,6 +2253,12 @@ namespace Client
         {
             Form frmUsers = new frmUsers();
             frmUsers.ShowDialog();
+        }
+
+        private void biToolsRooms_Click(object sender, EventArgs e)
+        {
+            Form frmRooms = new frmRooms();
+            frmRooms.ShowDialog();
         }
 
         private void cbxContactNameTitle_SelectionChangeCommitted_1(object sender, EventArgs e)

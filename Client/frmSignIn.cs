@@ -156,7 +156,7 @@ namespace Client
             cpMain.Visible = true;
             bool go = true;
 
-            DataSet ds = Program.DB.SelectAll("SELECT ID FROM users WHERE Username='" + txtUser.Text.Trim() + "';");
+            DataSet ds = Program.DB.SelectAll("SELECT ID FROM Users WHERE Username='" + txtUser.Text.Trim() + "';");
             if (ds.Tables.Count < 1)
             {
                 MessageBox.Show("The username provided wasn't found.\nPlease check and try again.", "Username", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -165,7 +165,7 @@ namespace Client
 
             if (go)
             {
-                ds = Program.DB.SelectAll("SELECT ID,UserGroup,Status FROM users WHERE Username='" + txtUser.Text.Trim() + "' AND Password='" + txtPass.Text.Trim() + "';");
+                ds = Program.DB.SelectAll("SELECT ID,UserGroup,Status,NameFirst,NameLast FROM Users WHERE Username='" + txtUser.Text.Trim() + "' AND Password='" + txtPass.Text.Trim() + "';");
                 if (ds.Tables.Count < 1)
                 {
                     MessageBox.Show("You've entered an incorrect password.\nPlease check and try again.", "Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -234,6 +234,8 @@ namespace Client
             Program.Global.UserIsAdmin = iUserGroup == 3 || iUserGroup == 4 ? true : false;
             Program.Global.UserID = Convert.ToInt32(ds.Tables[0].Rows[0]["ID"].ToString());
             Program.Global.UserSigned = true;
+            Program.Global.UserFirstName = ds.Tables[0].Rows[0]["NameFirst"].ToString();
+            Program.Global.UserLastName = ds.Tables[0].Rows[0]["NameLast"].ToString();
 
             cpMain.Visible = false;
             txtUser.Enabled = true;

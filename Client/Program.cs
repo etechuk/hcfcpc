@@ -13,6 +13,7 @@ namespace Client
     {
         public static Database DB = new Database();
         public static Globals Global = new Globals();
+        public static Utils Utils = new Utils();
 
         public static bool bSignOut = false;
         public static Form frmCurrent;

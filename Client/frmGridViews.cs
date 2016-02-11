@@ -83,19 +83,18 @@ namespace Client
 
         private void mAdd_Click(object sender, EventArgs e)
         {
+            iID = 0;
             txtName.Text = "";
             dtFrom.Text = "";
             dtTo.Text = "";
-            foreach (TreeNode n in tv.Nodes)
-            {
-                n.Checked = false;
-            }
             txtName.Enabled = true;
             dtFrom.Enabled = true;
             dtTo.Enabled = true;
             tv.Enabled = true;
             btnCancel.Enabled = true;
             btnSave.Enabled = true;
+            bDateStartChosen = true;
+            bDateFinishChosen = true;
             g.Enabled = false;
         }
 
@@ -166,6 +165,7 @@ namespace Client
                         string[] sRooms = r["Rooms"].ToString().Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
                         foreach (TreeNode n in tv.Nodes)
                         {
+                            n.Checked = false;
                             if (sRooms.Contains(n.Tag.ToString()))
                             {
                                 n.Checked = true;
@@ -173,21 +173,11 @@ namespace Client
                                 {
                                     foreach (TreeNode nc in n.Nodes)
                                     {
+                                        nc.Checked = false;
                                         if (sRooms.Contains(nc.Tag.ToString()))
                                         {
                                             nc.Checked = true;
                                         }
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                n.Checked = false;
-                                if (n.Nodes.Count > 0)
-                                {
-                                    foreach (TreeNode nc in n.Nodes)
-                                    {
-                                        nc.Checked = false;
                                     }
                                 }
                             }
@@ -220,6 +210,13 @@ namespace Client
             foreach (TreeNode n in tv.Nodes)
             {
                 n.Checked = false;
+                if (n.Nodes.Count > 0)
+                {
+                    foreach (TreeNode nc in n.Nodes)
+                    {
+                        nc.Checked = false;
+                    }
+                }
             }
             txtName.Enabled = false;
             dtFrom.Enabled = false;
@@ -316,6 +313,20 @@ namespace Client
             }
 
             iID = 0;
+            txtName.Text = "";
+            dtFrom.Text = "";
+            dtTo.Text = "";
+            foreach (TreeNode n in tv.Nodes)
+            {
+                n.Checked = false;
+                if (n.Nodes.Count > 0)
+                {
+                    foreach (TreeNode nc in n.Nodes)
+                    {
+                        nc.Checked = false;
+                    }
+                }
+            }
             txtName.Enabled = false;
             dtFrom.Enabled = false;
             dtTo.Enabled = false;

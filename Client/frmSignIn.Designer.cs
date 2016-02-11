@@ -98,7 +98,7 @@
             // 
             // 
             this.cbxRemember.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.cbxRemember.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxRemember.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.cbxRemember.ForeColor = System.Drawing.Color.Black;
             this.cbxRemember.Location = new System.Drawing.Point(118, 270);
             this.cbxRemember.Name = "cbxRemember";
@@ -130,6 +130,7 @@
             this.btnExit.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnExit.Location = new System.Drawing.Point(232, 383);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 31);
@@ -145,6 +146,7 @@
             this.btnSettings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSettings.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnSettings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSettings.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnSettings.Location = new System.Drawing.Point(3, 383);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(75, 31);
@@ -159,6 +161,7 @@
             this.btnSign.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSign.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnSign.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSign.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnSign.Location = new System.Drawing.Point(118, 310);
             this.btnSign.Name = "btnSign";
             this.btnSign.Size = new System.Drawing.Size(75, 31);
@@ -178,7 +181,7 @@
             this.txtPass.Border.Class = "TextBoxBorder";
             this.txtPass.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtPass.DisabledBackColor = System.Drawing.Color.White;
-            this.txtPass.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPass.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtPass.ForeColor = System.Drawing.Color.Black;
             this.txtPass.Location = new System.Drawing.Point(118, 237);
             this.txtPass.Name = "txtPass";
@@ -195,6 +198,7 @@
             // 
             // 
             this.lblPass.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblPass.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.lblPass.ForeColor = System.Drawing.Color.Black;
             this.lblPass.Location = new System.Drawing.Point(36, 239);
             this.lblPass.Name = "lblPass";
@@ -213,7 +217,7 @@
             this.txtUser.Border.Class = "TextBoxBorder";
             this.txtUser.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtUser.DisabledBackColor = System.Drawing.Color.White;
-            this.txtUser.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUser.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtUser.ForeColor = System.Drawing.Color.Black;
             this.txtUser.Location = new System.Drawing.Point(118, 206);
             this.txtUser.Name = "txtUser";
@@ -229,6 +233,7 @@
             // 
             // 
             this.lblUser.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblUser.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.lblUser.ForeColor = System.Drawing.Color.Black;
             this.lblUser.Location = new System.Drawing.Point(36, 208);
             this.lblUser.Name = "lblUser";
@@ -244,7 +249,7 @@
             // 
             // 
             this.lblSign.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblSign.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSign.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.lblSign.ForeColor = System.Drawing.Color.Black;
             this.lblSign.Location = new System.Drawing.Point(3, 162);
             this.lblSign.Name = "lblSign";
@@ -290,6 +295,7 @@
             this.pSettings.Controls.Add(this.lblInstructions);
             this.pSettings.Controls.Add(this.lblSettings);
             this.pSettings.DisabledBackColor = System.Drawing.Color.Empty;
+            this.pSettings.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.pSettings.Location = new System.Drawing.Point(12, 12);
             this.pSettings.Name = "pSettings";
             this.pSettings.Size = new System.Drawing.Size(310, 417);
@@ -339,7 +345,7 @@
             this.txtDataName.Border.Class = "TextBoxBorder";
             this.txtDataName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtDataName.DisabledBackColor = System.Drawing.Color.White;
-            this.txtDataName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDataName.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtDataName.ForeColor = System.Drawing.Color.Black;
             this.txtDataName.Location = new System.Drawing.Point(104, 268);
             this.txtDataName.Name = "txtDataName";
@@ -353,6 +359,7 @@
             // 
             // 
             this.lblDataName.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblDataName.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.lblDataName.ForeColor = System.Drawing.Color.Black;
             this.lblDataName.Location = new System.Drawing.Point(13, 268);
             this.lblDataName.Name = "lblDataName";
@@ -370,7 +377,7 @@
             this.txtDataPass.Border.Class = "TextBoxBorder";
             this.txtDataPass.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtDataPass.DisabledBackColor = System.Drawing.Color.White;
-            this.txtDataPass.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDataPass.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtDataPass.ForeColor = System.Drawing.Color.Black;
             this.txtDataPass.Location = new System.Drawing.Point(104, 237);
             this.txtDataPass.Name = "txtDataPass";
@@ -384,6 +391,7 @@
             // 
             // 
             this.lblDataPass.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblDataPass.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.lblDataPass.ForeColor = System.Drawing.Color.Black;
             this.lblDataPass.Location = new System.Drawing.Point(13, 237);
             this.lblDataPass.Name = "lblDataPass";
@@ -401,7 +409,7 @@
             this.txtDataUser.Border.Class = "TextBoxBorder";
             this.txtDataUser.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtDataUser.DisabledBackColor = System.Drawing.Color.White;
-            this.txtDataUser.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDataUser.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtDataUser.ForeColor = System.Drawing.Color.Black;
             this.txtDataUser.Location = new System.Drawing.Point(104, 206);
             this.txtDataUser.Name = "txtDataUser";
@@ -415,6 +423,7 @@
             // 
             // 
             this.lblDataUser.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblDataUser.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.lblDataUser.ForeColor = System.Drawing.Color.Black;
             this.lblDataUser.Location = new System.Drawing.Point(13, 207);
             this.lblDataUser.Name = "lblDataUser";
@@ -432,7 +441,7 @@
             this.txtDataPort.Border.Class = "TextBoxBorder";
             this.txtDataPort.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtDataPort.DisabledBackColor = System.Drawing.Color.White;
-            this.txtDataPort.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDataPort.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtDataPort.ForeColor = System.Drawing.Color.Black;
             this.txtDataPort.Location = new System.Drawing.Point(104, 175);
             this.txtDataPort.Name = "txtDataPort";
@@ -446,6 +455,7 @@
             // 
             // 
             this.lblDataPort.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblDataPort.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.lblDataPort.ForeColor = System.Drawing.Color.Black;
             this.lblDataPort.Location = new System.Drawing.Point(13, 175);
             this.lblDataPort.Name = "lblDataPort";
@@ -463,7 +473,7 @@
             this.txtDataHost.Border.Class = "TextBoxBorder";
             this.txtDataHost.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtDataHost.DisabledBackColor = System.Drawing.Color.White;
-            this.txtDataHost.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDataHost.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtDataHost.ForeColor = System.Drawing.Color.Black;
             this.txtDataHost.Location = new System.Drawing.Point(104, 144);
             this.txtDataHost.Name = "txtDataHost";
@@ -477,6 +487,7 @@
             // 
             // 
             this.lblDataHost.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblDataHost.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.lblDataHost.ForeColor = System.Drawing.Color.Black;
             this.lblDataHost.Location = new System.Drawing.Point(13, 144);
             this.lblDataHost.Name = "lblDataHost";
@@ -506,7 +517,7 @@
             // 
             // 
             this.lblSettings.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblSettings.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSettings.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.lblSettings.ForeColor = System.Drawing.Color.Black;
             this.lblSettings.Location = new System.Drawing.Point(3, 12);
             this.lblSettings.Name = "lblSettings";
@@ -523,16 +534,16 @@
             // 
             // frmSignIn
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.CaptionFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CaptionFont = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ClientSize = new System.Drawing.Size(334, 441);
             this.ControlBox = false;
             this.Controls.Add(this.pSign);
             this.Controls.Add(this.pSettings);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
