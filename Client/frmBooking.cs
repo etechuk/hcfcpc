@@ -592,12 +592,12 @@ namespace Client
 
             Program.DB.AddParameter("@name", txtName.Text.Trim());
 
-            if (iCompany > 0)
+            if (txtCompany.Text.Trim() != "")
             {
                 Program.DB.AddParameter("@company", iCompany);
             }
 
-            if (iContact > 0)
+            if (txtContact.Text.Trim() != "")
             {
                 Program.DB.AddParameter("@contact", iContact);
             }

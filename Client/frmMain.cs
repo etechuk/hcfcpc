@@ -1846,6 +1846,8 @@ namespace Client
                 SharedData.sBookingContact = "";
                 SharedData.sBookingEmail = "";
                 SharedData.sBookingPhone = "";
+                LoadBookingsGrid();
+                LoadBookings();
             }
         }
 
@@ -2258,7 +2260,12 @@ namespace Client
         private void biToolsRooms_Click(object sender, EventArgs e)
         {
             Form frmRooms = new frmRooms();
-            frmRooms.ShowDialog();
+            DialogResult dlg = frmRooms.ShowDialog();
+            if (dlg == DialogResult.OK)
+            {
+                LoadBookings();
+                LoadBookingsGrid();
+            }
         }
 
         private void cbxContactNameTitle_SelectionChangeCommitted_1(object sender, EventArgs e)
